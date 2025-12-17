@@ -1,0 +1,311 @@
+import { useState } from 'react';
+
+function ServerSentEvents() {
+  return (
+    <div className="space-y-6">
+      <h2 className="text-2xl font-bold text-gray-900">Server-Sent Events</h2>
+      
+      <section>
+        <h3 className="text-xl font-semibold text-gray-800 mb-3">EventSource API</h3>
+        <p className="text-gray-700 mb-4">
+          Use EventSource API for server-to-client streaming.
+        </p>
+        <div className="bg-gray-50 p-4 rounded-lg mb-4">
+          <pre className="text-sm bg-white p-2 rounded">{`// Basic EventSource
+const eventSource = new EventSource('/api/events');
+
+// Listen to messages
+eventSource.onmessage = (event) => {
+  const data = JSON.parse(event.data);
+  console.log('Received:', data);
+};
+
+// Listen to specific events
+eventSource.addEventListener('update', (event) => {
+  const data = JSON.parse(event.data);
+  console.log('Update:', data);
+});
+
+// Connection events
+eventSource.onopen = () => {
+  console.log('Connection opened');
+};
+
+eventSource.onerror = (error) => {
+  console.error('Error:', error);
+  // EventSource automatically reconnects
+};
+
+// Close connection
+eventSource.close();
+
+// React hook
+import { useEffect, useState } from 'react';
+
+function useEventSource(url) {
+  const [data, setData] = useState(null);
+  const [connected, setConnected] = useState(false);
+  const [error, setError] = useState(null);
+  
+  useEffect(() => {
+    const eventSource = new EventSource(url);
+    
+    eventSource.onopen = () => {
+      setConnected(true);
+      setError(null);
+    };
+    
+    eventSource.onmessage = (event) => {
+      try {
+        const parsed = JSON.parse(event.data);
+        setData(parsed);
+      } catch (e) {
+        setData(event.data);
+      }
+    };
+    
+    eventSource.onerror = (err) => {
+      setError(err);
+      setConnected(false);
+    };
+    
+    return () => {
+      eventSource.close();
+    };
+  }, [url]);
+  
+  return { data, connected, error };
+}
+
+// Usage
+function LiveUpdates() {
+  const { data, connected } = useEventSource('/api/events');
+  
+  return (
+    <div>
+      <div>Status: {connected ? 'Connected' : 'Disconnected'}</div>
+      {data && <div>{JSON.stringify(data)}</div>}
+    </div>
+  );
+}
+
+// Multiple event types
+function useEventSourceEvents(url) {
+  const [events, setEvents] = useState({});
+  
+  useEffect(() => {
+    const eventSource = new EventSource(url);
+    
+    eventSource.addEventListener('message', (event) => {
+      setEvents(prev => ({
+        ...prev,
+        message: JSON.parse(event.data)
+      }));
+    });
+    
+    eventSource.addEventListener('update', (event) => {
+      setEvents(prev => ({
+        ...prev,
+        update: JSON.parse(event.data)
+      }));
+    });
+    
+    eventSource.addEventListener('error', (event) => {
+      setEvents(prev => ({
+        ...prev,
+        error: JSON.parse(event.data)
+      }));
+    });
+    
+    return () => {
+      eventSource.close();
+    };
+  }, [url]);
+  
+  return events;
+}
+
+// With credentials
+const eventSource = new EventSource('/api/events', {
+  withCredentials: true
+});
+
+// Custom headers (not supported by EventSource)
+// Use fetch with ReadableStream instead`}</pre>
+        </div>
+      </section>
+
+      <section>
+        <h3 className="text-xl font-semibold text-gray-800 mb-3">Live Updates</h3>
+        <p className="text-gray-700 mb-4">
+          Implement live updates using Server-Sent Events.
+        </p>
+        <div className="bg-gray-50 p-4 rounded-lg">
+          <pre className="text-sm bg-white p-2 rounded">{`// Live data stream
+function useLiveData(url) {
+  const [data, setData] = useState([]);
+  
+  useEffect(() => {
+    const eventSource = new EventSource(url);
+    
+    eventSource.onmessage = (event) => {
+      const newItem = JSON.parse(event.data);
+      setData(prev => [...prev, newItem]);
+    };
+    
+    return () => {
+      eventSource.close();
+    };
+  }, [url]);
+  
+  return data;
+}
+
+// Live updates with replace
+function useLiveUpdates(url) {
+  const [data, setData] = useState(null);
+  
+  useEffect(() => {
+    const eventSource = new EventSource(url);
+    
+    eventSource.addEventListener('update', (event) => {
+      const updated = JSON.parse(event.data);
+      setData(updated);
+    });
+    
+    return () => {
+      eventSource.close();
+    };
+  }, [url]);
+  
+  return data;
+}
+
+// Live list updates
+function useLiveList(url) {
+  const [items, setItems] = useState([]);
+  
+  useEffect(() => {
+    const eventSource = new EventSource(url);
+    
+    eventSource.addEventListener('add', (event) => {
+      const item = JSON.parse(event.data);
+      setItems(prev => [...prev, item]);
+    });
+    
+    eventSource.addEventListener('update', (event) => {
+      const item = JSON.parse(event.data);
+      setItems(prev => prev.map(i => i.id === item.id ? item : i));
+    });
+    
+    eventSource.addEventListener('remove', (event) => {
+      const { id } = JSON.parse(event.data);
+      setItems(prev => prev.filter(i => i.id !== id));
+    });
+    
+    return () => {
+      eventSource.close();
+    };
+  }, [url]);
+  
+  return items;
+}
+
+// Progress updates
+function useProgress(url) {
+  const [progress, setProgress] = useState(0);
+  
+  useEffect(() => {
+    const eventSource = new EventSource(url);
+    
+    eventSource.addEventListener('progress', (event) => {
+      const { value } = JSON.parse(event.data);
+      setProgress(value);
+    });
+    
+    eventSource.addEventListener('complete', () => {
+      setProgress(100);
+      eventSource.close();
+    });
+    
+    return () => {
+      eventSource.close();
+    };
+  }, [url]);
+  
+  return progress;
+}
+
+// Notification stream
+function useNotifications(url) {
+  const [notifications, setNotifications] = useState([]);
+  
+  useEffect(() => {
+    const eventSource = new EventSource(url);
+    
+    eventSource.addEventListener('notification', (event) => {
+      const notification = JSON.parse(event.data);
+      setNotifications(prev => [notification, ...prev]);
+    });
+    
+    return () => {
+      eventSource.close();
+    };
+  }, [url]);
+  
+  return notifications;
+}
+
+// Reconnection handling
+function useEventSourceWithReconnect(url) {
+  const [data, setData] = useState(null);
+  const [connected, setConnected] = useState(false);
+  
+  useEffect(() => {
+    let eventSource;
+    let reconnectTimeout;
+    
+    const connect = () => {
+      eventSource = new EventSource(url);
+      
+      eventSource.onopen = () => {
+        setConnected(true);
+      };
+      
+      eventSource.onmessage = (event) => {
+        setData(JSON.parse(event.data));
+      };
+      
+      eventSource.onerror = () => {
+        setConnected(false);
+        eventSource.close();
+        
+        // Reconnect after delay
+        reconnectTimeout = setTimeout(() => {
+          connect();
+        }, 3000);
+      };
+    };
+    
+    connect();
+    
+    return () => {
+      if (eventSource) {
+        eventSource.close();
+      }
+      if (reconnectTimeout) {
+        clearTimeout(reconnectTimeout);
+      }
+    };
+  }, [url]);
+  
+  return { data, connected };
+}`}</pre>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default ServerSentEvents;
+
