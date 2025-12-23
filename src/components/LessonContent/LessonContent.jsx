@@ -89,30 +89,28 @@ import WebComponents from './lessons/WebComponents';
 import TypeScriptImprovements from './lessons/TypeScriptImprovements';
 import ConcurrentFeatures from './lessons/ConcurrentFeatures';
 import ErrorBoundariesEnhancements from './lessons/ErrorBoundariesEnhancements';
-import ReactFundamentalsCheatsheet from './lessons/ReactFundamentalsCheatsheet';
-import VirtualDomCheatsheet from './lessons/VirtualDomCheatsheet';
-import HooksCheatsheet from './lessons/HooksCheatsheet';
-import CustomHooksCheatsheet from './lessons/CustomHooksCheatsheet';
-import PerformanceCheatsheet from './lessons/PerformanceCheatsheet';
-import PerformancePitfallsCheatsheet from './lessons/PerformancePitfallsCheatsheet';
-import FundamentalsInterviewQuestions from './lessons/FundamentalsInterviewQuestions';
-import HooksInterviewQuestions from './lessons/HooksInterviewQuestions';
-
-// Debug: Verify import
-if (typeof HooksInterviewQuestions === 'undefined') {
-  console.error('HooksInterviewQuestions import failed!');
-}
-import AdvancedInterviewQuestions from './lessons/AdvancedInterviewQuestions';
-import PatternsCheatsheet from './lessons/PatternsCheatsheet';
-import StateManagementComparison from './lessons/StateManagementComparison';
-import RoutingCheatsheet from './lessons/RoutingCheatsheet';
-import FormsCheatsheet from './lessons/FormsCheatsheet';
-import TestingCheatsheet from './lessons/TestingCheatsheet';
-import TypeScriptReactCheatsheet from './lessons/TypeScriptReactCheatsheet';
-import React18FeaturesCheatsheet from './lessons/React18FeaturesCheatsheet';
-import React19FeaturesCheatsheet from './lessons/React19FeaturesCheatsheet';
-import BestPracticesCheatsheet from './lessons/BestPracticesCheatsheet';
-import CommonMistakesCheatsheet from './lessons/CommonMistakesCheatsheet';
+import InterviewFundamentals from './lessons/InterviewFundamentals';
+import InterviewHooks from './lessons/InterviewHooks';
+import InterviewPatterns from './lessons/InterviewPatterns';
+import InterviewStateManagement from './lessons/InterviewStateManagement';
+import InterviewPerformance from './lessons/InterviewPerformance';
+import InterviewQuestions from './lessons/InterviewQuestions';
+import InterviewTypeScript from './lessons/InterviewTypeScript';
+import InterviewTesting from './lessons/InterviewTesting';
+import InterviewAdvanced from './lessons/InterviewAdvanced';
+import InterviewPitfalls from './lessons/InterviewPitfalls';
+import InterviewScenarios from './lessons/InterviewScenarios';
+import InterviewRouter from './lessons/InterviewRouter';
+import InterviewForms from './lessons/InterviewForms';
+import InterviewDataFetching from './lessons/InterviewDataFetching';
+import InterviewInternals from './lessons/InterviewInternals';
+import InterviewArchitecture from './lessons/InterviewArchitecture';
+import InterviewStyling from './lessons/InterviewStyling';
+import InterviewSecurity from './lessons/InterviewSecurity';
+import InterviewAccessibility from './lessons/InterviewAccessibility';
+import InterviewBuildDeploy from './lessons/InterviewBuildDeploy';
+import InterviewFrameworkComparison from './lessons/InterviewFrameworkComparison';
+import InterviewMigration from './lessons/InterviewMigration';
 
 const contentComponents = {
   'setup-environment': SetupEnvironment,
@@ -206,36 +204,31 @@ const contentComponents = {
   'typescript-improvements': TypeScriptImprovements,
   'concurrent-features': ConcurrentFeatures,
   'error-boundaries-enhancements': ErrorBoundariesEnhancements,
-  // Phase 16: Interview Cheatsheets
-  'react-fundamentals-cheatsheet': ReactFundamentalsCheatsheet,
-  'virtual-dom-cheatsheet': VirtualDomCheatsheet,
-  'hooks-cheatsheet': HooksCheatsheet,
-  'custom-hooks-cheatsheet': CustomHooksCheatsheet,
-  'performance-cheatsheet': PerformanceCheatsheet,
-  'performance-pitfalls-cheatsheet': PerformancePitfallsCheatsheet,
-  'fundamentals-interview-questions': FundamentalsInterviewQuestions,
-  'hooks-interview-questions': HooksInterviewQuestions, // Debug: Verify this is defined
-  'advanced-interview-questions': AdvancedInterviewQuestions,
-  'patterns-cheatsheet': PatternsCheatsheet,
-  'state-management-comparison': StateManagementComparison,
-  'routing-cheatsheet': RoutingCheatsheet,
-  'forms-cheatsheet': FormsCheatsheet,
-  'testing-cheatsheet': TestingCheatsheet,
-  'typescript-react-cheatsheet': TypeScriptReactCheatsheet,
-  'react18-features-cheatsheet': React18FeaturesCheatsheet,
-  'react19-features-cheatsheet': React19FeaturesCheatsheet,
-  'best-practices-cheatsheet': BestPracticesCheatsheet,
-  'common-mistakes-cheatsheet': CommonMistakesCheatsheet,
+  'interview-fundamentals': InterviewFundamentals,
+  'interview-hooks': InterviewHooks,
+  'interview-patterns': InterviewPatterns,
+  'interview-state-management': InterviewStateManagement,
+  'interview-performance': InterviewPerformance,
+  'interview-questions': InterviewQuestions,
+  'interview-typescript': InterviewTypeScript,
+  'interview-testing': InterviewTesting,
+  'interview-advanced': InterviewAdvanced,
+  'interview-pitfalls': InterviewPitfalls,
+  'interview-scenarios': InterviewScenarios,
+  'interview-router': InterviewRouter,
+  'interview-forms': InterviewForms,
+  'interview-data-fetching': InterviewDataFetching,
+  'interview-internals': InterviewInternals,
+  'interview-architecture': InterviewArchitecture,
+  'interview-styling': InterviewStyling,
+  'interview-security': InterviewSecurity,
+  'interview-accessibility': InterviewAccessibility,
+  'interview-build-deploy': InterviewBuildDeploy,
+  'interview-framework-comparison': InterviewFrameworkComparison,
+  'interview-migration': InterviewMigration,
 };
 
 function LessonContent({ contentId }) {
-  // Debug log for hooks-interview-questions specifically
-  if (contentId === 'hooks-interview-questions') {
-    console.log('Looking up hooks-interview-questions');
-    console.log('HooksInterviewQuestions import:', typeof HooksInterviewQuestions);
-    console.log('In contentComponents:', typeof contentComponents['hooks-interview-questions']);
-  }
-  
   const ContentComponent = contentComponents[contentId];
 
   if (!ContentComponent) {
