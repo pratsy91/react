@@ -5,8 +5,54 @@ function TailwindCSS() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Tailwind CSS</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Tailwind CSS</h3>
+        <p className="text-blue-800 mb-2">
+          Tailwind CSS is a utility-first CSS framework that provides low-level utility classes to build custom designs directly 
+          in your markup. Instead of writing custom CSS, you compose your designs using pre-built utility classes.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Utility-First:</strong> Small, single-purpose classes that do one thing well</li>
+            <li><strong>No Custom CSS:</strong> Build designs by composing utility classes</li>
+            <li><strong>Responsive Design:</strong> Built-in breakpoints (sm, md, lg, xl, 2xl)</li>
+            <li><strong>State Variants:</strong> hover, focus, active, disabled, etc.</li>
+            <li><strong>Purging:</strong> Removes unused CSS in production for smaller bundle sizes</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Rapid UI development with pre-built utilities</li>
+            <li>Consistent design system with a limited set of values</li>
+            <li>Smaller CSS files through purging unused styles</li>
+            <li>No context switching between HTML and CSS files</li>
+            <li>Highly customizable through configuration</li>
+            <li>Mobile-first responsive design approach</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Tailwind:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Rapid prototyping and development</li>
+            <li>When you want consistent design constraints</li>
+            <li>Projects that need custom designs (not using component libraries)</li>
+            <li>When utility-first approach aligns with your workflow</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Utility-First Approach</h3>
+        <div className="bg-gray-50 p-4 rounded-lg mb-4">
+          <h4 className="font-semibold text-gray-900 mb-2">Philosophy</h4>
+          <p className="text-gray-700 mb-3">
+            Instead of writing semantic CSS classes like .button or .card, Tailwind encourages using utility classes that 
+            directly describe the styling properties. This approach keeps styles co-located with HTML and makes it easier 
+            to see exactly what styles are applied to each element.
+          </p>
+          <p className="text-gray-700">
+            The utility-first approach means you build complex components by combining simple, single-purpose utility classes 
+            rather than writing custom CSS for each component.
+          </p>
+        </div>
         <p className="text-gray-700 mb-4">
           Tailwind CSS uses utility classes to build custom designs without writing CSS.
         </p>

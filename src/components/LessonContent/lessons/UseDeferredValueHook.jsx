@@ -24,6 +24,38 @@ function UseDeferredValueHook() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">useDeferredValue Hook (React 18)</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding useDeferredValue</h3>
+        <p className="text-blue-800 mb-2">
+          useDeferredValue is a React 18 Hook that defers updating a value until more urgent updates have finished. It's similar 
+          to useTransition, but instead of wrapping state updates, it defers the value itself, allowing you to keep the previous 
+          value visible while the new value is being computed.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Value Deferral:</strong> Defers a value, not the state update itself</li>
+            <li><strong>Stale Value Display:</strong> Shows previous value while new value is computed</li>
+            <li><strong>Urgent Updates First:</strong> More urgent updates take priority</li>
+            <li><strong>Background Updates:</strong> Value updates in the background</li>
+            <li><strong>Better UX:</strong> Keeps UI responsive during expensive computations</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Filtering or searching through large lists</li>
+            <li>Rendering expensive components that depend on input</li>
+            <li>When you want to show stale data while computing new data</li>
+            <li>Any expensive computation that can be deferred</li>
+          </ul>
+          <p className="mt-2"><strong>vs useTransition:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>useDeferredValue:</strong> Defers a value (better for derived values)</li>
+            <li><strong>useTransition:</strong> Defers state updates (better for user actions)</li>
+            <li>Both keep UI responsive but have different use cases</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Deferring Non-Urgent Updates</h3>
         <p className="text-gray-700 mb-4">

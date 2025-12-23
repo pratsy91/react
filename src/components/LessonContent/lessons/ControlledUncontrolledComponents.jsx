@@ -21,6 +21,42 @@ function ControlledUncontrolledComponents() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Controlled vs Uncontrolled Components</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Controlled vs Uncontrolled Components</h3>
+        <p className="text-blue-800 mb-2">
+          React components can be either controlled or uncontrolled. This distinction is crucial for understanding how React manages 
+          form data and component state. Controlled components are managed by React state, while uncontrolled components are managed 
+          by the DOM. Each approach has its use cases and trade-offs.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Controlled Components:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Value controlled by React state via `value` prop</li>
+            <li>onChange handler updates state</li>
+            <li>Single source of truth (React state)</li>
+            <li>Better for validation and complex forms</li>
+            <li>Can transform input before displaying</li>
+            <li>More re-renders (state changes trigger renders)</li>
+          </ul>
+          <p className="mt-2"><strong>Uncontrolled Components:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Value managed by DOM (browser)</li>
+            <li>Use refs to access values when needed</li>
+            <li>Use `defaultValue` instead of `value`</li>
+            <li>Better performance (fewer re-renders)</li>
+            <li>Simpler for basic forms</li>
+            <li>Less control over input</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Each:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Controlled:</strong> Complex forms, validation, dynamic behavior</li>
+            <li><strong>Uncontrolled:</strong> Simple forms, file inputs, performance-critical</li>
+            <li><strong>Controlled:</strong> When you need to transform or validate input</li>
+            <li><strong>Uncontrolled:</strong> When you only need values on submit</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Controlled Inputs</h3>
         <p className="text-gray-700 mb-4">

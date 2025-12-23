@@ -20,8 +20,46 @@ function UseRefHook() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">useRef Hook</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding useRef</h3>
+        <p className="text-blue-800 mb-2">
+          useRef returns a mutable ref object whose .current property is initialized to the passed argument. The returned 
+          object will persist for the full lifetime of the component. Unlike useState, changing a ref's current value doesn't 
+          trigger a re-render.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Characteristics:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Persists Across Renders:</strong> Ref values persist between renders</li>
+            <li><strong>No Re-renders:</strong> Changing .current doesn't cause re-renders</li>
+            <li><strong>Mutable:</strong> You can mutate .current directly</li>
+            <li><strong>Two Main Uses:</strong> DOM references and storing mutable values</li>
+            <li><strong>Initial Value:</strong> Passed as argument to useRef()</li>
+          </ul>
+          <p className="mt-2"><strong>Common Use Cases:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Accessing DOM elements (focus, scroll, measurements)</li>
+            <li>Storing mutable values that don't need to trigger re-renders</li>
+            <li>Storing previous values or timers/intervals</li>
+            <li>Imperative access to child components (with forwardRef)</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">DOM References</h3>
+        <div className="bg-gray-50 p-4 rounded-lg mb-4">
+          <h4 className="font-semibold text-gray-900 mb-2">Accessing DOM Elements</h4>
+          <p className="text-gray-700 mb-3">
+            The most common use of useRef is to access DOM elements. By attaching a ref to a JSX element, you can get direct 
+            access to the underlying DOM node. This is useful for focusing inputs, scrolling to elements, measuring sizes, 
+            or integrating with third-party DOM libraries.
+          </p>
+          <p className="text-gray-700">
+            <strong>Important:</strong> Use refs for DOM access only when necessary. React's declarative model should be 
+            preferred for most use cases.
+          </p>
+        </div>
         <p className="text-gray-700 mb-4">
           useRef provides a way to access DOM elements directly.
         </p>

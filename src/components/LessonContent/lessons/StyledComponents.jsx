@@ -7,6 +7,42 @@ function StyledComponents() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Styled Components</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding styled-components</h3>
+        <p className="text-blue-800 mb-2">
+          styled-components is a CSS-in-JS library that lets you write actual CSS in your JavaScript. It uses tagged template 
+          literals to style your components, removing the mapping between components and styles. Styles are scoped to components 
+          automatically, preventing style conflicts and making it easy to delete unused styles.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>CSS-in-JS:</strong> Write CSS directly in JavaScript files</li>
+            <li><strong>Scoped Styles:</strong> Styles are automatically scoped to components</li>
+            <li><strong>Dynamic Styling:</strong> Use props and JavaScript logic in styles</li>
+            <li><strong>Theme Support:</strong> Built-in theming with ThemeProvider</li>
+            <li><strong>No Class Name Bugs:</strong> Unique class names generated automatically</li>
+            <li><strong>Full CSS Support:</strong> All CSS features including animations, media queries, pseudo-selectors</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>No naming conflicts - unique class names generated</li>
+            <li>Easy dynamic styling based on props</li>
+            <li>Better developer experience with syntax highlighting</li>
+            <li>Automatic vendor prefixing</li>
+            <li>Dead code elimination - unused styles removed</li>
+            <li>TypeScript support available</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use styled-components:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>When you want CSS-in-JS with full CSS power</li>
+            <li>For component libraries where styles are tightly coupled</li>
+            <li>When you need dynamic, prop-based styling</li>
+            <li>For applications with complex theming needs</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Complete styled-components API</h3>
         <p className="text-gray-700 mb-4">

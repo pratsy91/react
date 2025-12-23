@@ -5,6 +5,43 @@ function Jest() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Jest</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Jest</h3>
+        <p className="text-blue-800 mb-2">
+          Jest is a JavaScript testing framework developed by Facebook. It's a zero-configuration testing platform that works 
+          out of the box for most JavaScript projects. Jest provides a complete testing solution with test runner, assertion library, 
+          mocking capabilities, code coverage, and snapshot testing all built-in.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Zero Configuration:</strong> Works out of the box with minimal setup</li>
+            <li><strong>Built-in Assertions:</strong> Rich assertion library included</li>
+            <li><strong>Mocking:</strong> Powerful mocking capabilities for functions and modules</li>
+            <li><strong>Code Coverage:</strong> Built-in code coverage reports</li>
+            <li><strong>Snapshot Testing:</strong> Test UI components with snapshots</li>
+            <li><strong>Watch Mode:</strong> Automatically re-run tests on file changes</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>All-in-one testing solution</li>
+            <li>Fast test execution with parallelization</li>
+            <li>Great developer experience</li>
+            <li>Excellent React support</li>
+            <li>Large ecosystem and community</li>
+            <li>Works with TypeScript</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Jest:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>For React applications (especially with Create React App)</li>
+            <li>When you want a complete testing solution</li>
+            <li>For projects needing snapshot testing</li>
+            <li>When you need powerful mocking capabilities</li>
+            <li>For teams familiar with Jest ecosystem</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Test Suites and Specs</h3>
         <p className="text-gray-700 mb-4">

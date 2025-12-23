@@ -89,6 +89,30 @@ import WebComponents from './lessons/WebComponents';
 import TypeScriptImprovements from './lessons/TypeScriptImprovements';
 import ConcurrentFeatures from './lessons/ConcurrentFeatures';
 import ErrorBoundariesEnhancements from './lessons/ErrorBoundariesEnhancements';
+import ReactFundamentalsCheatsheet from './lessons/ReactFundamentalsCheatsheet';
+import VirtualDomCheatsheet from './lessons/VirtualDomCheatsheet';
+import HooksCheatsheet from './lessons/HooksCheatsheet';
+import CustomHooksCheatsheet from './lessons/CustomHooksCheatsheet';
+import PerformanceCheatsheet from './lessons/PerformanceCheatsheet';
+import PerformancePitfallsCheatsheet from './lessons/PerformancePitfallsCheatsheet';
+import FundamentalsInterviewQuestions from './lessons/FundamentalsInterviewQuestions';
+import HooksInterviewQuestions from './lessons/HooksInterviewQuestions';
+
+// Debug: Verify import
+if (typeof HooksInterviewQuestions === 'undefined') {
+  console.error('HooksInterviewQuestions import failed!');
+}
+import AdvancedInterviewQuestions from './lessons/AdvancedInterviewQuestions';
+import PatternsCheatsheet from './lessons/PatternsCheatsheet';
+import StateManagementComparison from './lessons/StateManagementComparison';
+import RoutingCheatsheet from './lessons/RoutingCheatsheet';
+import FormsCheatsheet from './lessons/FormsCheatsheet';
+import TestingCheatsheet from './lessons/TestingCheatsheet';
+import TypeScriptReactCheatsheet from './lessons/TypeScriptReactCheatsheet';
+import React18FeaturesCheatsheet from './lessons/React18FeaturesCheatsheet';
+import React19FeaturesCheatsheet from './lessons/React19FeaturesCheatsheet';
+import BestPracticesCheatsheet from './lessons/BestPracticesCheatsheet';
+import CommonMistakesCheatsheet from './lessons/CommonMistakesCheatsheet';
 
 const contentComponents = {
   'setup-environment': SetupEnvironment,
@@ -182,20 +206,74 @@ const contentComponents = {
   'typescript-improvements': TypeScriptImprovements,
   'concurrent-features': ConcurrentFeatures,
   'error-boundaries-enhancements': ErrorBoundariesEnhancements,
+  // Phase 16: Interview Cheatsheets
+  'react-fundamentals-cheatsheet': ReactFundamentalsCheatsheet,
+  'virtual-dom-cheatsheet': VirtualDomCheatsheet,
+  'hooks-cheatsheet': HooksCheatsheet,
+  'custom-hooks-cheatsheet': CustomHooksCheatsheet,
+  'performance-cheatsheet': PerformanceCheatsheet,
+  'performance-pitfalls-cheatsheet': PerformancePitfallsCheatsheet,
+  'fundamentals-interview-questions': FundamentalsInterviewQuestions,
+  'hooks-interview-questions': HooksInterviewQuestions, // Debug: Verify this is defined
+  'advanced-interview-questions': AdvancedInterviewQuestions,
+  'patterns-cheatsheet': PatternsCheatsheet,
+  'state-management-comparison': StateManagementComparison,
+  'routing-cheatsheet': RoutingCheatsheet,
+  'forms-cheatsheet': FormsCheatsheet,
+  'testing-cheatsheet': TestingCheatsheet,
+  'typescript-react-cheatsheet': TypeScriptReactCheatsheet,
+  'react18-features-cheatsheet': React18FeaturesCheatsheet,
+  'react19-features-cheatsheet': React19FeaturesCheatsheet,
+  'best-practices-cheatsheet': BestPracticesCheatsheet,
+  'common-mistakes-cheatsheet': CommonMistakesCheatsheet,
 };
 
 function LessonContent({ contentId }) {
+  // Debug log for hooks-interview-questions specifically
+  if (contentId === 'hooks-interview-questions') {
+    console.log('Looking up hooks-interview-questions');
+    console.log('HooksInterviewQuestions import:', typeof HooksInterviewQuestions);
+    console.log('In contentComponents:', typeof contentComponents['hooks-interview-questions']);
+  }
+  
   const ContentComponent = contentComponents[contentId];
 
   if (!ContentComponent) {
+    console.warn(`Content component not found for contentId: "${contentId}"`);
+    console.log('Available contentIds:', Object.keys(contentComponents));
+    console.log('Looking for:', contentId);
+    console.log('Type of ContentComponent:', typeof ContentComponent);
     return (
       <div className="text-center py-8">
         <p className="text-gray-600">Content coming soon...</p>
+        <p className="text-sm text-gray-500 mt-2">Content ID: {contentId}</p>
+        <p className="text-xs text-gray-400 mt-1">Check console for debugging info</p>
       </div>
     );
   }
 
-  return <ContentComponent />;
+  // Additional check for component validity
+  if (typeof ContentComponent !== 'function') {
+    console.error(`ContentComponent for "${contentId}" is not a function:`, ContentComponent);
+    return (
+      <div className="text-center py-8">
+        <p className="text-red-600">Error: Component is not a valid function</p>
+        <p className="text-sm text-gray-500 mt-2">Content ID: {contentId}</p>
+      </div>
+    );
+  }
+
+  try {
+    return <ContentComponent />;
+  } catch (error) {
+    console.error(`Error rendering component for "${contentId}":`, error);
+    return (
+      <div className="text-center py-8">
+        <p className="text-red-600">Error rendering component</p>
+        <p className="text-sm text-gray-500 mt-2">{error.message}</p>
+      </div>
+    );
+  }
 }
 
 export default LessonContent;

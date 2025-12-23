@@ -5,6 +5,43 @@ function AdvancedTypeScript() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Advanced TypeScript</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Advanced TypeScript with React</h3>
+        <p className="text-blue-800 mb-2">
+          Advanced TypeScript patterns in React enable you to create highly reusable, type-safe components. These patterns include 
+          generics, utility types, discriminated unions, type guards, and advanced typing for HOCs and render props. Mastering 
+          these patterns allows you to build robust, maintainable React applications with excellent type safety.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Advanced Patterns:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Generic Components:</strong> Reusable components that work with any type</li>
+            <li><strong>Utility Types:</strong> Built-in types for common transformations</li>
+            <li><strong>Discriminated Unions:</strong> Type-safe state machines and variants</li>
+            <li><strong>Type Guards:</strong> Runtime type checking with type narrowing</li>
+            <li><strong>Conditional Types:</strong> Types that depend on other types</li>
+            <li><strong>Mapped Types:</strong> Transform existing types</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Maximum type safety and code reliability</li>
+            <li>Better IDE autocomplete and IntelliSense</li>
+            <li>Self-documenting code through types</li>
+            <li>Catches errors at compile time</li>
+            <li>Enables highly reusable components</li>
+            <li>Better refactoring safety</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Advanced Patterns:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Building reusable component libraries</li>
+            <li>Complex state management with type safety</li>
+            <li>When you need maximum type safety</li>
+            <li>For large codebases requiring maintainability</li>
+            <li>When building shared components across teams</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Generic Components</h3>
         <p className="text-gray-700 mb-4">

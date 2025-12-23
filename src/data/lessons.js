@@ -1338,6 +1338,364 @@ export const phases = [
         ]
       }
     ]
+  },
+  {
+    id: 'phase-16',
+    title: 'Phase 16: Interview Cheatsheets',
+    description: 'Complete React Interview Preparation - Quick Reference & Common Questions',
+    modules: [
+      {
+        id: 'module-26',
+        title: 'Module 26: React Fundamentals Cheatsheet',
+        lessons: [
+          {
+            id: 'lesson-26-1',
+            title: 'React Core Concepts Cheatsheet',
+            topics: [
+              'JSX syntax and rules',
+              'Components and props',
+              'State and lifecycle',
+              'Event handling',
+              'Conditional rendering',
+              'Lists and keys',
+              'Component composition'
+            ],
+            content: 'react-fundamentals-cheatsheet'
+          },
+          {
+            id: 'lesson-26-2',
+            title: 'Virtual DOM & Reconciliation Cheatsheet',
+            topics: [
+              'Virtual DOM concept',
+              'Reconciliation algorithm',
+              'Diffing algorithm',
+              'Key prop importance',
+              'Performance implications',
+              'Render optimization'
+            ],
+            content: 'virtual-dom-cheatsheet'
+          }
+        ]
+      },
+      {
+        id: 'module-27',
+        title: 'Module 27: React Hooks Cheatsheet',
+        lessons: [
+          {
+            id: 'lesson-27-1',
+            title: 'All Hooks Quick Reference',
+            topics: [
+              'useState - state management',
+              'useEffect - side effects',
+              'useContext - context consumption',
+              'useReducer - complex state',
+              'useCallback - memoized callbacks',
+              'useMemo - memoized values',
+              'useRef - refs and mutable values',
+              'useLayoutEffect - synchronous effects',
+              'useImperativeHandle - ref forwarding',
+              'useDebugValue - dev tools',
+              'useId - unique IDs',
+              'useTransition - non-urgent updates',
+              'useDeferredValue - deferred values',
+              'useSyncExternalStore - external stores',
+              'useInsertionEffect - CSS-in-JS',
+              'useOptimistic - optimistic updates',
+              'useActionState - form actions',
+              'useFormStatus - form status',
+              'use() - promise/context unwrapping'
+            ],
+            content: 'hooks-cheatsheet'
+          },
+          {
+            id: 'lesson-27-2',
+            title: 'Custom Hooks Patterns Cheatsheet',
+            topics: [
+              'Custom hook rules',
+              'Common custom hooks',
+              'Hook composition',
+              'Sharing logic with hooks',
+              'Hook best practices'
+            ],
+            content: 'custom-hooks-cheatsheet'
+          }
+        ]
+      },
+      {
+        id: 'module-28',
+        title: 'Module 28: Performance Optimization Cheatsheet',
+        lessons: [
+          {
+            id: 'lesson-28-1',
+            title: 'Performance Optimization Quick Reference',
+            topics: [
+              'React.memo - component memoization',
+              'useMemo - value memoization',
+              'useCallback - function memoization',
+              'Code splitting - React.lazy',
+              'Virtualization - react-window',
+              'Debouncing and throttling',
+              'Bundle optimization',
+              'Profiling with DevTools'
+            ],
+            content: 'performance-cheatsheet'
+          },
+          {
+            id: 'lesson-28-2',
+            title: 'Common Performance Pitfalls',
+            topics: [
+              'Unnecessary re-renders',
+              'Expensive computations',
+              'Large component trees',
+              'Memory leaks',
+              'Bundle size issues',
+              'Anti-patterns to avoid'
+            ],
+            content: 'performance-pitfalls-cheatsheet'
+          }
+        ]
+      },
+      {
+        id: 'module-29',
+        title: 'Module 29: Common Interview Questions',
+        lessons: [
+          {
+            id: 'lesson-29-1',
+            title: 'React Fundamentals Interview Questions',
+            topics: [
+              'What is React?',
+              'JSX vs JavaScript',
+              'Components vs Elements',
+              'Props vs State',
+              'Controlled vs Uncontrolled',
+              'Keys in lists',
+              'Synthetic events',
+              'Virtual DOM explanation'
+            ],
+            content: 'fundamentals-interview-questions'
+          },
+          {
+            id: 'lesson-29-2',
+            title: 'Hooks Interview Questions',
+            topics: [
+              'Rules of hooks',
+              'useState vs useReducer',
+              'useEffect dependencies',
+              'useCallback vs useMemo',
+              'Custom hooks',
+              'Hook lifecycle',
+              'Hook optimization'
+            ],
+            content: 'hooks-interview-questions'
+          },
+          {
+            id: 'lesson-29-3',
+            title: 'Advanced React Interview Questions',
+            topics: [
+              'Error boundaries',
+              'Higher-order components',
+              'Render props pattern',
+              'Compound components',
+              'Context API vs Redux',
+              'Server Components',
+              'Concurrent features',
+              'React 19 features'
+            ],
+            content: 'advanced-interview-questions'
+          }
+        ]
+      },
+      {
+        id: 'module-30',
+        title: 'Module 30: React Patterns Cheatsheet',
+        lessons: [
+          {
+            id: 'lesson-30-1',
+            title: 'Component Patterns Quick Reference',
+            topics: [
+              'Container/Presentational pattern',
+              'Higher-Order Components (HOC)',
+              'Render Props pattern',
+              'Compound Components',
+              'Controlled Components',
+              'Uncontrolled Components',
+              'Custom Hooks pattern'
+            ],
+            content: 'patterns-cheatsheet'
+          }
+        ]
+      },
+      {
+        id: 'module-31',
+        title: 'Module 31: State Management Cheatsheet',
+        lessons: [
+          {
+            id: 'lesson-31-1',
+            title: 'State Management Solutions Comparison',
+            topics: [
+              'useState - local state',
+              'useReducer - complex state',
+              'Context API - global state',
+              'Redux Toolkit - predictable state',
+              'Zustand - simple state',
+              'Jotai - atomic state',
+              'Recoil - Facebook state',
+              'When to use each'
+            ],
+            content: 'state-management-comparison'
+          }
+        ]
+      },
+      {
+        id: 'module-32',
+        title: 'Module 32: Routing & Forms Cheatsheet',
+        lessons: [
+          {
+            id: 'lesson-32-1',
+            title: 'React Router Cheatsheet',
+            topics: [
+              'Router setup',
+              'Route configuration',
+              'Navigation hooks',
+              'Nested routes',
+              'Protected routes',
+              'Route parameters',
+              'Query strings',
+              'Programmatic navigation'
+            ],
+            content: 'routing-cheatsheet'
+          },
+          {
+            id: 'lesson-32-2',
+            title: 'Form Handling Cheatsheet',
+            topics: [
+              'Controlled forms',
+              'Uncontrolled forms',
+              'Form validation',
+              'React Hook Form',
+              'Formik',
+              'Form libraries comparison',
+              'Best practices'
+            ],
+            content: 'forms-cheatsheet'
+          }
+        ]
+      },
+      {
+        id: 'module-33',
+        title: 'Module 33: Testing & TypeScript Cheatsheet',
+        lessons: [
+          {
+            id: 'lesson-33-1',
+            title: 'Testing Cheatsheet',
+            topics: [
+              'React Testing Library',
+              'Jest basics',
+              'Vitest setup',
+              'Testing hooks',
+              'Testing components',
+              'E2E testing',
+              'Test best practices',
+              'Common testing patterns'
+            ],
+            content: 'testing-cheatsheet'
+          },
+          {
+            id: 'lesson-33-2',
+            title: 'TypeScript with React Cheatsheet',
+            topics: [
+              'Component types',
+              'Props types',
+              'Hook types',
+              'Event types',
+              'Generic components',
+              'Utility types',
+              'Type guards',
+              'Common patterns'
+            ],
+            content: 'typescript-react-cheatsheet'
+          }
+        ]
+      },
+      {
+        id: 'module-34',
+        title: 'Module 34: React 18/19 Features Cheatsheet',
+        lessons: [
+          {
+            id: 'lesson-34-1',
+            title: 'React 18 Features Cheatsheet',
+            topics: [
+              'Concurrent rendering',
+              'Automatic batching',
+              'Transitions',
+              'Suspense improvements',
+              'useId hook',
+              'useTransition',
+              'useDeferredValue',
+              'useSyncExternalStore'
+            ],
+            content: 'react18-features-cheatsheet'
+          },
+          {
+            id: 'lesson-34-2',
+            title: 'React 19 Features Cheatsheet',
+            topics: [
+              'React Compiler',
+              'Actions & Form Handling',
+              'useOptimistic hook',
+              'Document Metadata',
+              'Ref as Prop',
+              'Context as Provider',
+              'Async Components',
+              'use() Hook',
+              'Server Components (Stable)',
+              'Improved Hydration',
+              'Enhanced Suspense',
+              'Asset Loading',
+              'Web Components',
+              'TypeScript Improvements'
+            ],
+            content: 'react19-features-cheatsheet'
+          }
+        ]
+      },
+      {
+        id: 'module-35',
+        title: 'Module 35: Best Practices & Common Mistakes',
+        lessons: [
+          {
+            id: 'lesson-35-1',
+            title: 'React Best Practices Cheatsheet',
+            topics: [
+              'Component design',
+              'State management',
+              'Performance optimization',
+              'Code organization',
+              'Naming conventions',
+              'File structure',
+              'Accessibility',
+              'Security practices'
+            ],
+            content: 'best-practices-cheatsheet'
+          },
+          {
+            id: 'lesson-35-2',
+            title: 'Common Mistakes & Solutions',
+            topics: [
+              'Mutating state directly',
+              'Missing keys in lists',
+              'Infinite loops in useEffect',
+              'Stale closures',
+              'Memory leaks',
+              'Unnecessary re-renders',
+              'Anti-patterns',
+              'How to fix them'
+            ],
+            content: 'common-mistakes-cheatsheet'
+          }
+        ]
+      }
+    ]
   }
 ];
 

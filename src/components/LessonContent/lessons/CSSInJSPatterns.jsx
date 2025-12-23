@@ -8,6 +8,43 @@ function CSSInJSPatterns() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">CSS-in-JS Patterns</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding CSS-in-JS Patterns</h3>
+        <p className="text-blue-800 mb-2">
+          CSS-in-JS is an approach where CSS is written in JavaScript files alongside components. This includes inline styles, 
+          styled components, CSS modules, and other patterns that co-locate styles with components. Each pattern has different 
+          trade-offs in terms of performance, developer experience, and flexibility.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>CSS-in-JS Patterns:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Inline Styles:</strong> Style objects in JSX (limited CSS features)</li>
+            <li><strong>Styled Components:</strong> CSS-in-JS libraries (styled-components, Emotion)</li>
+            <li><strong>CSS Modules:</strong> Scoped CSS files imported as objects</li>
+            <li><strong>CSS-in-JS Libraries:</strong> Runtime or build-time CSS generation</li>
+            <li><strong>Template Literals:</strong> CSS written in template strings</li>
+            <li><strong>Utility CSS:</strong> Tailwind CSS, utility-first approach</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Co-location of styles and components</li>
+            <li>Dynamic styling based on props/state</li>
+            <li>Scoped styles prevent conflicts</li>
+            <li>Better component encapsulation</li>
+            <li>TypeScript support for type-safe styles</li>
+            <li>Dead code elimination possible</li>
+          </ul>
+          <p className="mt-2"><strong>Trade-offs:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Runtime overhead (for runtime CSS-in-JS)</li>
+            <li>Learning curve for teams used to CSS</li>
+            <li>Bundle size considerations</li>
+            <li>Debugging can be more complex</li>
+            <li>Not all CSS features supported in all patterns</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Inline Styles</h3>
         <p className="text-gray-700 mb-4">

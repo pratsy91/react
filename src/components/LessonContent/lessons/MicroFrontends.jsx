@@ -5,6 +5,43 @@ function MicroFrontends() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Micro-frontends</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Micro-frontends</h3>
+        <p className="text-blue-800 mb-2">
+          Micro-frontends is an architectural pattern where a frontend application is composed of smaller, independent applications 
+          (micro-frontends) that can be developed, deployed, and maintained separately. Each micro-frontend is owned by a different 
+          team and can use different technologies, enabling large organizations to scale frontend development.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Independent Deployment:</strong> Each micro-frontend can be deployed independently</li>
+            <li><strong>Team Autonomy:</strong> Different teams can work on different micro-frontends</li>
+            <li><strong>Technology Diversity:</strong> Each micro-frontend can use different frameworks</li>
+            <li><strong>Module Federation:</strong> Share code between applications at runtime</li>
+            <li><strong>Composition:</strong> Combine micro-frontends into a single application</li>
+            <li><strong>Isolation:</strong> Micro-frontends are isolated from each other</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Independent development and deployment</li>
+            <li>Team autonomy and faster development</li>
+            <li>Technology flexibility</li>
+            <li>Better scalability for large teams</li>
+            <li>Fault isolation - one micro-frontend failure doesn't break the whole app</li>
+            <li>Easier to maintain and update</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Micro-frontends:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Large applications with multiple teams</li>
+            <li>When you need independent deployments</li>
+            <li>For organizations with distributed teams</li>
+            <li>When different parts need different technologies</li>
+            <li>For applications that need to scale development</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Module Federation</h3>
         <p className="text-gray-700 mb-4">

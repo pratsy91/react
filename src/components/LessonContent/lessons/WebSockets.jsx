@@ -5,6 +5,43 @@ function WebSockets() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">WebSockets</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding WebSockets</h3>
+        <p className="text-blue-800 mb-2">
+          WebSockets provide a persistent, bidirectional communication channel between client and server. Unlike HTTP requests which 
+          are request-response based, WebSockets allow the server to push data to the client at any time, enabling real-time 
+          applications like chat, live updates, notifications, and collaborative features.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Persistent Connection:</strong> Connection stays open for bidirectional communication</li>
+            <li><strong>Real-time:</strong> Instant data transfer without polling</li>
+            <li><strong>Bidirectional:</strong> Both client and server can send messages</li>
+            <li><strong>Low Latency:</strong> Lower overhead than HTTP for frequent messages</li>
+            <li><strong>Event-based:</strong> Communication through events/messages</li>
+            <li><strong>Connection Management:</strong> Handle connection, disconnection, reconnection</li>
+          </ul>
+          <p className="mt-2"><strong>Common Use Cases:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Real-time chat applications</li>
+            <li>Live notifications and updates</li>
+            <li>Collaborative editing</li>
+            <li>Live dashboards and monitoring</li>
+            <li>Gaming applications</li>
+            <li>Any feature needing real-time data</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Real-time communication without polling</li>
+            <li>Lower latency than HTTP for frequent updates</li>
+            <li>Server can push data to clients</li>
+            <li>Efficient for high-frequency updates</li>
+            <li>Better user experience for real-time features</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Socket.io Integration</h3>
         <p className="text-gray-700 mb-4">

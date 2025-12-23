@@ -56,6 +56,43 @@ function AxiosIntegration() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Axios Integration</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Axios</h3>
+        <p className="text-blue-800 mb-2">
+          Axios is a popular, promise-based HTTP client for JavaScript. It provides a simple, clean API for making HTTP requests 
+          with features like request/response interceptors, automatic JSON transformation, request cancellation, and better error 
+          handling compared to the native Fetch API. It works in both browser and Node.js environments.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Promise-based:</strong> Clean async/await syntax</li>
+            <li><strong>Interceptors:</strong> Transform requests/responses globally</li>
+            <li><strong>Automatic JSON:</strong> Automatically transforms JSON data</li>
+            <li><strong>Request Cancellation:</strong> Cancel requests with CancelToken</li>
+            <li><strong>Error Handling:</strong> Better error handling than Fetch</li>
+            <li><strong>Request/Response Transformation:</strong> Transform data automatically</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits Over Fetch:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Automatic JSON transformation</li>
+            <li>Request/response interceptors</li>
+            <li>Better error handling</li>
+            <li>Request cancellation support</li>
+            <li>Automatic request body serialization</li>
+            <li>More convenient API</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Axios:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>When you need interceptors for auth tokens, error handling</li>
+            <li>For applications with many API calls</li>
+            <li>When you need request cancellation</li>
+            <li>For better error handling than Fetch</li>
+            <li>When you prefer a more feature-rich HTTP client</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Interceptors</h3>
         <p className="text-gray-700 mb-4">

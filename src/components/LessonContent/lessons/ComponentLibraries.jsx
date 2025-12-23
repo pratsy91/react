@@ -5,6 +5,42 @@ function ComponentLibraries() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Component Libraries</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding React Component Libraries</h3>
+        <p className="text-blue-800 mb-2">
+          Component libraries provide pre-built, reusable UI components that follow design systems and best practices. They 
+          accelerate development by providing ready-to-use components, consistent styling, accessibility features, and comprehensive 
+          APIs. Popular libraries include Material-UI, Chakra UI, Ant Design, and shadcn/ui.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Faster Development:</strong> Pre-built components save development time</li>
+            <li><strong>Consistent Design:</strong> Follow established design systems</li>
+            <li><strong>Accessibility:</strong> Built-in ARIA attributes and keyboard navigation</li>
+            <li><strong>Responsive:</strong> Components work across different screen sizes</li>
+            <li><strong>Theming:</strong> Customizable themes and styling</li>
+            <li><strong>Documentation:</strong> Comprehensive docs and examples</li>
+          </ul>
+          <p className="mt-2"><strong>Popular Libraries:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Material-UI (MUI):</strong> Material Design, comprehensive components</li>
+            <li><strong>Chakra UI:</strong> Simple, modular, accessible</li>
+            <li><strong>Ant Design:</strong> Enterprise-grade components</li>
+            <li><strong>shadcn/ui:</strong> Copy-paste components, highly customizable</li>
+            <li><strong>Radix UI:</strong> Unstyled, accessible primitives</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Component Libraries:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Rapid prototyping and development</li>
+            <li>When you need consistent design system</li>
+            <li>For applications requiring accessibility</li>
+            <li>When you want to focus on features, not UI components</li>
+            <li>For teams without dedicated designers</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Material-UI (MUI) - Complete API</h3>
         <p className="text-gray-700 mb-4">

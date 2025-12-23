@@ -5,6 +5,43 @@ function Recoil() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Recoil</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Recoil</h3>
+        <p className="text-blue-800 mb-2">
+          Recoil is a state management library for React developed by Facebook. It provides a way to share state across components 
+          using atoms (units of state) and selectors (derived state). Recoil is designed to be more intuitive and performant than 
+          Context API for complex state management scenarios, with fine-grained subscriptions and efficient re-renders.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Atoms:</strong> Units of state that components can subscribe to</li>
+            <li><strong>Selectors:</strong> Derived state computed from atoms or other selectors</li>
+            <li><strong>Atom Families:</strong> Parameterized atoms for dynamic state</li>
+            <li><strong>Selector Families:</strong> Parameterized selectors</li>
+            <li><strong>Fine-grained Updates:</strong> Only subscribed components re-render</li>
+            <li><strong>Async Selectors:</strong> Support for async data fetching</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Fine-grained subscriptions - only affected components re-render</li>
+            <li>Intuitive API - easy to learn and use</li>
+            <li>Derived state with selectors</li>
+            <li>Async state support built-in</li>
+            <li>DevTools support for debugging</li>
+            <li>TypeScript support</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Recoil:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>When Context API becomes too complex</li>
+            <li>For applications with complex shared state</li>
+            <li>When you need fine-grained re-render control</li>
+            <li>For applications with derived/computed state</li>
+            <li>When you need async state management</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Atoms and Selectors</h3>
         <p className="text-gray-700 mb-4">

@@ -18,6 +18,41 @@ function CodeSplitting() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Code Splitting</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Code Splitting</h3>
+        <p className="text-blue-800 mb-2">
+          Code splitting is a technique for splitting your JavaScript bundle into smaller chunks that can be loaded on demand. 
+          This reduces the initial bundle size, improving load time and user experience. React.lazy and dynamic imports enable 
+          code splitting in React applications.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Bundle Size:</strong> Split large bundles into smaller, loadable chunks</li>
+            <li><strong>Lazy Loading:</strong> Load code only when needed (on-demand)</li>
+            <li><strong>Dynamic Imports:</strong> Use import() syntax for dynamic component loading</li>
+            <li><strong>React.lazy:</strong> Wrapper around dynamic imports for React components</li>
+            <li><strong>Suspense Required:</strong> Lazy components must be wrapped in Suspense</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Smaller initial bundle size - faster first load</li>
+            <li>Better performance - only load what's needed</li>
+            <li>Improved user experience - faster time to interactive</li>
+            <li>Reduced memory usage - load components on demand</li>
+            <li>Better caching - changed components don't invalidate entire bundle</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Code Splitting:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Route-based splitting (split by page/route)</li>
+            <li>Large, heavy components that aren't always visible</li>
+            <li>Third-party libraries that aren't always needed</li>
+            <li>Modal dialogs, tabs, accordions with hidden content</li>
+            <li>Any feature that's conditionally rendered</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">React.lazy</h3>
         <p className="text-gray-700 mb-4">

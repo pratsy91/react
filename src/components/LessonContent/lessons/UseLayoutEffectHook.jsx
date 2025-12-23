@@ -28,6 +28,40 @@ function UseLayoutEffectHook() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">useLayoutEffect Hook</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding useLayoutEffect</h3>
+        <p className="text-blue-800 mb-2">
+          useLayoutEffect is identical to useEffect, but it runs synchronously after all DOM mutations and before the browser 
+          paints the screen. This makes it perfect for DOM measurements and updates that need to happen before the user sees 
+          the visual change, preventing layout shifts and visual flicker.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Differences from useEffect:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Timing:</strong> Runs synchronously before paint (useEffect runs asynchronously after paint)</li>
+            <li><strong>Blocking:</strong> Blocks browser painting until it completes</li>
+            <li><strong>Use Case:</strong> DOM measurements and synchronous DOM updates</li>
+            <li><strong>Performance:</strong> Can block rendering, so use sparingly</li>
+            <li><strong>API:</strong> Same API as useEffect (function, dependencies)</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use useLayoutEffect:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Measuring DOM elements (width, height, position)</li>
+            <li>Updating DOM before paint to prevent flicker</li>
+            <li>Tooltip positioning based on element measurements</li>
+            <li>Animation setup that needs to happen before first paint</li>
+            <li>Any DOM manipulation that must be synchronous</li>
+          </ul>
+          <p className="mt-2"><strong>When NOT to Use:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Data fetching (use useEffect instead)</li>
+            <li>Event subscriptions (use useEffect instead)</li>
+            <li>Any non-urgent side effect (use useEffect instead)</li>
+            <li>Most use cases - useEffect is preferred for performance</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Synchronous Effects</h3>
         <p className="text-gray-700 mb-4">

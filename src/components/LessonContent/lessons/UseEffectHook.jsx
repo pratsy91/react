@@ -77,6 +77,32 @@ function UseEffectHook() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">useEffect Hook</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding useEffect</h3>
+        <p className="text-blue-800 mb-2">
+          useEffect is a Hook that lets you perform side effects in function components. Side effects are operations 
+          that interact with the outside world: data fetching, subscriptions, timers, manually changing the DOM, etc.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Side Effects:</strong> Operations that don't affect the component's output directly</li>
+            <li><strong>After Render:</strong> Effects run after the browser has painted the screen</li>
+            <li><strong>Dependency Array:</strong> Controls when the effect re-runs</li>
+            <li><strong>Cleanup:</strong> Functions returned from effects clean up subscriptions, timers, etc.</li>
+            <li><strong>Multiple Effects:</strong> Split different concerns into separate effects</li>
+          </ul>
+          <p className="mt-2"><strong>Common Use Cases:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Fetching data from APIs</li>
+            <li>Setting up subscriptions or event listeners</li>
+            <li>Manually changing the DOM</li>
+            <li>Timers and intervals</li>
+            <li>Logging and analytics</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Basic Effects</h3>
         <p className="text-gray-700 mb-4">

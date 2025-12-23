@@ -34,6 +34,38 @@ function UseTransitionHook() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">useTransition Hook (React 18)</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding useTransition</h3>
+        <p className="text-blue-800 mb-2">
+          useTransition is a React 18 Hook that lets you mark state updates as transitions. Transitions are non-urgent updates 
+          that can be interrupted by more urgent updates (like user input), keeping the UI responsive during expensive operations.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Urgent vs Non-urgent:</strong> Distinguishes between urgent and non-urgent updates</li>
+            <li><strong>Interruptible:</strong> Non-urgent updates can be interrupted by urgent ones</li>
+            <li><strong>isPending:</strong> Boolean indicating if a transition is pending</li>
+            <li><strong>startTransition:</strong> Function to mark updates as transitions</li>
+            <li><strong>Better UX:</strong> Keeps UI responsive during heavy computations</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Filtering or sorting large lists while user types</li>
+            <li>Rendering heavy components that don't need immediate updates</li>
+            <li>Tab switching or navigation that doesn't need to block UI</li>
+            <li>Any expensive state update that can be deferred</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>UI stays responsive during expensive operations</li>
+            <li>Better perceived performance</li>
+            <li>Prioritizes user interactions</li>
+            <li>Prevents UI from freezing</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Concurrent Rendering</h3>
         <p className="text-gray-700 mb-4">

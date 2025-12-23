@@ -13,6 +13,38 @@ function UseContextHook() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">useContext Hook</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Context API</h3>
+        <p className="text-blue-800 mb-2">
+          Context provides a way to pass data through the component tree without having to pass props down manually at every 
+          level. This solves the "prop drilling" problem where you pass props through many components that don't need them, 
+          just to get data to a deeply nested component.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>createContext:</strong> Creates a context object with a default value</li>
+            <li><strong>Provider:</strong> Component that supplies the context value to its children</li>
+            <li><strong>useContext:</strong> Hook that consumes the context value</li>
+            <li><strong>Prop Drilling:</strong> Passing props through intermediate components unnecessarily</li>
+            <li><strong>Performance:</strong> Context can cause re-renders of all consumers when value changes</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Context:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Global state like theme, user authentication, language preferences</li>
+            <li>Data that's needed by many components at different nesting levels</li>
+            <li>Avoiding prop drilling for deeply nested component trees</li>
+            <li>Configuration values that rarely change</li>
+          </ul>
+          <p className="mt-2"><strong>When NOT to Use Context:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>For frequently changing data (use state management library instead)</li>
+            <li>When only a few components need the data (props are simpler)</li>
+            <li>For complex state management (consider Redux, Zustand, etc.)</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Creating Context</h3>
         <p className="text-gray-700 mb-4">

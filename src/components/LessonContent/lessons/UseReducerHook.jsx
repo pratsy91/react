@@ -57,6 +57,40 @@ function UseReducerHook() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">useReducer Hook</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding useReducer</h3>
+        <p className="text-blue-800 mb-2">
+          useReducer is an alternative to useState for managing complex state logic. It's especially useful when state logic 
+          involves multiple sub-values or when the next state depends on the previous one. It follows the Redux pattern of 
+          dispatching actions to update state through a reducer function.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Reducer Function:</strong> Pure function that takes (state, action) and returns new state</li>
+            <li><strong>Actions:</strong> Plain objects describing what happened (typically with type and payload)</li>
+            <li><strong>Dispatch:</strong> Function to send actions to the reducer</li>
+            <li><strong>Predictable Updates:</strong> State updates follow a predictable pattern</li>
+            <li><strong>Complex State:</strong> Better for managing objects or arrays with multiple operations</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use useReducer vs useState:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>useReducer:</strong> Complex state logic, multiple sub-values, state depends on previous state</li>
+            <li><strong>useState:</strong> Simple state, single value, independent updates</li>
+            <li><strong>useReducer:</strong> When you want to test state logic separately</li>
+            <li><strong>useReducer:</strong> When state updates follow predictable patterns</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Centralized state update logic</li>
+            <li>Easier to test reducers independently</li>
+            <li>Predictable state transitions</li>
+            <li>Better for complex state management</li>
+            <li>Can be combined with Context API for global state</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Reducer Pattern</h3>
         <p className="text-gray-700 mb-4">

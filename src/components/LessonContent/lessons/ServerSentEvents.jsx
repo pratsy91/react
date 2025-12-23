@@ -5,6 +5,42 @@ function ServerSentEvents() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Server-Sent Events</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Server-Sent Events (SSE)</h3>
+        <p className="text-blue-800 mb-2">
+          Server-Sent Events (SSE) is a web standard that enables servers to push data to clients over HTTP. Unlike WebSockets 
+          which are bidirectional, SSE is unidirectional - the server sends data to the client, but the client cannot send data 
+          back through the same connection. SSE is simpler than WebSockets and perfect for one-way data streaming scenarios.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Unidirectional:</strong> Server to client only (one-way)</li>
+            <li><strong>HTTP-based:</strong> Works over standard HTTP connections</li>
+            <li><strong>Automatic Reconnection:</strong> Browser automatically reconnects on disconnect</li>
+            <li><strong>Event Types:</strong> Support for different event types</li>
+            <li><strong>Simple API:</strong> Easy to use with EventSource API</li>
+            <li><strong>Text-based:</strong> Sends text data (JSON can be parsed)</li>
+          </ul>
+          <p className="mt-2"><strong>Use Cases:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Live notifications and updates</li>
+            <li>Real-time dashboards</li>
+            <li>Live feeds and streams</li>
+            <li>Progress updates</li>
+            <li>Chat applications (one-way)</li>
+            <li>Any scenario needing server-to-client streaming</li>
+          </ul>
+          <p className="mt-2"><strong>SSE vs WebSockets:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>SSE:</strong> Unidirectional, HTTP-based, simpler, automatic reconnection</li>
+            <li><strong>WebSockets:</strong> Bidirectional, TCP-based, more complex, manual reconnection</li>
+            <li><strong>SSE:</strong> Better for server-to-client streaming</li>
+            <li><strong>WebSockets:</strong> Better for interactive, bidirectional communication</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">EventSource API</h3>
         <p className="text-gray-700 mb-4">

@@ -74,6 +74,41 @@ function NativeFetch() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Native Fetch</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding the Fetch API</h3>
+        <p className="text-blue-800 mb-2">
+          The Fetch API is a modern JavaScript interface for making HTTP requests. It's built into browsers and provides a 
+          Promise-based API that's cleaner and more powerful than the older XMLHttpRequest. When used with React's useEffect, 
+          it enables data fetching in function components.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Promise-based:</strong> Returns a Promise, making async/await easy to use</li>
+            <li><strong>Streaming:</strong> Supports request and response streaming</li>
+            <li><strong>CORS:</strong> Handles CORS properly (unlike some XMLHttpRequest setups)</li>
+            <li><strong>AbortController:</strong> Can cancel requests to prevent race conditions</li>
+            <li><strong>Cleanup:</strong> Need to handle cleanup in useEffect to prevent memory leaks</li>
+          </ul>
+          <p className="mt-2"><strong>Common Patterns:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Fetching data on component mount</li>
+            <li>Fetching when dependencies change</li>
+            <li>Handling loading and error states</li>
+            <li>Canceling requests to prevent race conditions</li>
+            <li>Error handling and retry logic</li>
+          </ul>
+          <p className="mt-2"><strong>Best Practices:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Always handle errors (try-catch or .catch())</li>
+            <li>Clean up requests in useEffect cleanup function</li>
+            <li>Check if component is still mounted before setting state</li>
+            <li>Use AbortController for cancelable requests</li>
+            <li>Handle loading states for better UX</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Fetch API with useEffect</h3>
         <p className="text-gray-700 mb-4">

@@ -5,6 +5,42 @@ function UseHook() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">use Hook</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding the use() Hook (React 19)</h3>
+        <p className="text-blue-800 mb-2">
+          The use() hook is a React 19 Hook that can read the value of a Promise or Context. It's a more flexible alternative to 
+          useContext and enables better integration with Suspense for data fetching. Unlike other hooks, use() can be called 
+          conditionally and in loops, making it more versatile for certain patterns.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Promise Unwrapping:</strong> Unwraps promises and suspends until resolved</li>
+            <li><strong>Context Reading:</strong> Can read Context values (alternative to useContext)</li>
+            <li><strong>Conditional Usage:</strong> Can be called conditionally (unlike other hooks)</li>
+            <li><strong>Suspense Integration:</strong> Works seamlessly with Suspense boundaries</li>
+            <li><strong>Flexible:</strong> Can be used in loops and conditionals</li>
+            <li><strong>Error Handling:</strong> Errors propagate to nearest error boundary</li>
+          </ul>
+          <p className="mt-2"><strong>Use Cases:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Reading promises passed as props</li>
+            <li>Conditional context reading</li>
+            <li>Data fetching with Suspense</li>
+            <li>Reading context in loops or conditionals</li>
+            <li>When you need more flexibility than useContext</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>More flexible than useContext</li>
+            <li>Better Suspense integration</li>
+            <li>Can be used conditionally</li>
+            <li>Simpler promise handling</li>
+            <li>Works with async data fetching patterns</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">use() Hook API</h3>
         <p className="text-gray-700 mb-4">

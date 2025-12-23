@@ -50,6 +50,41 @@ function AdvancedContextPatterns() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Advanced Context Patterns</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Advanced Context Patterns</h3>
+        <p className="text-blue-800 mb-2">
+          Advanced Context patterns help you use Context API more effectively, especially for performance optimization and 
+          complex state management scenarios. These patterns include context composition, splitting contexts, using reducers 
+          with context, and memoization strategies to prevent unnecessary re-renders.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Advanced Patterns:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Context Composition:</strong> Combine multiple contexts into a single provider</li>
+            <li><strong>Context Splitting:</strong> Split large contexts to prevent unnecessary re-renders</li>
+            <li><strong>Context with useReducer:</strong> Use reducers for complex state logic</li>
+            <li><strong>Memoization:</strong> Memoize context values to prevent re-renders</li>
+            <li><strong>Multiple Providers:</strong> Use multiple context providers for different concerns</li>
+            <li><strong>Custom Hooks:</strong> Create custom hooks for context consumption</li>
+          </ul>
+          <p className="mt-2"><strong>Performance Optimization:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Split contexts by update frequency</li>
+            <li>Memoize context values with useMemo</li>
+            <li>Use separate contexts for different data types</li>
+            <li>Combine contexts only when needed</li>
+            <li>Consider state management libraries for complex state</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Advanced Patterns:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>When context causes performance issues</li>
+            <li>For complex state management with Context</li>
+            <li>When you need to optimize re-renders</li>
+            <li>For applications with many context consumers</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Multiple Context Providers</h3>
         <p className="text-gray-700 mb-4">

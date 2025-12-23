@@ -3,8 +3,47 @@ function RouterSetup() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Router Setup</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding React Router</h3>
+        <p className="text-blue-800 mb-2">
+          React Router is the standard library for routing in React applications. It enables navigation between different 
+          views/components in a single-page application, allows the browser URL to change, and keeps the UI in sync with the URL.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Client-Side Routing:</strong> Navigation happens in the browser without page refreshes</li>
+            <li><strong>URL Synchronization:</strong> UI reflects the current URL, enabling bookmarking and sharing</li>
+            <li><strong>History Management:</strong> Browser back/forward buttons work correctly</li>
+            <li><strong>Route Matching:</strong> Components render based on the current URL path</li>
+            <li><strong>Nested Routes:</strong> Routes can be nested for complex layouts</li>
+          </ul>
+          <p className="mt-2"><strong>Router Types:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>BrowserRouter:</strong> Uses HTML5 History API (clean URLs, requires server config)</li>
+            <li><strong>HashRouter:</strong> Uses hash (#) in URL (works without server config)</li>
+            <li><strong>MemoryRouter:</strong> Stores history in memory (for testing or non-browser environments)</li>
+            <li><strong>StaticRouter:</strong> For server-side rendering</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">BrowserRouter</h3>
+        <div className="bg-gray-50 p-4 rounded-lg mb-4">
+          <h4 className="font-semibold text-gray-900 mb-2">How BrowserRouter Works</h4>
+          <p className="text-gray-700 mb-3">
+            BrowserRouter uses the HTML5 History API (pushState, replaceState, popstate) to keep your UI in sync with the URL. 
+            It provides clean URLs without hash fragments (e.g., /about instead of /#/about).
+          </p>
+          <p className="text-gray-700 mb-3">
+            <strong>Server Configuration Required:</strong> Since BrowserRouter uses real URLs, your server must be configured 
+            to serve your React app for all routes. Otherwise, refreshing the page or directly accessing a route will result in a 404 error.
+          </p>
+          <p className="text-gray-700">
+            <strong>Best For:</strong> Production applications, SEO-friendly apps, and when you have control over server configuration.
+          </p>
+        </div>
         <p className="text-gray-700 mb-4">
           BrowserRouter uses HTML5 history API to keep UI in sync with the URL. This is the most common router.
         </p>

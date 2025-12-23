@@ -52,8 +52,43 @@ function EventHandling() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Event Handling</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Event Handling in React</h3>
+        <p className="text-blue-800 mb-2">
+          Event handling in React allows you to respond to user interactions like clicks, keyboard input, form submissions, 
+          and more. React uses a synthetic event system that wraps native browser events for consistency and performance.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Synthetic Events:</strong> React wraps native events in SyntheticEvent objects for cross-browser compatibility</li>
+            <li><strong>Event Handlers:</strong> Functions passed as props (onClick, onChange, etc.) that execute when events occur</li>
+            <li><strong>Event Pooling:</strong> React reuses event objects for performance (pre-React 17, now deprecated)</li>
+            <li><strong>Event Delegation:</strong> React uses event delegation by attaching handlers at the root level</li>
+            <li><strong>Binding:</strong> Event handlers in class components need binding, function components don't</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Synthetic Events</h3>
+        <div className="bg-gray-50 p-4 rounded-lg mb-4">
+          <h4 className="font-semibold text-gray-900 mb-2">What are Synthetic Events?</h4>
+          <p className="text-gray-700 mb-3">
+            React's SyntheticEvent is a cross-browser wrapper around the browser's native event. It provides a consistent 
+            API regardless of which browser your application is running in, normalizing differences between browsers.
+          </p>
+          <h4 className="font-semibold text-gray-900 mb-2">Benefits:</h4>
+          <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4 mb-3">
+            <li><strong>Consistency:</strong> Same behavior across all browsers</li>
+            <li><strong>Performance:</strong> Event pooling (pre-React 17) and optimized event delegation</li>
+            <li><strong>Normalization:</strong> Properties work the same way in all browsers</li>
+            <li><strong>Cross-browser:</strong> Handles browser differences automatically</li>
+          </ul>
+          <p className="text-gray-700">
+            All SyntheticEvents have the same interface as native events, including methods like <code className="bg-gray-100 px-1 rounded">preventDefault()</code> and <code className="bg-gray-100 px-1 rounded">stopPropagation()</code>.
+          </p>
+        </div>
         <p className="text-gray-700 mb-4">
           React wraps native events in SyntheticEvent objects for cross-browser compatibility.
         </p>

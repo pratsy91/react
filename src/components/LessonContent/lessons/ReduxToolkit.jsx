@@ -23,8 +23,42 @@ function ReduxToolkit() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Redux Toolkit</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Redux Toolkit</h3>
+        <p className="text-blue-800 mb-2">
+          Redux Toolkit (RTK) is the official, opinionated, batteries-included toolset for efficient Redux development. 
+          It simplifies Redux usage by reducing boilerplate code and providing utilities that make Redux easier to use.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>configureStore:</strong> Simplified store setup with good defaults (Redux DevTools, thunk middleware)</li>
+            <li><strong>createSlice:</strong> Automatically generates action creators and action types</li>
+            <li><strong>createReducer:</strong> Uses Immer internally for immutable updates with "mutating" syntax</li>
+            <li><strong>createAsyncThunk:</strong> Handles async logic and loading/error states</li>
+            <li><strong>RTK Query:</strong> Powerful data fetching and caching solution built on top of Redux</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits Over Plain Redux:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Less boilerplate code (no need to write action types, action creators manually)</li>
+            <li>Built-in Immer for simpler immutable updates</li>
+            <li>Better TypeScript support out of the box</li>
+            <li>Optimized bundle size with better code splitting</li>
+            <li>Recommended approach by Redux team</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Store Setup</h3>
+        <div className="bg-gray-50 p-4 rounded-lg mb-4">
+          <h4 className="font-semibold text-gray-900 mb-2">configureStore vs createStore</h4>
+          <p className="text-gray-700 mb-3">
+            configureStore is a wrapper around createStore that provides good defaults and automatically sets up 
+            middleware like Redux Thunk and enables Redux DevTools Extension. It also includes checks for common 
+            mistakes like accidental mutations.
+          </p>
+        </div>
         <p className="text-gray-700 mb-4">
           Redux Toolkit simplifies Redux store configuration with sensible defaults.
         </p>

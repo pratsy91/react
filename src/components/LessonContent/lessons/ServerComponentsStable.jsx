@@ -5,6 +5,43 @@ function ServerComponentsStable() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Server Components (Stable)</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Stable Server Components (React 19)</h3>
+        <p className="text-blue-800 mb-2">
+          React Server Components are now stable in React 19, meaning they're production-ready and no longer experimental. Server 
+          Components enable a new architecture where components can run on the server, reducing client bundle size and enabling 
+          direct access to server-side resources. This is a fundamental shift in how React applications can be built.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>What Changed in React 19:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Stable API:</strong> No longer experimental, production-ready</li>
+            <li><strong>Better Integration:</strong> Improved integration with Client Components</li>
+            <li><strong>Enhanced Features:</strong> More features and better performance</li>
+            <li><strong>Better Documentation:</strong> Comprehensive documentation and guides</li>
+            <li><strong>Ecosystem Support:</strong> Better tooling and framework support</li>
+            <li><strong>Type Safety:</strong> Improved TypeScript support</li>
+          </ul>
+          <p className="mt-2"><strong>Key Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Smaller client bundles - server code never sent to client</li>
+            <li>Direct database access - no API layer needed</li>
+            <li>Better security - sensitive code stays on server</li>
+            <li>Faster initial loads - less JavaScript to download</li>
+            <li>Better SEO - content rendered on server</li>
+            <li>Production-ready - stable and well-tested</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Server Components:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Data fetching and database access</li>
+            <li>Static or server-rendered content</li>
+            <li>When you want to reduce client bundle size</li>
+            <li>For better initial page load performance</li>
+            <li>Applications with server-side rendering needs</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Stable Server Components</h3>
         <p className="text-gray-700 mb-4">

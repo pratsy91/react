@@ -1,12 +1,51 @@
-import { useState } from 'react';
-
 function SecurityBestPractices() {
   return (
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Security Best Practices</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Web Application Security</h3>
+        <p className="text-blue-800 mb-2">
+          Security is crucial in web applications. React applications face various security threats including XSS attacks, 
+          CSRF attacks, and data exposure. Understanding and implementing security best practices protects both your users 
+          and your application.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Common Security Threats:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>XSS (Cross-Site Scripting):</strong> Injecting malicious scripts into web pages</li>
+            <li><strong>CSRF (Cross-Site Request Forgery):</strong> Forcing users to execute unwanted actions</li>
+            <li><strong>Data Exposure:</strong> Sensitive data leaked through poor handling</li>
+            <li><strong>Dependency Vulnerabilities:</strong> Security holes in third-party packages</li>
+            <li><strong>Insecure Authentication:</strong> Weak authentication and session management</li>
+          </ul>
+          <p className="mt-2"><strong>React's Security Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Automatic escaping of content to prevent XSS</li>
+            <li>Content Security Policy support</li>
+            <li>Safe handling of user input by default</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">XSS Prevention</h3>
+        <div className="bg-gray-50 p-4 rounded-lg mb-4">
+          <h4 className="font-semibold text-gray-900 mb-2">What is XSS?</h4>
+          <p className="text-gray-700 mb-3">
+            Cross-Site Scripting (XSS) attacks occur when attackers inject malicious scripts into web pages viewed by 
+            other users. React automatically escapes values in JSX to prevent XSS attacks. However, you must be careful 
+            with dangerouslySetInnerHTML and user-generated content.
+          </p>
+          <h4 className="font-semibold text-gray-900 mb-2">Best Practices:</h4>
+          <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4 mb-3">
+            <li>Never use dangerouslySetInnerHTML with untrusted data</li>
+            <li>Always sanitize user input before rendering</li>
+            <li>Use Content Security Policy headers</li>
+            <li>Validate and sanitize URLs before using them in links</li>
+            <li>Use libraries like DOMPurify for HTML sanitization</li>
+          </ul>
+        </div>
         <p className="text-gray-700 mb-4">
           Prevent Cross-Site Scripting (XSS) attacks in React.
         </p>
@@ -84,7 +123,7 @@ function useCSRFToken() {
       .find(row => row.startsWith('csrf-token='))
       ?.split('=')[1];
     
-    setToken(crfToken);
+    setToken(csrfToken);
   }, []);
   
   return token;
@@ -159,7 +198,7 @@ const csp = [
 const nonce = generateNonce();
 
 // Include in CSP
-script-src 'nonce-${nonce}'
+script-src 'nonce-\$\{nonce}'
 
 // Include in script tags
 <script nonce={nonce}>
@@ -271,10 +310,10 @@ function validateInput(input, rules) {
     return 'Required field';
   }
   if (rules.minLength && input.length < rules.minLength) {
-    return \`Minimum \${rules.minLength} characters\`;
+    return \`Minimum \$\{rules.minLength} characters\`;
   }
   if (rules.maxLength && input.length > rules.maxLength) {
-    return \`Maximum \${rules.maxLength} characters\`;
+    return \`Maximum \$\{rules.maxLength} characters\`;
   }
   if (rules.pattern && !rules.pattern.test(input)) {
     return 'Invalid format';

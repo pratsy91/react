@@ -5,6 +5,43 @@ function Jotai() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Jotai</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Jotai</h3>
+        <p className="text-blue-800 mb-2">
+          Jotai is a primitive and flexible state management library for React built on atomic state. The core idea is that state 
+          is split into atoms - small, independent pieces of state. Components can subscribe to individual atoms, resulting in 
+          fine-grained re-renders and excellent performance.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Atoms:</strong> Small, independent pieces of state</li>
+            <li><strong>Atomic State:</strong> Each atom is independent and can be composed</li>
+            <li><strong>Derived Atoms:</strong> Atoms can derive from other atoms</li>
+            <li><strong>Fine-grained Updates:</strong> Only components using changed atoms re-render</li>
+            <li><strong>No Providers:</strong> Works without providers for basic usage</li>
+            <li><strong>TypeScript First:</strong> Excellent TypeScript support</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Minimal boilerplate - just create atoms and use them</li>
+            <li>Excellent performance with fine-grained subscriptions</li>
+            <li>Composable - combine atoms to create complex state</li>
+            <li>TypeScript-friendly with full type inference</li>
+            <li>Small bundle size</li>
+            <li>No providers needed for basic usage</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Jotai:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>When you want atomic, fine-grained state management</li>
+            <li>For applications with many small, independent state pieces</li>
+            <li>When you need excellent performance with selective re-renders</li>
+            <li>For TypeScript projects needing type-safe state</li>
+            <li>When you want a lightweight alternative to Redux/Zustand</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Atoms</h3>
         <p className="text-gray-700 mb-4">

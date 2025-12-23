@@ -42,6 +42,41 @@ function Transitions() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Transitions</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Transitions (React 18)</h3>
+        <p className="text-blue-800 mb-2">
+          Transitions are a React 18 feature that lets you mark state updates as non-urgent. This allows React to keep the UI 
+          responsive by interrupting non-urgent updates to handle urgent ones (like user input). Transitions enable better 
+          user experience by prioritizing what users see and interact with.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Urgent Updates:</strong> User interactions (typing, clicking) that need immediate response</li>
+            <li><strong>Non-Urgent Updates:</strong> Updates that can be deferred (filtering lists, loading data)</li>
+            <li><strong>Interruptible:</strong> Non-urgent updates can be interrupted by urgent ones</li>
+            <li><strong>useTransition Hook:</strong> Returns isPending state and startTransition function</li>
+            <li><strong>startTransition Function:</strong> Alternative way to mark updates as transitions</li>
+            <li><strong>Better UX:</strong> Keeps UI responsive during expensive operations</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Transitions:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Filtering or searching large lists</li>
+            <li>Rendering expensive components</li>
+            <li>Any update that doesn't need immediate visual feedback</li>
+            <li>When you want to keep UI responsive</li>
+            <li>For non-critical state updates</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Better user experience - UI stays responsive</li>
+            <li>Prioritizes user interactions</li>
+            <li>Prevents UI blocking during expensive operations</li>
+            <li>Automatic interruption of non-urgent work</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">useTransition Hook Deep Dive</h3>
         <p className="text-gray-700 mb-4">

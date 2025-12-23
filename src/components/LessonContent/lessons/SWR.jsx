@@ -5,6 +5,43 @@ function SWR() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">SWR</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding SWR</h3>
+        <p className="text-blue-800 mb-2">
+          SWR (stale-while-revalidate) is a data fetching library created by Vercel. The name comes from the HTTP cache 
+          invalidation strategy: it shows stale (cached) data immediately while revalidating in the background to fetch fresh 
+          data. This provides instant UI updates with automatic background synchronization.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Stale-While-Revalidate:</strong> Shows cached data while fetching fresh data</li>
+            <li><strong>Automatic Revalidation:</strong> Revalidates on focus, reconnect, and interval</li>
+            <li><strong>Request Deduplication:</strong> Multiple components requesting same data share one request</li>
+            <li><strong>Error Retry:</strong> Automatic retry on failure</li>
+            <li><strong>Pagination Support:</strong> Built-in support for paginated data</li>
+            <li><strong>Infinite Loading:</strong> Support for infinite scroll patterns</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Instant UI updates with cached data</li>
+            <li>Automatic background synchronization</li>
+            <li>Better user experience with fast perceived performance</li>
+            <li>Reduces server load through intelligent caching</li>
+            <li>Simple API - easy to learn and use</li>
+            <li>Works with any data fetching function</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use SWR:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>When you need fast, cached data fetching</li>
+            <li>For applications with real-time data needs</li>
+            <li>When you want automatic revalidation</li>
+            <li>For applications with many data-fetching components</li>
+            <li>When you need better UX than plain fetch</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Complete SWR API</h3>
         <p className="text-gray-700 mb-4">

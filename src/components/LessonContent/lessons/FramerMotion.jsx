@@ -5,6 +5,43 @@ function FramerMotion() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Framer Motion</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Framer Motion</h3>
+        <p className="text-blue-800 mb-2">
+          Framer Motion is a production-ready motion library for React that makes it easy to create smooth, declarative animations. 
+          It provides a simple API for animating components with support for gestures, drag, layout animations, and complex animation 
+          sequences. Framer Motion is built on the Framer animation platform and brings that power to React.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Declarative API:</strong> Define animations declaratively with props</li>
+            <li><strong>Motion Components:</strong> Animated versions of all HTML elements</li>
+            <li><strong>Gestures:</strong> Built-in support for drag, hover, tap, pan, pinch</li>
+            <li><strong>Layout Animations:</strong> Animate layout changes automatically</li>
+            <li><strong>Variants:</strong> Reusable animation configurations</li>
+            <li><strong>AnimatePresence:</strong> Animate components entering/exiting</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Simple, declarative API for complex animations</li>
+            <li>High performance with GPU acceleration</li>
+            <li>Production-ready and well-tested</li>
+            <li>Excellent TypeScript support</li>
+            <li>Rich ecosystem with examples and documentation</li>
+            <li>Works with React and React Native</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Framer Motion:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>When you need complex, smooth animations</li>
+            <li>For gesture-based interactions (drag, swipe, etc.)</li>
+            <li>When you need layout animations</li>
+            <li>For production applications requiring polished animations</li>
+            <li>When you want a comprehensive animation solution</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Complete API Coverage</h3>
         <p className="text-gray-700 mb-4">

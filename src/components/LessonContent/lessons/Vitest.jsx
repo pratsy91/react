@@ -5,6 +5,44 @@ function Vitest() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Vitest</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Vitest</h3>
+        <p className="text-blue-800 mb-2">
+          Vitest is a blazing-fast unit test framework powered by Vite. It's designed to be a drop-in replacement for Jest when 
+          using Vite as your build tool. Vitest leverages Vite's speed and native ESM support to provide incredibly fast test 
+          execution and hot module reloading for tests.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Jest Compatible API:</strong> Same API as Jest, easy migration</li>
+            <li><strong>Vite Powered:</strong> Uses Vite's fast HMR and ESM support</li>
+            <li><strong>Fast Execution:</strong> Significantly faster than Jest</li>
+            <li><strong>TypeScript Support:</strong> Native TypeScript support without configuration</li>
+            <li><strong>Watch Mode:</strong> Fast watch mode with HMR for tests</li>
+            <li><strong>Built-in Coverage:</strong> Integrated code coverage support</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Much faster test execution than Jest</li>
+            <li>Same API as Jest - easy to migrate</li>
+            <li>Native ESM support</li>
+            <li>Works seamlessly with Vite projects</li>
+            <li>Fast watch mode with HMR</li>
+            <li>TypeScript support out of the box</li>
+            <li>Built-in UI for viewing test results</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Vitest:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>When using Vite as your build tool</li>
+            <li>When you need fast test execution</li>
+            <li>For new projects looking for modern testing tools</li>
+            <li>When migrating from Jest in Vite projects</li>
+            <li>When you need ESM support for tests</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Test Setup</h3>
         <p className="text-gray-700 mb-4">

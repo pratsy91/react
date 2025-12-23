@@ -96,6 +96,41 @@ function HigherOrderComponents() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Higher-Order Components (HOC)</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Higher-Order Components</h3>
+        <p className="text-blue-800 mb-2">
+          A Higher-Order Component (HOC) is an advanced React pattern for reusing component logic. HOCs are functions that 
+          take a component and return a new component with additional props or behavior. They are a way to share code between 
+          React components using composition.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Function Pattern:</strong> HOC is a function that takes a component and returns a component</li>
+            <li><strong>Composition:</strong> Wrap components to add functionality without modifying them</li>
+            <li><strong>Props Enhancement:</strong> Can add, modify, or filter props passed to wrapped component</li>
+            <li><strong>Reusability:</strong> Share logic across multiple components</li>
+            <li><strong>Naming Convention:</strong> Typically prefixed with "with" (e.g., withLoading, withAuth)</li>
+          </ul>
+          <p className="mt-2"><strong>Common Use Cases:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Adding authentication/authorization logic</li>
+            <li>Data fetching and loading states</li>
+            <li>Props manipulation or injection</li>
+            <li>Logging, analytics, or error handling</li>
+            <li>Styling or layout enhancements</li>
+          </ul>
+          <p className="mt-2"><strong>HOCs vs Custom Hooks:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>HOCs:</strong> Wrap components, work with class and function components</li>
+            <li><strong>Custom Hooks:</strong> Extract stateful logic, only work with function components</li>
+            <li><strong>HOCs:</strong> Can modify component rendering/behavior</li>
+            <li><strong>Custom Hooks:</strong> Return values/functions, don't modify component structure</li>
+            <li>Custom Hooks are generally preferred in modern React development</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Creating HOCs</h3>
         <p className="text-gray-700 mb-4">

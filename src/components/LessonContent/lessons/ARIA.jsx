@@ -5,6 +5,43 @@ function ARIA() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">ARIA</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding ARIA (Accessible Rich Internet Applications)</h3>
+        <p className="text-blue-800 mb-2">
+          ARIA is a set of attributes that make web content and applications more accessible to people with disabilities. ARIA 
+          attributes provide additional information to assistive technologies (like screen readers) about the purpose, state, and 
+          behavior of UI elements. ARIA supplements HTML semantics when native HTML elements aren't sufficient.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Semantic HTML First:</strong> Use native HTML elements when possible</li>
+            <li><strong>ARIA as Supplement:</strong> Use ARIA when HTML isn't sufficient</li>
+            <li><strong>Roles:</strong> Define what an element is (button, dialog, etc.)</li>
+            <li><strong>Properties:</strong> Describe characteristics (aria-label, aria-describedby)</li>
+            <li><strong>States:</strong> Indicate current state (aria-expanded, aria-checked)</li>
+            <li><strong>Live Regions:</strong> Announce dynamic content changes</li>
+          </ul>
+          <p className="mt-2"><strong>Common ARIA Attributes:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>aria-label:</strong> Accessible name for element</li>
+            <li><strong>aria-labelledby:</strong> Reference to element that labels this</li>
+            <li><strong>aria-describedby:</strong> Reference to element that describes this</li>
+            <li><strong>aria-hidden:</strong> Hide decorative elements from screen readers</li>
+            <li><strong>aria-live:</strong> Announce dynamic content changes</li>
+            <li><strong>aria-expanded:</strong> State of expandable content</li>
+          </ul>
+          <p className="mt-2"><strong>Best Practices:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Prefer semantic HTML over ARIA when possible</li>
+            <li>Don't use ARIA to fix bad HTML</li>
+            <li>Test with screen readers</li>
+            <li>Keep ARIA attributes up to date with component state</li>
+            <li>Use aria-live regions for dynamic content</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">ARIA Attributes</h3>
         <p className="text-gray-700 mb-4">

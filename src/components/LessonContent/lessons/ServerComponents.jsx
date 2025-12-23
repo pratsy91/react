@@ -47,6 +47,44 @@ function ServerComponents() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Server Components (React Server Components)</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding React Server Components</h3>
+        <p className="text-blue-800 mb-2">
+          React Server Components (RSC) is a new architecture that allows you to build applications that span the server and client. 
+          Server Components run exclusively on the server and are never sent to the client, reducing bundle size and enabling 
+          direct access to server-side resources like databases and file systems. They work alongside Client Components for a 
+          hybrid approach.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Server Components:</strong> Run on server, never sent to client (default)</li>
+            <li><strong>Client Components:</strong> Marked with 'use client', run in browser</li>
+            <li><strong>Zero Bundle Size:</strong> Server component code stays on server</li>
+            <li><strong>Direct Data Access:</strong> Can access databases, APIs, file system</li>
+            <li><strong>No Hooks:</strong> Server components can't use hooks or browser APIs</li>
+            <li><strong>Async Components:</strong> Can be async and await data</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Smaller client bundle - server code never sent to client</li>
+            <li>Better performance - data fetching on server</li>
+            <li>Direct database access - no API layer needed</li>
+            <li>Better security - sensitive code stays on server</li>
+            <li>Faster initial load - less JavaScript to download</li>
+            <li>Better SEO - content rendered on server</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Server Components:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>For data fetching and database access</li>
+            <li>Static content that doesn't need interactivity</li>
+            <li>Components using server-only APIs</li>
+            <li>When you want to reduce client bundle size</li>
+            <li>For better initial page load performance</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Understanding RSC</h3>
         <p className="text-gray-700 mb-4">

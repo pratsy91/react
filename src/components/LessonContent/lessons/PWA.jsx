@@ -5,6 +5,44 @@ function PWA() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">PWA</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Progressive Web Apps (PWA)</h3>
+        <p className="text-blue-800 mb-2">
+          Progressive Web Apps (PWAs) are web applications that use modern web capabilities to provide a native app-like experience. 
+          PWAs are installable, work offline, can send push notifications, and provide a seamless user experience across devices. 
+          They combine the best of web and native apps.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Service Workers:</strong> Background scripts enabling offline functionality</li>
+            <li><strong>Web App Manifest:</strong> JSON file defining app metadata and behavior</li>
+            <li><strong>Offline Support:</strong> App works without internet connection</li>
+            <li><strong>Installable:</strong> Can be installed on home screen</li>
+            <li><strong>Push Notifications:</strong> Send notifications even when app is closed</li>
+            <li><strong>Responsive:</strong> Works on all devices and screen sizes</li>
+          </ul>
+          <p className="mt-2"><strong>PWA Requirements:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>HTTPS (required for service workers)</li>
+            <li>Web App Manifest file</li>
+            <li>Service Worker for offline functionality</li>
+            <li>Responsive design</li>
+            <li>Fast loading times</li>
+            <li>Works in all modern browsers</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Native app-like experience in the browser</li>
+            <li>Works offline with cached content</li>
+            <li>Installable without app stores</li>
+            <li>Push notifications for user engagement</li>
+            <li>Faster than traditional web apps</li>
+            <li>Cross-platform (works on all devices)</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Service Workers</h3>
         <p className="text-gray-700 mb-4">

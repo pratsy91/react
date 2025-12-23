@@ -39,6 +39,39 @@ function UseMemoHook() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">useMemo Hook</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding useMemo</h3>
+        <p className="text-blue-800 mb-2">
+          useMemo is a React Hook that memoizes the result of an expensive computation. It returns the memoized value and 
+          only recalculates it when one of the dependencies has changed. This helps optimize performance by avoiding expensive 
+          calculations on every render.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Memoization:</strong> Caches the result of a computation</li>
+            <li><strong>Dependency Array:</strong> Value is recalculated when dependencies change</li>
+            <li><strong>Expensive Calculations:</strong> Use for computationally expensive operations</li>
+            <li><strong>Reference Stability:</strong> Useful for object/array references passed as props</li>
+            <li><strong>Not Guaranteed:</strong> React may discard memoized values between renders</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use useMemo:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>For expensive calculations that depend on specific values</li>
+            <li>When creating objects/arrays that are dependencies of other hooks</li>
+            <li>To prevent unnecessary recalculations in child components</li>
+            <li>When filtering, sorting, or transforming large arrays/lists</li>
+          </ul>
+          <p className="mt-2"><strong>When NOT to Use:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>For simple calculations (overhead isn't worth it)</li>
+            <li>For every value (premature optimization)</li>
+            <li>When dependencies change frequently (little benefit)</li>
+            <li>As a guarantee of referential equality (it's an optimization hint)</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Memoizing Values</h3>
         <p className="text-gray-700 mb-4">

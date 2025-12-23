@@ -48,6 +48,45 @@ function PerformancePatterns() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Performance Patterns</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Performance Optimization Patterns</h3>
+        <p className="text-blue-800 mb-2">
+          Performance optimization in React involves various patterns and techniques to improve application speed, reduce re-renders, 
+          optimize bundle size, and enhance user experience. These patterns include memoization, code splitting, debouncing, 
+          throttling, virtualization, and many others. Understanding when and how to apply these patterns is crucial for building 
+          performant React applications.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Optimization Patterns:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Memoization:</strong> Cache expensive computations (useMemo, useCallback)</li>
+            <li><strong>Code Splitting:</strong> Load code on demand (React.lazy, dynamic imports)</li>
+            <li><strong>Debouncing:</strong> Delay execution until after a pause</li>
+            <li><strong>Throttling:</strong> Limit execution frequency</li>
+            <li><strong>Virtualization:</strong> Render only visible items in long lists</li>
+            <li><strong>Bundle Optimization:</strong> Reduce bundle size and optimize assets</li>
+          </ul>
+          <p className="mt-2"><strong>Performance Metrics:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Time to First Byte (TTFB)</li>
+            <li>First Contentful Paint (FCP)</li>
+            <li>Largest Contentful Paint (LCP)</li>
+            <li>Time to Interactive (TTI)</li>
+            <li>Bundle size and load time</li>
+            <li>Re-render frequency</li>
+          </ul>
+          <p className="mt-2"><strong>Best Practices:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Measure first, optimize second (use React DevTools Profiler)</li>
+            <li>Avoid premature optimization</li>
+            <li>Focus on critical rendering path</li>
+            <li>Optimize images and assets</li>
+            <li>Use production builds for testing</li>
+            <li>Monitor performance in production</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Debouncing and Throttling</h3>
         <p className="text-gray-700 mb-4">

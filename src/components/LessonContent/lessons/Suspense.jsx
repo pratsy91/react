@@ -46,6 +46,39 @@ function SuspenseLesson() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Suspense</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding React Suspense</h3>
+        <p className="text-blue-800 mb-2">
+          Suspense is a React component that lets you "wait" for something to load before rendering. It displays a fallback 
+          UI while waiting for components, data, or other resources to be ready. Suspense enables declarative loading states 
+          and better user experiences.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Fallback UI:</strong> Shows loading state while waiting for resources</li>
+            <li><strong>Declarative Loading:</strong> Describe loading states declaratively in JSX</li>
+            <li><strong>Code Splitting:</strong> Works with React.lazy for code splitting</li>
+            <li><strong>Data Fetching:</strong> Can suspend on data fetching (with compatible libraries)</li>
+            <li><strong>Nested Suspense:</strong> Can have multiple Suspense boundaries at different levels</li>
+          </ul>
+          <p className="mt-2"><strong>Current Support:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>React.lazy:</strong> Fully supported for code splitting</li>
+            <li><strong>Data Fetching:</strong> Supported with React 18+ concurrent features and compatible libraries</li>
+            <li><strong>Server Components:</strong> Used in Next.js 13+ for server components</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Better user experience with loading states</li>
+            <li>Declarative approach to async operations</li>
+            <li>Reduces boilerplate for loading states</li>
+            <li>Enables concurrent rendering features</li>
+            <li>Works seamlessly with code splitting</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Suspense for Code Splitting</h3>
         <p className="text-gray-700 mb-4">

@@ -146,6 +146,37 @@ function CustomHooks() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Custom Hooks</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Custom Hooks</h3>
+        <p className="text-blue-800 mb-2">
+          Custom Hooks are JavaScript functions that start with "use" and can call other Hooks. They allow you to extract 
+          component logic into reusable functions, making your code more modular, testable, and maintainable.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Naming Convention:</strong> Must start with "use" (e.g., useCounter, useFetch)</li>
+            <li><strong>Reusability:</strong> Share stateful logic between components</li>
+            <li><strong>Composition:</strong> Can call other Hooks (useState, useEffect, etc.)</li>
+            <li><strong>Isolation:</strong> Each component using a custom Hook has independent state</li>
+            <li><strong>Abstraction:</strong> Hide complex logic behind a simple interface</li>
+          </ul>
+          <p className="mt-2"><strong>When to Create Custom Hooks:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>When you have logic that's used in multiple components</li>
+            <li>To extract complex component logic into smaller, focused pieces</li>
+            <li>To create reusable stateful logic</li>
+            <li>To separate concerns and improve code organization</li>
+          </ul>
+          <p className="mt-2"><strong>Rules of Hooks Apply:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Only call Hooks at the top level (not in loops, conditions, or nested functions)</li>
+            <li>Only call Hooks from React function components or custom Hooks</li>
+            <li>Custom Hooks should return values or functions that components can use</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Creating Custom Hooks</h3>
         <p className="text-gray-700 mb-4">

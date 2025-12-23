@@ -5,6 +5,43 @@ function ReactCompiler() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">React Compiler</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding React Compiler (React 19)</h3>
+        <p className="text-blue-800 mb-2">
+          The React Compiler is a new build-time optimization tool that automatically optimizes React applications. It analyzes 
+          your code and automatically applies optimizations like memoization, preventing unnecessary re-renders, and optimizing 
+          hook dependencies. This means you can write React code naturally without manually adding useMemo, useCallback, or 
+          React.memo in most cases.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Automatic Memoization:</strong> Automatically memoizes expensive computations</li>
+            <li><strong>Re-render Optimization:</strong> Prevents unnecessary re-renders</li>
+            <li><strong>Hook Optimization:</strong> Optimizes hook dependencies automatically</li>
+            <li><strong>Context Optimization:</strong> Reduces unnecessary context re-renders</li>
+            <li><strong>Zero Config:</strong> Works automatically, minimal setup needed</li>
+            <li><strong>Build-time:</strong> Runs at build time, no runtime overhead</li>
+          </ul>
+          <p className="mt-2"><strong>What It Optimizes:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Component re-renders based on prop/state changes</li>
+            <li>Expensive computations (equivalent to useMemo)</li>
+            <li>Callback functions (equivalent to useCallback)</li>
+            <li>Hook dependency arrays</li>
+            <li>Context provider updates</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Write cleaner code without manual optimizations</li>
+            <li>Better performance out of the box</li>
+            <li>Less boilerplate (no need for useMemo/useCallback everywhere)</li>
+            <li>Automatic optimization that's always correct</li>
+            <li>Reduces cognitive load - focus on features, not optimization</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Automatic Optimization</h3>
         <p className="text-gray-700 mb-4">

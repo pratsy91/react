@@ -48,6 +48,39 @@ function ReactMemo() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">React.memo</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding React.memo</h3>
+        <p className="text-blue-800 mb-2">
+          React.memo is a higher-order component that memoizes a component. It only re-renders the component if its props 
+          have changed. This is a performance optimization technique that prevents unnecessary re-renders when a parent 
+          component re-renders but the child component's props remain the same.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>How It Works:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Shallow Comparison:</strong> React.memo compares props using shallow comparison by default</li>
+            <li><strong>Re-render Prevention:</strong> If props are the same (by reference), component doesn't re-render</li>
+            <li><strong>Custom Comparison:</strong> You can provide a custom comparison function for complex props</li>
+            <li><strong>Props Only:</strong> Only checks props, not state or context changes</li>
+            <li><strong>Function Components:</strong> Works with function components (useMemo/useCallback for optimization)</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use React.memo:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Components that render frequently with the same props</li>
+            <li>Expensive components (complex calculations, heavy rendering)</li>
+            <li>Components that receive many props from parent</li>
+            <li>When parent re-renders often but child props rarely change</li>
+            <li>As part of performance optimization (measure first, optimize second)</li>
+          </ul>
+          <p className="mt-2"><strong>When NOT to Use:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>When props change on every render (no benefit)</li>
+            <li>For every component (premature optimization)</li>
+            <li>Simple components (comparison overhead may not be worth it)</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Component Memoization</h3>
         <p className="text-gray-700 mb-4">

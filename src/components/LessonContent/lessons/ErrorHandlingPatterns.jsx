@@ -64,6 +64,44 @@ function ErrorHandlingPatterns() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Error Handling Patterns</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Error Handling in React</h3>
+        <p className="text-blue-800 mb-2">
+          Error handling in React applications involves multiple strategies to catch, handle, and recover from errors gracefully. 
+          React provides Error Boundaries for catching errors in component trees, but you also need patterns for handling errors 
+          in event handlers, async code, data fetching, and other scenarios. Proper error handling ensures your application remains 
+          stable and provides good user experience even when things go wrong.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Error Handling Strategies:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Error Boundaries:</strong> Catch errors in component tree (class components or libraries)</li>
+            <li><strong>Try-Catch:</strong> Handle errors in event handlers and async code</li>
+            <li><strong>Error States:</strong> Display error messages to users</li>
+            <li><strong>Error Logging:</strong> Log errors for debugging and monitoring</li>
+            <li><strong>Fallback UI:</strong> Show fallback UI when errors occur</li>
+            <li><strong>Retry Logic:</strong> Retry failed operations</li>
+          </ul>
+          <p className="mt-2"><strong>Where Errors Can Occur:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Component rendering (caught by Error Boundaries)</li>
+            <li>Event handlers (need try-catch)</li>
+            <li>Async operations (use try-catch or .catch())</li>
+            <li>Data fetching (handle in fetch/axios calls)</li>
+            <li>Third-party libraries (wrap in Error Boundaries)</li>
+          </ul>
+          <p className="mt-2"><strong>Best Practices:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Use Error Boundaries for component errors</li>
+            <li>Always handle async errors (try-catch or .catch())</li>
+            <li>Provide user-friendly error messages</li>
+            <li>Log errors for debugging</li>
+            <li>Implement retry logic for transient errors</li>
+            <li>Show loading states during error recovery</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Try-Catch in Event Handlers</h3>
         <p className="text-gray-700 mb-4">

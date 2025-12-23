@@ -74,6 +74,40 @@ function RenderProps() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Render Props</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Render Props Pattern</h3>
+        <p className="text-blue-800 mb-2">
+          Render Props is a pattern in React where a component receives a function as a prop (often called "render") that 
+          returns a React element. The component calls this function with some data, and the function uses that data to render 
+          the UI. This pattern enables sharing code between components while maintaining flexibility.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Function Prop:</strong> Component receives a function that returns JSX</li>
+            <li><strong>Data Sharing:</strong> Component passes data to the render function</li>
+            <li><strong>Flexibility:</strong> Consumer decides how to render the data</li>
+            <li><strong>Children as Function:</strong> Can use children prop as a function (alternative syntax)</li>
+            <li><strong>Composition:</strong> Enables powerful component composition patterns</li>
+          </ul>
+          <p className="mt-2"><strong>Common Use Cases:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Sharing stateful logic (mouse position, window size, etc.)</li>
+            <li>Data fetching and providing data to consumers</li>
+            <li>Creating flexible, reusable components</li>
+            <li>Conditional rendering based on component state</li>
+            <li>Sharing complex logic without prop drilling</li>
+          </ul>
+          <p className="mt-2"><strong>Render Props vs HOCs:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Render Props:</strong> More flexible, easier to understand data flow</li>
+            <li><strong>HOCs:</strong> Can be harder to debug, creates wrapper components</li>
+            <li><strong>Render Props:</strong> Direct access to props, no prop name conflicts</li>
+            <li>Both patterns are less common now with Custom Hooks available</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Function as Children</h3>
         <p className="text-gray-700 mb-4">

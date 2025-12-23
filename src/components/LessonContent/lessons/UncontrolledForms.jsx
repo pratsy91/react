@@ -99,6 +99,42 @@ function UncontrolledForms() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Uncontrolled Forms</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Uncontrolled Components</h3>
+        <p className="text-blue-800 mb-2">
+          Uncontrolled components are form elements where the DOM itself manages the form data. Instead of React state controlling 
+          the value, you use refs to access the form values when needed (typically on form submission). This is closer to traditional 
+          HTML form handling and can be simpler for basic forms.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>DOM-Managed:</strong> Browser DOM manages the form values</li>
+            <li><strong>Refs for Access:</strong> Use refs to read values when needed</li>
+            <li><strong>FormData API:</strong> Use FormData to easily extract form values</li>
+            <li><strong>No Re-renders:</strong> Form changes don't trigger re-renders</li>
+            <li><strong>Default Values:</strong> Use defaultValue prop instead of value</li>
+            <li><strong>Native Behavior:</strong> Closer to native HTML form behavior</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Uncontrolled Forms:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Simple forms with basic validation</li>
+            <li>When you only need values on submit</li>
+            <li>For better performance (fewer re-renders)</li>
+            <li>When integrating with non-React code</li>
+            <li>For file inputs (always uncontrolled)</li>
+            <li>When you want simpler code</li>
+          </ul>
+          <p className="mt-2"><strong>Uncontrolled vs Controlled:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Uncontrolled:</strong> DOM manages state, refs for access</li>
+            <li><strong>Controlled:</strong> React manages state, value prop</li>
+            <li><strong>Uncontrolled:</strong> Better performance, simpler for basic forms</li>
+            <li><strong>Controlled:</strong> Better for validation, complex forms</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Form Refs</h3>
         <p className="text-gray-700 mb-4">

@@ -5,6 +5,42 @@ function ReactTestingLibrary() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">React Testing Library</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding React Testing Library</h3>
+        <p className="text-blue-800 mb-2">
+          React Testing Library (RTL) is a testing utility that encourages testing your components the way users interact 
+          with them. It focuses on testing behavior rather than implementation details, making your tests more maintainable 
+          and less brittle.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Principles:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>User-Centric:</strong> Test what users see and do, not implementation details</li>
+            <li><strong>Accessibility First:</strong> Queries prioritize accessible queries (role, label, text)</li>
+            <li><strong>Behavior Over Implementation:</strong> Don't test internal state or methods</li>
+            <li><strong>Encourages Good Practices:</strong> Writing accessible, user-friendly components</li>
+            <li><strong>Simple API:</strong> Easy to learn and use with minimal setup</li>
+          </ul>
+          <p className="mt-2"><strong>Query Priority (Recommended Order):strong></strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>1. getByRole (most accessible, recommended)</li>
+            <li>2. getByLabelText (for form fields)</li>
+            <li>3. getByPlaceholderText (for inputs)</li>
+            <li>4. getByText (for visible text content)</li>
+            <li>5. getByDisplayValue (for form values)</li>
+            <li>6. getByAltText (for images)</li>
+            <li>7. getByTitle (for title attributes)</li>
+            <li>8. getByTestId (last resort, not user-visible)</li>
+          </ul>
+          <p className="mt-2"><strong>Query Variants:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>getBy*:</strong> Throws error if element not found (use when element must exist)</li>
+            <li><strong>queryBy*:</strong> Returns null if not found (use when checking absence)</li>
+            <li><strong>findBy*:</strong> Returns promise, waits for async appearance</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">All Queries (getBy, queryBy, findBy)</h3>
         <p className="text-gray-700 mb-4">

@@ -82,6 +82,40 @@ function Portal() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Portal</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding React Portals</h3>
+        <p className="text-blue-800 mb-2">
+          Portals provide a way to render children into a DOM node that exists outside the DOM hierarchy of the parent component. 
+          This is useful for components like modals, tooltips, dropdowns, and popovers that need to render above other content 
+          without being constrained by parent component styles (like overflow: hidden or z-index stacking contexts).
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>DOM Hierarchy:</strong> Renders outside parent's DOM tree but maintains React component hierarchy</li>
+            <li><strong>Event Bubbling:</strong> Events from portals bubble through React tree, not DOM tree</li>
+            <li><strong>createPortal:</strong> React function to create a portal (import from 'react-dom')</li>
+            <li><strong>Target Node:</strong> Portal renders into a specific DOM node (usually document.body)</li>
+            <li><strong>Styling:</strong> Useful for components that need to escape parent CSS constraints</li>
+          </ul>
+          <p className="mt-2"><strong>Common Use Cases:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Modal dialogs and overlays</li>
+            <li>Tooltips and popovers</li>
+            <li>Dropdown menus</li>
+            <li>Toast notifications</li>
+            <li>Any component that needs to render on top of other content</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Escape parent CSS constraints (overflow, z-index, etc.)</li>
+            <li>Better positioning for overlays</li>
+            <li>Maintains React event handling and context</li>
+            <li>Cleaner DOM structure for modals and overlays</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">createPortal</h3>
         <p className="text-gray-700 mb-4">

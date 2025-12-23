@@ -30,6 +30,42 @@ function Zustand() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Zustand</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Zustand</h3>
+        <p className="text-blue-800 mb-2">
+          Zustand is a small, fast, and scalable state management library for React. It has a minimal API with no boilerplate, 
+          making it easy to use while still being powerful enough for complex applications. It provides a simpler alternative to 
+          Redux with better TypeScript support.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Minimal API:</strong> Simple create() function, no providers or reducers needed</li>
+            <li><strong>No Boilerplate:</strong> Less code than Redux or Context API</li>
+            <li><strong>Selective Subscriptions:</strong> Components only re-render when selected state changes</li>
+            <li><strong>TypeScript First:</strong> Excellent TypeScript support out of the box</li>
+            <li><strong>Small Bundle:</strong> Only ~1KB gzipped</li>
+            <li><strong>Middleware Support:</strong> Extensible with middleware (persist, devtools, etc.)</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Zustand:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>When you need global state management without Redux complexity</li>
+            <li>For medium to large applications with shared state</li>
+            <li>When you want TypeScript support without configuration</li>
+            <li>When Context API becomes too complex or causes performance issues</li>
+            <li>For applications that need simple, fast state management</li>
+          </ul>
+          <p className="mt-2"><strong>Advantages Over Redux:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Less boilerplate code</li>
+            <li>No actions, reducers, or dispatch needed</li>
+            <li>Direct state mutations (with Immer support)</li>
+            <li>Simpler mental model</li>
+            <li>Better performance with selective subscriptions</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Store Creation</h3>
         <p className="text-gray-700 mb-4">

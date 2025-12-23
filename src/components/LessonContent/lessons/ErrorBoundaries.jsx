@@ -87,6 +87,36 @@ function ErrorBoundaries() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Error Boundaries</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Error Boundaries</h3>
+        <p className="text-blue-800 mb-2">
+          Error Boundaries are React components that catch JavaScript errors anywhere in their child component tree, 
+          log those errors, and display a fallback UI instead of crashing the entire application.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Class Components Only:</strong> Error boundaries must be class components (for now)</li>
+            <li><strong>Error Catching:</strong> Catch errors during rendering, lifecycle methods, and constructors</li>
+            <li><strong>Fallback UI:</strong> Display a user-friendly error message instead of a blank screen</li>
+            <li><strong>Error Logging:</strong> Log errors to error reporting services for debugging</li>
+            <li><strong>Partial Failure:</strong> Only the component tree inside the boundary is affected</li>
+          </ul>
+          <p className="mt-2"><strong>What Error Boundaries DON'T Catch:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Errors in event handlers (use try-catch instead)</li>
+            <li>Asynchronous code (setTimeout, promises, etc.)</li>
+            <li>Errors in the error boundary itself</li>
+            <li>Server-side rendering errors</li>
+          </ul>
+          <p className="mt-2"><strong>Lifecycle Methods:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>getDerivedStateFromError:</strong> Update state to render fallback UI</li>
+            <li><strong>componentDidCatch:</strong> Log error information</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">getDerivedStateFromError</h3>
         <p className="text-gray-700 mb-4">

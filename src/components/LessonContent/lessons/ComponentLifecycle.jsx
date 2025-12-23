@@ -13,6 +13,38 @@ function ComponentLifecycle() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Component Lifecycle</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Component Lifecycle</h3>
+        <p className="text-blue-800 mb-2">
+          React components go through a lifecycle - a series of phases from creation to removal from the DOM. Understanding 
+          these phases helps you know when to perform side effects, clean up resources, and optimize your components. While 
+          class components have explicit lifecycle methods, function components use hooks to achieve similar functionality.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Lifecycle Phases:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Mounting:</strong> Component is created and inserted into the DOM</li>
+            <li><strong>Updating:</strong> Component re-renders due to state or prop changes</li>
+            <li><strong>Unmounting:</strong> Component is removed from the DOM</li>
+          </ul>
+          <p className="mt-2"><strong>In Function Components (Hooks):</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Mount:</strong> useEffect with empty dependency array ([])</li>
+            <li><strong>Update:</strong> useEffect with dependencies or component re-render</li>
+            <li><strong>Unmount:</strong> Cleanup function returned from useEffect</li>
+            <li><strong>Every Render:</strong> Code in component body runs on every render</li>
+          </ul>
+          <p className="mt-2"><strong>Common Use Cases:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Setting up subscriptions on mount</li>
+            <li>Fetching data when component mounts</li>
+            <li>Cleaning up subscriptions on unmount</li>
+            <li>Updating document title or DOM on mount/update</li>
+            <li>Tracking analytics events</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Mount, Update, Unmount Phases</h3>
         <p className="text-gray-700 mb-4">

@@ -5,6 +5,43 @@ function CSSModules() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">CSS Modules</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding CSS Modules</h3>
+        <p className="text-blue-800 mb-2">
+          CSS Modules is a CSS system that provides scoped CSS by automatically generating unique class names. It allows you to 
+          write regular CSS but ensures that class names are locally scoped to the component, preventing style conflicts and 
+          naming collisions. It's a compile-time solution that requires no runtime overhead.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Scoped Styles:</strong> Class names are automatically scoped to components</li>
+            <li><strong>Unique Class Names:</strong> Build tools generate unique hashes for class names</li>
+            <li><strong>No Conflicts:</strong> Prevents naming collisions between components</li>
+            <li><strong>Regular CSS:</strong> Write normal CSS syntax, no special syntax needed</li>
+            <li><strong>Composition:</strong> Can compose classes using the `composes` keyword</li>
+            <li><strong>Build-time:</strong> Processed at build time, no runtime overhead</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Prevents style conflicts between components</li>
+            <li>Works with regular CSS (no learning curve)</li>
+            <li>No runtime overhead - processed at build time</li>
+            <li>Easy to migrate from regular CSS</li>
+            <li>Works well with TypeScript</li>
+            <li>Supports CSS features like nesting (with PostCSS)</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use CSS Modules:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>When you want scoped CSS without CSS-in-JS</li>
+            <li>For teams comfortable with CSS</li>
+            <li>When you need to share styles between components</li>
+            <li>For projects that prefer separation of concerns (CSS in separate files)</li>
+            <li>When you want build-time optimization</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Setup and Usage</h3>
         <p className="text-gray-700 mb-4">

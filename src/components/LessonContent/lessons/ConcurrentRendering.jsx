@@ -55,6 +55,40 @@ function ConcurrentRendering() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Concurrent Rendering</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Concurrent Rendering</h3>
+        <p className="text-blue-800 mb-2">
+          Concurrent Rendering is a set of features in React 18 that allows React to interrupt, pause, resume, or abandon work. 
+          This enables React to prepare multiple versions of the UI simultaneously, prioritize urgent updates, and keep the UI 
+          responsive even during expensive rendering operations.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Interruptible Rendering:</strong> React can interrupt rendering to handle urgent updates</li>
+            <li><strong>Priority Updates:</strong> Urgent updates (user input) take priority over non-urgent ones</li>
+            <li><strong>Automatic Batching:</strong> Multiple state updates are batched together automatically</li>
+            <li><strong>Transitions:</strong> Mark updates as non-urgent using startTransition</li>
+            <li><strong>Better UX:</strong> UI stays responsive during heavy computations</li>
+          </ul>
+          <p className="mt-2"><strong>Concurrent Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Automatic Batching:</strong> All updates batched by default (even in async functions)</li>
+            <li><strong>Transitions:</strong> Mark non-urgent updates with startTransition</li>
+            <li><strong>Suspense Improvements:</strong> Better integration with Suspense</li>
+            <li><strong>Concurrent Mode:</strong> Enabled automatically in React 18</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>UI stays responsive during expensive renders</li>
+            <li>Better perceived performance</li>
+            <li>Prioritizes user interactions</li>
+            <li>Reduces layout thrashing</li>
+            <li>Enables new Suspense features</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Automatic Batching</h3>
         <p className="text-gray-700 mb-4">

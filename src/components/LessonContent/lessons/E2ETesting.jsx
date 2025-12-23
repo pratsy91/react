@@ -5,6 +5,41 @@ function E2ETesting() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">E2E Testing</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding End-to-End (E2E) Testing</h3>
+        <p className="text-blue-800 mb-2">
+          End-to-End (E2E) testing involves testing your application from the user's perspective. E2E tests simulate real user 
+          interactions with your application in a real browser environment, testing the entire flow from start to finish. This 
+          type of testing catches integration issues that unit and integration tests might miss.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>User Perspective:</strong> Tests from the user's point of view</li>
+            <li><strong>Real Browser:</strong> Runs in actual browser environments</li>
+            <li><strong>Full Stack:</strong> Tests entire application stack</li>
+            <li><strong>Integration Testing:</strong> Tests how components work together</li>
+            <li><strong>Critical Paths:</strong> Focus on important user flows</li>
+            <li><strong>Slower Execution:</strong> Takes longer than unit tests</li>
+          </ul>
+          <p className="mt-2"><strong>Popular E2E Tools:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Playwright:</strong> Modern, fast, supports multiple browsers</li>
+            <li><strong>Cypress:</strong> Developer-friendly, great DX, time-travel debugging</li>
+            <li><strong>Selenium:</strong> Mature, widely used, supports many languages</li>
+            <li><strong>Puppeteer:</strong> Chrome/Chromium automation</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use E2E Testing:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Testing critical user flows (login, checkout, etc.)</li>
+            <li>Verifying integration between frontend and backend</li>
+            <li>Testing cross-browser compatibility</li>
+            <li>Regression testing before releases</li>
+            <li>Testing user journeys end-to-end</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Playwright</h3>
         <p className="text-gray-700 mb-4">

@@ -8,6 +8,40 @@ function UseIdHook() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">useId Hook (React 18)</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding useId</h3>
+        <p className="text-blue-800 mb-2">
+          useId is a React 18 Hook that generates unique, stable IDs that are consistent across server and client renders. 
+          This is essential for server-side rendering (SSR) and avoiding hydration mismatches. It's particularly useful for 
+          accessibility attributes like htmlFor and id, ARIA attributes, and any place where you need unique identifiers.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Unique IDs:</strong> Generates unique IDs for each component instance</li>
+            <li><strong>SSR Safe:</strong> Same ID on server and client (prevents hydration errors)</li>
+            <li><strong>Stable:</strong> ID doesn't change between renders</li>
+            <li><strong>Accessibility:</strong> Perfect for htmlFor/id relationships</li>
+            <li><strong>No Conflicts:</strong> IDs are unique across the entire component tree</li>
+          </ul>
+          <p className="mt-2"><strong>Common Use Cases:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Connecting labels to inputs (htmlFor/id)</li>
+            <li>ARIA attributes (aria-labelledby, aria-describedby)</li>
+            <li>Form field associations</li>
+            <li>Any place needing unique identifiers</li>
+            <li>Server-side rendered applications</li>
+          </ul>
+          <p className="mt-2"><strong>Important Notes:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Don't use for keys in lists (use proper keys instead)</li>
+            <li>IDs include colons (:) - not valid CSS selectors</li>
+            <li>Each call to useId generates a new unique ID</li>
+            <li>IDs are stable across re-renders</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Generating Unique IDs</h3>
         <p className="text-gray-700 mb-4">

@@ -75,6 +75,41 @@ function CompoundComponents() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Compound Components</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Compound Components</h3>
+        <p className="text-blue-800 mb-2">
+          Compound Components is a pattern where multiple components work together to form a complete UI. The components share 
+          implicit state through Context API, allowing them to coordinate while giving the consumer flexibility in composition 
+          and ordering.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Multiple Components:</strong> A set of related components that work together</li>
+            <li><strong>Shared State:</strong> Components share state through Context API</li>
+            <li><strong>Flexible Composition:</strong> Consumer can compose components in any order</li>
+            <li><strong>Implicit Communication:</strong> Components communicate through context, not props</li>
+            <li><strong>API Flexibility:</strong> Consumers have control over structure and styling</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Flexible API - consumers control component structure</li>
+            <li>Better separation of concerns</li>
+            <li>Reusable component groups</li>
+            <li>Cleaner component APIs</li>
+            <li>Easier to style and customize</li>
+          </ul>
+          <p className="mt-2"><strong>Example Use Cases:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Toggle components (Toggle, ToggleOn, ToggleOff, ToggleButton)</li>
+            <li>Accordion components (Accordion, AccordionHeader, AccordionBody)</li>
+            <li>Select/Dropdown components</li>
+            <li>Modal components (Modal, ModalHeader, ModalBody, ModalFooter)</li>
+            <li>Tab components (Tabs, TabList, Tab, TabPanels, TabPanel)</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Implicit State Sharing</h3>
         <p className="text-gray-700 mb-4">

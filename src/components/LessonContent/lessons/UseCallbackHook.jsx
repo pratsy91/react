@@ -23,6 +23,39 @@ function UseCallbackHook() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">useCallback Hook</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding useCallback</h3>
+        <p className="text-blue-800 mb-2">
+          useCallback is a React Hook that returns a memoized version of a callback function. It only changes if one of the 
+          dependencies has changed. This is useful when passing callbacks to optimized child components that rely on reference 
+          equality to prevent unnecessary renders.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Memoization:</strong> Returns the same function reference unless dependencies change</li>
+            <li><strong>Dependency Array:</strong> Function is recreated when dependencies change</li>
+            <li><strong>Reference Equality:</strong> Prevents unnecessary re-renders in memoized children</li>
+            <li><strong>Performance Optimization:</strong> Use with React.memo to optimize child renders</li>
+            <li><strong>Not Free:</strong> Memoization has its own cost - only use when beneficial</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use useCallback:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>When passing callbacks to memoized child components (React.memo)</li>
+            <li>When callbacks are dependencies of other hooks (useEffect, useMemo)</li>
+            <li>When callbacks are expensive to recreate</li>
+            <li>As part of performance optimization (measure first!)</li>
+          </ul>
+          <p className="mt-2"><strong>When NOT to Use:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>For every callback (premature optimization)</li>
+            <li>When dependencies change frequently (little benefit)</li>
+            <li>For simple callbacks with no performance issues</li>
+            <li>Without React.memo in children (no benefit)</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Memoizing Callbacks</h3>
         <p className="text-gray-700 mb-4">

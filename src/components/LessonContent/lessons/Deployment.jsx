@@ -5,6 +5,43 @@ function Deployment() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Deployment</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding React App Deployment</h3>
+        <p className="text-blue-800 mb-2">
+          Deploying React applications involves building your app for production and hosting it on a platform. Modern deployment 
+          platforms offer features like automatic builds, CDN distribution, environment variable management, and continuous 
+          deployment from Git. Understanding deployment options helps you choose the right platform for your needs.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Deployment Process:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Build:</strong> Create optimized production bundle</li>
+            <li><strong>Upload:</strong> Deploy built files to hosting platform</li>
+            <li><strong>Configure:</strong> Set up environment variables and routing</li>
+            <li><strong>CDN:</strong> Distribute assets via Content Delivery Network</li>
+            <li><strong>SSL:</strong> Enable HTTPS for secure connections</li>
+            <li><strong>Monitoring:</strong> Set up analytics and error tracking</li>
+          </ul>
+          <p className="mt-2"><strong>Popular Platforms:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Vercel:</strong> Zero-config deployment, great for React/Next.js</li>
+            <li><strong>Netlify:</strong> JAMstack hosting with continuous deployment</li>
+            <li><strong>Railway:</strong> Full-stack deployment with database support</li>
+            <li><strong>AWS/GCP/Azure:</strong> Cloud platforms with more control</li>
+            <li><strong>GitHub Pages:</strong> Free hosting for static sites</li>
+          </ul>
+          <p className="mt-2"><strong>Key Considerations:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>SPA routing configuration (redirect all routes to index.html)</li>
+            <li>Environment variable management</li>
+            <li>Build optimization and caching</li>
+            <li>Custom domain setup</li>
+            <li>CI/CD pipeline integration</li>
+            <li>Performance monitoring and analytics</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Vercel</h3>
         <p className="text-gray-700 mb-4">

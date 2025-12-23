@@ -5,6 +5,43 @@ function TypeDefinitions() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Type Definitions</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding React TypeScript Types</h3>
+        <p className="text-blue-800 mb-2">
+          React provides comprehensive TypeScript type definitions that help you write type-safe React code. Understanding these 
+          types is crucial for building robust TypeScript React applications. These types enable proper type checking for props, 
+          children, refs, and component return values.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Type Definitions:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>FC (FunctionComponent):</strong> Type for function components</li>
+            <li><strong>ReactNode:</strong> Most flexible type for anything renderable</li>
+            <li><strong>ReactElement:</strong> Type for React elements (JSX)</li>
+            <li><strong>JSX.Element:</strong> Similar to ReactElement, specific to JSX</li>
+            <li><strong>ComponentProps:</strong> Extract props type from component</li>
+            <li><strong>ComponentPropsWithoutRef:</strong> Props without ref</li>
+          </ul>
+          <p className="mt-2"><strong>Common Use Cases:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Typing function components</li>
+            <li>Typing children props</li>
+            <li>Typing component props</li>
+            <li>Extracting types from existing components</li>
+            <li>Typing refs and forwardRef</li>
+            <li>Creating reusable type utilities</li>
+          </ul>
+          <p className="mt-2"><strong>Best Practices:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Use ReactNode for children (most flexible)</li>
+            <li>Avoid FC when possible (use direct function typing)</li>
+            <li>Use ComponentProps to extract prop types</li>
+            <li>Leverage TypeScript's type inference when possible</li>
+            <li>Use proper generic types for reusable components</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">FC, ReactNode, ReactElement</h3>
         <p className="text-gray-700 mb-4">

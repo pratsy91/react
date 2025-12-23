@@ -5,6 +5,43 @@ function Emotion() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Emotion</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Emotion</h3>
+        <p className="text-blue-800 mb-2">
+          Emotion is a performant, flexible CSS-in-JS library. It provides two main APIs: the `css` prop for styling components 
+          inline, and the `styled` API (similar to styled-components) for creating styled components. Emotion is known for its 
+          performance optimizations, including automatic dead code elimination and source map support.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>css Prop:</strong> Style components with a css prop (no styled components needed)</li>
+            <li><strong>styled API:</strong> Create styled components similar to styled-components</li>
+            <li><strong>Performance:</strong> Optimized with automatic dead code elimination</li>
+            <li><strong>Source Maps:</strong> Better debugging with source map support</li>
+            <li><strong>Composition:</strong> Compose styles easily with arrays and functions</li>
+            <li><strong>TypeScript:</strong> Excellent TypeScript support</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Flexible styling with css prop or styled API</li>
+            <li>High performance with optimizations</li>
+            <li>Better debugging with source maps</li>
+            <li>Small bundle size</li>
+            <li>Works with React and other frameworks</li>
+            <li>Full CSS support including animations</li>
+          </ul>
+          <p className="mt-2"><strong>When to Use Emotion:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>When you want CSS-in-JS with good performance</li>
+            <li>For projects needing the css prop API</li>
+            <li>When you need source map support for debugging</li>
+            <li>For applications with complex dynamic styling</li>
+            <li>When you want a styled-components alternative</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">css Prop</h3>
         <p className="text-gray-700 mb-4">

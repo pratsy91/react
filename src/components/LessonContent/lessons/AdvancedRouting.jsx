@@ -68,6 +68,34 @@ function AdvancedRouting() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Advanced Routing</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Advanced Routing Patterns</h3>
+        <p className="text-blue-800 mb-2">
+          Advanced routing patterns in React Router enable complex navigation structures, data loading, error handling, and 
+          route protection. These patterns help you build production-ready applications with proper data fetching, authentication, 
+          and user experience.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Advanced Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Nested Routes:</strong> Create route hierarchies with shared layouts</li>
+            <li><strong>Dynamic Routes:</strong> Routes with parameters (/:id)</li>
+            <li><strong>Protected Routes:</strong> Require authentication before rendering</li>
+            <li><strong>Data Loading:</strong> Loaders fetch data before route renders</li>
+            <li><strong>Form Actions:</strong> Handle form submissions at route level</li>
+            <li><strong>Error Boundaries:</strong> Error elements for route-level error handling</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Better code organization with nested routes</li>
+            <li>Shared layouts reduce code duplication</li>
+            <li>Data loading before render improves UX</li>
+            <li>Route-level error handling</li>
+            <li>Better authentication/authorization patterns</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Nested Routes</h3>
         <p className="text-gray-700 mb-4">

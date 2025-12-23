@@ -12,8 +12,46 @@ function JSXDeepDive() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">JSX Deep Dive</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding JSX</h3>
+        <p className="text-blue-800 mb-2">
+          JSX (JavaScript XML) is a syntax extension for JavaScript that allows you to write HTML-like code in your 
+          JavaScript files. It makes React code more readable and intuitive by letting you describe the UI structure 
+          declaratively.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Transpilation:</strong> JSX is not valid JavaScript - it must be compiled (typically by Babel)</li>
+            <li><strong>createElement:</strong> JSX compiles to React.createElement() calls</li>
+            <li><strong>Expressions:</strong> Use curly braces {} to embed JavaScript expressions</li>
+            <li><strong>Security:</strong> React automatically escapes values to prevent XSS attacks</li>
+            <li><strong>Single Root:</strong> JSX expressions must return a single root element (or Fragment)</li>
+          </ul>
+          <p className="mt-2"><strong>Why JSX?</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>More intuitive and readable than createElement calls</li>
+            <li>Visual structure matches HTML, making it easier to understand</li>
+            <li>Better developer experience with syntax highlighting and tooling</li>
+            <li>Type-safe when using TypeScript with JSX</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">JSX Syntax and Expressions</h3>
+        <div className="bg-gray-50 p-4 rounded-lg mb-4">
+          <h4 className="font-semibold text-gray-900 mb-2">Embedding Expressions</h4>
+          <p className="text-gray-700 mb-3">
+            JSX allows you to embed any valid JavaScript expression inside curly braces. This includes variables, 
+            function calls, arithmetic operations, ternary operators, and more. React will evaluate the expression 
+            and render its value.
+          </p>
+          <p className="text-gray-700 mb-3">
+            <strong>Important:</strong> You cannot embed statements (if/for/while) directly in JSX. Use expressions 
+            like ternary operators, logical &&, or map() functions instead.
+          </p>
+        </div>
         <p className="text-gray-700 mb-4">
           JSX allows you to write HTML-like syntax in JavaScript. You can embed expressions using curly braces.
         </p>

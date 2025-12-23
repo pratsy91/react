@@ -5,6 +5,33 @@ function ReactQuery() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">React Query / TanStack Query</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding React Query (TanStack Query)</h3>
+        <p className="text-blue-800 mb-2">
+          React Query (renamed to TanStack Query) is a powerful data-fetching library for React that simplifies server state 
+          management. It provides caching, background updates, stale-while-revalidate strategies, and much more out of the box.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Features:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Automatic Caching:</strong> Data is cached and shared across components</li>
+            <li><strong>Background Updates:</strong> Keeps data fresh with background refetching</li>
+            <li><strong>Stale-While-Revalidate:</strong> Shows cached data while fetching fresh data</li>
+            <li><strong>Request Deduplication:</strong> Multiple components requesting same data share one request</li>
+            <li><strong>Pagination & Infinite Queries:</strong> Built-in support for paginated data</li>
+            <li><strong>Optimistic Updates:</strong> Update UI optimistically before server confirms</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Eliminates boilerplate for data fetching, caching, and synchronization</li>
+            <li>Reduces server load through intelligent caching</li>
+            <li>Improves user experience with instant UI updates</li>
+            <li>Handles loading and error states automatically</li>
+            <li>Works with any data fetching library (fetch, axios, etc.)</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Complete API Coverage</h3>
         <p className="text-gray-700 mb-4">

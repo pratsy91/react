@@ -5,6 +5,43 @@ function BuildConfiguration() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Build Configuration</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding Build Configuration</h3>
+        <p className="text-blue-800 mb-2">
+          Build configuration is crucial for optimizing your React application for production. Proper configuration ensures 
+          smaller bundle sizes, faster load times, better code splitting, and optimal asset handling. Vite provides extensive 
+          configuration options for customizing the build process to meet your application's specific needs.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Configuration Areas:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Code Splitting:</strong> Split code into smaller chunks for better loading</li>
+            <li><strong>Minification:</strong> Reduce bundle size by minifying code</li>
+            <li><strong>Tree Shaking:</strong> Remove unused code from bundles</li>
+            <li><strong>Asset Optimization:</strong> Optimize images, fonts, and other assets</li>
+            <li><strong>Source Maps:</strong> Generate source maps for debugging</li>
+            <li><strong>Environment Variables:</strong> Configure environment-specific settings</li>
+          </ul>
+          <p className="mt-2"><strong>Optimization Strategies:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Manual chunk splitting for vendor libraries</li>
+            <li>Lazy loading routes and components</li>
+            <li>Asset compression and optimization</li>
+            <li>CSS code splitting</li>
+            <li>Polyfill management</li>
+            <li>Target browser configuration</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits of Proper Configuration:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Smaller bundle sizes - faster downloads</li>
+            <li>Better code splitting - load only what's needed</li>
+            <li>Improved performance - optimized assets</li>
+            <li>Better caching - separate chunks cache independently</li>
+            <li>Faster initial load times</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Vite Configuration</h3>
         <p className="text-gray-700 mb-4">

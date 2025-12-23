@@ -5,6 +5,41 @@ function UseOptimisticHook() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">useOptimistic Hook</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding useOptimistic (React 19)</h3>
+        <p className="text-blue-800 mb-2">
+          useOptimistic is a React 19 Hook that enables optimistic UI updates. It allows you to immediately update the UI 
+          before a server action completes, providing instant feedback to users. If the server action fails, React automatically 
+          reverts to the previous state. This creates a responsive, smooth user experience.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Optimistic Updates:</strong> Update UI immediately before server confirms</li>
+            <li><strong>Automatic Rollback:</strong> Reverts to previous state if action fails</li>
+            <li><strong>Better UX:</strong> Instant feedback makes apps feel faster</li>
+            <li><strong>State Management:</strong> Manages temporary optimistic state</li>
+            <li><strong>Async Actions:</strong> Works with async server actions</li>
+          </ul>
+          <p className="mt-2"><strong>Common Use Cases:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Adding items to lists (todos, comments, messages)</li>
+            <li>Liking/unliking posts</li>
+            <li>Updating form data</li>
+            <li>Any action where you want instant feedback</li>
+            <li>Actions that typically succeed but have network delay</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Instant UI feedback - app feels faster</li>
+            <li>Better perceived performance</li>
+            <li>Automatic error handling with rollback</li>
+            <li>Simpler code than manual optimistic updates</li>
+            <li>Works seamlessly with React 19 features</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Optimistic Updates</h3>
         <p className="text-gray-700 mb-4">

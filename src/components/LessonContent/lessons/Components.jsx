@@ -54,8 +54,46 @@ function Components() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">Components</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding React Components</h3>
+        <p className="text-blue-800 mb-2">
+          Components are the fundamental building blocks of React applications. They are reusable pieces of code that 
+          return JSX to describe what should appear on the screen.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Concepts:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Encapsulation:</strong> Components encapsulate UI logic and presentation</li>
+            <li><strong>Reusability:</strong> Write once, use many times with different props</li>
+            <li><strong>Composition:</strong> Build complex UIs by combining simple components</li>
+            <li><strong>Single Responsibility:</strong> Each component should do one thing well</li>
+            <li><strong>Props Down, Events Up:</strong> Data flows down via props, events flow up via callbacks</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Function Components</h3>
+        <div className="bg-gray-50 p-4 rounded-lg mb-4">
+          <h4 className="font-semibold text-gray-900 mb-2">What are Function Components?</h4>
+          <p className="text-gray-700 mb-3">
+            Function components (also called functional components) are JavaScript functions that return JSX. 
+            They are the recommended way to write React components since React 16.8 introduced Hooks.
+          </p>
+          <h4 className="font-semibold text-gray-900 mb-2">Advantages:</h4>
+          <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4 mb-3">
+            <li><strong>Simpler syntax:</strong> Easier to read and write than class components</li>
+            <li><strong>Better performance:</strong> Slightly faster with less overhead</li>
+            <li><strong>Hooks support:</strong> Full access to React Hooks for state and lifecycle</li>
+            <li><strong>Easier testing:</strong> Pure functions are simpler to test</li>
+            <li><strong>Less boilerplate:</strong> No need for constructors, binding, or class syntax</li>
+          </ul>
+          <h4 className="font-semibold text-gray-900 mb-2">Component Naming:</h4>
+          <p className="text-gray-700">
+            Component names must start with a capital letter. This tells React that you're rendering a component 
+            rather than a regular HTML element. Use PascalCase for component names (e.g., UserProfile, not userProfile).
+          </p>
+        </div>
         <p className="text-gray-700 mb-4">
           Function components are the modern way to write React components. They're simpler and easier to test.
         </p>

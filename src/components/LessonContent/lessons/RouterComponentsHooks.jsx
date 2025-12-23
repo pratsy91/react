@@ -19,6 +19,43 @@ function RouterComponentsHooks() {
     <div className="space-y-6">
       <h2 className="text-2xl font-bold text-gray-900">All Router Components & Hooks</h2>
       
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+        <h3 className="text-lg font-semibold text-blue-900 mb-2">Understanding React Router Components & Hooks</h3>
+        <p className="text-blue-800 mb-2">
+          React Router provides a comprehensive set of components and hooks for building navigation in React applications. 
+          Components handle rendering and navigation, while hooks provide programmatic access to routing information and 
+          navigation functions. Understanding all available components and hooks gives you full control over routing behavior.
+        </p>
+        <div className="text-blue-800 space-y-2">
+          <p><strong>Key Components:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>Routes/Route:</strong> Define route paths and components</li>
+            <li><strong>Link:</strong> Navigate without page refresh</li>
+            <li><strong>NavLink:</strong> Link with active state styling</li>
+            <li><strong>Navigate:</strong> Programmatic navigation component</li>
+            <li><strong>Outlet:</strong> Render nested route components</li>
+            <li><strong>RouterProvider:</strong> New data router API provider</li>
+          </ul>
+          <p className="mt-2"><strong>Key Hooks:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li><strong>useNavigate:</strong> Programmatic navigation</li>
+            <li><strong>useLocation:</strong> Access current location object</li>
+            <li><strong>useParams:</strong> Access route parameters</li>
+            <li><strong>useSearchParams:</strong> Access and modify URL search params</li>
+            <li><strong>useMatch:</strong> Check if route matches pattern</li>
+            <li><strong>useOutlet:</strong> Access nested route component</li>
+          </ul>
+          <p className="mt-2"><strong>Benefits:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-4">
+            <li>Complete routing solution for React</li>
+            <li>Flexible navigation options</li>
+            <li>Access to routing state and information</li>
+            <li>Support for nested routes and layouts</li>
+            <li>Type-safe with TypeScript</li>
+          </ul>
+        </div>
+      </div>
+      
       <section>
         <h3 className="text-xl font-semibold text-gray-800 mb-3">Routes and Route</h3>
         <p className="text-gray-700 mb-4">
