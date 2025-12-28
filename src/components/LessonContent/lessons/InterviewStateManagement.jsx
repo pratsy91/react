@@ -48,6 +48,9 @@ function InterviewStateManagement() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="text-gray-700 mb-2"><strong>Purpose:</strong> Share data without prop drilling</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Context API provides a way to pass data through component tree without prop drilling. createContext creates a context object. Provider component supplies value to all descendants. useContext hook reads context value from nearest Provider. If no Provider found, uses default value. All consumers re-render when Provider value changes. Good for theme, auth, language - data that doesn't change frequently. Not optimized for frequently changing data - can cause performance issues.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm mt-2">
 {`const ThemeContext = createContext();
 
@@ -64,6 +67,9 @@ function Toolbar() {
   return <div className={theme}>...</div>;
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> createContext creates context. Provider supplies value. useContext reads value. All consumers re-render on value change. Use for infrequently changing data.</p>
+            </div>
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">

@@ -86,6 +86,9 @@ function InterviewFundamentals() {
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Example:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> This JSX example demonstrates key concepts: (1) JSX expressions use curly braces {`{}`} to embed JavaScript, (2) className is used instead of class (class is a reserved word in JS), (3) Conditional rendering with && operator, (4) Component composition with UserProfile. JSX gets transpiled to React.createElement() calls by Babel.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`const element = (
   <div className="container">
@@ -94,6 +97,9 @@ function InterviewFundamentals() {
   </div>
 );`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> The {`{name}`} is a JavaScript expression that gets evaluated. The && operator renders UserProfile only if isLoggedIn is true. This JSX compiles to React.createElement() calls.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -126,11 +132,17 @@ function InterviewFundamentals() {
           </div>
           <div className="bg-blue-50 p-4 rounded">
             <p className="font-semibold mb-2">Function Component Example:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Function components are JavaScript functions that return JSX. They're simpler than class components, have better performance, and are the recommended approach. Props are passed as function parameters and can be destructured. Function components are pure functions - same props always return same output.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Welcome({ name }) {
   return <h1>Hello, {name}!</h1>;
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Props are destructured in the function parameters. The component returns JSX directly. This is equivalent to a class component but simpler and more performant.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -189,6 +201,9 @@ function InterviewFundamentals() {
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Example:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> React uses SyntheticEvent objects that wrap native browser events. This provides cross-browser compatibility and consistent behavior. preventDefault() stops default browser behavior (like form submission), while stopPropagation() prevents event bubbling. Event handlers receive the synthetic event object as the first parameter.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Button() {
   const handleClick = (e) => {
@@ -200,6 +215,9 @@ function InterviewFundamentals() {
   return <button onClick={handleClick}>Click me</button>;
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> onClick uses camelCase (not onclick). The event object is a SyntheticEvent, not a native event. Event handlers can be inline functions or separate functions. React pools events for performance (in older versions).</p>
+            </div>
           </div>
         </div>
       </section>
@@ -219,6 +237,9 @@ function InterviewFundamentals() {
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Example:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Conditional rendering allows showing different UI based on state/props. Ternary operator (condition ? A : B) is used for two options. Logical AND (condition && Component) renders only when condition is truthy. Fragment ({`<>`}) allows multiple elements without a wrapper div. React evaluates expressions and renders accordingly.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Greeting({ isLoggedIn }) {
   return (
@@ -233,6 +254,9 @@ function InterviewFundamentals() {
   );
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Ternary operator provides if-else logic. && operator renders only when left side is truthy (be careful with 0 or empty strings). Fragment prevents unnecessary DOM nodes. All expressions must return valid React elements or null.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -255,6 +279,9 @@ function InterviewFundamentals() {
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Example:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Keys help React identify which items changed, were added, or removed during reconciliation. Without keys, React can't efficiently update lists and may cause bugs or performance issues. Keys must be unique among siblings and stable across renders. Using array index as key is only acceptable for static lists that never reorder.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function TodoList({ todos }) {
   return (
@@ -266,6 +293,9 @@ function InterviewFundamentals() {
   );
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> key prop is required for list items. Use stable, unique identifiers (like IDs from database). Keys help React match elements between renders. Without keys, React may incorrectly reuse components, causing state bugs.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -298,6 +328,9 @@ function InterviewFundamentals() {
           </div>
           <div className="bg-blue-50 p-4 rounded">
             <p className="font-semibold mb-2">Controlled Example:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> In controlled components, React state is the single source of truth. The input's value is controlled by state, and onChange updates that state. This creates a unidirectional data flow: state → input value → user types → onChange → update state → re-render. This pattern makes form validation and submission easier.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Form() {
   const [value, setValue] = useState('');
@@ -310,6 +343,9 @@ function InterviewFundamentals() {
   );
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> value prop controls the input. onChange handler updates state. State is single source of truth. Every keystroke triggers re-render. This is the recommended pattern for most forms.</p>
+            </div>
           </div>
         </div>
       </section>

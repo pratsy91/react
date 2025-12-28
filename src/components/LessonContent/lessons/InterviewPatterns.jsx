@@ -12,6 +12,9 @@ function InterviewPatterns() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="text-gray-700 mb-2"><strong>Definition:</strong> Function that takes a component and returns a new component</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> HOC is a function that takes a component and returns an enhanced component. It's a pattern for reusing component logic. The HOC wraps the original component, adds functionality (like auth check), and conditionally renders it or a fallback. Props are spread to the wrapped component. This pattern was popular before hooks but is now less common - hooks provide a cleaner way to share logic. HOCs can cause prop naming conflicts and make debugging harder.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm mt-2">
 {`function withAuth(WrappedComponent) {
   return function AuthenticatedComponent(props) {
@@ -27,6 +30,9 @@ function InterviewPatterns() {
 
 const ProtectedComponent = withAuth(MyComponent);`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> HOC takes component, returns enhanced component. Adds cross-cutting concerns. Spread props to wrapped component. Legacy pattern - hooks preferred now. Can cause prop conflicts.</p>
+            </div>
           </div>
           <div className="bg-blue-50 p-4 rounded">
             <p className="font-semibold mb-2">Use Cases:</p>
@@ -46,6 +52,9 @@ const ProtectedComponent = withAuth(MyComponent);`}
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="text-gray-700 mb-2"><strong>Definition:</strong> Component that uses a prop (usually render) that is a function</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Render props pattern shares code between components using a prop whose value is a function. The component calls this function with data, and the function returns JSX. This allows the component to control rendering while sharing logic. Can use render prop or children-as-function pattern. More flexible than HOC but can create deeply nested JSX. Hooks are now preferred for sharing logic, but render props are still useful for flexible component composition.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm mt-2">
 {`<DataProvider render={data => (
   <h1>Hello {data.target}</h1>
@@ -56,6 +65,9 @@ const ProtectedComponent = withAuth(MyComponent);`}
   {data => <h1>Hello {data.target}</h1>}
 </DataProvider>`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Prop is a function that returns JSX. Component calls function with data. Flexible composition. Can use render or children. Hooks often preferred now.</p>
+            </div>
           </div>
           <div className="bg-blue-50 p-4 rounded">
             <p className="font-semibold mb-2">Benefits:</p>
@@ -74,6 +86,9 @@ const ProtectedComponent = withAuth(MyComponent);`}
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="text-gray-700 mb-2"><strong>Definition:</strong> Components that work together to form a complete UI</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Compound components are multiple components that work together as a cohesive unit. The parent component (Select) manages shared state via Context. Child components (Select.Button, Select.Option) are attached as static properties and access shared state via useContext. This provides flexible composition - users can arrange child components as needed. The API is intuitive and allows for good separation of concerns. Context shares state without prop drilling.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm mt-2">
 {`<Select>
   <Select.Button />
@@ -83,9 +98,15 @@ const ProtectedComponent = withAuth(MyComponent);`}
   </Select.Options>
 </Select>`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Multiple components work together. Parent manages state via Context. Children attached as static properties. Flexible composition. Intuitive API.</p>
+            </div>
           </div>
           <div className="bg-blue-50 p-4 rounded">
             <p className="font-semibold mb-2">Implementation:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> The implementation uses Context to share state between parent and children. Select component creates context and provides state (isOpen, setIsOpen). Child components (Button, Option) are defined as static properties on Select, making them accessible as Select.Button. They use useContext to access shared state. This pattern is used by libraries like Reach UI and Radix UI for flexible, composable components.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`const SelectContext = createContext();
 
@@ -103,6 +124,9 @@ Select.Button = function Button() {
   return <button onClick={() => setIsOpen(!isOpen)}>...</button>;
 };`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Context shares state. Children as static properties. useContext accesses shared state. Flexible child arrangement. Clean separation of concerns.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -113,6 +137,9 @@ Select.Button = function Button() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="text-gray-700 mb-2"><strong>Definition:</strong> Class components that catch errors in child component tree</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Error boundaries catch JavaScript errors in child components, preventing the entire app from crashing. They're class components because hooks don't have equivalent error handling. getDerivedStateFromError runs during render phase to update state for fallback UI. componentDidCatch runs in commit phase for side effects like logging. Error boundaries only catch errors in render, lifecycle methods, and constructors - not event handlers, async code, or SSR errors. Place strategically to isolate error impact.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm mt-2">
 {`class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -136,6 +163,9 @@ Select.Button = function Button() {
   }
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Only class components can be error boundaries. getDerivedStateFromError for state updates. componentDidCatch for side effects. Only catches render/lifecycle errors. Place strategically to isolate failures.</p>
+            </div>
           </div>
           <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
             <p className="font-semibold mb-2">Important:</p>

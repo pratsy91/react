@@ -12,6 +12,9 @@ function InterviewScenarios() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Complete Implementation:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Todo app demonstrates core React patterns: state management (useState), immutable updates (spread operator), list rendering (map with keys), controlled inputs, and event handling. addTodo uses functional update to append new todo immutably. toggleTodo maps array, updating only matching todo. deleteTodo filters array to remove item. Keys are essential for list rendering. Controlled input pattern manages form state. This pattern scales to complex apps.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function TodoApp() {
   const [todos, setTodos] = useState([]);
@@ -67,6 +70,9 @@ function InterviewScenarios() {
   );
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Immutable state updates. Functional updates for state. Keys for list items. Controlled inputs. Event handling patterns. Core React patterns demonstrated.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -77,6 +83,9 @@ function InterviewScenarios() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Auth Context Pattern:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Auth context provides authentication state to entire app without prop drilling. Provider component manages auth state (user, loading). useEffect checks for stored token on mount. login function authenticates and stores token. logout clears token and user. Context value includes user, loading, login, logout - everything components need. This pattern centralizes auth logic and makes it accessible anywhere. Loading state prevents flash of unauthenticated content.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`const AuthContext = createContext();
 
@@ -128,6 +137,9 @@ function useAuth() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Custom Hook Pattern:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Custom hooks encapsulate data fetching logic for reuse. cancelled flag prevents state updates if component unmounts or URL changes (race condition prevention). useEffect cleanup sets cancelled=true when effect re-runs or component unmounts. This pattern handles loading, error, and success states. AbortController can also cancel fetch requests. This is a foundational pattern for data fetching before libraries like React Query.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function useFetch(url) {
   const [data, setData] = useState(null);

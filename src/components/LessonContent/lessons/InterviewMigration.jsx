@@ -49,6 +49,9 @@ function InterviewMigration() {
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Migration Steps:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> React 18 introduced new root API to enable concurrent features. Old API (ReactDOM.render) is synchronous and doesn't support concurrent rendering. New API (createRoot) creates a root object that supports concurrent features like automatic batching, transitions, and Suspense. The root object persists across renders, allowing React to manage the tree more efficiently. This is a breaking change - old API still works but is deprecated.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`// Old API
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -57,6 +60,9 @@ ReactDOM.render(<App />, document.getElementById('root'));
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> New API enables concurrent features. Root object persists. Supports automatic batching. Required for React 18 features. Old API deprecated.</p>
+            </div>
           </div>
         </div>
       </section>

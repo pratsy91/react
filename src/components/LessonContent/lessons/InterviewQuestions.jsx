@@ -264,6 +264,9 @@ function InterviewQuestions() {
         <div className="space-y-4">
           <div className="bg-blue-50 p-4 rounded">
             <p className="font-semibold mb-2">Challenge 1: Implement a Counter</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> This demonstrates basic state management with useState hook. useState(0) initializes count state to 0. setCount updates the state, triggering re-render. Using functional updates setCount(c => c + 1) ensures we use the current state value, which is important for correct behavior. The component re-renders when state changes, displaying the updated count value.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm mt-2">
 {`function Counter() {
   const [count, setCount] = useState(0);
@@ -280,6 +283,9 @@ function InterviewQuestions() {
 
           <div className="bg-blue-50 p-4 rounded">
             <p className="font-semibold mb-2">Challenge 2: Fetch and Display Data</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> This demonstrates data fetching with useEffect hook. Empty dependency array [] ensures fetch runs once on mount. useState manages both data and loading states. loading starts as true, showing loading UI. After fetch completes, setData updates the data and setLoading(false) hides loading state. Conditional rendering shows different UI based on loading state. Note: This example lacks error handling - in production, add try-catch or .catch() to handle fetch errors.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm mt-2">
 {`function DataFetcher() {
   const [data, setData] = useState(null);

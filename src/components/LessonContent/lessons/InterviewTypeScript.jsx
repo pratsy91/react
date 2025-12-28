@@ -12,6 +12,9 @@ function InterviewTypeScript() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Basic Props:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> TypeScript interfaces define the shape of component props. Required props have no modifier. Optional props use ? modifier. Function types use () => returnType syntax. void means function returns nothing. TypeScript enforces prop types at compile time, catching errors before runtime. This provides autocomplete, refactoring safety, and documentation.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`interface ButtonProps {
   label: string;
@@ -23,9 +26,15 @@ function Button({ label, onClick, disabled }: ButtonProps) {
   return <button onClick={onClick} disabled={disabled}>{label}</button>;
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> interface defines prop shape. ? makes props optional. () => void for functions. TypeScript enforces at compile time. Provides autocomplete and safety.</p>
+            </div>
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">With Children:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> React.ReactNode is the type for children prop. It accepts strings, numbers, elements, arrays, fragments, null, undefined - anything React can render. This is the most permissive type for children. For more specific types, use React.ReactElement or React.ReactElement[]. Children prop allows component composition - passing JSX as props.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`interface CardProps {
   title: string;
@@ -41,6 +50,9 @@ function Card({ title, children }: CardProps) {
   );
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> React.ReactNode accepts any renderable content. Most permissive children type. Allows component composition. Can be string, element, array, etc.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -51,6 +63,9 @@ function Card({ title, children }: CardProps) {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">FC Type (Legacy):</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> FC (FunctionComponent) is a generic type that includes children prop automatically. It's legacy because it has issues: always includes children (even when not needed), makes components harder to type, and doesn't work well with generics. Modern approach is to type props directly in function parameters, giving more control and better type inference.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import { FC } from 'react';
 
@@ -62,9 +77,15 @@ const Component: FC<Props> = ({ name }) => {
   return <div>{name}</div>;
 };`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> FC includes children automatically. Legacy pattern. Harder to type generics. Not recommended for new code.</p>
+            </div>
           </div>
           <div className="bg-blue-50 p-4 rounded">
             <p className="font-semibold mb-2">Modern Approach (Recommended):</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Modern approach types props directly in function parameters. This gives explicit control over prop types, better type inference, and works well with generics. No automatic children prop - add it explicitly if needed. Function declarations and arrow functions both work. This is the recommended pattern in modern React TypeScript code.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`interface Props {
   name: string;
@@ -79,6 +100,9 @@ const Component = ({ name }: Props) => {
   return <div>{name}</div>;
 };`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Type props in parameters. Explicit control. Better type inference. Works with generics. Recommended approach.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -89,6 +113,9 @@ const Component = ({ name }: Props) => {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Common Events:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> React event types are generic, taking the element type as parameter. React.MouseEvent{'<'}{'HTMLButtonElement>'} types a mouse event on a button. React.ChangeEvent{'<'}{'HTMLInputElement>'} types a change event on an input. React.FormEvent{'<'}{'HTMLFormElement>'} types a form submission event. The generic parameter ensures e.target is correctly typed. This provides type safety for event handlers and prevents accessing properties that don't exist.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Form() {
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -111,6 +138,9 @@ const Component = ({ name }: Props) => {
   );
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Event types are generic. Parameter is element type. e.target is correctly typed. Type safety for event handlers. Prevents property access errors.</p>
+            </div>
           </div>
         </div>
       </section>

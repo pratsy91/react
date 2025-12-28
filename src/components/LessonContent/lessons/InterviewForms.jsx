@@ -12,6 +12,9 @@ function InterviewForms() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Basic Usage:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> React Hook Form minimizes re-renders by using uncontrolled components with refs. register() connects inputs to form state. Spread operator {'{'}{'...'}register('fieldName'){'}'} adds name, ref, onChange, onBlur. Validation rules are passed as second argument. handleSubmit wraps onSubmit and validates before calling it. errors object contains validation errors. This approach is more performant than controlled components because it doesn't trigger re-renders on every keystroke.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import { useForm } from 'react-hook-form';
 
@@ -35,6 +38,9 @@ function Form() {
   );
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> register() connects inputs. Validation rules in second argument. handleSubmit validates before onSubmit. errors object for error display. Minimal re-renders (uncontrolled approach).</p>
+            </div>
           </div>
           <div className="bg-blue-50 p-4 rounded">
             <p className="font-semibold mb-2">Key Features:</p>
@@ -54,6 +60,9 @@ function Form() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Basic Usage:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Formik uses controlled components approach. useFormik returns form state and handlers. initialValues sets starting form state. validate function runs on change/blur and returns errors object. onSubmit receives validated values. formik.values contains current form values. formik.handleChange updates values. formik.errors contains validation errors. This is a more traditional React approach with controlled inputs, providing more control but potentially more re-renders.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import { useFormik } from 'formik';
 
@@ -83,6 +92,9 @@ function Form() {
   );
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Controlled components approach. validate function for custom validation. formik.values for current state. formik.handleChange updates values. More re-renders than React Hook Form but more control.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -93,6 +105,9 @@ function Form() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Schema Validation:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Yup provides schema-based validation. Define validation rules declaratively in a schema object. yupResolver integrates Yup with React Hook Form. Schema defines shape and rules for form data. Validation runs automatically on submit and can run on change/blur. This separates validation logic from component code, making it reusable and testable.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -121,6 +136,9 @@ function Form() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Zod Schema:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Zod is a TypeScript-first schema validation library. Define schemas using z.object() with typed validators. zodResolver integrates Zod with React Hook Form. Zod provides better TypeScript inference than Yup. Schema validation runs automatically. Error messages can be customized inline. This provides type-safe validation with excellent TypeScript support.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -149,6 +167,9 @@ function Form() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Custom Validators:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Custom validation functions allow domain-specific validation logic. Pass validate function in register() options. Function receives field value and returns error string if invalid, or true if valid. mode: 'onChange' runs validation on every change. This enables complex validation rules that can't be expressed with simple schema validators. Use for conditional validation, async validation, or business logic checks.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Form() {
   const { register, handleSubmit, formState: { errors } } = useForm({
@@ -185,6 +206,9 @@ function Form() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">State with React Hook Form:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> React Hook Form provides formState object with useful state flags. watch() subscribes to field changes and triggers re-render. watch('fieldName') watches specific field, watch() watches all fields. isDirty indicates if form values changed from defaults. isValid indicates if form passes validation. These flags enable conditional UI updates like disabling submit button until form is valid. Note: watch() causes re-renders, so use selectively.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Form() {
   const { register, watch, formState: { isDirty, isValid, errors } } = useForm();
@@ -212,6 +236,9 @@ function Form() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Error Display Patterns:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Form errors come from validation (field-level) and submission failures (root-level). errors object contains validation errors keyed by field name. setError('root', {'{'} message: 'error' {'}'}) sets form-level errors like API failures. role="alert" makes error announcements accessible to screen readers. Display field errors near the input, root errors at form level. This pattern ensures users understand both validation and submission errors.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Form() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -244,6 +271,9 @@ function Form() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Async Submission:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> handleSubmit automatically validates form before calling onSubmit. onSubmit receives validated form data. Make onSubmit async to handle API calls. isSubmitting flag tracks submission state, useful for disabling submit button and showing loading indicators. Throw errors to trigger error handling. handleSubmit catches errors and can be used with onError callback. This pattern ensures form is validated before submission and provides good UX during async operations.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Form() {
   const { register, handleSubmit, formState: { isSubmitting } } = useForm();
@@ -280,6 +310,9 @@ function Form() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Nested Object Fields:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Use dot notation to access nested object properties in form state. defaultValues can define nested structure matching your data shape. register('user.name') creates nested path in form state. This allows complex form structures like user profiles with nested address objects. The form state structure will have nested objects like user containing name and address fields, where address contains street and city. Useful for forms matching API data structures.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Form() {
   const { register } = useForm({
@@ -313,6 +346,9 @@ function Form() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Accessible Form:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Accessibility requires proper labels, ARIA attributes, and error association. htmlFor/id links labels to inputs for screen readers. aria-required indicates required fields. aria-invalid indicates validation state. aria-describedby links input to error message, so screen readers announce errors. role="alert" makes errors immediately announced. This ensures forms are usable by assistive technologies and follows WCAG guidelines.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Form() {
   const { register, formState: { errors } } = useForm();
@@ -348,6 +384,9 @@ function Form() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Dynamic Fields:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> useFieldArray manages dynamic lists of form fields. Pass control from useForm() and field array name. fields array contains field objects with id and value. append() adds new field to end. remove(index) removes field at index. Use field.id as key (not index) for stable React keys. register with template literal syntax like register(`items.{'{'}index{'}'}.name`) to register nested array fields. This enables dynamic forms like todo lists, tags, or repeating sections.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import { useFieldArray } from 'react-hook-form';
 
@@ -383,6 +422,9 @@ function Form() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Implementation:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Multi-step forms break complex forms into manageable steps. useState tracks current step. Conditionally render step components based on step state. trigger() manually validates current step fields before advancing. Only allow next step if current step is valid. Register all fields in same form instance, so final submit has access to all data. This improves UX by reducing cognitive load and making long forms feel manageable.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function MultiStepForm() {
   const [step, setStep] = useState(1);

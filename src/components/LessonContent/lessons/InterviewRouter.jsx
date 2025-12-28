@@ -12,6 +12,9 @@ function InterviewRouter() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Basic Setup:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> React Router enables client-side routing. BrowserRouter uses HTML5 history API for clean URLs (no hash). Routes component renders the first matching Route. Route defines a path and element to render. Path "/" matches root URL. Path "/users/:id" uses dynamic segment - :id is a parameter accessible via useParams. This creates single-page app navigation without full page reloads.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -27,6 +30,9 @@ function App() {
   );
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> BrowserRouter wraps the app. Routes renders first matching route. Route path can be static or dynamic (:param). element prop renders component. No page reloads - instant navigation.</p>
+            </div>
           </div>
           <div className="bg-blue-50 p-4 rounded">
             <p className="font-semibold mb-2">Router Types:</p>
@@ -45,6 +51,9 @@ function App() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Link and NavLink:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Link component navigates without page reload using client-side routing. It renders an anchor tag but prevents default navigation. NavLink extends Link with active state detection. className prop can be a function receiving {isActive} to style active links. This is perfect for navigation menus where you want to highlight the current route. Both components maintain browser history.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import { Link, NavLink } from 'react-router-dom';
 
@@ -59,9 +68,15 @@ function App() {
   About
 </NavLink>`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Link for basic navigation. NavLink detects active route. className function receives isActive. No page reloads. Maintains browser history.</p>
+            </div>
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Programmatic Navigation:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> useNavigate hook provides programmatic navigation. navigate(path) pushes new entry to history. navigate(path, {'{'}{'}'} replace: true {'{'}{'}'}) replaces current history entry (back button won't go to previous page). navigate(-1) goes back one page. navigate(1) goes forward. This is useful for navigation after form submission, authentication, or conditional routing based on logic.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import { useNavigate } from 'react-router-dom';
 
@@ -78,6 +93,9 @@ function Component() {
   return <button onClick={handleClick}>Navigate</button>;
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> navigate() for programmatic navigation. replace: true prevents back navigation. Negative numbers go back. Positive numbers go forward. Use after async operations or conditional logic.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -88,6 +106,9 @@ function Component() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">useParams:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> useParams extracts dynamic route parameters from the URL. If route is "/users/:id", accessing /users/123 makes id = "123". Parameters are always strings - convert to number if needed. This allows components to access URL data without prop drilling. Parameters come from route path segments prefixed with :.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import { useParams } from 'react-router-dom';
 
@@ -96,6 +117,9 @@ function UserProfile() {
   return <div>User ID: {id}</div>;
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Extracts URL parameters. Values are always strings. Destructure needed params. Use for dynamic routes. Accessible in route component.</p>
+            </div>
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">useSearchParams:</p>

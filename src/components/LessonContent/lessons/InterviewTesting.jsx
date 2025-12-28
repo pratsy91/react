@@ -12,6 +12,9 @@ function InterviewTesting() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="text-gray-700 mb-2"><strong>Philosophy:</strong> Test behavior, not implementation</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> React Testing Library encourages testing from user's perspective - what users see and interact with, not internal implementation. render() renders component into DOM. screen provides queries to find elements. getByRole is preferred because it queries by accessibility role (how screen readers see elements). This makes tests more resilient to refactoring and ensures accessibility. Testing behavior means tests focus on outcomes, not how code achieves them.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm mt-2">
 {`import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -22,6 +25,9 @@ test('renders button', () => {
   expect(button).toBeInTheDocument();
 });`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Test from user perspective. getByRole queries by accessibility. Tests behavior, not implementation. More resilient to refactoring. Ensures accessibility.</p>
+            </div>
           </div>
           <div className="bg-blue-50 p-4 rounded">
             <p className="font-semibold mb-2">Query Methods (Priority Order):</p>
@@ -42,6 +48,9 @@ test('renders button', () => {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">User Events:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> userEvent simulates real user interactions more accurately than fireEvent. userEvent.setup() creates a user instance. All interactions are async and must be awaited. userEvent fires multiple events (like mousedown, mouseup, click for a click) to match real browser behavior. This makes tests more realistic and catches bugs that fireEvent might miss. userEvent is preferred over fireEvent for better simulation of user behavior.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import userEvent from '@testing-library/user-event';
 
@@ -62,6 +71,9 @@ test('handles input', async () => {
   expect(input).toHaveValue('Hello');
 });`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> userEvent simulates real interactions. All events are async. Fires multiple events like real browser. More accurate than fireEvent. Must await interactions.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -72,6 +84,9 @@ test('handles input', async () => {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Using renderHook:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> renderHook allows testing custom hooks in isolation without rendering components. It returns result object with current property containing hook's return value. act() wraps state updates to ensure React processes them synchronously. This is required for testing hooks because state updates need to be batched and processed. renderHook is useful for testing hook logic separately from component rendering, making tests faster and more focused.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import { renderHook, act } from '@testing-library/react';
 
@@ -91,6 +106,9 @@ test('increments count', () => {
   expect(result.current.count).toBe(1);
 });`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> renderHook tests hooks in isolation. result.current contains hook return value. act() wraps state updates. Required for synchronous state processing. Faster than component tests.</p>
+            </div>
           </div>
         </div>
       </section>

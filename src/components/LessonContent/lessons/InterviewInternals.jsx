@@ -50,6 +50,9 @@ function InterviewInternals() {
             </div>
             <div className="bg-gray-50 p-4 rounded mt-2">
               <p className="font-semibold mb-2">Fiber Node Structure:</p>
+              <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+                <p className="text-gray-700 text-sm"><strong>Theory:</strong> Each Fiber node represents a unit of work. type is the component or element type. props are the component props. stateNode is the DOM node (for host components). return points to parent fiber. child points to first child. sibling points to next sibling. This linked list structure allows React to traverse the tree efficiently, pause work, and resume later. The structure enables concurrent rendering and priority-based updates.</p>
+              </div>
               <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`{
   type: ComponentType,
@@ -60,6 +63,9 @@ function InterviewInternals() {
   sibling: Fiber // Next sibling
 }`}
               </pre>
+              <div className="bg-blue-50 p-3 rounded mt-2">
+                <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Fiber is unit of work. Linked list structure. Enables pausing/resuming. Supports concurrent rendering. Efficient tree traversal.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -116,6 +122,9 @@ function InterviewInternals() {
           <div className="bg-gray-50 p-4 rounded">
             <p className="text-gray-700 mb-2"><strong>Automatic Batching (React 18):</strong></p>
             <p className="text-gray-700">Multiple state updates are automatically batched together, even in async functions, promises, and event handlers.</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Automatic batching groups multiple state updates into a single re-render. In React 18, batching works everywhere - event handlers, promises, timeouts, native handlers. This improves performance by reducing unnecessary renders. React waits for all updates in the current scope, then processes them together. This is automatic - no special API needed. In React 17, only updates inside event handlers were batched.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm mt-2">
 {`// React 18 - All batched automatically
 function handleClick() {
@@ -124,6 +133,9 @@ function handleClick() {
   // Only one re-render!
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Multiple updates batched together. Works everywhere in React 18. Reduces re-renders. Automatic - no API needed. Improves performance.</p>
+            </div>
           </div>
         </div>
       </section>

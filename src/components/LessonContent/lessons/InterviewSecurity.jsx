@@ -12,6 +12,9 @@ function InterviewSecurity() {
         <div className="space-y-4">
           <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
             <p className="font-semibold mb-2">❌ Dangerous:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> dangerouslySetInnerHTML bypasses React's automatic escaping, allowing raw HTML injection. If userInput contains malicious script tags, they will execute. This is a major XSS (Cross-Site Scripting) vulnerability. Never use dangerouslySetInnerHTML with user-generated content without sanitization. Attackers can inject scripts that steal cookies, redirect users, or perform actions on their behalf. Always sanitize HTML before using dangerouslySetInnerHTML.</p>
+            </div>
             <pre className="bg-gray-800 text-red-400 p-4 rounded overflow-x-auto text-sm">
 {`// NEVER do this with user input
 <div dangerouslySetInnerHTML={{ __html: userInput }} />`}
@@ -19,6 +22,9 @@ function InterviewSecurity() {
           </div>
           <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
             <p className="font-semibold mb-2">✅ Safe:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> React automatically escapes content in {'{}'} brackets, converting dangerous characters like {'<'} to &lt;. This prevents XSS attacks. If you must render HTML, use DOMPurify.sanitize() to remove dangerous elements and attributes while keeping safe HTML. DOMPurify uses a whitelist approach, only allowing safe tags and attributes. This is the secure way to render user-generated HTML content. Always sanitize on both client and server side.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`// React automatically escapes
 <div>{userInput}</div>
@@ -88,6 +94,9 @@ import DOMPurify from 'dompurify';
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Implementation:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Content Security Policy (CSP) is a security header that restricts which resources can be loaded and executed. default-src 'self' only allows resources from same origin. script-src controls which scripts can execute. 'unsafe-inline' allows inline scripts (use with caution). CSP prevents XSS by blocking unauthorized script execution. Set CSP via meta tag in HTML or HTTP headers. Strict CSP significantly reduces XSS attack surface. Configure CSP carefully to balance security and functionality.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`// In index.html or server headers
 <meta httpEquiv="Content-Security-Policy" 
@@ -103,6 +112,9 @@ import DOMPurify from 'dompurify';
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Sanitization Example:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> DOMPurify sanitizes HTML by removing dangerous elements and attributes. ALLOWED_TAGS whitelist specifies which HTML tags are safe (only 'b', 'i', 'em', 'strong', 'a' allowed here). ALLOWED_ATTR whitelist specifies which attributes are safe (only 'href' on anchor tags). All other tags and attributes are stripped. This whitelist approach is more secure than blacklisting. Sanitization happens before dangerouslySetInnerHTML, ensuring only safe HTML is rendered. Always use whitelist approach for maximum security.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import DOMPurify from 'dompurify';
 
@@ -134,6 +146,9 @@ function SafeHTML({ html }) {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Token Management:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> credentials: 'include' sends cookies (including httpOnly cookies) with requests. httpOnly cookies cannot be accessed via JavaScript, protecting tokens from XSS attacks. Store tokens in httpOnly cookies set by the server, never in localStorage or sessionStorage. Tokens in httpOnly cookies are automatically sent with requests but invisible to JavaScript. This prevents token theft via XSS. The server sets the cookie with httpOnly flag, and the browser handles it securely. This is the recommended approach for authentication tokens.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`// Secure token handling
 function useAuth() {

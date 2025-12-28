@@ -12,6 +12,9 @@ function InterviewStyling() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Usage:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> CSS Modules provide scoped CSS by automatically generating unique class names. Import styles object from .module.css file. Use styles.className to apply classes. Build tools hash class names (e.g., .button becomes .Button_button__3x4yz) ensuring no naming conflicts. Styles are scoped to the component. Zero runtime cost - all processing happens at build time. This gives you CSS benefits with automatic scoping and no global namespace pollution.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`// Button.module.css
 .button {
@@ -45,6 +48,9 @@ function Button() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Usage:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> styled-components uses tagged template literals to create styled React components. styled.button creates a styled button element. Template literal syntax allows embedding CSS. Props can be accessed via ${'${'}props{'}'} for dynamic styling. Styles are injected at runtime, generating unique class names. Styles are co-located with components. Supports theming, pseudo-selectors, and media queries. Runtime overhead is minimal but exists, and bundle size is larger than CSS Modules.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import styled from 'styled-components';
 
@@ -85,6 +91,9 @@ function App() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Usage:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Tailwind CSS uses utility classes for styling. Classes like px-4 (padding-x), py-2 (padding-y), rounded (border-radius) apply single CSS properties. Template literals combine multiple utility classes. Conditional classes use template literal expressions. Tailwind's purge process removes unused classes in production, keeping bundle size small. Utility-first approach means no custom CSS files needed for most styling. Rapid development but requires learning Tailwind's class names.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Button({ primary, children }) {
   return (
@@ -117,6 +126,9 @@ function App() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">CSS Prop:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Emotion's css prop allows inline CSS styling. css function creates styled objects applied via css prop. Supports nested selectors with & syntax (e.g., &:hover). Styles are processed at runtime and injected as CSS. Better performance than styled-components in some cases. Can be combined with styled API. The /** @jsxImportSource @emotion/react */ pragma enables css prop without explicit imports in JSX.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
@@ -136,6 +148,9 @@ function Button() {
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Styled API:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Emotion's styled API is similar to styled-components. Creates styled components using tagged template literals. Supports props-based dynamic styling. Styles are co-located with components. Emotion offers both css prop and styled API, giving flexibility. Can use both approaches in the same codebase. Emotion is generally faster than styled-components and has a smaller bundle size.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import styled from '@emotion/styled';
 
@@ -183,6 +198,9 @@ const Button = styled.button\`
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Styled-components Theming:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> ThemeProvider wraps the app and provides theme object to all styled components via context. Access theme via props.theme in styled component template literals. Theme object can contain colors, spacing, breakpoints, etc. Enables global theming and dark mode. Change theme by updating ThemeProvider's theme prop. All styled components automatically receive new theme values. This creates a centralized design system that's easy to update globally.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import { ThemeProvider } from 'styled-components';
 
@@ -208,6 +226,9 @@ const Button = styled.button\`
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">CSS Variables Theming:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> CSS custom properties (variables) enable theming without JavaScript. Define variables in :root for global scope. Use data-theme attribute to switch themes (e.g., [data-theme="dark"]). Variables cascade and can be overridden. Use var(--variable-name) to reference variables. Change theme by updating data-theme attribute on root element. Zero runtime cost, works with any CSS approach. Can be combined with CSS Modules or regular CSS. Modern browsers have full support.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`// CSS
 :root {
@@ -232,6 +253,9 @@ const Button = styled.button\`
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Conditional Classes:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Conditional classes use template literals with ternary operators or logical operators to apply classes based on props/state. Combines base classes with conditional variant classes. Works with CSS Modules, regular CSS, or Tailwind. Common pattern: base classes + conditional variant classes. Template literal expressions evaluate to strings that become className. This pattern is flexible and works with any CSS approach. Useful for variant-based styling (primary/secondary buttons, sizes, states).</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Button({ variant, size }) {
   return (
@@ -248,6 +272,9 @@ const Button = styled.button\`
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Inline Styles:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Inline styles use style prop with object syntax. CSS properties are camelCased (backgroundColor, not background-color). Useful for dynamic, calculated values that change frequently. Higher specificity than CSS classes. No class name generation overhead. However, inline styles can't use pseudo-selectors, media queries, or keyframe animations. Best for truly dynamic values (position calculations, color pickers). Avoid for static styling - use CSS classes instead.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Component({ color }) {
   return (
@@ -284,6 +311,9 @@ const Button = styled.button\`
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">File Organization:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Organize CSS files by purpose. globals.css contains reset styles and global rules affecting the entire app. variables.css defines CSS custom properties for theming. reset.css normalizes browser default styles. utilities.css contains utility classes (like helper classes). Component-specific styles go in component folders (Button.module.css). This organization separates concerns: global styles vs component styles, design tokens vs implementations. Makes styles easier to find and maintain.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`src/
   styles/
@@ -306,6 +336,9 @@ const Button = styled.button\`
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Media Queries:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Media queries enable responsive design by applying styles based on viewport size. @media (min-width: 768px) applies styles when screen is at least 768px wide. CSS Modules support media queries in .module.css files. styled-components supports media queries in template literals. Tailwind provides responsive prefixes (md:, lg:) that automatically apply media queries. Mobile-first approach (default mobile, override for larger screens) is recommended. This ensures apps work well across device sizes.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`// CSS Modules
 .container {

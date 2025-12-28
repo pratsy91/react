@@ -31,6 +31,9 @@ function InterviewAdvanced() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">React 18+ Pattern:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Suspense for data fetching allows components to suspend while loading data. When a component suspends, React shows the nearest fallback. Nested Suspense boundaries allow granular loading states - different parts can show different loading UIs. This creates better UX than showing one loading spinner for entire page. Components using data fetching libraries (React Query, Relay) or the use hook can suspend. Suspense boundaries catch these suspensions and show fallbacks.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function ProfilePage() {
   return (
@@ -43,6 +46,9 @@ function InterviewAdvanced() {
   );
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Suspense shows fallback during loading. Nested boundaries for granular loading. Better UX than single loader. Works with data fetching libraries. Components suspend while loading.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -87,6 +93,9 @@ function InterviewAdvanced() {
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Actions & Form Handling:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> React 19 introduces Actions for server-side form handling. 'use server' directive marks function as server action (runs on server). form action prop accepts async function. React automatically handles form submission, loading states, and errors. FormData is automatically passed to action. This simplifies form handling without manual state management. Works with Server Components and provides progressive enhancement.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`async function updateUser(formData) {
   'use server';
@@ -102,6 +111,9 @@ function UserForm() {
   );
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> 'use server' marks server action. form action accepts async function. Automatic form handling. FormData passed automatically. Progressive enhancement support.</p>
+            </div>
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">useOptimistic Hook:</p>

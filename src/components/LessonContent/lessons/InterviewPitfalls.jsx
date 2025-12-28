@@ -12,6 +12,9 @@ function InterviewPitfalls() {
         <div className="space-y-4">
           <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
             <p className="font-semibold mb-2">❌ Problem:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Without a dependency array, useEffect runs after every render. If the effect updates state, it triggers a re-render, which runs the effect again, creating an infinite loop. This happens because: render → effect runs → state updates → re-render → effect runs again. The missing dependency array means React treats the effect as needing to run on every render, causing the cycle.</p>
+            </div>
             <pre className="bg-gray-800 text-red-400 p-4 rounded overflow-x-auto text-sm">
 {`function Component() {
   const [count, setCount] = useState(0);
@@ -26,6 +29,9 @@ function InterviewPitfalls() {
           </div>
           <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
             <p className="font-semibold mb-2">✅ Solution:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Empty dependency array [] makes effect run only once on mount. For effects that need to update state based on dependencies, use functional updates (prev => newValue) which don't require the state variable in dependencies. This breaks the cycle: effect runs → functional update doesn't depend on current state → no re-trigger. Always include all dependencies or use functional updates to avoid stale closures.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Component() {
   const [count, setCount] = useState(0);
@@ -42,6 +48,9 @@ function InterviewPitfalls() {
   return <div>{count}</div>;
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Empty array runs once. Functional updates don't need state in deps. Prevents infinite loops. Always include dependencies or use functional updates.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -52,6 +61,9 @@ function InterviewPitfalls() {
         <div className="space-y-4">
           <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
             <p className="font-semibold mb-2">❌ Problem:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Stale closure occurs when a function captures an old value of a variable. The effect runs once (empty deps), creating a closure over count=0. The interval callback always sees count=0 because it was captured at effect creation time. Even when count updates, the interval callback still references the old value. This is a closure - the function "closes over" the value from when it was created.</p>
+            </div>
             <pre className="bg-gray-800 text-red-400 p-4 rounded overflow-x-auto text-sm">
 {`function Component() {
   const [count, setCount] = useState(0);
@@ -70,6 +82,9 @@ function InterviewPitfalls() {
           </div>
           <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
             <p className="font-semibold mb-2">✅ Solution:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Functional updates solve stale closures. setCount(prev => prev + 1) doesn't depend on the count variable - it receives the current state as prev parameter. React guarantees prev is always the latest state, so no stale closure. This pattern is essential for intervals, timeouts, and async operations that need current state but shouldn't re-run when state changes.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Component() {
   const [count, setCount] = useState(0);
@@ -85,6 +100,9 @@ function InterviewPitfalls() {
   return <div>{count}</div>;
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Functional updates avoid stale closures. prev is always current state. No dependency needed. Essential for intervals/timeouts. Prevents bugs with async code.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -95,6 +113,9 @@ function InterviewPitfalls() {
         <div className="space-y-4">
           <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
             <p className="font-semibold mb-2">❌ Problem:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Missing dependencies cause bugs. When userId prop changes, the effect doesn't re-run because userId isn't in the dependency array. The component shows stale user data for the old userId. React's exhaustive-deps rule warns about this. All values from component scope used inside effect must be in dependencies, or React can't track when effect should re-run.</p>
+            </div>
             <pre className="bg-gray-800 text-red-400 p-4 rounded overflow-x-auto text-sm">
 {`function Component({ userId }) {
   const [user, setUser] = useState(null);
@@ -109,6 +130,9 @@ function InterviewPitfalls() {
           </div>
           <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
             <p className="font-semibold mb-2">✅ Solution:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Including all dependencies ensures effect runs when dependencies change. When userId changes, effect re-runs and fetches new user. This keeps data in sync with props. ESLint exhaustive-deps rule automatically detects missing dependencies. Always include all values from component scope used in effect, unless you intentionally want to ignore them (rare).</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Component({ userId }) {
   const [user, setUser] = useState(null);
@@ -120,6 +144,9 @@ function InterviewPitfalls() {
   return <div>{user?.name}</div>;
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Include all dependencies. Effect re-runs when deps change. Keeps data in sync. ESLint catches missing deps. Prevents stale data bugs.</p>
+            </div>
           </div>
           <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
             <p className="font-semibold mb-2">💡 Tip:</p>
@@ -134,6 +161,9 @@ function InterviewPitfalls() {
         <div className="space-y-4">
           <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
             <p className="font-semibold mb-2">❌ Problem:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> React uses shallow comparison to detect state changes. Mutating the array directly (items.push) changes the array but keeps the same reference. setItems(items) passes the same array reference, so React sees no change and doesn't re-render. React requires immutable updates - create a new array/object so React can detect the change. Mutations also break React's reconciliation and can cause bugs with concurrent features.</p>
+            </div>
             <pre className="bg-gray-800 text-red-400 p-4 rounded overflow-x-auto text-sm">
 {`function Component() {
   const [items, setItems] = useState([1, 2, 3]);

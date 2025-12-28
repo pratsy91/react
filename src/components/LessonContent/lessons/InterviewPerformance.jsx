@@ -12,6 +12,9 @@ function InterviewPerformance() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="text-gray-700 mb-2"><strong>Purpose:</strong> Memoize component to prevent unnecessary re-renders</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> React.memo is a higher-order component that memoizes the result. It does shallow comparison of props - if props haven't changed, it reuses the previous render result. This prevents re-renders when parent re-renders but props are the same. Custom comparison function allows fine-grained control over when to re-render. Only use when you have a measured performance problem - memoization has overhead. Works best with primitive props or stable object references.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm mt-2">
 {`const MyComponent = React.memo(function MyComponent({ name }) {
   return <div>{name}</div>;
@@ -27,6 +30,9 @@ const MyComponent = React.memo(
   }
 );`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Shallow compares props. Skips re-render if props unchanged. Custom comparison for fine control. Only use when needed. Has overhead - measure first.</p>
+            </div>
           </div>
           <div className="bg-blue-50 p-4 rounded">
             <p className="font-semibold mb-2">When to Use:</p>
@@ -48,22 +54,34 @@ const MyComponent = React.memo(
             <div className="bg-gray-50 p-4 rounded">
               <p className="font-semibold mb-2">useMemo:</p>
               <p className="text-gray-700 text-sm mb-2">Memoizes <strong>values</strong></p>
+              <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+                <p className="text-gray-700 text-sm"><strong>Theory:</strong> useMemo memoizes the result of an expensive computation. It only recalculates when dependencies change. This prevents expensive operations from running on every render. Also useful for maintaining referential equality of objects/arrays passed to memoized children. The function runs during render, so it must be pure. Don't overuse - memoization has overhead.</p>
+              </div>
               <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`const expensiveValue = useMemo(
   () => computeExpensiveValue(a, b),
   [a, b]
 );`}
               </pre>
+              <div className="bg-blue-50 p-3 rounded mt-2">
+                <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Memoizes computed values. Only recalculates when deps change. Use for expensive calculations. Also for referential equality. Has overhead - measure first.</p>
+              </div>
             </div>
             <div className="bg-gray-50 p-4 rounded">
               <p className="font-semibold mb-2">useCallback:</p>
               <p className="text-gray-700 text-sm mb-2">Memoizes <strong>functions</strong></p>
+              <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+                <p className="text-gray-700 text-sm"><strong>Theory:</strong> useCallback memoizes a function, returning the same function reference if dependencies haven't changed. Without it, a new function is created on every render, causing memoized children to re-render unnecessarily. Useful when passing callbacks to React.memo components or when callbacks are in dependency arrays. Only use when you have a performance problem - overuse can hurt performance.</p>
+              </div>
               <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`const memoizedCallback = useCallback(
   () => doSomething(a, b),
   [a, b]
 );`}
               </pre>
+              <div className="bg-blue-50 p-3 rounded mt-2">
+                <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Memoizes function references. Prevents unnecessary re-renders of memoized children. Use when callbacks in dependency arrays. Only when needed. Overuse can hurt performance.</p>
+              </div>
             </div>
           </div>
           <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
@@ -79,6 +97,9 @@ const MyComponent = React.memo(
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Route-based Splitting:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Code splitting loads code on-demand instead of all at once. React.lazy creates a lazy-loaded component. The import() function returns a promise that resolves to the module. Suspense component shows fallback while component loads. This reduces initial bundle size, improving initial load time. Route-based splitting loads code when user navigates to that route. Each route becomes a separate chunk loaded on demand.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`const Home = lazy(() => import('./Home'));
 const About = lazy(() => import('./About'));
@@ -91,6 +112,9 @@ const About = lazy(() => import('./About'));
   } />
 </Routes>`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> lazy() creates lazy component. import() returns promise. Suspense shows fallback. Reduces initial bundle. Loads code on navigation.</p>
+            </div>
           </div>
           <div className="bg-blue-50 p-4 rounded">
             <p className="font-semibold mb-2">Component-based Splitting:</p>

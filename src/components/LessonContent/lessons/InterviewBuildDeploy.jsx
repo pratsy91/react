@@ -59,6 +59,9 @@ function InterviewBuildDeploy() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Webpack SplitChunks:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Webpack's splitChunks automatically splits code into separate chunks. chunks: 'all' splits both async and sync imports. cacheGroups define splitting rules - vendor group matches node_modules, creating separate vendor bundle. This separates third-party code from app code, enabling better caching. Users download vendor bundle once, then only app code changes. Reduces bundle size and improves load times.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`// webpack.config.js
 module.exports = {
@@ -76,9 +79,15 @@ module.exports = {
   }
 };`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Automatically splits code. Separates vendor from app code. Better caching strategy. Reduces bundle size. Improves load performance.</p>
+            </div>
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Vite Code Splitting:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Vite uses Rollup for production builds. manualChunks allows explicit control over chunk splitting. You specify which modules go into which chunks. This gives precise control but requires manual configuration. Vite automatically splits node_modules, but manualChunks lets you customize further. Useful for separating large libraries or grouping related code together.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`// vite.config.js
 export default {
@@ -94,6 +103,9 @@ export default {
   }
 };`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Manual control over chunks. Explicit module grouping. Custom splitting strategy. Vite uses Rollup for builds. More control than automatic splitting.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -113,6 +125,9 @@ export default {
           </div>
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Package.json Side Effects:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Tree shaking removes unused code, but only works if code has no side effects. sideEffects: false tells bundler all code is side-effect free and safe to tree-shake. If some files have side effects (like CSS imports, polyfills), list them in sideEffects array. Bundler will include these files even if they appear unused. This is critical for CSS modules and polyfills that must be included regardless of usage.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`{
   "sideEffects": false,
@@ -123,6 +138,9 @@ export default {
   ]
 }`}
             </pre>
+            <div className="bg-blue-50 p-3 rounded mt-2">
+              <p className="text-gray-700 text-sm"><strong>Key Points:</strong> Enables tree shaking. false means all code is pure. Array lists files with side effects. Required for CSS and polyfills. Prevents removal of necessary code.</p>
+            </div>
           </div>
         </div>
       </section>

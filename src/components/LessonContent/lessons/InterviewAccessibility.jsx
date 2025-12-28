@@ -12,6 +12,9 @@ function InterviewAccessibility() {
         <div className="space-y-4">
           <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
             <p className="font-semibold mb-2">❌ Bad:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Using generic div elements with onClick handlers creates accessibility issues. Screen readers don't recognize divs as interactive elements. Users can't navigate to them with keyboard. No semantic meaning - screen reader users don't know it's a button. Headers should use {'<'}header{'>'} not {'<'}div{'>'} for proper document structure. Semantic HTML provides meaning and enables assistive technologies to understand and navigate content properly.</p>
+            </div>
             <pre className="bg-gray-800 text-red-400 p-4 rounded overflow-x-auto text-sm">
 {`<div onClick={handleClick}>Button</div>
 <div>Header</div>`}
@@ -19,6 +22,9 @@ function InterviewAccessibility() {
           </div>
           <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
             <p className="font-semibold mb-2">✅ Good:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Semantic HTML elements provide meaning and built-in accessibility. {'<'}button{'>'} is recognized as interactive, keyboard accessible, and announced by screen readers. {'<'}header{'>'}, {'<'}nav{'>'}, {'<'}main{'>'}, {'<'}footer{'>'} create document landmarks that screen readers use for navigation. Semantic elements have default keyboard behavior and ARIA roles. They communicate structure and purpose to assistive technologies. Always prefer semantic HTML over generic divs.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`<button onClick={handleClick}>Button</button>
 <header>Header</header>
@@ -36,6 +42,9 @@ function InterviewAccessibility() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Common ARIA Attributes:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> ARIA (Accessible Rich Internet Applications) attributes enhance accessibility when semantic HTML isn't enough. role defines what an element is (button, alert). aria-label provides accessible name when text isn't visible. aria-labelledby references element ID that labels this element. aria-pressed indicates toggle button state. aria-required indicates required form fields. aria-hidden hides decorative content from screen readers. aria-live regions announce dynamic content changes (polite=wait, assertive=interrupt). Use ARIA to supplement, not replace, semantic HTML.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`// Roles
 <div role="button" tabIndex={0}>Custom Button</div>
@@ -64,6 +73,9 @@ function InterviewAccessibility() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Keyboard Events:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Keyboard accessibility is crucial for users who can't use a mouse. onKeyDown handler detects keyboard interactions. Enter and Space activate buttons/links. Escape closes modals/dialogs. tabIndex={0} makes element keyboard focusable. role="button" indicates interactive element to screen readers. Always provide keyboard alternatives to mouse interactions. Handle both onClick and onKeyDown for custom interactive elements. This ensures all users can interact with your interface regardless of input method.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Component() {
   const handleKeyDown = (e) => {
@@ -90,6 +102,9 @@ function InterviewAccessibility() {
           </div>
           <div className="bg-blue-50 p-4 rounded">
             <p className="font-semibold mb-2">Focus Management:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Focus management is critical for modals and dynamic content. useRef creates reference to modal element. useEffect focuses modal when it opens (isOpen becomes true). modalRef.current?.focus() moves focus to modal. tabIndex={-1} makes element programmatically focusable but not tab-focusable. role="dialog" identifies modal to screen readers. Focus should move to modal when it opens, and return to trigger when it closes. This prevents keyboard users from getting lost in the page content.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Modal({ isOpen, onClose }) {
   const modalRef = useRef();
@@ -134,6 +149,9 @@ function InterviewAccessibility() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Best Practices:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Accessible forms require proper labeling and error association. htmlFor/id creates explicit label-input association for screen readers. aria-required indicates required fields. aria-describedby links input to error message, so screen readers announce errors. aria-invalid indicates validation state. role="alert" makes errors immediately announced. Error messages should be associated with inputs so screen reader users understand what's wrong. Submit button should be clearly labeled. This ensures form errors are communicated effectively to all users.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`<form>
   <label htmlFor="email">Email</label>
@@ -160,6 +178,9 @@ function InterviewAccessibility() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Modal Implementation:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Accessible modals require focus management, ARIA attributes, and keyboard handling. previousFocusRef stores element that triggered modal. When modal opens, focus moves to modal. When modal closes, focus returns to trigger element. aria-modal="true" indicates modal blocks interaction with background. aria-labelledby references modal title. Escape key closes modal (onKeyDown handler). Focus trap (keep focus within modal) should be implemented. Background should be hidden from screen readers (aria-hidden). This creates an accessible modal experience.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`function Modal({ isOpen, onClose, children }) {
   const modalRef = useRef();
@@ -216,6 +237,9 @@ function InterviewAccessibility() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Best Practices:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Alt text provides textual description of images for screen readers. Informative images (charts, diagrams) need descriptive alt text explaining the content. Decorative images should have empty alt="" so screen readers skip them. Complex images (detailed diagrams) need longer descriptions via aria-describedby linking to detailed text. Alt text should be concise but descriptive. Don't include "image of" - screen readers announce that. Good alt text conveys the same information the image provides visually.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`// Informative image
 <img src="chart.png" alt="Sales increased by 25% in Q3" />
@@ -243,6 +267,9 @@ function InterviewAccessibility() {
         <div className="space-y-4">
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Usage:</p>
+            <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Live regions announce dynamic content changes to screen reader users. aria-live="polite" waits for user to finish before announcing (for status updates). aria-live="assertive" interrupts immediately (for errors). aria-atomic="true" announces entire region when any part changes. role="status" is equivalent to aria-live="polite". Use live regions for dynamic content like form submission status, search results, or error messages. This ensures screen reader users are notified of important changes without refreshing the page.</p>
+            </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`// Polite announcement (waits for user to finish)
 <div aria-live="polite" aria-atomic="true">
