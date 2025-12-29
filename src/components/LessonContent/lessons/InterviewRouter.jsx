@@ -52,7 +52,7 @@ function App() {
           <div className="bg-gray-50 p-4 rounded">
             <p className="font-semibold mb-2">Link and NavLink:</p>
             <div className="bg-purple-50 border-l-4 border-purple-500 p-3 rounded mb-2">
-              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Link component navigates without page reload using client-side routing. It renders an anchor tag but prevents default navigation. NavLink extends Link with active state detection. className prop can be a function receiving {isActive} to style active links. This is perfect for navigation menus where you want to highlight the current route. Both components maintain browser history.</p>
+              <p className="text-gray-700 text-sm"><strong>Theory:</strong> Link component navigates without page reload using client-side routing. It renders an anchor tag but prevents default navigation. NavLink extends Link with active state detection. className prop can be a function receiving an isActive parameter to style active links. This is perfect for navigation menus where you want to highlight the current route. Both components maintain browser history.</p>
             </div>
             <pre className="bg-gray-800 text-green-400 p-4 rounded overflow-x-auto text-sm">
 {`import { Link, NavLink } from 'react-router-dom';
