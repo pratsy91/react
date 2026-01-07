@@ -1,1945 +1,1945 @@
 export const phases = [
   {
-    id: 'phase-1',
-    title: 'Phase 1: Foundation & Core Concepts',
-    description: 'Weeks 1-2: Master the fundamentals of React',
+    id: "phase-1",
+    title: "Phase 1: Foundation & Core Concepts",
+    description: "Weeks 1-2: Master the fundamentals of React",
     modules: [
       {
-        id: 'module-1',
-        title: 'Module 1: React Fundamentals',
+        id: "module-1",
+        title: "Module 1: React Fundamentals",
         lessons: [
           {
-            id: 'lesson-1-1',
-            title: 'Setup & Environment',
+            id: "lesson-1-1",
+            title: "Setup & Environment",
             topics: [
-              'Vite setup and configuration',
-              'Project structure and organization',
-              'ESLint, Prettier configuration',
-              'Understanding build tools and bundling'
+              "Vite setup and configuration",
+              "Project structure and organization",
+              "ESLint, Prettier configuration",
+              "Understanding build tools and bundling",
             ],
-            content: 'setup-environment'
+            content: "setup-environment",
           },
           {
-            id: 'lesson-1-2',
-            title: 'JSX Deep Dive',
+            id: "lesson-1-2",
+            title: "JSX Deep Dive",
             topics: [
-              'JSX syntax and expressions',
-              'JSX vs createElement',
-              'Fragments (`<>` and `<React.Fragment>`)',
-              'JSX transformations and Babel',
-              'Conditional rendering (ternary, &&, ||, if-else)',
-              'Lists and keys (key prop importance)',
-              'JSX escaping and security'
+              "JSX syntax and expressions",
+              "JSX vs createElement",
+              "Fragments (`<>` and `<React.Fragment>`)",
+              "JSX transformations and Babel",
+              "Conditional rendering (ternary, &&, ||, if-else)",
+              "Lists and keys (key prop importance)",
+              "JSX escaping and security",
             ],
-            content: 'jsx-deep-dive'
+            content: "jsx-deep-dive",
           },
           {
-            id: 'lesson-1-3',
-            title: 'Components',
+            id: "lesson-1-3",
+            title: "Components",
             topics: [
-              'Function components',
-              'Component composition',
-              'Props (passing, destructuring, default props)',
-              'Children prop',
-              'Props validation with PropTypes',
-              'Component naming conventions'
+              "Function components",
+              "Component composition",
+              "Props (passing, destructuring, default props)",
+              "Children prop",
+              "Props validation with PropTypes",
+              "Component naming conventions",
             ],
-            content: 'components'
-          }
-        ]
+            content: "components",
+          },
+        ],
       },
       {
-        id: 'module-2',
-        title: 'Module 2: State & Events',
+        id: "module-2",
+        title: "Module 2: State & Events",
         lessons: [
           {
-            id: 'lesson-2-1',
-            title: 'State Management (useState)',
+            id: "lesson-2-1",
+            title: "State Management (useState)",
             topics: [
-              'useState hook basics',
-              'State updates (functional updates)',
-              'State batching',
-              'State with objects and arrays',
-              'Lazy initial state',
-              'Multiple state variables vs single object'
+              "useState hook basics",
+              "State updates (functional updates)",
+              "State batching",
+              "State with objects and arrays",
+              "Lazy initial state",
+              "Multiple state variables vs single object",
             ],
-            content: 'state-management-usestate'
+            content: "state-management-usestate",
           },
           {
-            id: 'lesson-2-2',
-            title: 'Event Handling',
+            id: "lesson-2-2",
+            title: "Event Handling",
             topics: [
-              'All synthetic events (onClick, onChange, onSubmit, onFocus, onBlur, etc.)',
-              'Event object and properties',
-              'Event pooling (legacy)',
-              'preventDefault and stopPropagation',
-              'Event delegation',
-              'Custom event handlers',
-              'Keyboard events, mouse events, touch events, form events'
+              "All synthetic events (onClick, onChange, onSubmit, onFocus, onBlur, etc.)",
+              "Event object and properties",
+              "Event pooling (legacy)",
+              "preventDefault and stopPropagation",
+              "Event delegation",
+              "Custom event handlers",
+              "Keyboard events, mouse events, touch events, form events",
             ],
-            content: 'event-handling'
-          }
-        ]
+            content: "event-handling",
+          },
+        ],
       },
       {
-        id: 'module-3',
-        title: 'Module 3: Effects & Lifecycle',
+        id: "module-3",
+        title: "Module 3: Effects & Lifecycle",
         lessons: [
           {
-            id: 'lesson-3-1',
-            title: 'useEffect Hook',
+            id: "lesson-3-1",
+            title: "useEffect Hook",
             topics: [
-              'Basic effects',
-              'Cleanup functions',
-              'Dependency arrays (empty, with deps, no array)',
-              'Multiple effects',
-              'Effect execution timing',
-              'Fetching data with useEffect',
-              'Race conditions in effects',
-              'Effect dependencies best practices'
+              "Basic effects",
+              "Cleanup functions",
+              "Dependency arrays (empty, with deps, no array)",
+              "Multiple effects",
+              "Effect execution timing",
+              "Fetching data with useEffect",
+              "Race conditions in effects",
+              "Effect dependencies best practices",
             ],
-            content: 'useeffect-hook'
+            content: "useeffect-hook",
           },
           {
-            id: 'lesson-3-2',
-            title: 'Component Lifecycle',
+            id: "lesson-3-2",
+            title: "Component Lifecycle",
             topics: [
-              'Mount, update, unmount phases',
-              'Lifecycle equivalents in hooks',
-              'Understanding re-renders',
-              'Rendering behavior'
+              "Mount, update, unmount phases",
+              "Lifecycle equivalents in hooks",
+              "Understanding re-renders",
+              "Rendering behavior",
             ],
-            content: 'component-lifecycle'
-          }
-        ]
-      }
-    ]
+            content: "component-lifecycle",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-2',
-    title: 'Phase 2: Intermediate Hooks & Optimization',
-    description: 'Weeks 3-4: Master all React hooks and performance optimization',
+    id: "phase-2",
+    title: "Phase 2: Intermediate Hooks & Optimization",
+    description:
+      "Weeks 3-4: Master all React hooks and performance optimization",
     modules: [
       {
-        id: 'module-4',
-        title: 'Module 4: All React Hooks',
+        id: "module-4",
+        title: "Module 4: All React Hooks",
         lessons: [
           {
-            id: 'lesson-4-1',
-            title: 'useRef',
+            id: "lesson-4-1",
+            title: "useRef",
             topics: [
-              'DOM references',
-              'Mutable values that persist',
-              'Ref forwarding with forwardRef',
-              'useImperativeHandle',
-              'Callback refs',
-              'Refs with TypeScript'
+              "DOM references",
+              "Mutable values that persist",
+              "Ref forwarding with forwardRef",
+              "useImperativeHandle",
+              "Callback refs",
+              "Refs with TypeScript",
             ],
-            content: 'useref-hook'
+            content: "useref-hook",
           },
           {
-            id: 'lesson-4-2',
-            title: 'useContext',
+            id: "lesson-4-2",
+            title: "useContext",
             topics: [
-              'Creating context',
-              'Provider and Consumer',
-              'Multiple contexts',
-              'Context composition',
-              'Dynamic context values',
-              'Context with reducers'
+              "Creating context",
+              "Provider and Consumer",
+              "Multiple contexts",
+              "Context composition",
+              "Dynamic context values",
+              "Context with reducers",
             ],
-            content: 'usecontext-hook'
+            content: "usecontext-hook",
           },
           {
-            id: 'lesson-4-3',
-            title: 'useReducer',
+            id: "lesson-4-3",
+            title: "useReducer",
             topics: [
-              'Reducer pattern',
-              'Actions and action types',
-              'Complex state logic',
-              'useReducer vs useState',
-              'Combining with context',
-              'Init function'
+              "Reducer pattern",
+              "Actions and action types",
+              "Complex state logic",
+              "useReducer vs useState",
+              "Combining with context",
+              "Init function",
             ],
-            content: 'usereducer-hook'
+            content: "usereducer-hook",
           },
           {
-            id: 'lesson-4-4',
-            title: 'useCallback',
+            id: "lesson-4-4",
+            title: "useCallback",
             topics: [
-              'Memoizing callbacks',
-              'Dependency arrays',
-              'When to use useCallback',
-              'Performance implications',
-              'Common pitfalls'
+              "Memoizing callbacks",
+              "Dependency arrays",
+              "When to use useCallback",
+              "Performance implications",
+              "Common pitfalls",
             ],
-            content: 'usecallback-hook'
+            content: "usecallback-hook",
           },
           {
-            id: 'lesson-4-5',
-            title: 'useMemo',
+            id: "lesson-4-5",
+            title: "useMemo",
             topics: [
-              'Memoizing values',
-              'Expensive calculations',
-              'Referential equality',
-              'When to use useMemo',
-              'Performance optimization'
+              "Memoizing values",
+              "Expensive calculations",
+              "Referential equality",
+              "When to use useMemo",
+              "Performance optimization",
             ],
-            content: 'usememo-hook'
+            content: "usememo-hook",
           },
           {
-            id: 'lesson-4-6',
-            title: 'useLayoutEffect',
+            id: "lesson-4-6",
+            title: "useLayoutEffect",
             topics: [
-              'Synchronous effects',
-              'DOM measurements',
-              'useLayoutEffect vs useEffect',
-              'Use cases and performance'
+              "Synchronous effects",
+              "DOM measurements",
+              "useLayoutEffect vs useEffect",
+              "Use cases and performance",
             ],
-            content: 'uselayouteffect-hook'
+            content: "uselayouteffect-hook",
           },
           {
-            id: 'lesson-4-7',
-            title: 'useDebugValue',
+            id: "lesson-4-7",
+            title: "useDebugValue",
             topics: [
-              'Custom hook debugging',
-              'Formatting debug values',
-              'DevTools integration'
+              "Custom hook debugging",
+              "Formatting debug values",
+              "DevTools integration",
             ],
-            content: 'usedebugvalue-hook'
+            content: "usedebugvalue-hook",
           },
           {
-            id: 'lesson-4-8',
-            title: 'useId (React 18)',
+            id: "lesson-4-8",
+            title: "useId (React 18)",
             topics: [
-              'Generating unique IDs',
-              'SSR compatibility',
-              'Accessibility IDs'
+              "Generating unique IDs",
+              "SSR compatibility",
+              "Accessibility IDs",
             ],
-            content: 'useid-hook'
+            content: "useid-hook",
           },
           {
-            id: 'lesson-4-9',
-            title: 'useTransition (React 18)',
+            id: "lesson-4-9",
+            title: "useTransition (React 18)",
             topics: [
-              'Concurrent rendering',
-              'Marking updates as transitions',
-              'isPending state',
-              'UI responsiveness'
+              "Concurrent rendering",
+              "Marking updates as transitions",
+              "isPending state",
+              "UI responsiveness",
             ],
-            content: 'usetransition-hook'
+            content: "usetransition-hook",
           },
           {
-            id: 'lesson-4-10',
-            title: 'useDeferredValue (React 18)',
+            id: "lesson-4-10",
+            title: "useDeferredValue (React 18)",
             topics: [
-              'Deferring non-urgent updates',
-              'Debouncing alternative',
-              'Performance optimization'
+              "Deferring non-urgent updates",
+              "Debouncing alternative",
+              "Performance optimization",
             ],
-            content: 'usedeferredvalue-hook'
+            content: "usedeferredvalue-hook",
           },
           {
-            id: 'lesson-4-11',
-            title: 'useSyncExternalStore & useInsertionEffect (React 18)',
+            id: "lesson-4-11",
+            title: "useSyncExternalStore & useInsertionEffect (React 18)",
             topics: [
-              'useSyncExternalStore: Subscribing to external stores',
-              'Snapshot and subscribe functions',
-              'Library integration',
-              'useInsertionEffect: CSS-in-JS libraries',
-              'DOM mutations before layout effects'
+              "useSyncExternalStore: Subscribing to external stores",
+              "Snapshot and subscribe functions",
+              "Library integration",
+              "useInsertionEffect: CSS-in-JS libraries",
+              "DOM mutations before layout effects",
             ],
-            content: 'usesyncexternalstore-insertioneffect-hook'
-          }
-        ]
+            content: "usesyncexternalstore-insertioneffect-hook",
+          },
+        ],
       },
       {
-        id: 'module-5',
-        title: 'Module 5: Performance Optimization',
+        id: "module-5",
+        title: "Module 5: Performance Optimization",
         lessons: [
           {
-            id: 'lesson-5-1',
-            title: 'React.memo',
+            id: "lesson-5-1",
+            title: "React.memo",
             topics: [
-              'Component memoization',
-              'Custom comparison functions',
-              'When to use memo',
-              'Shallow comparison'
+              "Component memoization",
+              "Custom comparison functions",
+              "When to use memo",
+              "Shallow comparison",
             ],
-            content: 'react-memo'
+            content: "react-memo",
           },
           {
-            id: 'lesson-5-2',
-            title: 'Code Splitting',
+            id: "lesson-5-2",
+            title: "Code Splitting",
             topics: [
-              'React.lazy',
-              'Suspense boundary',
-              'Dynamic imports',
-              'Route-based splitting',
-              'Component-based splitting',
-              'Error boundaries with lazy loading'
+              "React.lazy",
+              "Suspense boundary",
+              "Dynamic imports",
+              "Route-based splitting",
+              "Component-based splitting",
+              "Error boundaries with lazy loading",
             ],
-            content: 'code-splitting'
+            content: "code-splitting",
           },
           {
-            id: 'lesson-5-3',
-            title: 'Performance Patterns',
+            id: "lesson-5-3",
+            title: "Performance Patterns",
             topics: [
-              'Windowing/virtualization',
-              'Debouncing and throttling',
-              'Optimistic UI updates',
-              'Request deduplication',
-              'Image lazy loading',
-              'Bundle analysis and optimization'
+              "Windowing/virtualization",
+              "Debouncing and throttling",
+              "Optimistic UI updates",
+              "Request deduplication",
+              "Image lazy loading",
+              "Bundle analysis and optimization",
             ],
-            content: 'performance-patterns'
-          }
-        ]
-      }
-    ]
+            content: "performance-patterns",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-3',
-    title: 'Phase 3: Advanced Patterns & Architecture',
-    description: 'Weeks 5-6: Master advanced patterns and error handling',
+    id: "phase-3",
+    title: "Phase 3: Advanced Patterns & Architecture",
+    description: "Weeks 5-6: Master advanced patterns and error handling",
     modules: [
       {
-        id: 'module-6',
-        title: 'Module 6: Advanced Component Patterns',
+        id: "module-6",
+        title: "Module 6: Advanced Component Patterns",
         lessons: [
           {
-            id: 'lesson-6-1',
-            title: 'Compound Components',
+            id: "lesson-6-1",
+            title: "Compound Components",
             topics: [
-              'Implicit state sharing',
-              'Context in compound components',
-              'Flexible component APIs'
+              "Implicit state sharing",
+              "Context in compound components",
+              "Flexible component APIs",
             ],
-            content: 'compound-components'
+            content: "compound-components",
           },
           {
-            id: 'lesson-6-2',
-            title: 'Render Props',
+            id: "lesson-6-2",
+            title: "Render Props",
             topics: [
-              'Function as children',
-              'Render prop pattern',
-              'HOC vs render props'
+              "Function as children",
+              "Render prop pattern",
+              "HOC vs render props",
             ],
-            content: 'render-props'
+            content: "render-props",
           },
           {
-            id: 'lesson-6-3',
-            title: 'Higher-Order Components (HOC)',
+            id: "lesson-6-3",
+            title: "Higher-Order Components (HOC)",
             topics: [
-              'Creating HOCs',
-              'Props manipulation',
-              'Multiple HOCs composition',
-              'HOC best practices and pitfalls'
+              "Creating HOCs",
+              "Props manipulation",
+              "Multiple HOCs composition",
+              "HOC best practices and pitfalls",
             ],
-            content: 'higher-order-components'
+            content: "higher-order-components",
           },
           {
-            id: 'lesson-6-4',
-            title: 'Custom Hooks',
+            id: "lesson-6-4",
+            title: "Custom Hooks",
             topics: [
-              'Creating custom hooks',
-              'Hook composition',
-              'Hook testing',
-              'Common custom hooks patterns',
-              'Sharing logic between components'
+              "Creating custom hooks",
+              "Hook composition",
+              "Hook testing",
+              "Common custom hooks patterns",
+              "Sharing logic between components",
             ],
-            content: 'custom-hooks'
+            content: "custom-hooks",
           },
           {
-            id: 'lesson-6-5',
-            title: 'Controlled vs Uncontrolled Components',
+            id: "lesson-6-5",
+            title: "Controlled vs Uncontrolled Components",
             topics: [
-              'Controlled inputs',
-              'Uncontrolled with refs',
-              'When to use each',
-              'File inputs and special cases'
+              "Controlled inputs",
+              "Uncontrolled with refs",
+              "When to use each",
+              "File inputs and special cases",
             ],
-            content: 'controlled-uncontrolled-components'
+            content: "controlled-uncontrolled-components",
           },
           {
-            id: 'lesson-6-6',
-            title: 'Portal',
+            id: "lesson-6-6",
+            title: "Portal",
             topics: [
-              'createPortal',
-              'Rendering outside parent',
-              'Modal and tooltip patterns',
-              'Event bubbling through portals'
+              "createPortal",
+              "Rendering outside parent",
+              "Modal and tooltip patterns",
+              "Event bubbling through portals",
             ],
-            content: 'portal'
-          }
-        ]
+            content: "portal",
+          },
+        ],
       },
       {
-        id: 'module-7',
-        title: 'Module 7: Error Handling & Boundaries',
+        id: "module-7",
+        title: "Module 7: Error Handling & Boundaries",
         lessons: [
           {
-            id: 'lesson-7-1',
-            title: 'Error Boundaries',
+            id: "lesson-7-1",
+            title: "Error Boundaries",
             topics: [
-              'getDerivedStateFromError',
-              'componentDidCatch (class-based)',
-              'Error boundary placement',
-              'Fallback UI',
-              'Error reporting',
-              'React 18+ error handling improvements'
+              "getDerivedStateFromError",
+              "componentDidCatch (class-based)",
+              "Error boundary placement",
+              "Fallback UI",
+              "Error reporting",
+              "React 18+ error handling improvements",
             ],
-            content: 'error-boundaries'
+            content: "error-boundaries",
           },
           {
-            id: 'lesson-7-2',
-            title: 'Error Handling Patterns',
+            id: "lesson-7-2",
+            title: "Error Handling Patterns",
             topics: [
-              'Try-catch in event handlers',
-              'Error handling in async code',
-              'Graceful degradation',
-              'Error logging services integration'
+              "Try-catch in event handlers",
+              "Error handling in async code",
+              "Graceful degradation",
+              "Error logging services integration",
             ],
-            content: 'error-handling-patterns'
-          }
-        ]
-      }
-    ]
+            content: "error-handling-patterns",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-4',
-    title: 'Phase 4: React 18 Concurrent Features',
-    description: 'Week 7: Master React 18 concurrent rendering and advanced features',
+    id: "phase-4",
+    title: "Phase 4: React 18 Concurrent Features",
+    description:
+      "Week 7: Master React 18 concurrent rendering and advanced features",
     modules: [
       {
-        id: 'module-8',
-        title: 'Module 8: Concurrent React',
+        id: "module-8",
+        title: "Module 8: Concurrent React",
         lessons: [
           {
-            id: 'lesson-8-1',
-            title: 'Concurrent Rendering',
+            id: "lesson-8-1",
+            title: "Concurrent Rendering",
             topics: [
-              'Automatic batching',
-              'startTransition API',
-              'Concurrent features overview',
-              'Interruptible rendering',
-              'Priority-based rendering'
+              "Automatic batching",
+              "startTransition API",
+              "Concurrent features overview",
+              "Interruptible rendering",
+              "Priority-based rendering",
             ],
-            content: 'concurrent-rendering'
+            content: "concurrent-rendering",
           },
           {
-            id: 'lesson-8-2',
-            title: 'Suspense',
+            id: "lesson-8-2",
+            title: "Suspense",
             topics: [
-              'Suspense for code splitting',
-              'Suspense for data fetching',
-              'Multiple Suspense boundaries',
-              'Suspense best practices',
-              'SuspenseList (experimental)'
+              "Suspense for code splitting",
+              "Suspense for data fetching",
+              "Multiple Suspense boundaries",
+              "Suspense best practices",
+              "SuspenseList (experimental)",
             ],
-            content: 'suspense'
+            content: "suspense",
           },
           {
-            id: 'lesson-8-3',
-            title: 'Server Components (React Server Components)',
+            id: "lesson-8-3",
+            title: "Server Components (React Server Components)",
             topics: [
-              'Understanding RSC',
-              'Client vs Server components',
-              'Use cases and benefits',
-              'Limitations and considerations'
+              "Understanding RSC",
+              "Client vs Server components",
+              "Use cases and benefits",
+              "Limitations and considerations",
             ],
-            content: 'server-components'
+            content: "server-components",
           },
           {
-            id: 'lesson-8-4',
-            title: 'Transitions',
+            id: "lesson-8-4",
+            title: "Transitions",
             topics: [
-              'useTransition hook deep dive',
-              'startTransition function',
-              'Urgent vs non-urgent updates',
-              'Loading states management'
+              "useTransition hook deep dive",
+              "startTransition function",
+              "Urgent vs non-urgent updates",
+              "Loading states management",
             ],
-            content: 'transitions'
-          }
-        ]
-      }
-    ]
+            content: "transitions",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-5',
-    title: 'Phase 5: Routing & Navigation',
-    description: 'Week 8: Master React Router and advanced routing patterns',
+    id: "phase-5",
+    title: "Phase 5: Routing & Navigation",
+    description: "Week 8: Master React Router and advanced routing patterns",
     modules: [
       {
-        id: 'module-9',
-        title: 'Module 9: React Router',
+        id: "module-9",
+        title: "Module 9: React Router",
         lessons: [
           {
-            id: 'lesson-9-1',
-            title: 'Router Setup',
+            id: "lesson-9-1",
+            title: "Router Setup",
             topics: [
-              'BrowserRouter, HashRouter, MemoryRouter',
-              'RouterProvider (v6.4+)',
-              'createBrowserRouter',
-              'createRoutesFromElements'
+              "BrowserRouter, HashRouter, MemoryRouter",
+              "RouterProvider (v6.4+)",
+              "createBrowserRouter",
+              "createRoutesFromElements",
             ],
-            content: 'router-setup'
+            content: "router-setup",
           },
           {
-            id: 'lesson-9-2',
-            title: 'All Router Components & Hooks',
+            id: "lesson-9-2",
+            title: "All Router Components & Hooks",
             topics: [
-              'Routes, Route',
-              'Link, NavLink',
-              'Navigate',
-              'Outlet',
-              'useNavigate',
-              'useLocation',
-              'useParams',
-              'useSearchParams',
-              'useMatch',
-              'useRoutes',
-              'useResolvedPath',
-              'useHref',
-              'useInRouterContext',
-              'useNavigationType',
-              'useOutlet',
-              'useOutletContext'
+              "Routes, Route",
+              "Link, NavLink",
+              "Navigate",
+              "Outlet",
+              "useNavigate",
+              "useLocation",
+              "useParams",
+              "useSearchParams",
+              "useMatch",
+              "useRoutes",
+              "useResolvedPath",
+              "useHref",
+              "useInRouterContext",
+              "useNavigationType",
+              "useOutlet",
+              "useOutletContext",
             ],
-            content: 'router-components-hooks'
+            content: "router-components-hooks",
           },
           {
-            id: 'lesson-9-3',
-            title: 'Advanced Routing',
+            id: "lesson-9-3",
+            title: "Advanced Routing",
             topics: [
-              'Nested routes',
-              'Dynamic routes',
-              'Protected routes',
-              'Route guards',
-              'Lazy loaded routes',
-              'Data loading with loaders',
-              'Actions and forms',
-              'Error elements',
-              'Index routes',
-              'Layout routes',
-              'Scroll restoration',
-              'Route parameters and query strings'
+              "Nested routes",
+              "Dynamic routes",
+              "Protected routes",
+              "Route guards",
+              "Lazy loaded routes",
+              "Data loading with loaders",
+              "Actions and forms",
+              "Error elements",
+              "Index routes",
+              "Layout routes",
+              "Scroll restoration",
+              "Route parameters and query strings",
             ],
-            content: 'advanced-routing'
-          }
-        ]
-      }
-    ]
+            content: "advanced-routing",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-6',
-    title: 'Phase 6: Forms & Validation',
-    description: 'Week 9: Master form handling and validation in React',
+    id: "phase-6",
+    title: "Phase 6: Forms & Validation",
+    description: "Week 9: Master form handling and validation in React",
     modules: [
       {
-        id: 'module-10',
-        title: 'Module 10: Form Handling',
+        id: "module-10",
+        title: "Module 10: Form Handling",
         lessons: [
           {
-            id: 'lesson-10-1',
-            title: 'Controlled Forms',
+            id: "lesson-10-1",
+            title: "Controlled Forms",
             topics: [
-              'Input, textarea, select',
-              'Checkboxes and radio buttons',
-              'File uploads',
-              'Multi-step forms',
-              'Dynamic form fields'
+              "Input, textarea, select",
+              "Checkboxes and radio buttons",
+              "File uploads",
+              "Multi-step forms",
+              "Dynamic form fields",
             ],
-            content: 'controlled-forms'
+            content: "controlled-forms",
           },
           {
-            id: 'lesson-10-2',
-            title: 'Form Libraries',
+            id: "lesson-10-2",
+            title: "Form Libraries",
             topics: [
-              'React Hook Form (complete API)',
-              'Formik (complete API)',
-              'Form validation strategies',
-              'Custom validation',
-              'Yup, Zod integration',
-              'Field arrays and nested forms'
+              "React Hook Form (complete API)",
+              "Formik (complete API)",
+              "Form validation strategies",
+              "Custom validation",
+              "Yup, Zod integration",
+              "Field arrays and nested forms",
             ],
-            content: 'form-libraries'
+            content: "form-libraries",
           },
           {
-            id: 'lesson-10-3',
-            title: 'Uncontrolled Forms',
-            topics: [
-              'Form refs',
-              'FormData API',
-              'Native form handling'
-            ],
-            content: 'uncontrolled-forms'
-          }
-        ]
-      }
-    ]
+            id: "lesson-10-3",
+            title: "Uncontrolled Forms",
+            topics: ["Form refs", "FormData API", "Native form handling"],
+            content: "uncontrolled-forms",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-7',
-    title: 'Phase 7: State Management',
-    description: 'Weeks 10-11: Master Context API and external state management libraries',
+    id: "phase-7",
+    title: "Phase 7: State Management",
+    description:
+      "Weeks 10-11: Master Context API and external state management libraries",
     modules: [
       {
-        id: 'module-11',
-        title: 'Module 11: Context API Deep Dive',
+        id: "module-11",
+        title: "Module 11: Context API Deep Dive",
         lessons: [
           {
-            id: 'lesson-11-1',
-            title: 'Advanced Context Patterns',
+            id: "lesson-11-1",
+            title: "Advanced Context Patterns",
             topics: [
-              'Multiple context providers',
-              'Context composition',
-              'Performance optimization',
-              'Context splitting',
-              'Context with useReducer'
+              "Multiple context providers",
+              "Context composition",
+              "Performance optimization",
+              "Context splitting",
+              "Context with useReducer",
             ],
-            content: 'advanced-context-patterns'
-          }
-        ]
+            content: "advanced-context-patterns",
+          },
+        ],
       },
       {
-        id: 'module-12',
-        title: 'Module 12: External State Management',
+        id: "module-12",
+        title: "Module 12: External State Management",
         lessons: [
           {
-            id: 'lesson-12-1',
-            title: 'Redux Toolkit',
+            id: "lesson-12-1",
+            title: "Redux Toolkit",
             topics: [
-              'Store setup',
-              'Slices and reducers',
-              'All RTK hooks (useSelector, useDispatch, useStore)',
-              'createSlice, createAsyncThunk',
-              'RTK Query (complete API)',
-              'Middleware',
-              'Redux DevTools'
+              "Store setup",
+              "Slices and reducers",
+              "All RTK hooks (useSelector, useDispatch, useStore)",
+              "createSlice, createAsyncThunk",
+              "RTK Query (complete API)",
+              "Middleware",
+              "Redux DevTools",
             ],
-            content: 'redux-toolkit'
+            content: "redux-toolkit",
           },
           {
-            id: 'lesson-12-2',
-            title: 'Zustand',
+            id: "lesson-12-2",
+            title: "Zustand",
             topics: [
-              'Store creation',
-              'Subscriptions',
-              'Middleware',
-              'Persistence',
-              'All Zustand APIs'
+              "Store creation",
+              "Subscriptions",
+              "Middleware",
+              "Persistence",
+              "All Zustand APIs",
             ],
-            content: 'zustand'
+            content: "zustand",
           },
           {
-            id: 'lesson-12-3',
-            title: 'Jotai',
+            id: "lesson-12-3",
+            title: "Jotai",
             topics: [
-              'Atoms',
-              'Derived atoms',
-              'Async atoms',
-              'All Jotai hooks and utilities'
+              "Atoms",
+              "Derived atoms",
+              "Async atoms",
+              "All Jotai hooks and utilities",
             ],
-            content: 'jotai'
+            content: "jotai",
           },
           {
-            id: 'lesson-12-4',
-            title: 'Recoil',
+            id: "lesson-12-4",
+            title: "Recoil",
             topics: [
-              'Atoms and selectors',
-              'Atom families',
-              'Selector families',
-              'All Recoil hooks'
+              "Atoms and selectors",
+              "Atom families",
+              "Selector families",
+              "All Recoil hooks",
             ],
-            content: 'recoil'
-          }
-        ]
-      }
-    ]
+            content: "recoil",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-8',
-    title: 'Phase 8: Data Fetching & API Integration',
-    description: 'Week 12: Master data fetching and API integration in React',
+    id: "phase-8",
+    title: "Phase 8: Data Fetching & API Integration",
+    description: "Week 12: Master data fetching and API integration in React",
     modules: [
       {
-        id: 'module-13',
-        title: 'Module 13: Data Fetching',
+        id: "module-13",
+        title: "Module 13: Data Fetching",
         lessons: [
           {
-            id: 'lesson-13-1',
-            title: 'Native Fetch',
+            id: "lesson-13-1",
+            title: "Native Fetch",
             topics: [
-              'Fetch API with useEffect',
-              'Abort controllers',
-              'Error handling',
-              'Loading states',
-              'Caching strategies'
+              "Fetch API with useEffect",
+              "Abort controllers",
+              "Error handling",
+              "Loading states",
+              "Caching strategies",
             ],
-            content: 'native-fetch'
+            content: "native-fetch",
           },
           {
-            id: 'lesson-13-2',
-            title: 'React Query / TanStack Query',
+            id: "lesson-13-2",
+            title: "React Query / TanStack Query",
             topics: [
-              'Complete API coverage',
-              'useQuery, useMutation, useInfiniteQuery',
-              'Query invalidation',
-              'Optimistic updates',
-              'Cache management',
-              'Prefetching',
-              'Suspense mode',
-              'Query keys strategies'
+              "Complete API coverage",
+              "useQuery, useMutation, useInfiniteQuery",
+              "Query invalidation",
+              "Optimistic updates",
+              "Cache management",
+              "Prefetching",
+              "Suspense mode",
+              "Query keys strategies",
             ],
-            content: 'react-query'
+            content: "react-query",
           },
           {
-            id: 'lesson-13-3',
-            title: 'SWR',
+            id: "lesson-13-3",
+            title: "SWR",
             topics: [
-              'Complete SWR API',
-              'Revalidation strategies',
-              'Mutations',
-              'All SWR hooks'
+              "Complete SWR API",
+              "Revalidation strategies",
+              "Mutations",
+              "All SWR hooks",
             ],
-            content: 'swr'
+            content: "swr",
           },
           {
-            id: 'lesson-13-4',
-            title: 'Axios Integration',
+            id: "lesson-13-4",
+            title: "Axios Integration",
             topics: [
-              'Interceptors',
-              'Request/response handling',
-              'Custom hooks with Axios'
+              "Interceptors",
+              "Request/response handling",
+              "Custom hooks with Axios",
             ],
-            content: 'axios-integration'
-          }
-        ]
-      }
-    ]
+            content: "axios-integration",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-9',
-    title: 'Phase 9: Styling Solutions',
-    description: 'Week 13: Master all styling approaches in React',
+    id: "phase-9",
+    title: "Phase 9: Styling Solutions",
+    description: "Week 13: Master all styling approaches in React",
     modules: [
       {
-        id: 'module-14',
-        title: 'Module 14: All Styling Approaches',
+        id: "module-14",
+        title: "Module 14: All Styling Approaches",
         lessons: [
           {
-            id: 'lesson-14-1',
-            title: 'CSS Modules',
+            id: "lesson-14-1",
+            title: "CSS Modules",
             topics: [
-              'Setup and usage',
-              'Composition',
-              'Global vs local styles'
+              "Setup and usage",
+              "Composition",
+              "Global vs local styles",
             ],
-            content: 'css-modules'
+            content: "css-modules",
           },
           {
-            id: 'lesson-14-2',
-            title: 'Styled Components',
+            id: "lesson-14-2",
+            title: "Styled Components",
             topics: [
-              'Complete styled-components API',
-              'Theming',
-              'Dynamic styles',
-              'Server-side rendering'
+              "Complete styled-components API",
+              "Theming",
+              "Dynamic styles",
+              "Server-side rendering",
             ],
-            content: 'styled-components'
+            content: "styled-components",
           },
           {
-            id: 'lesson-14-3',
-            title: 'Emotion',
-            topics: [
-              'css prop',
-              'styled API',
-              'Theming and variants'
-            ],
-            content: 'emotion'
+            id: "lesson-14-3",
+            title: "Emotion",
+            topics: ["css prop", "styled API", "Theming and variants"],
+            content: "emotion",
           },
           {
-            id: 'lesson-14-4',
-            title: 'Tailwind CSS',
+            id: "lesson-14-4",
+            title: "Tailwind CSS",
             topics: [
-              'Utility-first approach',
-              'Custom configuration',
-              'Component patterns',
-              'JIT mode'
+              "Utility-first approach",
+              "Custom configuration",
+              "Component patterns",
+              "JIT mode",
             ],
-            content: 'tailwind-css'
+            content: "tailwind-css",
           },
           {
-            id: 'lesson-14-5',
-            title: 'CSS-in-JS Patterns',
+            id: "lesson-14-5",
+            title: "CSS-in-JS Patterns",
             topics: [
-              'Inline styles',
-              'Style object patterns',
-              'Dynamic styling'
+              "Inline styles",
+              "Style object patterns",
+              "Dynamic styling",
             ],
-            content: 'css-in-js-patterns'
+            content: "css-in-js-patterns",
           },
           {
-            id: 'lesson-14-6',
-            title: 'Component Libraries',
+            id: "lesson-14-6",
+            title: "Component Libraries",
             topics: [
-              'Material-UI (MUI) - complete API',
-              'Chakra UI - complete API',
-              'Ant Design',
-              'shadcn/ui',
-              'Radix UI primitives'
+              "Material-UI (MUI) - complete API",
+              "Chakra UI - complete API",
+              "Ant Design",
+              "shadcn/ui",
+              "Radix UI primitives",
             ],
-            content: 'component-libraries'
-          }
-        ]
-      }
-    ]
+            content: "component-libraries",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-10',
-    title: 'Phase 10: Testing',
-    description: 'Weeks 14-15: Master testing strategies in React',
+    id: "phase-10",
+    title: "Phase 10: Testing",
+    description: "Weeks 14-15: Master testing strategies in React",
     modules: [
       {
-        id: 'module-15',
-        title: 'Module 15: Testing Strategies',
+        id: "module-15",
+        title: "Module 15: Testing Strategies",
         lessons: [
           {
-            id: 'lesson-15-1',
-            title: 'React Testing Library',
+            id: "lesson-15-1",
+            title: "React Testing Library",
             topics: [
-              'All queries (getBy, queryBy, findBy)',
-              'User events and interactions',
-              'Async testing',
-              'Custom renders',
-              'Testing hooks (@testing-library/react-hooks)',
-              'Testing context',
-              'Testing custom hooks'
+              "All queries (getBy, queryBy, findBy)",
+              "User events and interactions",
+              "Async testing",
+              "Custom renders",
+              "Testing hooks (@testing-library/react-hooks)",
+              "Testing context",
+              "Testing custom hooks",
             ],
-            content: 'react-testing-library'
+            content: "react-testing-library",
           },
           {
-            id: 'lesson-15-2',
-            title: 'Vitest',
-            topics: [
-              'Test setup',
-              'Assertions',
-              'Mocking',
-              'Coverage'
-            ],
-            content: 'vitest'
+            id: "lesson-15-2",
+            title: "Vitest",
+            topics: ["Test setup", "Assertions", "Mocking", "Coverage"],
+            content: "vitest",
           },
           {
-            id: 'lesson-15-3',
-            title: 'Jest',
+            id: "lesson-15-3",
+            title: "Jest",
             topics: [
-              'Test suites and specs',
-              'Matchers (all Jest matchers)',
-              'Mocking modules and functions',
-              'Snapshot testing',
-              'Timer mocks',
-              'Mock functions (jest.fn, jest.mock, etc.)'
+              "Test suites and specs",
+              "Matchers (all Jest matchers)",
+              "Mocking modules and functions",
+              "Snapshot testing",
+              "Timer mocks",
+              "Mock functions (jest.fn, jest.mock, etc.)",
             ],
-            content: 'jest'
+            content: "jest",
           },
           {
-            id: 'lesson-15-4',
-            title: 'E2E Testing',
-            topics: [
-              'Playwright',
-              'Cypress',
-              'Component testing'
-            ],
-            content: 'e2e-testing'
-          }
-        ]
-      }
-    ]
+            id: "lesson-15-4",
+            title: "E2E Testing",
+            topics: ["Playwright", "Cypress", "Component testing"],
+            content: "e2e-testing",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-11',
-    title: 'Phase 11: TypeScript Integration',
-    description: 'Week 16: Master TypeScript with React',
+    id: "phase-11",
+    title: "Phase 11: TypeScript Integration",
+    description: "Week 16: Master TypeScript with React",
     modules: [
       {
-        id: 'module-16',
-        title: 'Module 16: TypeScript with React',
+        id: "module-16",
+        title: "Module 16: TypeScript with React",
         lessons: [
           {
-            id: 'lesson-16-1',
-            title: 'Type Definitions',
+            id: "lesson-16-1",
+            title: "Type Definitions",
             topics: [
-              'FC, ReactNode, ReactElement',
-              'Props typing',
-              'Children typing',
-              'Event types (all synthetic events)',
-              'Ref types',
-              'Hook types'
+              "FC, ReactNode, ReactElement",
+              "Props typing",
+              "Children typing",
+              "Event types (all synthetic events)",
+              "Ref types",
+              "Hook types",
             ],
-            content: 'type-definitions'
+            content: "type-definitions",
           },
           {
-            id: 'lesson-16-2',
-            title: 'Advanced TypeScript',
+            id: "lesson-16-2",
+            title: "Advanced TypeScript",
             topics: [
-              'Generic components',
-              'Utility types (Partial, Pick, Omit, etc.)',
-              'Discriminated unions',
-              'Type guards',
-              'Context typing',
-              'HOC typing',
-              'Render props typing'
+              "Generic components",
+              "Utility types (Partial, Pick, Omit, etc.)",
+              "Discriminated unions",
+              "Type guards",
+              "Context typing",
+              "HOC typing",
+              "Render props typing",
             ],
-            content: 'advanced-typescript'
-          }
-        ]
-      }
-    ]
+            content: "advanced-typescript",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-12',
-    title: 'Phase 12: Build & Deploy',
-    description: 'Week 17: Master production optimization and deployment',
+    id: "phase-12",
+    title: "Phase 12: Build & Deploy",
+    description: "Week 17: Master production optimization and deployment",
     modules: [
       {
-        id: 'module-17',
-        title: 'Module 17: Production Optimization',
+        id: "module-17",
+        title: "Module 17: Production Optimization",
         lessons: [
           {
-            id: 'lesson-17-1',
-            title: 'Build Configuration',
+            id: "lesson-17-1",
+            title: "Build Configuration",
             topics: [
-              'Vite configuration',
-              'Environment variables',
-              'Build optimization',
-              'Asset optimization',
-              'Tree shaking',
-              'Code splitting strategies'
+              "Vite configuration",
+              "Environment variables",
+              "Build optimization",
+              "Asset optimization",
+              "Tree shaking",
+              "Code splitting strategies",
             ],
-            content: 'build-configuration'
+            content: "build-configuration",
           },
           {
-            id: 'lesson-17-2',
-            title: 'Deployment',
+            id: "lesson-17-2",
+            title: "Deployment",
             topics: [
-              'Vercel, Netlify, Railway',
-              'Docker containerization',
-              'CI/CD pipelines',
-              'Environment management',
-              'Performance monitoring'
+              "Vercel, Netlify, Railway",
+              "Docker containerization",
+              "CI/CD pipelines",
+              "Environment management",
+              "Performance monitoring",
             ],
-            content: 'deployment'
-          }
-        ]
-      }
-    ]
+            content: "deployment",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-13',
-    title: 'Phase 13: Advanced Topics',
-    description: 'Weeks 18-20: Master advanced React concepts and patterns',
+    id: "phase-13",
+    title: "Phase 13: Advanced Topics",
+    description: "Weeks 18-20: Master advanced React concepts and patterns",
     modules: [
       {
-        id: 'module-18',
-        title: 'Module 18: Animations',
+        id: "module-18",
+        title: "Module 18: Animations",
         lessons: [
           {
-            id: 'lesson-18-1',
-            title: 'Framer Motion',
+            id: "lesson-18-1",
+            title: "Framer Motion",
             topics: [
-              'Complete API coverage',
-              'Variants and animations',
-              'Gestures',
-              'Layout animations',
-              'Scroll animations'
+              "Complete API coverage",
+              "Variants and animations",
+              "Gestures",
+              "Layout animations",
+              "Scroll animations",
             ],
-            content: 'framer-motion'
+            content: "framer-motion",
           },
           {
-            id: 'lesson-18-2',
-            title: 'React Spring',
-            topics: [
-              'Springs and physics',
-              'Transitions',
-              'All hooks'
-            ],
-            content: 'react-spring'
+            id: "lesson-18-2",
+            title: "React Spring",
+            topics: ["Springs and physics", "Transitions", "All hooks"],
+            content: "react-spring",
           },
           {
-            id: 'lesson-18-3',
-            title: 'CSS Animations',
-            topics: [
-              'CSS transitions',
-              'CSS animations',
-              'Animation patterns'
-            ],
-            content: 'css-animations'
-          }
-        ]
+            id: "lesson-18-3",
+            title: "CSS Animations",
+            topics: ["CSS transitions", "CSS animations", "Animation patterns"],
+            content: "css-animations",
+          },
+        ],
       },
       {
-        id: 'module-19',
-        title: 'Module 19: Accessibility (a11y)',
+        id: "module-19",
+        title: "Module 19: Accessibility (a11y)",
         lessons: [
           {
-            id: 'lesson-19-1',
-            title: 'ARIA',
+            id: "lesson-19-1",
+            title: "ARIA",
             topics: [
-              'ARIA attributes',
-              'Semantic HTML',
-              'Keyboard navigation',
-              'Screen reader testing',
-              'Focus management',
-              'Live regions'
+              "ARIA attributes",
+              "Semantic HTML",
+              "Keyboard navigation",
+              "Screen reader testing",
+              "Focus management",
+              "Live regions",
             ],
-            content: 'aria'
+            content: "aria",
           },
           {
-            id: 'lesson-19-2',
-            title: 'Accessibility Tools',
-            topics: [
-              'axe DevTools',
-              'Lighthouse',
-              'Testing accessibility'
-            ],
-            content: 'accessibility-tools'
-          }
-        ]
+            id: "lesson-19-2",
+            title: "Accessibility Tools",
+            topics: ["axe DevTools", "Lighthouse", "Testing accessibility"],
+            content: "accessibility-tools",
+          },
+        ],
       },
       {
-        id: 'module-20',
-        title: 'Module 20: Internationalization (i18n)',
+        id: "module-20",
+        title: "Module 20: Internationalization (i18n)",
         lessons: [
           {
-            id: 'lesson-20-1',
-            title: 'react-i18next',
+            id: "lesson-20-1",
+            title: "react-i18next",
             topics: [
-              'Complete API',
-              'Translation management',
-              'Language switching',
-              'Pluralization',
-              'Formatting (dates, numbers)'
+              "Complete API",
+              "Translation management",
+              "Language switching",
+              "Pluralization",
+              "Formatting (dates, numbers)",
             ],
-            content: 'react-i18next'
-          }
-        ]
+            content: "react-i18next",
+          },
+        ],
       },
       {
-        id: 'module-21',
-        title: 'Module 21: Security',
+        id: "module-21",
+        title: "Module 21: Security",
         lessons: [
           {
-            id: 'lesson-21-1',
-            title: 'Security Best Practices',
+            id: "lesson-21-1",
+            title: "Security Best Practices",
             topics: [
-              'XSS prevention',
-              'CSRF protection',
-              'Content Security Policy',
-              'Secure authentication patterns',
-              'Input sanitization',
-              'Dependency security'
+              "XSS prevention",
+              "CSRF protection",
+              "Content Security Policy",
+              "Secure authentication patterns",
+              "Input sanitization",
+              "Dependency security",
             ],
-            content: 'security-best-practices'
-          }
-        ]
+            content: "security-best-practices",
+          },
+        ],
       },
       {
-        id: 'module-22',
-        title: 'Module 22: Advanced Patterns',
+        id: "module-22",
+        title: "Module 22: Advanced Patterns",
         lessons: [
           {
-            id: 'lesson-22-1',
-            title: 'Micro-frontends',
+            id: "lesson-22-1",
+            title: "Micro-frontends",
             topics: [
-              'Module federation',
-              'Independent deployments',
-              'Shared dependencies'
+              "Module federation",
+              "Independent deployments",
+              "Shared dependencies",
             ],
-            content: 'micro-frontends'
+            content: "micro-frontends",
           },
           {
-            id: 'lesson-22-2',
-            title: 'PWA',
+            id: "lesson-22-2",
+            title: "PWA",
             topics: [
-              'Service workers',
-              'Offline support',
-              'Web app manifest',
-              'Push notifications',
-              'Cache strategies'
+              "Service workers",
+              "Offline support",
+              "Web app manifest",
+              "Push notifications",
+              "Cache strategies",
             ],
-            content: 'pwa'
-          }
-        ]
+            content: "pwa",
+          },
+        ],
       },
       {
-        id: 'module-23',
-        title: 'Module 23: Real-time Features',
+        id: "module-23",
+        title: "Module 23: Real-time Features",
         lessons: [
           {
-            id: 'lesson-23-1',
-            title: 'WebSockets',
+            id: "lesson-23-1",
+            title: "WebSockets",
             topics: [
-              'Socket.io integration',
-              'Real-time updates',
-              'Reconnection handling'
+              "Socket.io integration",
+              "Real-time updates",
+              "Reconnection handling",
             ],
-            content: 'websockets'
+            content: "websockets",
           },
           {
-            id: 'lesson-23-2',
-            title: 'Server-Sent Events',
-            topics: [
-              'EventSource API',
-              'Live updates'
-            ],
-            content: 'server-sent-events'
-          }
-        ]
-      }
-    ]
+            id: "lesson-23-2",
+            title: "Server-Sent Events",
+            topics: ["EventSource API", "Live updates"],
+            content: "server-sent-events",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-14',
-    title: 'Phase 14: DevTools & Debugging',
-    description: 'Week 21: Master developer tools and debugging',
+    id: "phase-14",
+    title: "Phase 14: DevTools & Debugging",
+    description: "Week 21: Master developer tools and debugging",
     modules: [
       {
-        id: 'module-24',
-        title: 'Module 24: Developer Tools',
+        id: "module-24",
+        title: "Module 24: Developer Tools",
         lessons: [
           {
-            id: 'lesson-24-1',
-            title: 'React DevTools',
+            id: "lesson-24-1",
+            title: "React DevTools",
             topics: [
-              'Component tree inspection',
-              'Props and state inspection',
-              'Profiler',
-              'Performance monitoring',
-              'Debugging hooks'
+              "Component tree inspection",
+              "Props and state inspection",
+              "Profiler",
+              "Performance monitoring",
+              "Debugging hooks",
             ],
-            content: 'react-devtools'
+            content: "react-devtools",
           },
           {
-            id: 'lesson-24-2',
-            title: 'Browser DevTools',
+            id: "lesson-24-2",
+            title: "Browser DevTools",
             topics: [
-              'Performance profiling',
-              'Memory leaks detection',
-              'Network monitoring'
+              "Performance profiling",
+              "Memory leaks detection",
+              "Network monitoring",
             ],
-            content: 'browser-devtools'
-          }
-        ]
-      }
-    ]
+            content: "browser-devtools",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-15',
-    title: 'Phase 15: Recent Updates',
-    description: 'Week 22: React 19 - All New Features & APIs',
+    id: "phase-15",
+    title: "Phase 15: Recent Updates",
+    description: "Week 22: React 19 - All New Features & APIs",
     modules: [
       {
-        id: 'module-25',
-        title: 'Module 25: React 19 - Complete Coverage',
+        id: "module-25",
+        title: "Module 25: React 19 - Complete Coverage",
         lessons: [
           {
-            id: 'lesson-25-1',
-            title: 'React Compiler',
+            id: "lesson-25-1",
+            title: "React Compiler",
             topics: [
-              'Automatic optimization',
-              'Compiler configuration',
-              'Memoization improvements',
-              'Performance enhancements',
-              'Migration guide'
+              "Automatic optimization",
+              "Compiler configuration",
+              "Memoization improvements",
+              "Performance enhancements",
+              "Migration guide",
             ],
-            content: 'react-compiler'
+            content: "react-compiler",
           },
           {
-            id: 'lesson-25-2',
-            title: 'Actions & Form Handling',
+            id: "lesson-25-2",
+            title: "Actions & Form Handling",
             topics: [
-              'Form actions',
-              'useActionState hook',
-              'useFormStatus hook',
-              'Server actions',
-              'Progressive enhancement'
+              "Form actions",
+              "useActionState hook",
+              "useFormStatus hook",
+              "Server actions",
+              "Progressive enhancement",
             ],
-            content: 'actions-form-handling'
+            content: "actions-form-handling",
           },
           {
-            id: 'lesson-25-3',
-            title: 'useOptimistic Hook',
+            id: "lesson-25-3",
+            title: "useOptimistic Hook",
             topics: [
-              'Optimistic updates',
-              'useOptimistic API',
-              'UI responsiveness',
-              'Error handling',
-              'Rollback patterns'
+              "Optimistic updates",
+              "useOptimistic API",
+              "UI responsiveness",
+              "Error handling",
+              "Rollback patterns",
             ],
-            content: 'useoptimistic-hook'
+            content: "useoptimistic-hook",
           },
           {
-            id: 'lesson-25-4',
-            title: 'Document Metadata',
+            id: "lesson-25-4",
+            title: "Document Metadata",
             topics: [
-              'Built-in title support',
-              'Meta tags',
-              'Async metadata',
-              'Document head management',
-              'SEO improvements'
+              "Built-in title support",
+              "Meta tags",
+              "Async metadata",
+              "Document head management",
+              "SEO improvements",
             ],
-            content: 'document-metadata'
+            content: "document-metadata",
           },
           {
-            id: 'lesson-25-5',
-            title: 'Ref as Prop',
+            id: "lesson-25-5",
+            title: "Ref as Prop",
             topics: [
-              'Ref forwarding improvements',
-              'Ref prop support',
-              'Component refs',
-              'Forward ref patterns',
-              'TypeScript support'
+              "Ref forwarding improvements",
+              "Ref prop support",
+              "Component refs",
+              "Forward ref patterns",
+              "TypeScript support",
             ],
-            content: 'ref-as-prop'
+            content: "ref-as-prop",
           },
           {
-            id: 'lesson-25-6',
-            title: 'Context as Provider',
+            id: "lesson-25-6",
+            title: "Context as Provider",
             topics: [
-              'Context provider pattern',
-              'Context composition',
-              'Provider improvements',
-              'Performance optimizations',
-              'Multiple contexts'
+              "Context provider pattern",
+              "Context composition",
+              "Provider improvements",
+              "Performance optimizations",
+              "Multiple contexts",
             ],
-            content: 'context-as-provider'
+            content: "context-as-provider",
           },
           {
-            id: 'lesson-25-7',
-            title: 'Async Components',
+            id: "lesson-25-7",
+            title: "Async Components",
             topics: [
-              'Async component support',
-              'Promise handling',
-              'Suspense integration',
-              'Error boundaries',
-              'Loading states'
+              "Async component support",
+              "Promise handling",
+              "Suspense integration",
+              "Error boundaries",
+              "Loading states",
             ],
-            content: 'async-components'
+            content: "async-components",
           },
           {
-            id: 'lesson-25-8',
-            title: 'use Hook',
+            id: "lesson-25-8",
+            title: "use Hook",
             topics: [
-              'use() hook API',
-              'Promise unwrapping',
-              'Context reading',
-              'Suspense integration',
-              'Error handling'
+              "use() hook API",
+              "Promise unwrapping",
+              "Context reading",
+              "Suspense integration",
+              "Error handling",
             ],
-            content: 'use-hook'
+            content: "use-hook",
           },
           {
-            id: 'lesson-25-9',
-            title: 'Server Components (Stable)',
+            id: "lesson-25-9",
+            title: "Server Components (Stable)",
             topics: [
-              'Stable Server Components',
-              'RSC architecture',
-              'Client/Server boundaries',
-              'Data fetching',
-              'Streaming SSR'
+              "Stable Server Components",
+              "RSC architecture",
+              "Client/Server boundaries",
+              "Data fetching",
+              "Streaming SSR",
             ],
-            content: 'server-components-stable'
+            content: "server-components-stable",
           },
           {
-            id: 'lesson-25-10',
-            title: 'Improved Hydration',
+            id: "lesson-25-10",
+            title: "Improved Hydration",
             topics: [
-              'Better hydration errors',
-              'Error messages',
-              'Hydration mismatch detection',
-              'SSR improvements',
-              'Debugging tools'
+              "Better hydration errors",
+              "Error messages",
+              "Hydration mismatch detection",
+              "SSR improvements",
+              "Debugging tools",
             ],
-            content: 'improved-hydration'
+            content: "improved-hydration",
           },
           {
-            id: 'lesson-25-11',
-            title: 'Enhanced Suspense',
+            id: "lesson-25-11",
+            title: "Enhanced Suspense",
             topics: [
-              'Suspense improvements',
-              'Multiple boundaries',
-              'Nested Suspense',
-              'Error boundaries integration',
-              'Loading patterns'
+              "Suspense improvements",
+              "Multiple boundaries",
+              "Nested Suspense",
+              "Error boundaries integration",
+              "Loading patterns",
             ],
-            content: 'enhanced-suspense'
+            content: "enhanced-suspense",
           },
           {
-            id: 'lesson-25-12',
-            title: 'Asset Loading',
+            id: "lesson-25-12",
+            title: "Asset Loading",
             topics: [
-              'Resource hints',
-              'Preloading',
-              'Image optimization',
-              'Font loading',
-              'Performance improvements'
+              "Resource hints",
+              "Preloading",
+              "Image optimization",
+              "Font loading",
+              "Performance improvements",
             ],
-            content: 'asset-loading'
+            content: "asset-loading",
           },
           {
-            id: 'lesson-25-13',
-            title: 'Web Components',
+            id: "lesson-25-13",
+            title: "Web Components",
             topics: [
-              'Web Components support',
-              'Custom elements',
-              'Shadow DOM',
-              'Integration patterns',
-              'Event handling'
+              "Web Components support",
+              "Custom elements",
+              "Shadow DOM",
+              "Integration patterns",
+              "Event handling",
             ],
-            content: 'web-components'
+            content: "web-components",
           },
           {
-            id: 'lesson-25-14',
-            title: 'TypeScript Improvements',
+            id: "lesson-25-14",
+            title: "TypeScript Improvements",
             topics: [
-              'Better type inference',
-              'Ref types',
-              'Context types',
-              'Component types',
-              'Hook types'
+              "Better type inference",
+              "Ref types",
+              "Context types",
+              "Component types",
+              "Hook types",
             ],
-            content: 'typescript-improvements'
+            content: "typescript-improvements",
           },
           {
-            id: 'lesson-25-15',
-            title: 'Concurrent Features',
+            id: "lesson-25-15",
+            title: "Concurrent Features",
             topics: [
-              'Enhanced concurrent rendering',
-              'Automatic batching improvements',
-              'Transition API updates',
-              'Priority scheduling',
-              'Performance optimizations'
+              "Enhanced concurrent rendering",
+              "Automatic batching improvements",
+              "Transition API updates",
+              "Priority scheduling",
+              "Performance optimizations",
             ],
-            content: 'concurrent-features'
+            content: "concurrent-features",
           },
           {
-            id: 'lesson-25-16',
-            title: 'Error Boundaries Enhancements',
+            id: "lesson-25-16",
+            title: "Error Boundaries Enhancements",
             topics: [
-              'Improved error boundaries',
-              'Error recovery',
-              'Error reporting',
-              'Fallback UI patterns',
-              'Error boundary composition'
+              "Improved error boundaries",
+              "Error recovery",
+              "Error reporting",
+              "Fallback UI patterns",
+              "Error boundary composition",
             ],
-            content: 'error-boundaries-enhancements'
-          }
-        ]
-      }
-    ]
+            content: "error-boundaries-enhancements",
+          },
+        ],
+      },
+    ],
   },
   {
-    id: 'phase-16',
-    title: 'Phase 16: Interview Cheatsheet',
-    description: 'Complete React interview preparation guide - All concepts, patterns, and answers in one place',
+    id: "phase-16",
+    title: "Phase 16: Interview Cheatsheet",
+    description:
+      "Complete React interview preparation guide - All concepts, patterns, and answers in one place",
     modules: [
       {
-        id: 'module-26',
-        title: 'Module 26: Core Concepts & Fundamentals',
+        id: "module-26",
+        title: "Module 26: Core Concepts & Fundamentals",
         lessons: [
           {
-            id: 'lesson-26-1',
-            title: 'React Fundamentals Cheatsheet',
+            id: "lesson-26-1",
+            title: "React Fundamentals Cheatsheet",
             topics: [
-              'What is React and why use it?',
-              'Virtual DOM vs Real DOM',
-              'JSX syntax and transformations',
-              'Components: Function vs Class',
-              'Props and PropTypes',
-              'State vs Props',
-              'Component lifecycle (hooks equivalent)',
-              'Event handling and synthetic events',
-              'Conditional rendering patterns',
-              'Lists and keys',
-              'Forms: Controlled vs Uncontrolled',
-              'Common interview questions on fundamentals'
+              "What is React and why use it?",
+              "Virtual DOM vs Real DOM",
+              "JSX syntax and transformations",
+              "Components: Function vs Class",
+              "Props and PropTypes",
+              "State vs Props",
+              "Component lifecycle (hooks equivalent)",
+              "Event handling and synthetic events",
+              "Conditional rendering patterns",
+              "Lists and keys",
+              "Forms: Controlled vs Uncontrolled",
+              "Common interview questions on fundamentals",
             ],
-            content: 'interview-fundamentals'
-          }
-        ]
+            content: "interview-fundamentals",
+          },
+        ],
       },
       {
-        id: 'module-27',
-        title: 'Module 27: All React Hooks Reference',
+        id: "module-27",
+        title: "Module 27: All React Hooks Reference",
         lessons: [
           {
-            id: 'lesson-27-1',
-            title: 'Complete Hooks Cheatsheet',
+            id: "lesson-27-1",
+            title: "Complete Hooks Cheatsheet",
             topics: [
-              'useState: State management patterns',
-              'useEffect: Side effects and cleanup',
-              'useContext: Context API usage',
-              'useReducer: Complex state logic',
-              'useCallback: Memoizing functions',
-              'useMemo: Memoizing values',
-              'useRef: DOM refs and mutable values',
-              'useLayoutEffect: Synchronous effects',
-              'useImperativeHandle: Exposing refs',
-              'useDebugValue: Custom hook debugging',
-              'useId: Unique ID generation',
-              'useTransition: Concurrent updates',
-              'useDeferredValue: Deferred updates',
-              'useSyncExternalStore: External stores',
-              'useInsertionEffect: CSS-in-JS',
-              'useOptimistic: Optimistic updates (React 19)',
-              'use: Promise and context unwrapping (React 19)',
-              'Hook rules and best practices',
-              'Custom hooks patterns',
-              'Common hook interview questions'
+              "useState: State management patterns",
+              "useEffect: Side effects and cleanup",
+              "useContext: Context API usage",
+              "useReducer: Complex state logic",
+              "useCallback: Memoizing functions",
+              "useMemo: Memoizing values",
+              "useRef: DOM refs and mutable values",
+              "useLayoutEffect: Synchronous effects",
+              "useImperativeHandle: Exposing refs",
+              "useDebugValue: Custom hook debugging",
+              "useId: Unique ID generation",
+              "useTransition: Concurrent updates",
+              "useDeferredValue: Deferred updates",
+              "useSyncExternalStore: External stores",
+              "useInsertionEffect: CSS-in-JS",
+              "useOptimistic: Optimistic updates (React 19)",
+              "use: Promise and context unwrapping (React 19)",
+              "Hook rules and best practices",
+              "Custom hooks patterns",
+              "Common hook interview questions",
             ],
-            content: 'interview-hooks'
-          }
-        ]
+            content: "interview-hooks",
+          },
+        ],
       },
       {
-        id: 'module-28',
-        title: 'Module 28: Component Patterns & Best Practices',
+        id: "module-28",
+        title: "Module 28: Component Patterns & Best Practices",
         lessons: [
           {
-            id: 'lesson-28-1',
-            title: 'Advanced Patterns Cheatsheet',
+            id: "lesson-28-1",
+            title: "Advanced Patterns Cheatsheet",
             topics: [
-              'Higher-Order Components (HOC)',
-              'Render Props pattern',
-              'Compound Components',
-              'Controlled vs Uncontrolled components',
-              'Component composition patterns',
-              'Children prop patterns',
-              'Portal usage',
-              'Error Boundaries implementation',
-              'Code splitting with React.lazy',
-              'Suspense boundaries',
-              'Context API patterns',
-              'Custom hooks design',
-              'Component design principles',
-              'Reusability patterns',
-              'Common pattern interview questions'
+              "Higher-Order Components (HOC)",
+              "Render Props pattern",
+              "Compound Components",
+              "Controlled vs Uncontrolled components",
+              "Component composition patterns",
+              "Children prop patterns",
+              "Portal usage",
+              "Error Boundaries implementation",
+              "Code splitting with React.lazy",
+              "Suspense boundaries",
+              "Context API patterns",
+              "Custom hooks design",
+              "Component design principles",
+              "Reusability patterns",
+              "Common pattern interview questions",
             ],
-            content: 'interview-patterns'
-          }
-        ]
+            content: "interview-patterns",
+          },
+        ],
       },
       {
-        id: 'module-29',
-        title: 'Module 29: State Management Solutions',
+        id: "module-29",
+        title: "Module 29: State Management Solutions",
         lessons: [
           {
-            id: 'lesson-29-1',
-            title: 'State Management Cheatsheet',
+            id: "lesson-29-1",
+            title: "State Management Cheatsheet",
             topics: [
-              'useState vs useReducer: When to use',
-              'Context API: Pros and cons',
-              'Redux Toolkit: Complete guide',
-              'Zustand: Lightweight state management',
-              'Jotai: Atomic state management',
-              'Recoil: Facebook\'s state management',
-              'State management comparison',
-              'When to use external state management',
-              'State management patterns',
-              'Global vs local state',
-              'State normalization',
-              'State management interview questions'
+              "useState vs useReducer: When to use",
+              "Context API: Pros and cons",
+              "Redux Toolkit: Complete guide",
+              "Zustand: Lightweight state management",
+              "Jotai: Atomic state management",
+              "Recoil: Facebook's state management",
+              "State management comparison",
+              "When to use external state management",
+              "State management patterns",
+              "Global vs local state",
+              "State normalization",
+              "State management interview questions",
             ],
-            content: 'interview-state-management'
-          }
-        ]
+            content: "interview-state-management",
+          },
+        ],
       },
       {
-        id: 'module-30',
-        title: 'Module 30: Performance Optimization',
+        id: "module-30",
+        title: "Module 30: Performance Optimization",
         lessons: [
           {
-            id: 'lesson-30-1',
-            title: 'Performance Optimization Cheatsheet',
+            id: "lesson-30-1",
+            title: "Performance Optimization Cheatsheet",
             topics: [
-              'React.memo: Component memoization',
-              'useMemo vs useCallback: When to use',
-              'Code splitting strategies',
-              'Lazy loading components',
-              'Virtualization and windowing',
-              'Debouncing and throttling',
-              'Bundle size optimization',
-              'Image optimization',
-              'Re-render optimization',
-              'Profiling with React DevTools',
-              'Performance anti-patterns',
-              'Performance interview questions',
-              'Optimization checklist'
+              "React.memo: Component memoization",
+              "useMemo vs useCallback: When to use",
+              "Code splitting strategies",
+              "Lazy loading components",
+              "Virtualization and windowing",
+              "Debouncing and throttling",
+              "Bundle size optimization",
+              "Image optimization",
+              "Re-render optimization",
+              "Profiling with React DevTools",
+              "Performance anti-patterns",
+              "Performance interview questions",
+              "Optimization checklist",
             ],
-            content: 'interview-performance'
-          }
-        ]
+            content: "interview-performance",
+          },
+        ],
       },
       {
-        id: 'module-31',
-        title: 'Module 31: Common Interview Questions',
+        id: "module-31",
+        title: "Module 31: Common Interview Questions",
         lessons: [
           {
-            id: 'lesson-31-1',
-            title: 'Top Interview Questions & Answers',
+            id: "lesson-31-1",
+            title: "Top Interview Questions & Answers",
             topics: [
-              'What is React and its key features?',
-              'Explain Virtual DOM',
-              'Difference between state and props',
-              'What are React Hooks?',
-              'useEffect cleanup and dependencies',
-              'How does React handle events?',
-              'Explain React component lifecycle',
-              'What is JSX?',
-              'Controlled vs Uncontrolled components',
-              'Keys in React lists',
-              'Error Boundaries',
-              'React Router concepts',
-              'State management approaches',
-              'Performance optimization techniques',
-              'Testing React components',
-              'React 18/19 new features',
-              'Common coding challenges',
-              'System design questions for React apps'
+              "What is React and its key features?",
+              "Explain Virtual DOM",
+              "Difference between state and props",
+              "What are React Hooks?",
+              "useEffect cleanup and dependencies",
+              "How does React handle events?",
+              "Explain React component lifecycle",
+              "What is JSX?",
+              "Controlled vs Uncontrolled components",
+              "Keys in React lists",
+              "Error Boundaries",
+              "React Router concepts",
+              "State management approaches",
+              "Performance optimization techniques",
+              "Testing React components",
+              "React 18/19 new features",
+              "Common coding challenges",
+              "System design questions for React apps",
             ],
-            content: 'interview-questions'
-          }
-        ]
+            content: "interview-questions",
+          },
+        ],
       },
       {
-        id: 'module-32',
-        title: 'Module 32: TypeScript with React',
+        id: "module-32",
+        title: "Module 32: TypeScript with React",
         lessons: [
           {
-            id: 'lesson-32-1',
-            title: 'TypeScript React Cheatsheet',
+            id: "lesson-32-1",
+            title: "TypeScript React Cheatsheet",
             topics: [
-              'Component prop types',
-              'Function component types (FC, ReactNode)',
-              'Event handler types',
-              'Hook types',
-              'Ref types',
-              'Context types',
-              'Generic components',
-              'Utility types (Partial, Pick, Omit)',
-              'Type guards',
-              'Discriminated unions',
-              'HOC typing',
-              'Render props typing',
-              'Common TypeScript patterns',
-              'TypeScript interview questions'
+              "Component prop types",
+              "Function component types (FC, ReactNode)",
+              "Event handler types",
+              "Hook types",
+              "Ref types",
+              "Context types",
+              "Generic components",
+              "Utility types (Partial, Pick, Omit)",
+              "Type guards",
+              "Discriminated unions",
+              "HOC typing",
+              "Render props typing",
+              "Common TypeScript patterns",
+              "TypeScript interview questions",
             ],
-            content: 'interview-typescript'
-          }
-        ]
+            content: "interview-typescript",
+          },
+        ],
       },
       {
-        id: 'module-33',
-        title: 'Module 33: Testing Strategies',
+        id: "module-33",
+        title: "Module 33: Testing Strategies",
         lessons: [
           {
-            id: 'lesson-33-1',
-            title: 'Testing Cheatsheet',
+            id: "lesson-33-1",
+            title: "Testing Cheatsheet",
             topics: [
-              'React Testing Library best practices',
-              'Testing user interactions',
-              'Testing hooks',
-              'Testing context providers',
-              'Testing async operations',
-              'Mocking and stubbing',
-              'Snapshot testing',
-              'E2E testing strategies',
-              'Test coverage',
-              'Testing patterns',
-              'Common testing mistakes',
-              'Testing interview questions'
+              "React Testing Library best practices",
+              "Testing user interactions",
+              "Testing hooks",
+              "Testing context providers",
+              "Testing async operations",
+              "Mocking and stubbing",
+              "Snapshot testing",
+              "E2E testing strategies",
+              "Test coverage",
+              "Testing patterns",
+              "Common testing mistakes",
+              "Testing interview questions",
             ],
-            content: 'interview-testing'
-          }
-        ]
+            content: "interview-testing",
+          },
+        ],
       },
       {
-        id: 'module-34',
-        title: 'Module 34: Advanced Topics & React 19',
+        id: "module-34",
+        title: "Module 34: Advanced Topics & React 19",
         lessons: [
           {
-            id: 'lesson-34-1',
-            title: 'Advanced Topics Cheatsheet',
+            id: "lesson-34-1",
+            title: "Advanced Topics Cheatsheet",
             topics: [
-              'Concurrent Rendering',
-              'Suspense for data fetching',
-              'Server Components',
-              'React 19 new features',
-              'React Compiler',
-              'Actions and form handling',
-              'useOptimistic hook',
-              'Document metadata',
-              'Ref as prop',
-              'Context as provider',
-              'Async components',
-              'use hook',
-              'Web Components integration',
-              'Micro-frontends',
-              'PWA with React',
-              'Real-time features (WebSockets)',
-              'Advanced interview topics'
+              "Concurrent Rendering",
+              "Suspense for data fetching",
+              "Server Components",
+              "React 19 new features",
+              "React Compiler",
+              "Actions and form handling",
+              "useOptimistic hook",
+              "Document metadata",
+              "Ref as prop",
+              "Context as provider",
+              "Async components",
+              "use hook",
+              "Web Components integration",
+              "Micro-frontends",
+              "PWA with React",
+              "Real-time features (WebSockets)",
+              "Advanced interview topics",
             ],
-            content: 'interview-advanced'
-          }
-        ]
+            content: "interview-advanced",
+          },
+        ],
       },
       {
-        id: 'module-35',
-        title: 'Module 35: Common Pitfalls & Solutions',
+        id: "module-35",
+        title: "Module 35: Common Pitfalls & Solutions",
         lessons: [
           {
-            id: 'lesson-35-1',
-            title: 'Pitfalls & Solutions Cheatsheet',
+            id: "lesson-35-1",
+            title: "Pitfalls & Solutions Cheatsheet",
             topics: [
-              'Infinite re-render loops',
-              'Stale closures in hooks',
-              'Missing dependencies in useEffect',
-              'Mutating state directly',
-              'Forgetting keys in lists',
-              'Memory leaks',
-              'Performance issues',
-              'Context overuse',
-              'Prop drilling problems',
-              'State management mistakes',
-              'Common bugs and fixes',
-              'Debugging strategies',
-              'Best practices to avoid pitfalls'
+              "Infinite re-render loops",
+              "Stale closures in hooks",
+              "Missing dependencies in useEffect",
+              "Mutating state directly",
+              "Forgetting keys in lists",
+              "Memory leaks",
+              "Performance issues",
+              "Context overuse",
+              "Prop drilling problems",
+              "State management mistakes",
+              "Common bugs and fixes",
+              "Debugging strategies",
+              "Best practices to avoid pitfalls",
             ],
-            content: 'interview-pitfalls'
-          }
-        ]
+            content: "interview-pitfalls",
+          },
+        ],
       },
       {
-        id: 'module-36',
-        title: 'Module 36: Real-world Scenarios',
+        id: "module-36",
+        title: "Module 36: Real-world Scenarios",
         lessons: [
           {
-            id: 'lesson-36-1',
-            title: 'Real-world Scenarios Cheatsheet',
+            id: "lesson-36-1",
+            title: "Real-world Scenarios Cheatsheet",
             topics: [
-              'Building a todo app',
-              'Implementing authentication',
-              'Data fetching patterns',
-              'Form handling scenarios',
-              'Modal and dialog patterns',
-              'Infinite scroll implementation',
-              'Search and filter functionality',
-              'Pagination patterns',
-              'File upload handling',
-              'Real-time updates',
-              'Error handling strategies',
-              'Loading states management',
-              'Route protection',
-              'API integration patterns',
-              'State synchronization',
-              'Common feature implementations'
+              "Building a todo app",
+              "Implementing authentication",
+              "Data fetching patterns",
+              "Form handling scenarios",
+              "Modal and dialog patterns",
+              "Infinite scroll implementation",
+              "Search and filter functionality",
+              "Pagination patterns",
+              "File upload handling",
+              "Real-time updates",
+              "Error handling strategies",
+              "Loading states management",
+              "Route protection",
+              "API integration patterns",
+              "State synchronization",
+              "Common feature implementations",
             ],
-            content: 'interview-scenarios'
-          }
-        ]
+            content: "interview-scenarios",
+          },
+        ],
       },
       {
-        id: 'module-37',
-        title: 'Module 37: React Router',
+        id: "module-37",
+        title: "Module 37: React Router",
         lessons: [
           {
-            id: 'lesson-37-1',
-            title: 'React Router Cheatsheet',
+            id: "lesson-37-1",
+            title: "React Router Cheatsheet",
             topics: [
-              'Router setup and configuration',
-              'All Router hooks (useNavigate, useParams, useLocation, useSearchParams)',
-              'Route components and patterns',
-              'Nested routes and layouts',
-              'Protected routes and authentication',
-              'Dynamic routes and route parameters',
-              'Query strings and search params',
-              'Programmatic navigation',
-              'Route guards and redirects',
-              'Lazy loading routes',
-              'Route data loading patterns',
-              'Error boundaries with routes',
-              'Common React Router interview questions'
+              "Router setup and configuration",
+              "All Router hooks (useNavigate, useParams, useLocation, useSearchParams)",
+              "Route components and patterns",
+              "Nested routes and layouts",
+              "Protected routes and authentication",
+              "Dynamic routes and route parameters",
+              "Query strings and search params",
+              "Programmatic navigation",
+              "Route guards and redirects",
+              "Lazy loading routes",
+              "Route data loading patterns",
+              "Error boundaries with routes",
+              "Common React Router interview questions",
             ],
-            content: 'interview-router'
-          }
-        ]
+            content: "interview-router",
+          },
+        ],
       },
       {
-        id: 'module-38',
-        title: 'Module 38: Forms & Validation',
+        id: "module-38",
+        title: "Module 38: Forms & Validation",
         lessons: [
           {
-            id: 'lesson-38-1',
-            title: 'Forms & Validation Cheatsheet',
+            id: "lesson-38-1",
+            title: "Forms & Validation Cheatsheet",
             topics: [
-              'React Hook Form patterns',
-              'Formik patterns and API',
-              'Form validation strategies',
-              'Custom validation logic',
-              'Yup and Zod integration',
-              'Field arrays and nested forms',
-              'Form state management',
-              'Error handling in forms',
-              'Form submission patterns',
-              'Multi-step forms',
-              'Dynamic form fields',
-              'Form accessibility',
-              'Common form interview questions'
+              "React Hook Form patterns",
+              "Formik patterns and API",
+              "Form validation strategies",
+              "Custom validation logic",
+              "Yup and Zod integration",
+              "Field arrays and nested forms",
+              "Form state management",
+              "Error handling in forms",
+              "Form submission patterns",
+              "Multi-step forms",
+              "Dynamic form fields",
+              "Form accessibility",
+              "Common form interview questions",
             ],
-            content: 'interview-forms'
-          }
-        ]
+            content: "interview-forms",
+          },
+        ],
       },
       {
-        id: 'module-39',
-        title: 'Module 39: Data Fetching Libraries',
+        id: "module-39",
+        title: "Module 39: Data Fetching Libraries",
         lessons: [
           {
-            id: 'lesson-39-1',
-            title: 'Data Fetching Libraries Cheatsheet',
+            id: "lesson-39-1",
+            title: "Data Fetching Libraries Cheatsheet",
             topics: [
-              'React Query / TanStack Query patterns',
-              'useQuery, useMutation, useInfiniteQuery',
-              'Query invalidation strategies',
-              'Optimistic updates',
-              'Cache management',
-              'SWR patterns and hooks',
-              'Data fetching best practices',
-              'Error handling in data fetching',
-              'Loading states management',
-              'Refetching strategies',
-              'Parallel and dependent queries',
-              'Data fetching interview questions'
+              "React Query / TanStack Query patterns",
+              "useQuery, useMutation, useInfiniteQuery",
+              "Query invalidation strategies",
+              "Optimistic updates",
+              "Cache management",
+              "SWR patterns and hooks",
+              "Data fetching best practices",
+              "Error handling in data fetching",
+              "Loading states management",
+              "Refetching strategies",
+              "Parallel and dependent queries",
+              "Data fetching interview questions",
             ],
-            content: 'interview-data-fetching'
-          }
-        ]
+            content: "interview-data-fetching",
+          },
+        ],
       },
       {
-        id: 'module-40',
-        title: 'Module 40: React Internals',
+        id: "module-40",
+        title: "Module 40: React Internals",
         lessons: [
           {
-            id: 'lesson-40-1',
-            title: 'React Internals Cheatsheet',
+            id: "lesson-40-1",
+            title: "React Internals Cheatsheet",
             topics: [
-              'Reconciliation algorithm',
-              'Fiber architecture',
-              'Render phases (render and commit)',
-              'Diffing algorithm',
-              'Batching and scheduling',
-              'Priority levels in React',
-              'How React updates the DOM',
-              'Virtual DOM tree structure',
-              'Component tree reconciliation',
-              'Key prop and reconciliation',
-              'Render optimization internals',
-              'React internals interview questions'
+              "Reconciliation algorithm",
+              "Fiber architecture",
+              "Render phases (render and commit)",
+              "Diffing algorithm",
+              "Batching and scheduling",
+              "Priority levels in React",
+              "How React updates the DOM",
+              "Virtual DOM tree structure",
+              "Component tree reconciliation",
+              "Key prop and reconciliation",
+              "Render optimization internals",
+              "React internals interview questions",
             ],
-            content: 'interview-internals'
-          }
-        ]
+            content: "interview-internals",
+          },
+        ],
       },
       {
-        id: 'module-41',
-        title: 'Module 41: Architecture & Code Organization',
+        id: "module-41",
+        title: "Module 41: Architecture & Code Organization",
         lessons: [
           {
-            id: 'lesson-41-1',
-            title: 'Architecture & Organization Cheatsheet',
+            id: "lesson-41-1",
+            title: "Architecture & Organization Cheatsheet",
             topics: [
-              'Folder structure patterns',
-              'Component organization strategies',
-              'Feature-based vs type-based structure',
-              'Barrel exports (index.js)',
-              'Naming conventions',
-              'Code splitting strategies',
-              'Module boundaries',
-              'Shared component patterns',
-              'Utility functions organization',
-              'Configuration management',
-              'Environment variables',
-              'Scalable architecture patterns',
-              'Architecture interview questions'
+              "Folder structure patterns",
+              "Component organization strategies",
+              "Feature-based vs type-based structure",
+              "Barrel exports (index.js)",
+              "Naming conventions",
+              "Code splitting strategies",
+              "Module boundaries",
+              "Shared component patterns",
+              "Utility functions organization",
+              "Configuration management",
+              "Environment variables",
+              "Scalable architecture patterns",
+              "Architecture interview questions",
             ],
-            content: 'interview-architecture'
-          }
-        ]
+            content: "interview-architecture",
+          },
+        ],
       },
       {
-        id: 'module-42',
-        title: 'Module 42: Styling Approaches',
+        id: "module-42",
+        title: "Module 42: Styling Approaches",
         lessons: [
           {
-            id: 'lesson-42-1',
-            title: 'Styling Approaches Cheatsheet',
+            id: "lesson-42-1",
+            title: "Styling Approaches Cheatsheet",
             topics: [
-              'CSS Modules patterns',
-              'Styled-components patterns',
-              'Emotion patterns',
-              'Tailwind CSS utility-first approach',
-              'CSS-in-JS vs CSS Modules comparison',
-              'When to use each styling approach',
-              'Theming strategies',
-              'Dynamic styling patterns',
-              'Performance considerations',
-              'CSS organization',
-              'Responsive design patterns',
-              'Styling interview questions'
+              "CSS Modules patterns",
+              "Styled-components patterns",
+              "Emotion patterns",
+              "Tailwind CSS utility-first approach",
+              "CSS-in-JS vs CSS Modules comparison",
+              "When to use each styling approach",
+              "Theming strategies",
+              "Dynamic styling patterns",
+              "Performance considerations",
+              "CSS organization",
+              "Responsive design patterns",
+              "Styling interview questions",
             ],
-            content: 'interview-styling'
-          }
-        ]
+            content: "interview-styling",
+          },
+        ],
       },
       {
-        id: 'module-43',
-        title: 'Module 43: Security',
+        id: "module-43",
+        title: "Module 43: Security",
         lessons: [
           {
-            id: 'lesson-43-1',
-            title: 'Security Cheatsheet',
+            id: "lesson-43-1",
+            title: "Security Cheatsheet",
             topics: [
-              'XSS (Cross-Site Scripting) prevention',
-              'DangerouslySetInnerHTML risks',
-              'Input sanitization',
-              'CSRF protection',
-              'Content Security Policy (CSP)',
-              'Secure authentication patterns',
-              'Token storage best practices',
-              'Dependency security',
-              'Environment variable security',
-              'API security practices',
-              'Secure coding patterns',
-              'Security interview questions'
+              "XSS (Cross-Site Scripting) prevention",
+              "DangerouslySetInnerHTML risks",
+              "Input sanitization",
+              "CSRF protection",
+              "Content Security Policy (CSP)",
+              "Secure authentication patterns",
+              "Token storage best practices",
+              "Dependency security",
+              "Environment variable security",
+              "API security practices",
+              "Secure coding patterns",
+              "Security interview questions",
             ],
-            content: 'interview-security'
-          }
-        ]
+            content: "interview-security",
+          },
+        ],
       },
       {
-        id: 'module-44',
-        title: 'Module 44: Accessibility (a11y)',
+        id: "module-44",
+        title: "Module 44: Accessibility (a11y)",
         lessons: [
           {
-            id: 'lesson-44-1',
-            title: 'Accessibility Cheatsheet',
+            id: "lesson-44-1",
+            title: "Accessibility Cheatsheet",
             topics: [
-              'ARIA attributes and roles',
-              'Semantic HTML elements',
-              'Keyboard navigation patterns',
-              'Focus management',
-              'Screen reader compatibility',
-              'Accessible forms',
-              'Accessible modals and dialogs',
-              'Color contrast requirements',
-              'Alt text for images',
-              'Live regions and announcements',
-              'Testing accessibility',
-              'Accessibility interview questions'
+              "ARIA attributes and roles",
+              "Semantic HTML elements",
+              "Keyboard navigation patterns",
+              "Focus management",
+              "Screen reader compatibility",
+              "Accessible forms",
+              "Accessible modals and dialogs",
+              "Color contrast requirements",
+              "Alt text for images",
+              "Live regions and announcements",
+              "Testing accessibility",
+              "Accessibility interview questions",
             ],
-            content: 'interview-accessibility'
-          }
-        ]
+            content: "interview-accessibility",
+          },
+        ],
       },
       {
-        id: 'module-45',
-        title: 'Module 45: Build Tools & Deployment',
+        id: "module-45",
+        title: "Module 45: Build Tools & Deployment",
         lessons: [
           {
-            id: 'lesson-45-1',
-            title: 'Build Tools & Deployment Cheatsheet',
+            id: "lesson-45-1",
+            title: "Build Tools & Deployment Cheatsheet",
             topics: [
-              'Webpack vs Vite comparison',
-              'Bundle optimization strategies',
-              'Code splitting configuration',
-              'Tree shaking',
-              'Environment variables management',
-              'Production build optimization',
-              'Deployment platforms (Vercel, Netlify, AWS)',
-              'CI/CD pipelines for React',
-              'Docker containerization',
-              'Performance monitoring',
-              'Error tracking and logging',
-              'Build tools interview questions'
+              "Webpack vs Vite comparison",
+              "Bundle optimization strategies",
+              "Code splitting configuration",
+              "Tree shaking",
+              "Environment variables management",
+              "Production build optimization",
+              "Deployment platforms (Vercel, Netlify, AWS)",
+              "CI/CD pipelines for React",
+              "Docker containerization",
+              "Performance monitoring",
+              "Error tracking and logging",
+              "Build tools interview questions",
             ],
-            content: 'interview-build-deploy'
-          }
-        ]
+            content: "interview-build-deploy",
+          },
+        ],
       },
       {
-        id: 'module-46',
-        title: 'Module 46: Framework Comparisons',
+        id: "module-46",
+        title: "Module 46: Framework Comparisons",
         lessons: [
           {
-            id: 'lesson-46-1',
-            title: 'Framework Comparisons Cheatsheet',
+            id: "lesson-46-1",
+            title: "Framework Comparisons Cheatsheet",
             topics: [
-              'React vs Vue: Key differences',
-              'React vs Angular: Key differences',
-              'React vs Svelte comparison',
-              'When to choose React',
-              'Performance comparisons',
-              'Learning curve comparisons',
-              'Ecosystem comparisons',
-              'Job market considerations',
-              'Migration between frameworks',
-              'Framework-specific patterns',
-              'Framework comparison interview questions'
+              "React vs Vue: Key differences",
+              "React vs Angular: Key differences",
+              "React vs Svelte comparison",
+              "When to choose React",
+              "Performance comparisons",
+              "Learning curve comparisons",
+              "Ecosystem comparisons",
+              "Job market considerations",
+              "Migration between frameworks",
+              "Framework-specific patterns",
+              "Framework comparison interview questions",
             ],
-            content: 'interview-framework-comparison'
-          }
-        ]
+            content: "interview-framework-comparison",
+          },
+        ],
       },
       {
-        id: 'module-47',
-        title: 'Module 47: Version Migration',
+        id: "module-47",
+        title: "Module 47: Version Migration",
         lessons: [
           {
-            id: 'lesson-47-1',
-            title: 'Version Migration Cheatsheet',
+            id: "lesson-47-1",
+            title: "Version Migration Cheatsheet",
             topics: [
-              'React 16 to 17 migration',
-              'React 17 to 18 migration',
-              'React 18 to 19 migration',
-              'Breaking changes by version',
-              'New features by version',
-              'Migration strategies',
-              'Deprecated APIs',
-              'Component API changes',
-              'Hook changes by version',
-              'Concurrent features adoption',
-              'Migration checklist',
-              'Version migration interview questions'
+              "React 16 to 17 migration",
+              "React 17 to 18 migration",
+              "React 18 to 19 migration",
+              "Breaking changes by version",
+              "New features by version",
+              "Migration strategies",
+              "Deprecated APIs",
+              "Component API changes",
+              "Hook changes by version",
+              "Concurrent features adoption",
+              "Migration checklist",
+              "Version migration interview questions",
             ],
-            content: 'interview-migration'
-          }
-        ]
-      }
-    ]
-  }
+            content: "interview-migration",
+          },
+        ],
+      },
+      {
+        id: "module-48",
+        title: "Module 48: Debugging & Bug Fixing",
+        lessons: [
+          {
+            id: "lesson-48-1",
+            title: "Debugging Questions Cheatsheet",
+            topics: [
+              "Infinite re-render loops",
+              "State not updating immediately",
+              "Wrong useEffect dependencies",
+              "Infinite useEffect loops",
+              "Mutating state bugs",
+              "Key warning and list bugs",
+              "Stale closures in hooks",
+              "Controlled input issues",
+              "useCallback stale state",
+              "React.memo and object mutation",
+              "Conditional rendering crashes",
+              "API called multiple times",
+              "Using React DevTools and Profiler for debugging",
+              "Debugging re-renders in large apps",
+              "Structuring debugging answers for interviews",
+            ],
+            content: "interview-debugging",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 // Helper function to get all lessons
 export const getAllLessons = () => {
-  return phases.flatMap(phase => 
-    phase.modules.flatMap(module => 
-      module.lessons.map(lesson => ({
+  return phases.flatMap((phase) =>
+    phase.modules.flatMap((module) =>
+      module.lessons.map((lesson) => ({
         ...lesson,
         moduleId: module.id,
         moduleTitle: module.title,
         phaseId: phase.id,
-        phaseTitle: phase.title
+        phaseTitle: phase.title,
       }))
     )
   );
@@ -1948,17 +1948,21 @@ export const getAllLessons = () => {
 // Helper function to get lesson by ID
 export const getLessonById = (lessonId) => {
   const allLessons = getAllLessons();
-  return allLessons.find(lesson => lesson.id === lessonId);
+  return allLessons.find((lesson) => lesson.id === lessonId);
 };
 
 // Helper function to get next/previous lesson
 export const getNavigationLessons = (currentLessonId) => {
   const allLessons = getAllLessons();
-  const currentIndex = allLessons.findIndex(lesson => lesson.id === currentLessonId);
-  
+  const currentIndex = allLessons.findIndex(
+    (lesson) => lesson.id === currentLessonId
+  );
+
   return {
     previous: currentIndex > 0 ? allLessons[currentIndex - 1] : null,
-    next: currentIndex < allLessons.length - 1 ? allLessons[currentIndex + 1] : null
+    next:
+      currentIndex < allLessons.length - 1
+        ? allLessons[currentIndex + 1]
+        : null,
   };
 };
-

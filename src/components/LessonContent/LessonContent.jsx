@@ -111,6 +111,7 @@ import InterviewAccessibility from './lessons/InterviewAccessibility';
 import InterviewBuildDeploy from './lessons/InterviewBuildDeploy';
 import InterviewFrameworkComparison from './lessons/InterviewFrameworkComparison';
 import InterviewMigration from './lessons/InterviewMigration';
+import InterviewDebugging from './lessons/InterviewDebugging';
 
 const contentComponents = {
   'setup-environment': SetupEnvironment,
@@ -226,6 +227,7 @@ const contentComponents = {
   'interview-build-deploy': InterviewBuildDeploy,
   'interview-framework-comparison': InterviewFrameworkComparison,
   'interview-migration': InterviewMigration,
+  'interview-debugging': InterviewDebugging,
 };
 
 function LessonContent({ contentId }) {
