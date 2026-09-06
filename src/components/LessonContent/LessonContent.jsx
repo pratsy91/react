@@ -112,6 +112,7 @@ import InterviewBuildDeploy from './lessons/InterviewBuildDeploy';
 import InterviewFrameworkComparison from './lessons/InterviewFrameworkComparison';
 import InterviewMigration from './lessons/InterviewMigration';
 import InterviewDebugging from './lessons/InterviewDebugging';
+import InterviewQALesson from './lessons/InterviewQALesson';
 
 const contentComponents = {
   'setup-environment': SetupEnvironment,
@@ -231,6 +232,11 @@ const contentComponents = {
 };
 
 function LessonContent({ contentId }) {
+  if (contentId?.startsWith('interview-qa-')) {
+    const lessonContentId = contentId.replace('interview-qa-', '');
+    return <InterviewQALesson contentId={lessonContentId} />;
+  }
+
   const ContentComponent = contentComponents[contentId];
 
   if (!ContentComponent) {

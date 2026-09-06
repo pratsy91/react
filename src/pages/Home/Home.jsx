@@ -34,9 +34,12 @@ function Home() {
             <div className="space-y-6">
               {phase.modules.map(module => (
                 <div key={module.id} className="border-l-4 border-blue-500 pl-4">
-                  <h3 className="text-xl font-semibold text-gray-800 mb-3">
+                  <Link
+                    to={`/lesson/${module.lessons[0].id}`}
+                    className="text-xl font-semibold text-gray-800 mb-3 block hover:text-blue-600 transition-colors"
+                  >
                     {module.title}
-                  </h3>
+                  </Link>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {module.lessons.map(lesson => (
                       <Link

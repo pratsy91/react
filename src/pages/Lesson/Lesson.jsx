@@ -1,11 +1,39 @@
+import { Component, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getLessonById, getNavigationLessons } from '../../data/lessons';
 import LessonContent from '../../components/LessonContent/LessonContent';
+
+class ContentErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { error };
+  }
+
+  render() {
+    if (this.state.error) {
+      return (
+        <div className="text-center py-8">
+          <p className="text-red-600 font-semibold">Failed to load lesson content</p>
+          <p className="text-sm text-gray-500 mt-2">{this.state.error.message}</p>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 function Lesson() {
   const { lessonId } = useParams();
   const lesson = getLessonById(lessonId);
   const { previous, next } = getNavigationLessons(lessonId);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [lessonId]);
 
   if (!lesson) {
     return (
@@ -57,7 +85,9 @@ function Lesson() {
 
       {/* Lesson Content */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-        <LessonContent contentId={lesson.content} />
+        <ContentErrorBoundary key={lesson.content}>
+          <LessonContent contentId={lesson.content} />
+        </ContentErrorBoundary>
       </div>
 
       {/* Navigation */}

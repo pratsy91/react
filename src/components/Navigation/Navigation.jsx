@@ -29,7 +29,7 @@ function Navigation() {
               <button className="px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors">
                 Lessons
               </button>
-              <div className="absolute right-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="absolute right-0 mt-2 w-72 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 max-h-[70vh] overflow-y-auto">
                 <div className="py-2">
                   {phases.map(phase => (
                     <div key={phase.id} className="px-4 py-2">
@@ -38,9 +38,12 @@ function Navigation() {
                       </div>
                       {phase.modules.map(module => (
                         <div key={module.id} className="ml-2">
-                          <div className="text-xs font-medium text-gray-600 mb-1">
+                          <Link
+                            to={`/lesson/${module.lessons[0].id}`}
+                            className="text-xs font-medium text-gray-600 mb-1 block hover:text-blue-600"
+                          >
                             {module.title}
-                          </div>
+                          </Link>
                           {module.lessons.map(lesson => (
                             <Link
                               key={lesson.id}

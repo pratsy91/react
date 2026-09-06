@@ -1,4 +1,6 @@
-export const phases = [
+import { buildInterviewQuestionsPhase, isLearningPhase } from "./buildPhase17.js";
+
+export const corePhases = [
   {
     id: "phase-1",
     title: "Phase 1: Foundation & Core Concepts",
@@ -1928,6 +1930,11 @@ export const phases = [
       },
     ],
   },
+];
+
+export const phases = [
+  ...corePhases,
+  buildInterviewQuestionsPhase(corePhases.filter(isLearningPhase)),
 ];
 
 // Helper function to get all lessons
