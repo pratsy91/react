@@ -4,49 +4,39 @@ export const interviewQA = {
     title: "Setup & Environment — Most Asked Interview Questions",
     subtitle: "Phase 1: Foundation & Core Concepts · Module 1: React Fundamentals",
     level: "Junior to Senior",
-    tip: "When answering \"Setup & Environment\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Setup & Environment\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Why use Vite instead of Create React App in 2025?",
-    a: "CRA is deprecated. Vite 7 uses native ESM in dev for instant HMR, Rollup for production, and first-class React 19 support via @vitejs/plugin-react.",
+    q: "Q: Why use Vite instead of Create React App?",
+    a: "CRA is deprecated. Vite 7 uses native ESM in development for instant HMR, Rollup for production builds, and first-class React 19 support via @vitejs/plugin-react. Cold starts and rebuilds are much faster than Webpack-based CRA.",
     level: "Mid"
   },
   {
-    q: "Q: What is the role of ESLint and Prettier in a React project?",
-    a: "ESLint catches bugs and enforces patterns (e.g. hooks rules). Prettier formats code consistently.",
+    q: "Q: What is the role of ESLint and Prettier?",
+    a: "ESLint catches bugs and enforces rules (including react-hooks). Prettier formats code consistently. Together they reduce review noise and keep a React codebase maintainable.",
     level: "Junior"
   },
   {
     q: "Q: How do you structure a modern React + Vite project?",
-    a: "src/ for components, pages, hooks; public/ for static assets; vite.config.js; .env with VITE_ prefix for client vars.",
+    a: "src/ holds components, pages, hooks, and utils; public/ holds static assets; vite.config.js configures the build; .env files use the VITE_ prefix for client-exposed variables.",
     level: "Mid"
   },
   {
     q: "Q: What does the Vite dev server do differently from Webpack?",
-    a: "Vite serves ESM natively — no full bundle on startup. Transforms on demand for near-instant HMR.",
+    a: "Vite serves source as native ES modules and transforms files on demand. Webpack bundles the whole app on startup, which is slower for large projects.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Vite setup and configuration\" — how would you answer this in an interview?",
-    a: "When discussing Vite setup and configuration in Setup & Environment: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What does @vitejs/plugin-react provide?",
+    a: "It enables Fast Refresh, JSX transform (automatic runtime), and optional React Compiler / Babel plugins for a Vite React app.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Project structure and organization\" — how would you answer this in an interview?",
-    a: "When discussing Project structure and organization in Setup & Environment: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"ESLint, Prettier configuration\" — how would you answer this in an interview?",
-    a: "When discussing ESLint, Prettier configuration in Setup & Environment: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Understanding build tools and bundling\" — how would you answer this in an interview?",
-    a: "When discussing Understanding build tools and bundling in Setup & Environment: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How should environment variables be handled in Vite?",
+    a: "Prefix client vars with VITE_ and read them via import.meta.env. Never put secrets in VITE_ variables — they are embedded in the client bundle.",
     level: "Mid"
   }
         ],
@@ -57,59 +47,39 @@ export const interviewQA = {
     title: "JSX Deep Dive — Most Asked Interview Questions",
     subtitle: "Phase 1: Foundation & Core Concepts · Module 1: React Fundamentals",
     level: "Junior to Senior",
-    tip: "When answering \"JSX Deep Dive\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"JSX Deep Dive\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What is JSX? Does the browser understand it?",
-    a: "JSX is a syntax extension compiled by Vite/Babel to createElement or the automatic jsx runtime. Browsers do not parse JSX.",
+    a: "JSX is a syntax extension for describing UI in JavaScript. Browsers do not understand it — Vite/Babel compiles it to React.createElement or the automatic jsx runtime.",
     level: "Junior"
   },
   {
-    q: "Q: Why must list items have a unique key prop?",
-    a: "Keys identify items during reconciliation. Index keys break on reorder/filter causing state bugs.",
+    q: "Q: Why must list items have a unique key?",
+    a: "Keys let React identify which items changed, were added, or removed. Using array index as key on reorderable lists causes wrong state, lost focus, and UI bugs.",
     level: "Junior"
   },
   {
     q: "Q: What is reconciliation?",
-    a: "React compares new vs previous virtual tree and applies minimal DOM updates.",
+    a: "React compares the new element tree with the previous one and applies the minimal set of DOM updates. Same type → update props; different type → replace the subtree.",
     level: "Mid"
   },
   {
     q: "Q: Explain conditional rendering in JSX.",
-    a: "Ternary, &&, early return, or extracted subcomponents for complex conditions.",
+    a: "Use ternary for if/else, && for show-when-true (watch out for rendering 0), early returns for guards, or extract complex conditions into variables/components.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"JSX syntax and expressions\" — how would you answer this in an interview?",
-    a: "When discussing JSX syntax and expressions in JSX Deep Dive: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: What are Fragments and when do you use them?",
+    a: "Fragments group children without an extra DOM node. Use <>...</> or React.Fragment when you need multiple siblings without a wrapper div.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"JSX vs createElement\" — how would you answer this in an interview?",
-    a: "When discussing JSX vs createElement in JSX Deep Dive: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Fragments (`<>` and `<React.Fragment>`)\" — how would you answer this in an interview?",
-    a: "When discussing Fragments (`<>` and `<React.Fragment>`) in JSX Deep Dive: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"JSX transformations and Babel\" — how would you answer this in an interview?",
-    a: "When discussing JSX transformations and Babel in JSX Deep Dive: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Conditional rendering (ternary, &&, ||, if-else)\" — how would you answer this in an interview?",
-    a: "When discussing Conditional rendering (ternary, &&, ||, if-else) in JSX Deep Dive: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Lists and keys (key prop importance)\" — how would you answer this in an interview?",
-    a: "When discussing Lists and keys (key prop importance) in JSX Deep Dive: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: JSX vs createElement — what is the difference?",
+    a: "JSX is syntactic sugar. <div className=\"x\">Hi</div> compiles to createElement(\"div\", { className: \"x\" }, \"Hi\") or the equivalent jsx() call from react/jsx-runtime.",
     level: "Mid"
   }
         ],
@@ -120,59 +90,39 @@ export const interviewQA = {
     title: "Components — Most Asked Interview Questions",
     subtitle: "Phase 1: Foundation & Core Concepts · Module 1: React Fundamentals",
     level: "Junior to Senior",
-    tip: "When answering \"Components\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Components\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What is the difference between props and state?",
-    a: "Props are read-only from parent. State is internal and mutable via setState/useState.",
+    a: "Props are read-only inputs passed from parent to child. State is internal mutable data owned by a component and updated with useState, which triggers a re-render.",
     level: "Junior"
   },
   {
-    q: "Q: Can you mutate props?",
-    a: "No — one-way data flow. Parent owns state and passes callbacks.",
+    q: "Q: Can you mutate props in a child?",
+    a: "No. Props are immutable. The child requests changes through a callback; the parent owns the state.",
     level: "Junior"
   },
   {
     q: "Q: Function vs class components today?",
-    a: "Use function components with hooks (React 19). Classes only for error boundaries.",
+    a: "Prefer function components with hooks in React 19. Class components are legacy; the main remaining use is error boundaries.",
     level: "Mid"
   },
   {
     q: "Q: What is component composition?",
-    a: "Nest components and use children prop instead of inheritance.",
+    a: "Building UI by nesting components and using the children prop instead of inheritance. Composition keeps APIs flexible and reusable.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Function components\" — how would you answer this in an interview?",
-    a: "When discussing Function components in Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: What is the children prop?",
+    a: "children is whatever JSX is nested between a component’s tags. It enables layout/wrapper components without hard-coding content.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Component composition\" — how would you answer this in an interview?",
-    a: "When discussing Component composition in Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Props (passing, destructuring, default props)\" — how would you answer this in an interview?",
-    a: "When discussing Props (passing, destructuring, default props) in Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Children prop\" — how would you answer this in an interview?",
-    a: "When discussing Children prop in Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Props validation with PropTypes\" — how would you answer this in an interview?",
-    a: "When discussing Props validation with PropTypes in Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Component naming conventions\" — how would you answer this in an interview?",
-    a: "When discussing Component naming conventions in Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What are default props and how do you set them?",
+    a: "In function components, use default parameter values: function Button({ size = \"md\" }). PropTypes/defaultProps on functions are largely obsolete in modern React.",
     level: "Mid"
   }
         ],
@@ -183,60 +133,40 @@ export const interviewQA = {
     title: "State Management (useState) — Most Asked Interview Questions",
     subtitle: "Phase 1: Foundation & Core Concepts · Module 2: State & Events",
     level: "Junior to Senior",
-    tip: "When answering \"State Management (useState)\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"State Management (useState)\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: Explain useState and functional updates.",
-    a: "Returns [value, setter]. Use prev => when next state depends on previous value.",
+    a: "useState returns [value, setter]. Use setCount(prev => prev + 1) when the next value depends on the previous one, especially inside closures, intervals, or batched updates.",
     level: "Junior"
   },
   {
     q: "Q: Why does React batch state updates?",
-    a: "Performance — multiple setStates in one event become one re-render. React 18+ batches everywhere.",
+    a: "Batching merges multiple setState calls into one re-render for performance. React 18+ batches updates from events, promises, timeouts, and native handlers.",
     level: "Mid"
   },
   {
-    q: "Q: How update object/array state immutably?",
-    a: "Spread/copy: setUser(u => ({ ...u, name })). Never mutate state directly.",
+    q: "Q: How do you update object or array state immutably?",
+    a: "Always create a new reference: setUser(u => ({ ...u, name })) or setItems(items => [...items, next]). Mutating state in place will not reliably re-render.",
     level: "Junior"
   },
   {
     q: "Q: What is lazy initial state?",
-    a: "useState(() => expensive()) runs initializer once on mount.",
+    a: "Pass a function to useState: useState(() => expensive()). React runs it once on mount, not on every render.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"useState hook basics\" — how would you answer this in an interview?",
-    a: "When discussing useState hook basics in State Management (useState): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Multiple useState vs one object state?",
+    a: "Multiple primitives are clearer and update independently. Use one object (or useReducer) when fields always change together.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"State updates (functional updates)\" — how would you answer this in an interview?",
-    a: "When discussing State updates (functional updates) in State Management (useState): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"State batching\" — how would you answer this in an interview?",
-    a: "When discussing State batching in State Management (useState): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"State with objects and arrays\" — how would you answer this in an interview?",
-    a: "When discussing State with objects and arrays in State Management (useState): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Lazy initial state\" — how would you answer this in an interview?",
-    a: "When discussing Lazy initial state in State Management (useState): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Multiple state variables vs single object\" — how would you answer this in an interview?",
-    a: "When discussing Multiple state variables vs single object in State Management (useState): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Why does state not update immediately after setState?",
+    a: "Updates are asynchronous and scheduled. The new value appears on the next render. Read the latest value via the functional updater or in an effect.",
+    level: "Junior"
   }
         ],
       },
@@ -246,60 +176,40 @@ export const interviewQA = {
     title: "Event Handling — Most Asked Interview Questions",
     subtitle: "Phase 1: Foundation & Core Concepts · Module 2: State & Events",
     level: "Junior to Senior",
-    tip: "When answering \"Event Handling\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Event Handling\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What are synthetic events?",
-    a: "Cross-browser wrappers around native events. React 17+ attaches to root; no event pooling.",
+    a: "React wraps native browser events for a consistent cross-browser API. Since React 17, listeners attach to the root container and event pooling was removed.",
     level: "Mid"
   },
   {
     q: "Q: preventDefault vs stopPropagation?",
-    a: "preventDefault blocks default browser behavior. stopPropagation stops bubbling.",
+    a: "preventDefault stops the browser default action (e.g. form submit). stopPropagation stops the event from bubbling to parent handlers.",
     level: "Junior"
   },
   {
-    q: "Q: How pass arguments to handlers?",
-    a: "Arrow wrapper: onClick={() => handle(id)} — never invoke during render.",
+    q: "Q: How do you pass arguments to event handlers?",
+    a: "Use an arrow wrapper: onClick={() => handle(id)}. Calling handle(id) directly in JSX invokes it during render.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"All synthetic events (onClick, onChange, onSubmit, onFocus, onBlur, etc.)\" — how would you answer this in an interview?",
-    a: "When discussing All synthetic events (onClick, onChange, onSubmit, onFocus, onBlur, etc.) in Event Handling: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: What is event delegation in React?",
+    a: "React attaches most listeners at the root and dispatches to the matching fiber. You write handlers on elements, but React manages attachment efficiently.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Event object and properties\" — how would you answer this in an interview?",
-    a: "When discussing Event object and properties in Event Handling: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: How do keyboard and form events work in React?",
+    a: "Use onKeyDown/onKeyUp and onSubmit/onChange. For forms, call preventDefault in onSubmit to avoid a full page reload.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Event pooling (legacy)\" — how would you answer this in an interview?",
-    a: "When discussing Event pooling (legacy) in Event Handling: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"preventDefault and stopPropagation\" — how would you answer this in an interview?",
-    a: "When discussing preventDefault and stopPropagation in Event Handling: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Event delegation\" — how would you answer this in an interview?",
-    a: "When discussing Event delegation in Event Handling: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Custom event handlers\" — how would you answer this in an interview?",
-    a: "When discussing Custom event handlers in Event Handling: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Keyboard events, mouse events, touch events, form events\" — how would you answer this in an interview?",
-    a: "When discussing Keyboard events, mouse events, touch events, form events in Event Handling: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Do portal events bubble through the React tree?",
+    a: "Yes. Even if a portal renders into another DOM node, events bubble through the React parent tree, not only the DOM hierarchy.",
+    level: "Senior"
   }
         ],
       },
@@ -309,59 +219,39 @@ export const interviewQA = {
     title: "useEffect Hook — Most Asked Interview Questions",
     subtitle: "Phase 1: Foundation & Core Concepts · Module 3: Effects & Lifecycle",
     level: "Junior to Senior",
-    tip: "When answering \"useEffect Hook\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"useEffect Hook\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: When does useEffect run?",
-    a: "After paint. [] once; [deps] on change; cleanup before re-run/unmount.",
+    a: "After the browser paints. [] runs after mount; [deps] when dependencies change; no array runs after every render (usually a bug). Cleanup runs before the next effect and on unmount.",
     level: "Junior"
   },
   {
-    q: "Q: Common useEffect mistakes?",
-    a: "Missing deps, infinite loops, no cleanup, fetch races without abort.",
+    q: "Q: What are common useEffect mistakes?",
+    a: "Missing dependencies, infinite loops from setting state without proper deps, forgetting cleanup for subscriptions/timers, and fetch race conditions without AbortController.",
     level: "Mid"
   },
   {
-    q: "Q: useEffect vs data fetching libraries?",
-    a: "TanStack Query handles cache/dedup/retry — prefer over raw useEffect for server state.",
+    q: "Q: useEffect vs data-fetching libraries?",
+    a: "Raw useEffect fetch has no cache, deduplication, or retry. TanStack Query / SWR handle server state better for production apps.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Basic effects\" — how would you answer this in an interview?",
-    a: "When discussing Basic effects in useEffect Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you avoid race conditions when fetching?",
+    a: "Abort the previous request in cleanup with AbortController, or ignore stale responses with a cancelled flag / request id.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Cleanup functions\" — how would you answer this in an interview?",
-    a: "When discussing Cleanup functions in useEffect Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Can useEffect run during SSR?",
+    a: "No. Effects run only on the client after hydration. Put SSR data loading in loaders/Server Components, not useEffect.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Dependency arrays (empty, with deps, no array)\" — how would you answer this in an interview?",
-    a: "When discussing Dependency arrays (empty, with deps, no array) in useEffect Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Multiple effects\" — how would you answer this in an interview?",
-    a: "When discussing Multiple effects in useEffect Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Effect execution timing\" — how would you answer this in an interview?",
-    a: "When discussing Effect execution timing in useEffect Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Fetching data with useEffect\" — how would you answer this in an interview?",
-    a: "When discussing Fetching data with useEffect in useEffect Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Race conditions in effects\" — how would you answer this in an interview?",
-    a: "When discussing Race conditions in effects in useEffect Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What belongs in the dependency array?",
+    a: "Every reactive value from the component scope that the effect reads. The eslint-plugin-react-hooks exhaustive-deps rule helps catch mistakes.",
     level: "Mid"
   }
         ],
@@ -372,59 +262,39 @@ export const interviewQA = {
     title: "Component Lifecycle — Most Asked Interview Questions",
     subtitle: "Phase 1: Foundation & Core Concepts · Module 3: Effects & Lifecycle",
     level: "Junior to Senior",
-    tip: "When answering \"Component Lifecycle\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Component Lifecycle\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What is the component lifecycle with hooks?",
-    a: "Mount: render then useEffect. Update: re-render then effect if deps changed. Unmount: effect cleanup runs.",
+    a: "Mount: first render, then effects. Update: re-render when state/props/context change, then effects if deps changed. Unmount: effect cleanups run.",
     level: "Mid"
   },
   {
     q: "Q: What triggers a re-render?",
-    a: "State change in the component, parent re-render, or context value change for consumers.",
+    a: "State updates in the component, a parent re-render, or a context value change for consumers. React 19 Compiler can skip some unnecessary re-renders.",
     level: "Junior"
   },
   {
-    q: "Q: What does React Strict Mode do in development?",
-    a: "Double-invokes render and effects to expose missing cleanup. Production runs once.",
+    q: "Q: What does Strict Mode do in development?",
+    a: "It double-invokes render and effects to surface missing cleanup. Production builds run effects once per mount/update.",
     level: "Mid"
   },
   {
-    q: "Q: useEffect vs useLayoutEffect in lifecycle?",
-    a: "useEffect runs after paint. useLayoutEffect runs synchronously after DOM update before paint — for measurements.",
+    q: "Q: useEffect vs useLayoutEffect in the lifecycle?",
+    a: "useEffect runs after paint (non-blocking). useLayoutEffect runs synchronously after DOM mutations and before paint — use it for measurements.",
     level: "Mid"
   },
   {
     q: "Q: How do class lifecycle methods map to hooks?",
-    a: "componentDidMount → useEffect([], fn). componentDidUpdate → useEffect with deps. componentWillUnmount → return cleanup from effect.",
+    a: "componentDidMount ≈ useEffect([], fn). componentDidUpdate ≈ useEffect with deps. componentWillUnmount ≈ returning a cleanup from the effect.",
     level: "Mid"
   },
   {
     q: "Q: When does effect cleanup run?",
-    a: "Before the effect runs again (deps changed) and on component unmount. Required for timers, subscriptions, listeners.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Mount, update, unmount phases\" — how would you answer this in an interview?",
-    a: "When discussing Mount, update, unmount phases in Component Lifecycle: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Lifecycle equivalents in hooks\" — how would you answer this in an interview?",
-    a: "When discussing Lifecycle equivalents in hooks in Component Lifecycle: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Understanding re-renders\" — how would you answer this in an interview?",
-    a: "When discussing Understanding re-renders in Component Lifecycle: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Rendering behavior\" — how would you answer this in an interview?",
-    a: "When discussing Rendering behavior in Component Lifecycle: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    a: "Before the effect runs again when dependencies change, and when the component unmounts. Use it for timers, listeners, and subscriptions.",
     level: "Mid"
   }
         ],
@@ -435,54 +305,39 @@ export const interviewQA = {
     title: "useRef — Most Asked Interview Questions",
     subtitle: "Phase 2: Intermediate Hooks & Optimization · Module 4: All React Hooks",
     level: "Junior to Senior",
-    tip: "When answering \"useRef\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"useRef\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: useRef vs useState?",
-    a: "useRef persists without re-render — DOM refs, timers, mutable values.",
+    q: "Q: useRef vs useState — when to use each?",
+    a: "useState triggers a re-render when updated. useRef stores a mutable value that persists across renders without re-rendering — DOM nodes, timer ids, previous values.",
     level: "Junior"
   },
   {
     q: "Q: What is a callback ref?",
-    a: "ref={node => ...} for mount/unmount access — useful for measure/integrate libs.",
+    a: "A function form: ref={(node) => {...}}. React calls it with the DOM node on mount and null on unmount. Useful for measuring layout or integrating non-React libraries.",
     level: "Mid"
   },
   {
     q: "Q: ref as prop in React 19?",
-    a: "ref is a normal prop on function components — forwardRef often unnecessary.",
+    a: "Function components can accept ref like any other prop. forwardRef is still supported but often unnecessary in React 19.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"DOM references\" — how would you answer this in an interview?",
-    a: "When discussing DOM references in useRef: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Can changing ref.current cause a re-render?",
+    a: "No. Updating ref.current is a silent mutation. If the UI must update, use state instead.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Mutable values that persist\" — how would you answer this in an interview?",
-    a: "When discussing Mutable values that persist in useRef: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: What is useImperativeHandle?",
+    a: "Used with forwardRef to expose a custom imperative API to a parent (e.g. focus(), scrollTo()) instead of the raw DOM node.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Ref forwarding with forwardRef\" — how would you answer this in an interview?",
-    a: "When discussing Ref forwarding with forwardRef in useRef: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"useImperativeHandle\" — how would you answer this in an interview?",
-    a: "When discussing useImperativeHandle in useRef: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Callback refs\" — how would you answer this in an interview?",
-    a: "When discussing Callback refs in useRef: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Refs with TypeScript\" — how would you answer this in an interview?",
-    a: "When discussing Refs with TypeScript in useRef: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Common use cases for useRef?",
+    a: "Input focus, storing interval/timeout ids, keeping the latest callback without re-subscribing, and tracking previous prop/state values.",
     level: "Mid"
   }
         ],
@@ -493,55 +348,40 @@ export const interviewQA = {
     title: "useContext — Most Asked Interview Questions",
     subtitle: "Phase 2: Intermediate Hooks & Optimization · Module 4: All React Hooks",
     level: "Junior to Senior",
-    tip: "When answering \"useContext\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"useContext\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: How does useContext work?",
-    a: "Reads nearest Provider; re-renders when value changes.",
+    a: "It reads the nearest matching Provider above in the tree. When the Provider value changes, every consumer that uses that context re-renders.",
     level: "Junior"
   },
   {
-    q: "Q: Context performance pitfall?",
-    a: "All consumers re-render — split context or use selectors.",
+    q: "Q: What is the main Context performance pitfall?",
+    a: "A new object as value on every render re-renders all consumers. Fix by memoizing the value, splitting contexts, or using a store with selectors (Zustand/Redux).",
     level: "Mid"
   },
   {
-    q: "Q: Context vs props?",
-    a: "Context for global low-frequency data; props for local flow.",
+    q: "Q: When should you use Context vs props?",
+    a: "Context for app-wide, low-frequency data (theme, auth, locale). Props for parent–child data that stays local.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Creating context\" — how would you answer this in an interview?",
-    a: "When discussing Creating context in useContext: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you create Context?",
+    a: "const ThemeContext = createContext(defaultValue); wrap a tree with <ThemeContext value={theme}> (React 19) or .Provider, then call useContext(ThemeContext).",
+    level: "Junior"
+  },
+  {
+    q: "Q: Can you use multiple contexts?",
+    a: "Yes. Nest Providers or compose them. Prefer separate contexts per concern so updating theme does not re-render auth consumers.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Provider and Consumer\" — how would you answer this in an interview?",
-    a: "When discussing Provider and Consumer in useContext: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Multiple contexts\" — how would you answer this in an interview?",
-    a: "When discussing Multiple contexts in useContext: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Context composition\" — how would you answer this in an interview?",
-    a: "When discussing Context composition in useContext: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Dynamic context values\" — how would you answer this in an interview?",
-    a: "When discussing Dynamic context values in useContext: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Context with reducers\" — how would you answer this in an interview?",
-    a: "When discussing Context with reducers in useContext: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Context with useReducer pattern?",
+    a: "Put [state, dispatch] from useReducer in Context to share complex state without Redux. Memoize the provided value to limit re-renders.",
+    level: "Senior"
   }
         ],
       },
@@ -551,50 +391,40 @@ export const interviewQA = {
     title: "useReducer — Most Asked Interview Questions",
     subtitle: "Phase 2: Intermediate Hooks & Optimization · Module 4: All React Hooks",
     level: "Junior to Senior",
-    tip: "When answering \"useReducer\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"useReducer\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: useReducer vs useState?",
-    a: "useReducer for complex predictable state via actions.",
+    a: "useReducer shines for complex state, multiple related fields, or when updates are expressed as actions. useState is enough for simple independent values.",
     level: "Mid"
   },
   {
-    q: "Q: Reducer pattern?",
-    a: "Pure (state, action) => newState — testable and predictable.",
+    q: "Q: What is the reducer pattern?",
+    a: "A pure function (state, action) => newState. Same inputs always produce the same output, which makes logic easy to test and reason about.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Reducer pattern\" — how would you answer this in an interview?",
-    a: "When discussing Reducer pattern in useReducer: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: What does the action object look like?",
+    a: "Usually { type: \"INCREMENT\", payload: 1 }. The reducer switches on type and returns the next state immutably.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Actions and action types\" — how would you answer this in an interview?",
-    a: "When discussing Actions and action types in useReducer: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Can useReducer replace Redux?",
+    a: "For medium apps, useReducer + Context can replace a lot of Redux. Large apps often still prefer Redux Toolkit for DevTools, middleware, and RTK Query.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Complex state logic\" — how would you answer this in an interview?",
-    a: "When discussing Complex state logic in useReducer: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: What is the lazy init argument?",
+    a: "useReducer(reducer, initialArg, init) — init(initialArg) runs once to compute initial state (e.g. from localStorage).",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"useReducer vs useState\" — how would you answer this in an interview?",
-    a: "When discussing useReducer vs useState in useReducer: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Combining with context\" — how would you answer this in an interview?",
-    a: "When discussing Combining with context in useReducer: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Init function\" — how would you answer this in an interview?",
-    a: "When discussing Init function in useReducer: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: When combining Context and useReducer, what should you provide?",
+    a: "Often provide both state and dispatch. Dispatch is stable, so consumers that only need dispatch can avoid re-renders if you split contexts.",
+    level: "Senior"
   }
         ],
       },
@@ -604,44 +434,39 @@ export const interviewQA = {
     title: "useCallback — Most Asked Interview Questions",
     subtitle: "Phase 2: Intermediate Hooks & Optimization · Module 4: All React Hooks",
     level: "Junior to Senior",
-    tip: "When answering \"useCallback\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"useCallback\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What does useCallback do?",
-    a: "Memoizes function reference when deps unchanged.",
+    a: "It returns a memoized function that keeps the same reference until its dependency array changes. Equivalent to useMemo(() => fn, deps).",
     level: "Mid"
   },
   {
-    q: "Q: When use useCallback?",
-    a: "Stable callbacks for memo children or effect deps — measure first.",
+    q: "Q: When should you use useCallback?",
+    a: "When passing callbacks to React.memo children, or when a function is a dependency of useEffect/useMemo. Do not wrap every function by default.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Memoizing callbacks\" — how would you answer this in an interview?",
-    a: "When discussing Memoizing callbacks in useCallback: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What happens with empty dependency arrays?",
+    a: "The function is created once. If it closes over changing state without functional updates or refs, you get stale closures.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Does React 19 Compiler replace useCallback?",
+    a: "Often yes when the Compiler is enabled — it auto-memoizes. Know both approaches for interviews and non-Compiler codebases.",
+    level: "Senior"
+  },
+  {
+    q: "Q: useCallback vs defining a function inline?",
+    a: "Inline functions are new references every render. That breaks memoized children and can re-run effects that list the function as a dependency.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Dependency arrays\" — how would you answer this in an interview?",
-    a: "When discussing Dependency arrays in useCallback: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"When to use useCallback\" — how would you answer this in an interview?",
-    a: "When discussing When to use useCallback in useCallback: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Performance implications\" — how would you answer this in an interview?",
-    a: "When discussing Performance implications in useCallback: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Common pitfalls\" — how would you answer this in an interview?",
-    a: "When discussing Common pitfalls in useCallback: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Common misuse of useCallback?",
+    a: "Wrapping everything “for performance” without measuring, or forgetting dependencies so the callback uses stale values.",
     level: "Mid"
   }
         ],
@@ -652,44 +477,39 @@ export const interviewQA = {
     title: "useMemo — Most Asked Interview Questions",
     subtitle: "Phase 2: Intermediate Hooks & Optimization · Module 4: All React Hooks",
     level: "Junior to Senior",
-    tip: "When answering \"useMemo\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"useMemo\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What does useMemo do?",
-    a: "Caches computed values between renders when deps unchanged.",
+    a: "It caches a computed value between renders and recomputes only when dependencies change. Use it for expensive calculations or stable object/array references.",
     level: "Mid"
   },
   {
     q: "Q: useMemo vs useCallback?",
-    a: "Values vs functions — both preserve referential equality.",
+    a: "useMemo memoizes a value; useCallback memoizes a function. useCallback(fn, deps) is useMemo(() => fn, deps).",
     level: "Junior"
   },
   {
-    q: "Q: Explain \"Memoizing values\" — how would you answer this in an interview?",
-    a: "When discussing Memoizing values in useMemo: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Does useMemo prevent re-renders by itself?",
+    a: "No. It avoids recomputing a value. To skip child re-renders, pair a stable memoized prop with React.memo on the child.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Expensive calculations\" — how would you answer this in an interview?",
-    a: "When discussing Expensive calculations in useMemo: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: When is useMemo premature optimization?",
+    a: "For cheap calculations, or when deps change every render anyway. Profile first; React Compiler may remove the need for manual memoization.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Referential equality\" — how would you answer this in an interview?",
-    a: "When discussing Referential equality in useMemo: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What is referential equality and why does it matter?",
+    a: "Objects and functions compare by reference. Creating {} or [] inline each render breaks memo, memoized children, and effect dependency checks.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"When to use useMemo\" — how would you answer this in an interview?",
-    a: "When discussing When to use useMemo in useMemo: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Performance optimization\" — how would you answer this in an interview?",
-    a: "When discussing Performance optimization in useMemo: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Example of a good useMemo use case?",
+    a: "Filtering/sorting a large list, deriving a heavy chart dataset, or building a stable options object passed to a memoized child.",
     level: "Mid"
   }
         ],
@@ -700,39 +520,39 @@ export const interviewQA = {
     title: "useLayoutEffect — Most Asked Interview Questions",
     subtitle: "Phase 2: Intermediate Hooks & Optimization · Module 4: All React Hooks",
     level: "Junior to Senior",
-    tip: "When answering \"useLayoutEffect\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"useLayoutEffect\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: useLayoutEffect vs useEffect?",
-    a: "Layout runs sync before paint — for DOM measure/flicker prevention.",
+    a: "useLayoutEffect runs synchronously after DOM updates and before paint. useEffect runs after paint. Prefer useEffect unless you need to measure or adjust layout before the user sees a frame.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Synchronous effects\" — how would you answer this in an interview?",
-    a: "When discussing Synchronous effects in useLayoutEffect: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: When must you use useLayoutEffect?",
+    a: "Reading layout (getBoundingClientRect), preventing visual flicker, or syncing with libraries that require DOM measurements before paint.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"DOM measurements\" — how would you answer this in an interview?",
-    a: "When discussing DOM measurements in useLayoutEffect: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Does useLayoutEffect work on the server?",
+    a: "No. It warns during SSR. Guard with typeof window or use useEffect for universal code.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Can useLayoutEffect hurt performance?",
+    a: "Yes — it blocks painting. Keep work minimal; move non-visual side effects to useEffect.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Typical interview example for useLayoutEffect?",
+    a: "Measuring a tooltip position and setting state before paint so it appears in the correct place without jumping.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"useLayoutEffect vs useEffect\" — how would you answer this in an interview?",
-    a: "When discussing useLayoutEffect vs useEffect in useLayoutEffect: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Use cases and performance\" — how would you answer this in an interview?",
-    a: "When discussing Use cases and performance in useLayoutEffect: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is useLayoutEffect and why is it important in React 19?",
-    a: "useLayoutEffect is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
+    q: "Q: Cleanup in useLayoutEffect?",
+    a: "Same rules as useEffect: return a cleanup that runs before the next layout effect and on unmount.",
     level: "Mid"
   }
         ],
@@ -743,40 +563,40 @@ export const interviewQA = {
     title: "useDebugValue — Most Asked Interview Questions",
     subtitle: "Phase 2: Intermediate Hooks & Optimization · Module 4: All React Hooks",
     level: "Junior to Senior",
-    tip: "When answering \"useDebugValue\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"useDebugValue\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What is useDebugValue?",
-    a: "Custom label in DevTools for custom hooks — dev only.",
+    a: "It shows a custom label for a custom hook in React DevTools. Optional formatter: useDebugValue(value, v => format(v)).",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Custom hook debugging\" — how would you answer this in an interview?",
-    a: "When discussing Custom hook debugging in useDebugValue: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Where can you call useDebugValue?",
+    a: "Only inside custom hooks — not in regular components.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Formatting debug values\" — how would you answer this in an interview?",
-    a: "When discussing Formatting debug values in useDebugValue: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Is useDebugValue included in production?",
+    a: "It is a development aid and does not meaningfully affect production behavior.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"DevTools integration\" — how would you answer this in an interview?",
-    a: "When discussing DevTools integration in useDebugValue: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is useDebugValue and why is it important in React 19?",
-    a: "useDebugValue is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What are the most common useDebugValue interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how useDebugValue interacts with hooks, Suspense, or Server Components in modern React apps.",
+    q: "Q: Why use a formatter function?",
+    a: "So DevTools only formats the value when the hooks panel is open, avoiding expensive formatting on every render.",
     level: "Senior"
+  },
+  {
+    q: "Q: Example use case?",
+    a: "In useLocalStorage, show useDebugValue(value) so DevTools displays the stored value next to the hook name.",
+    level: "Mid"
+  },
+  {
+    q: "Q: Does useDebugValue change runtime behavior of the app?",
+    a: "No. It only affects what DevTools displays for debugging custom hooks.",
+    level: "Junior"
   }
         ],
       },
@@ -786,39 +606,39 @@ export const interviewQA = {
     title: "useId (React 18) — Most Asked Interview Questions",
     subtitle: "Phase 2: Intermediate Hooks & Optimization · Module 4: All React Hooks",
     level: "Junior to Senior",
-    tip: "When answering \"useId (React 18)\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"useId (React 18)\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What is useId?",
-    a: "SSR-safe unique IDs for accessibility attributes.",
+    a: "It generates a unique ID that is stable across server and client renders — ideal for htmlFor, aria-describedby, and other accessibility attributes.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Generating unique IDs\" — how would you answer this in an interview?",
-    a: "When discussing Generating unique IDs in useId (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Why not use Math.random() for IDs?",
+    a: "Random IDs differ between server HTML and client hydration, causing hydration mismatches.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"SSR compatibility\" — how would you answer this in an interview?",
-    a: "When discussing SSR compatibility in useId (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Can you use useId as a list key?",
+    a: "No. List keys should come from your data. useId is for accessibility/DOM id attributes.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Accessibility IDs\" — how would you answer this in an interview?",
-    a: "When discussing Accessibility IDs in useId (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Does useId work with SSR?",
+    a: "Yes. That is its main purpose — consistent IDs between server render and client hydration.",
     level: "Mid"
   },
   {
-    q: "Q: What is useId (React 18) and why is it important in React 19?",
-    a: "useId (React 18) is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
+    q: "Q: Can you call useId multiple times?",
+    a: "Yes. Each call produces a distinct ID within the component.",
+    level: "Junior"
   },
   {
-    q: "Q: What are the most common useId (React 18) interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how useId (React 18) interacts with hooks, Suspense, or Server Components in modern React apps.",
+    q: "Q: useId vs a counter ref?",
+    a: "A counter ref can break under SSR/concurrent rendering. useId is the React-supported API for unique, hydration-safe IDs.",
     level: "Senior"
   }
         ],
@@ -829,40 +649,40 @@ export const interviewQA = {
     title: "useTransition (React 18) — Most Asked Interview Questions",
     subtitle: "Phase 2: Intermediate Hooks & Optimization · Module 4: All React Hooks",
     level: "Junior to Senior",
-    tip: "When answering \"useTransition (React 18)\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"useTransition (React 18)\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What is useTransition?",
-    a: "[isPending, startTransition] — marks updates non-urgent.",
+    a: "It returns [isPending, startTransition]. Updates inside startTransition are marked non-urgent so React can keep the UI responsive.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Concurrent rendering\" — how would you answer this in an interview?",
-    a: "When discussing Concurrent rendering in useTransition (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: useTransition vs startTransition from react?",
+    a: "useTransition also gives isPending for loading UI. startTransition alone is enough when you do not need pending state.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Marking updates as transitions\" — how would you answer this in an interview?",
-    a: "When discussing Marking updates as transitions in useTransition (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Typical useTransition use cases?",
+    a: "Filtering large lists while typing, switching tabs with heavy content, or other UI updates that should not block input.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"isPending state\" — how would you answer this in an interview?",
-    a: "When discussing isPending state in useTransition (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What does isPending mean?",
+    a: "True while a transition update is in progress — use it to show a spinner or dim non-urgent UI.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Urgent vs non-urgent updates?",
+    a: "Typing into an input is urgent. Computing filtered results can be a transition so keystrokes stay snappy.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"UI responsiveness\" — how would you answer this in an interview?",
-    a: "When discussing UI responsiveness in useTransition (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is useTransition (React 18) and why is it important in React 19?",
-    a: "useTransition (React 18) is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
+    q: "Q: How does this relate to Concurrent React?",
+    a: "Transitions rely on interruptible rendering so React can pause low-priority work when higher-priority updates arrive.",
+    level: "Senior"
   }
         ],
       },
@@ -872,40 +692,40 @@ export const interviewQA = {
     title: "useDeferredValue (React 18) — Most Asked Interview Questions",
     subtitle: "Phase 2: Intermediate Hooks & Optimization · Module 4: All React Hooks",
     level: "Junior to Senior",
-    tip: "When answering \"useDeferredValue (React 18)\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"useDeferredValue (React 18)\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What is useDeferredValue?",
-    a: "Defers a value update integrated with concurrent rendering.",
+    a: "It returns a deferred version of a value. React may keep showing the previous value while preparing an update with the new one.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Deferring non-urgent updates\" — how would you answer this in an interview?",
-    a: "When discussing Deferring non-urgent updates in useDeferredValue (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Debouncing alternative\" — how would you answer this in an interview?",
-    a: "When discussing Debouncing alternative in useDeferredValue (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Performance optimization\" — how would you answer this in an interview?",
-    a: "When discussing Performance optimization in useDeferredValue (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is useDeferredValue (React 18) and why is it important in React 19?",
-    a: "useDeferredValue (React 18) is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What are the most common useDeferredValue (React 18) interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how useDeferredValue (React 18) interacts with hooks, Suspense, or Server Components in modern React apps.",
+    q: "Q: useDeferredValue vs debounce?",
+    a: "Debounce uses a fixed timer. useDeferredValue is integrated with React’s scheduler and can interrupt/resume work based on priority.",
     level: "Senior"
+  },
+  {
+    q: "Q: Typical use case?",
+    a: "Keep the input value immediate, but pass useDeferredValue(query) into an expensive filtered list.",
+    level: "Mid"
+  },
+  {
+    q: "Q: How do you show that a deferred update is pending?",
+    a: "Compare the live value to the deferred value (query !== deferredQuery) and show a pending indicator.",
+    level: "Mid"
+  },
+  {
+    q: "Q: useDeferredValue vs useTransition?",
+    a: "useTransition wraps the state update. useDeferredValue defers a value you already have (often from props or parent state).",
+    level: "Senior"
+  },
+  {
+    q: "Q: Does it replace memoization?",
+    a: "No. It helps keep the UI responsive. You may still memoize expensive list rendering, or rely on the React Compiler.",
+    level: "Mid"
   }
         ],
       },
@@ -915,44 +735,39 @@ export const interviewQA = {
     title: "useSyncExternalStore & useInsertionEffect (React 18) — Most Asked Interview Questions",
     subtitle: "Phase 2: Intermediate Hooks & Optimization · Module 4: All React Hooks",
     level: "Junior to Senior",
-    tip: "When answering \"useSyncExternalStore & useInsertionEffect (React 18)\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"useSyncExternalStore & useInsertionEffect (React 18)\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: useSyncExternalStore purpose?",
-    a: "Safe external store subscription in concurrent React.",
+    q: "Q: What is useSyncExternalStore?",
+    a: "A hook for subscribing to external stores safely under concurrent rendering. It prevents tearing by reading a consistent snapshot.",
     level: "Senior"
   },
   {
-    q: "Q: useInsertionEffect purpose?",
-    a: "Inject styles before layout — CSS-in-JS libraries.",
+    q: "Q: Who uses useSyncExternalStore?",
+    a: "Library authors and stores like Redux and Zustand use it under the hood. App code rarely needs it directly unless integrating a custom store or browser API.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"useSyncExternalStore: Subscribing to external stores\" — how would you answer this in an interview?",
-    a: "When discussing useSyncExternalStore: Subscribing to external stores in useSyncExternalStore & useInsertionEffect (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What is useInsertionEffect?",
+    a: "It runs before useLayoutEffect, intended for CSS-in-JS libraries to inject styles before layout measurements.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Why not subscribe to an external store with useEffect alone?",
+    a: "In concurrent mode you can tear (UI showing mixed old/new store values). useSyncExternalStore was designed to prevent that.",
+    level: "Senior"
+  },
+  {
+    q: "Q: What arguments does useSyncExternalStore take?",
+    a: "subscribe(callback), getSnapshot(), and optionally getServerSnapshot() for SSR.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Snapshot and subscribe functions\" — how would you answer this in an interview?",
-    a: "When discussing Snapshot and subscribe functions in useSyncExternalStore & useInsertionEffect (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Library integration\" — how would you answer this in an interview?",
-    a: "When discussing Library integration in useSyncExternalStore & useInsertionEffect (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"useInsertionEffect: CSS-in-JS libraries\" — how would you answer this in an interview?",
-    a: "When discussing useInsertionEffect: CSS-in-JS libraries in useSyncExternalStore & useInsertionEffect (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"DOM mutations before layout effects\" — how would you answer this in an interview?",
-    a: "When discussing DOM mutations before layout effects in useSyncExternalStore & useInsertionEffect (React 18): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: When would you use useInsertionEffect in app code?",
+    a: "Almost never — leave it to styling libraries. Prefer useEffect/useLayoutEffect in application components.",
     level: "Mid"
   }
         ],
@@ -963,40 +778,40 @@ export const interviewQA = {
     title: "React.memo — Most Asked Interview Questions",
     subtitle: "Phase 2: Intermediate Hooks & Optimization · Module 5: Performance Optimization",
     level: "Junior to Senior",
-    tip: "When answering \"React.memo\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"React.memo\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What does React.memo do?",
-    a: "Skips re-render if props shallow-equal.",
+    a: "It memoizes a component and skips re-rendering when props are shallowly equal to the previous props. You can pass a custom compare function.",
     level: "Mid"
   },
   {
-    q: "Q: When use React.memo?",
-    a: "Expensive components with stable props — profile first.",
+    q: "Q: When should you use React.memo?",
+    a: "For expensive components that often receive the same props, or list item components. Profile first — do not memo everything.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Component memoization\" — how would you answer this in an interview?",
-    a: "When discussing Component memoization in React.memo: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Why does memo fail with object/function props?",
+    a: "Inline objects and functions are new references each render, so shallow compare fails. Stabilize them with useMemo/useCallback or the Compiler.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Custom comparison functions\" — how would you answer this in an interview?",
-    a: "When discussing Custom comparison functions in React.memo: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: React.memo vs useMemo?",
+    a: "React.memo wraps a component. useMemo caches a value inside a component.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Does memo deep-compare props?",
+    a: "No — shallow compare by default. Nested object field changes need a new object reference or a custom comparator.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"When to use memo\" — how would you answer this in an interview?",
-    a: "When discussing When to use memo in React.memo: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Shallow comparison\" — how would you answer this in an interview?",
-    a: "When discussing Shallow comparison in React.memo: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: React 19 Compiler and memo?",
+    a: "The Compiler can automatically memoize components, reducing the need for manual React.memo in many cases.",
+    level: "Senior"
   }
         ],
       },
@@ -1006,45 +821,40 @@ export const interviewQA = {
     title: "Code Splitting — Most Asked Interview Questions",
     subtitle: "Phase 2: Intermediate Hooks & Optimization · Module 5: Performance Optimization",
     level: "Junior to Senior",
-    tip: "When answering \"Code Splitting\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Code Splitting\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: How code-split in React?",
-    a: "React.lazy + Suspense or dynamic import(). Vite splits chunks automatically.",
+    q: "Q: How do you code-split in React?",
+    a: "Use React.lazy(() => import(\"./Page\")) with <Suspense fallback={...}>, or dynamic import(). Vite emits separate chunks automatically.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"React.lazy\" — how would you answer this in an interview?",
-    a: "When discussing React.lazy in Code Splitting: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Route-based vs component-based splitting?",
+    a: "Route-based is most common — each page is a separate chunk. Component-based splits heavy modals, charts, or editors.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Suspense boundary\" — how would you answer this in an interview?",
-    a: "When discussing Suspense boundary in Code Splitting: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What goes in a Suspense fallback?",
+    a: "A spinner or skeleton that matches layout to reduce layout shift. Nested Suspense boundaries allow granular loading.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Dynamic imports\" — how would you answer this in an interview?",
-    a: "When discussing Dynamic imports in Code Splitting: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How does code splitting help performance?",
+    a: "Users download only the JS needed for the current route, improving initial load time and Time to Interactive.",
+    level: "Junior"
+  },
+  {
+    q: "Q: What if a lazy import fails?",
+    a: "Wrap with an error boundary (and optionally retry). Suspense alone does not handle load errors.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Route-based splitting\" — how would you answer this in an interview?",
-    a: "When discussing Route-based splitting in Code Splitting: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Component-based splitting\" — how would you answer this in an interview?",
-    a: "When discussing Component-based splitting in Code Splitting: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Error boundaries with lazy loading\" — how would you answer this in an interview?",
-    a: "When discussing Error boundaries with lazy loading in Code Splitting: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Named exports and React.lazy?",
+    a: "lazy expects a default export. For named exports, re-export a default or map: import(\"./m\").then(m => ({ default: m.Foo })).",
+    level: "Senior"
   }
         ],
       },
@@ -1054,45 +864,40 @@ export const interviewQA = {
     title: "Performance Patterns — Most Asked Interview Questions",
     subtitle: "Phase 2: Intermediate Hooks & Optimization · Module 5: Performance Optimization",
     level: "Junior to Senior",
-    tip: "When answering \"Performance Patterns\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Performance Patterns\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Optimize large lists?",
-    a: "Virtualization, pagination, memoized rows, stable keys.",
+    q: "Q: How do you optimize large lists in React?",
+    a: "Virtualize with react-window or TanStack Virtual so only visible rows render. Use stable keys and memoized row components.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Windowing/virtualization\" — how would you answer this in an interview?",
-    a: "When discussing Windowing/virtualization in Performance Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Debouncing vs throttling?",
+    a: "Debounce waits until activity pauses (search input). Throttle limits calls to once per interval (scroll handlers).",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Debouncing and throttling\" — how would you answer this in an interview?",
-    a: "When discussing Debouncing and throttling in Performance Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you analyze React performance?",
+    a: "React DevTools Profiler for re-renders, Chrome Performance for long tasks, and bundle analyzers for JS size.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Optimistic UI updates\" — how would you answer this in an interview?",
-    a: "When discussing Optimistic UI updates in Performance Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What is optimistic UI?",
+    a: "Update the UI immediately before the server responds, then rollback on failure. Improves perceived performance for likes, todos, etc.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Request deduplication\" — how would you answer this in an interview?",
-    a: "When discussing Request deduplication in Performance Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Image and asset optimizations?",
+    a: "Lazy-load images, use modern formats (WebP/AVIF), correct sizes, and preload critical assets.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Image lazy loading\" — how would you answer this in an interview?",
-    a: "When discussing Image lazy loading in Performance Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Bundle analysis and optimization\" — how would you answer this in an interview?",
-    a: "When discussing Bundle analysis and optimization in Performance Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Common performance anti-patterns?",
+    a: "Unnecessary context updates, inline objects breaking memo, fetching in every child, and shipping huge unused libraries.",
+    level: "Senior"
   }
         ],
       },
@@ -1102,40 +907,40 @@ export const interviewQA = {
     title: "Compound Components — Most Asked Interview Questions",
     subtitle: "Phase 3: Advanced Patterns & Architecture · Module 6: Advanced Component Patterns",
     level: "Junior to Senior",
-    tip: "When answering \"Compound Components\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Compound Components\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What are compound components?",
-    a: "Related components (Tabs.List, Tabs.Panel) sharing implicit state via Context.",
+    a: "A set of components that work together and share implicit state (often via Context), e.g. Tabs, Tabs.List, Tabs.Panel.",
     level: "Mid"
   },
   {
     q: "Q: Why use compound components?",
-    a: "Flexible API without prop explosion on one component.",
+    a: "They give a flexible API without prop-drilling every option into one mega-component. Consumers compose the pieces they need.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Implicit state sharing\" — how would you answer this in an interview?",
-    a: "When discussing Implicit state sharing in Compound Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How is state shared between compound parts?",
+    a: "Usually React Context inside the parent compound component. Children read/write shared state without explicit props.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Context in compound components\" — how would you answer this in an interview?",
-    a: "When discussing Context in compound components in Compound Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Compound components vs a single props API?",
+    a: "Single props APIs are simpler for basic cases. Compound components scale better for complex, configurable UI.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Flexible component APIs\" — how would you answer this in an interview?",
-    a: "When discussing Flexible component APIs in Compound Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Real-world examples?",
+    a: "Select menus, tabs, accordion, and menu systems (Radix/Headless UI style APIs).",
+    level: "Junior"
   },
   {
-    q: "Q: What is Compound Components and why is it important in React 19?",
-    a: "Compound Components is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
+    q: "Q: Pitfall of compound components?",
+    a: "Children must be used under the parent provider. Document the required structure and validate in development if needed.",
+    level: "Senior"
   }
         ],
       },
@@ -1145,40 +950,40 @@ export const interviewQA = {
     title: "Render Props — Most Asked Interview Questions",
     subtitle: "Phase 3: Advanced Patterns & Architecture · Module 6: Advanced Component Patterns",
     level: "Junior to Senior",
-    tip: "When answering \"Render Props\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Render Props\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: What is render props pattern?",
-    a: "Component receives function as prop/child to share state: <DataFetcher render={data => ...} />.",
+    q: "Q: What is the render props pattern?",
+    a: "A component accepts a function as a prop (or children) and calls it with state/data: <Mouse render={({ x, y }) => ...} />.",
     level: "Mid"
   },
   {
-    q: "Q: Render props vs hooks?",
-    a: "Hooks preferred today — render props still valid for inversion of control.",
+    q: "Q: Render props vs custom hooks?",
+    a: "Custom hooks are preferred for sharing logic in modern React. Render props still help when you need to invert control of rendering.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Function as children\" — how would you answer this in an interview?",
-    a: "When discussing Function as children in Render Props: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Function-as-children — is that render props?",
+    a: "Yes. children can be a function: <Data>{(data) => <List items={data} />}</Data>.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Downsides of render props?",
+    a: "Nesting can get deep (“callback hell”), and TypeScript typing is noisier than hooks.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Render prop pattern\" — how would you answer this in an interview?",
-    a: "When discussing Render prop pattern in Render Props: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: When might you still choose render props?",
+    a: "Headless UI libraries that separate behavior from presentation, or when consumers need full control of the rendered tree.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"HOC vs render props\" — how would you answer this in an interview?",
-    a: "When discussing HOC vs render props in Render Props: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is Render Props and why is it important in React 19?",
-    a: "Render Props is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
+    q: "Q: HOC vs render props vs hooks?",
+    a: "Hooks for logic reuse; render props for render inversion; HOCs for wrapping component trees. Prefer hooks in new React 19 code.",
+    level: "Senior"
   }
         ],
       },
@@ -1188,40 +993,40 @@ export const interviewQA = {
     title: "Higher-Order Components (HOC) — Most Asked Interview Questions",
     subtitle: "Phase 3: Advanced Patterns & Architecture · Module 6: Advanced Component Patterns",
     level: "Junior to Senior",
-    tip: "When answering \"Higher-Order Components (HOC)\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Higher-Order Components (HOC)\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: What is a HOC?",
-    a: "Function(Component) => EnhancedComponent — adds behavior/props.",
+    q: "Q: What is a Higher-Order Component (HOC)?",
+    a: "A function that takes a component and returns a new component with added behavior or props: withAuth(Profile).",
     level: "Mid"
   },
   {
     q: "Q: HOC vs custom hooks?",
-    a: "Prefer hooks for logic reuse; HOC when wrapping JSX tree.",
+    a: "Prefer custom hooks for reusable logic. Use an HOC when you need to wrap JSX structure or inject props around an existing component.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Creating HOCs\" — how would you answer this in an interview?",
-    a: "When discussing Creating HOCs in Higher-Order Components (HOC): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Common HOC pitfalls?",
+    a: "Wrapper hell, static prop collisions, broken refs without forwarding, and harder debugging of display names.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Props manipulation\" — how would you answer this in an interview?",
-    a: "When discussing Props manipulation in Higher-Order Components (HOC): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you preserve the display name?",
+    a: "Set Wrapped.displayName = `withX(${Component.displayName || Component.name})` for clearer DevTools.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Multiple HOCs composition\" — how would you answer this in an interview?",
-    a: "When discussing Multiple HOCs composition in Higher-Order Components (HOC): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Do you still need HOCs in React 19?",
+    a: "Less often. Hooks and composition cover most cases. Some libraries still expose HOCs for compatibility.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"HOC best practices and pitfalls\" — how would you answer this in an interview?",
-    a: "When discussing HOC best practices and pitfalls in Higher-Order Components (HOC): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Example HOC use case?",
+    a: "withLoading that shows a spinner when isLoading is true, otherwise renders the wrapped component.",
+    level: "Junior"
   }
         ],
       },
@@ -1231,45 +1036,40 @@ export const interviewQA = {
     title: "Custom Hooks — Most Asked Interview Questions",
     subtitle: "Phase 3: Advanced Patterns & Architecture · Module 6: Advanced Component Patterns",
     level: "Junior to Senior",
-    tip: "When answering \"Custom Hooks\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Custom Hooks\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: How create custom hooks?",
-    a: "Function starting with use calling other hooks — extracts reusable stateful logic.",
+    q: "Q: How do you create a custom hook?",
+    a: "Extract stateful logic into a function whose name starts with use and that calls other hooks. Return the values/APIs the component needs.",
     level: "Mid"
   },
   {
-    q: "Q: Rules of Hooks?",
-    a: "Top level only; only in React functions/custom hooks.",
+    q: "Q: What are the Rules of Hooks?",
+    a: "Call hooks only at the top level of React functions — not in loops, conditions, or nested functions. Only call them from components or other hooks.",
     level: "Junior"
   },
   {
-    q: "Q: Explain \"Creating custom hooks\" — how would you answer this in an interview?",
-    a: "When discussing Creating custom hooks in Custom Hooks: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Why must custom hooks start with use?",
+    a: "So lint rules and React tooling can enforce the Rules of Hooks and treat them as hooks.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Do custom hooks share state between components?",
+    a: "No. Each call gets its own state. They share logic, not a single state instance (unless they use a shared store/context).",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Hook composition\" — how would you answer this in an interview?",
-    a: "When discussing Hook composition in Custom Hooks: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you test custom hooks?",
+    a: "Use renderHook from React Testing Library, or test through a small harness component.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Hook testing\" — how would you answer this in an interview?",
-    a: "When discussing Hook testing in Custom Hooks: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Common custom hooks patterns\" — how would you answer this in an interview?",
-    a: "When discussing Common custom hooks patterns in Custom Hooks: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Sharing logic between components\" — how would you answer this in an interview?",
-    a: "When discussing Sharing logic between components in Custom Hooks: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Examples of good custom hooks?",
+    a: "useLocalStorage, useDebounce, useMediaQuery, useFetch (or prefer TanStack Query for server state).",
+    level: "Junior"
   }
         ],
       },
@@ -1279,39 +1079,39 @@ export const interviewQA = {
     title: "Controlled vs Uncontrolled Components — Most Asked Interview Questions",
     subtitle: "Phase 3: Advanced Patterns & Architecture · Module 6: Advanced Component Patterns",
     level: "Junior to Senior",
-    tip: "When answering \"Controlled vs Uncontrolled Components\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Controlled vs Uncontrolled Components\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: Controlled vs uncontrolled inputs?",
-    a: "Controlled: React state is source of truth. Uncontrolled: DOM/ref/FormData holds value.",
+    a: "Controlled: React state is the source of truth (value + onChange). Uncontrolled: the DOM holds the value; you read it via refs or FormData.",
     level: "Junior"
   },
   {
-    q: "Q: Explain \"Controlled inputs\" — how would you answer this in an interview?",
-    a: "When discussing Controlled inputs in Controlled vs Uncontrolled Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: When prefer controlled components?",
+    a: "When you need instant validation UI, disable submit based on values, or transform input as the user types.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Uncontrolled with refs\" — how would you answer this in an interview?",
-    a: "When discussing Uncontrolled with refs in Controlled vs Uncontrolled Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: When prefer uncontrolled components?",
+    a: "Simple forms, file inputs (always uncontrolled), performance-sensitive large forms (React Hook Form’s default approach), and FormData/Actions.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"When to use each\" — how would you answer this in an interview?",
-    a: "When discussing When to use each in Controlled vs Uncontrolled Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Can a component be both?",
+    a: "Sometimes — defaultValue for initial uncontrolled value, then switch to controlled. Mixing without care causes React warnings.",
+    level: "Senior"
+  },
+  {
+    q: "Q: How do file inputs work?",
+    a: "File inputs are uncontrolled. Use ref or FormData; you cannot set file value programmatically for security reasons.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"File inputs and special cases\" — how would you answer this in an interview?",
-    a: "When discussing File inputs and special cases in Controlled vs Uncontrolled Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is Controlled vs Uncontrolled Components and why is it important in React 19?",
-    a: "Controlled vs Uncontrolled Components is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
+    q: "Q: Why does React Hook Form prefer uncontrolled?",
+    a: "Fewer re-renders — it registers inputs via refs instead of putting every keystroke into React state.",
     level: "Mid"
   }
         ],
@@ -1322,40 +1122,40 @@ export const interviewQA = {
     title: "Portal — Most Asked Interview Questions",
     subtitle: "Phase 3: Advanced Patterns & Architecture · Module 6: Advanced Component Patterns",
     level: "Junior to Senior",
-    tip: "When answering \"Portal\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Portal\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What are React Portals?",
-    a: "createPortal renders elsewhere in DOM but keeps React tree/events.",
+    a: "createPortal(child, domNode) renders children into a different DOM node while keeping them in the React tree for context and events.",
     level: "Mid"
   },
   {
-    q: "Q: Portal use cases?",
-    a: "Modals, tooltips, dropdowns escaping overflow:hidden.",
+    q: "Q: Common portal use cases?",
+    a: "Modals, tooltips, dropdowns, and toasts that must escape overflow:hidden or stacking-context parents.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"createPortal\" — how would you answer this in an interview?",
-    a: "When discussing createPortal in Portal: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Do events bubble from a portal?",
+    a: "Yes, through the React tree (logical parent), even if the DOM parent is different.",
+    level: "Senior"
+  },
+  {
+    q: "Q: How do you create a portal?",
+    a: "ReactDOM.createPortal(<Modal />, document.getElementById(\"modal-root\")).",
+    level: "Junior"
+  },
+  {
+    q: "Q: Accessibility concerns with modals/portals?",
+    a: "Trap focus, restore focus on close, use aria-modal, and close on Escape.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Rendering outside parent\" — how would you answer this in an interview?",
-    a: "When discussing Rendering outside parent in Portal: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Modal and tooltip patterns\" — how would you answer this in an interview?",
-    a: "When discussing Modal and tooltip patterns in Portal: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Event bubbling through portals\" — how would you answer this in an interview?",
-    a: "When discussing Event bubbling through portals in Portal: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: SSR and portals?",
+    a: "Ensure the target DOM node exists. On the server you may render null and create the portal after mount.",
+    level: "Senior"
   }
         ],
       },
@@ -1365,49 +1165,39 @@ export const interviewQA = {
     title: "Error Boundaries — Most Asked Interview Questions",
     subtitle: "Phase 3: Advanced Patterns & Architecture · Module 7: Error Handling & Boundaries",
     level: "Junior to Senior",
-    tip: "When answering \"Error Boundaries\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Error Boundaries\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: What are error boundaries?",
-    a: "Catch render errors in children — class components with getDerivedStateFromError.",
+    q: "Q: What are Error Boundaries?",
+    a: "Components that catch render/lifecycle errors in their child tree and show a fallback UI instead of crashing the whole app.",
     level: "Mid"
   },
   {
-    q: "Q: What errors are NOT caught?",
-    a: "Event handlers, async, SSR — use try/catch there.",
+    q: "Q: Can Error Boundaries be hooks?",
+    a: "No. They require class methods: getDerivedStateFromError and componentDidCatch. There is no hook equivalent yet.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"getDerivedStateFromError\" — how would you answer this in an interview?",
-    a: "When discussing getDerivedStateFromError in Error Boundaries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What errors do they NOT catch?",
+    a: "Errors in event handlers, async code, SSR, and the boundary’s own render. Use try/catch for those.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"componentDidCatch (class-based)\" — how would you answer this in an interview?",
-    a: "When discussing componentDidCatch (class-based) in Error Boundaries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Where should you place Error Boundaries?",
+    a: "Around routes, widgets, and risky third-party components — not only one global boundary — so the rest of the app stays usable.",
+    level: "Senior"
+  },
+  {
+    q: "Q: getDerivedStateFromError vs componentDidCatch?",
+    a: "getDerivedStateFromError updates state for fallback UI during render. componentDidCatch is for side effects like logging.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Error boundary placement\" — how would you answer this in an interview?",
-    a: "When discussing Error boundary placement in Error Boundaries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Fallback UI\" — how would you answer this in an interview?",
-    a: "When discussing Fallback UI in Error Boundaries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Error reporting\" — how would you answer this in an interview?",
-    a: "When discussing Error reporting in Error Boundaries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"React 18+ error handling improvements\" — how would you answer this in an interview?",
-    a: "When discussing React 18+ error handling improvements in Error Boundaries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you recover from an error boundary?",
+    a: "Provide a “Try again” button that resets boundary state, or navigate to a safe route.",
     level: "Mid"
   }
         ],
@@ -1418,40 +1208,40 @@ export const interviewQA = {
     title: "Error Handling Patterns — Most Asked Interview Questions",
     subtitle: "Phase 3: Advanced Patterns & Architecture · Module 7: Error Handling & Boundaries",
     level: "Junior to Senior",
-    tip: "When answering \"Error Handling Patterns\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Error Handling Patterns\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Handle errors in async/event code?",
-    a: "try/catch, error state for UI, log to monitoring (Sentry).",
+    q: "Q: How do you handle errors in event handlers?",
+    a: "Error boundaries do not catch them — use try/catch, set error state for UI, and log to a service like Sentry.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Try-catch in event handlers\" — how would you answer this in an interview?",
-    a: "When discussing Try-catch in event handlers in Error Handling Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you handle async errors?",
+    a: "try/catch around await, .catch on promises, and map failures to user-friendly messages without leaking internals.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Error handling in async code\" — how would you answer this in an interview?",
-    a: "When discussing Error handling in async code in Error Handling Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What is graceful degradation?",
+    a: "Keep core UI usable when a non-critical feature fails — show a partial error state instead of a blank page.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Graceful degradation\" — how would you answer this in an interview?",
-    a: "When discussing Graceful degradation in Error Handling Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Error logging best practices?",
+    a: "Capture stack, user context, release version; scrub PII; alert on spikes. Do not only console.log in production.",
+    level: "Senior"
+  },
+  {
+    q: "Q: How do forms surface validation vs server errors?",
+    a: "Client validation for fast feedback; server errors shown near fields or as a form-level message after submit.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Error logging services integration\" — how would you answer this in an interview?",
-    a: "When discussing Error logging services integration in Error Handling Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is Error Handling Patterns and why is it important in React 19?",
-    a: "Error Handling Patterns is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
+    q: "Q: Retry strategies?",
+    a: "Idempotent GETs can retry with backoff. Mutations need care — avoid duplicate creates without idempotency keys.",
+    level: "Senior"
   }
         ],
       },
@@ -1461,45 +1251,40 @@ export const interviewQA = {
     title: "Concurrent Rendering — Most Asked Interview Questions",
     subtitle: "Phase 4: React 18 Concurrent Features · Module 8: Concurrent React",
     level: "Junior to Senior",
-    tip: "When answering \"Concurrent Rendering\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Concurrent Rendering\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What is Concurrent React?",
-    a: "Interruptible rendering — urgent updates prioritized (React 18+ with createRoot).",
+    a: "React can interrupt, pause, and resume rendering. Urgent updates (typing, clicks) take priority over non-urgent ones (filtering large lists). Enabled with createRoot in React 18+.",
     level: "Mid"
   },
   {
-    q: "Q: Automatic batching in React 18?",
-    a: "All setStates batch — promises, timeouts, native events.",
+    q: "Q: What is automatic batching in React 18?",
+    a: "All state updates in the same tick are batched into one re-render — including updates inside promises and timeouts.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Automatic batching\" — how would you answer this in an interview?",
-    a: "When discussing Automatic batching in Concurrent Rendering: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: createRoot vs ReactDOM.render?",
+    a: "createRoot enables concurrent features. ReactDOM.render is legacy and does not turn on the concurrent model.",
+    level: "Junior"
+  },
+  {
+    q: "Q: What is interruptible rendering?",
+    a: "React may stop a low-priority render mid-way when a higher-priority update arrives, then continue later.",
+    level: "Senior"
+  },
+  {
+    q: "Q: How do transitions relate to concurrency?",
+    a: "startTransition marks updates as interruptible/non-urgent so the UI stays responsive.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"startTransition API\" — how would you answer this in an interview?",
-    a: "When discussing startTransition API in Concurrent Rendering: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Concurrent features overview\" — how would you answer this in an interview?",
-    a: "When discussing Concurrent features overview in Concurrent Rendering: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Interruptible rendering\" — how would you answer this in an interview?",
-    a: "When discussing Interruptible rendering in Concurrent Rendering: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Priority-based rendering\" — how would you answer this in an interview?",
-    a: "When discussing Priority-based rendering in Concurrent Rendering: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Does concurrency change how you write components?",
+    a: "Mostly write pure components and correct effect deps. Use transitions/deferred values where heavy updates block the UI.",
+    level: "Senior"
   }
         ],
       },
@@ -1509,40 +1294,40 @@ export const interviewQA = {
     title: "Suspense — Most Asked Interview Questions",
     subtitle: "Phase 4: React 18 Concurrent Features · Module 8: Concurrent React",
     level: "Junior to Senior",
-    tip: "When answering \"Suspense\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Suspense\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What is Suspense?",
-    a: "Shows fallback while children load — code splitting and data (with framework support).",
+    a: "A boundary that shows fallback UI while children are loading — originally for React.lazy, extended for data loading with framework support.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Suspense for code splitting\" — how would you answer this in an interview?",
-    a: "When discussing Suspense for code splitting in Suspense: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Suspense for code splitting?",
+    a: "Wrap lazy components: <Suspense fallback={<Spinner />}><LazyPage /></Suspense>.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Suspense for data fetching?",
+    a: "Works when the data source integrates with Suspense (framework loaders, Relay, TanStack Query suspense mode). Plain useEffect fetch does not suspend by itself.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Multiple Suspense boundaries?",
+    a: "Yes — nest them so the shell loads fast while slower sections stream or load independently.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Suspense for data fetching\" — how would you answer this in an interview?",
-    a: "When discussing Suspense for data fetching in Suspense: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Suspense vs Error Boundaries?",
+    a: "Suspense handles loading states; Error Boundaries handle thrown errors. Use both around async UI.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Multiple Suspense boundaries\" — how would you answer this in an interview?",
-    a: "When discussing Multiple Suspense boundaries in Suspense: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Suspense best practices\" — how would you answer this in an interview?",
-    a: "When discussing Suspense best practices in Suspense: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"SuspenseList (experimental)\" — how would you answer this in an interview?",
-    a: "When discussing SuspenseList (experimental) in Suspense: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: What is a good fallback?",
+    a: "Skeletons matching content layout reduce layout shift better than a generic spinner alone.",
+    level: "Junior"
   }
         ],
       },
@@ -1552,39 +1337,39 @@ export const interviewQA = {
     title: "Server Components (React Server Components) — Most Asked Interview Questions",
     subtitle: "Phase 4: React 18 Concurrent Features · Module 8: Concurrent React",
     level: "Junior to Senior",
-    tip: "When answering \"Server Components (React Server Components)\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Server Components (React Server Components)\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: What are React Server Components?",
-    a: "Run on server — zero client JS for that component, access DB directly, stream HTML.",
+    q: "Q: What are React Server Components (RSC)?",
+    a: "Components that run only on the server. They can access databases/files directly and send zero client JS for that component’s code.",
     level: "Senior"
   },
   {
-    q: "Q: RSC vs Client Components?",
-    a: "Server: data/static. Client: interactivity, hooks, browser APIs.",
+    q: "Q: Client vs Server Components?",
+    a: "Server: data fetching and static/non-interactive UI. Client (\"use client\"): hooks, events, browser APIs.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Understanding RSC\" — how would you answer this in an interview?",
-    a: "When discussing Understanding RSC in Server Components (React Server Components): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Can Server Components use useState?",
+    a: "No. Hooks like useState/useEffect are client-only. Pass data as props to Client Components for interactivity.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Client vs Server components\" — how would you answer this in an interview?",
-    a: "When discussing Client vs Server components in Server Components (React Server Components): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do props cross the server/client boundary?",
+    a: "Only serializable props. Functions and class instances cannot be passed from Server to Client Components.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Primary adoption path for RSC?",
+    a: "Next.js App Router is the main production path. React 19 stabilizes the RSC model for frameworks.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Use cases and benefits\" — how would you answer this in an interview?",
-    a: "When discussing Use cases and benefits in Server Components (React Server Components): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Limitations and considerations\" — how would you answer this in an interview?",
-    a: "When discussing Limitations and considerations in Server Components (React Server Components): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Benefits of RSC?",
+    a: "Smaller client bundles, secrets stay on the server, and data fetching closer to the source without extra API hops.",
     level: "Mid"
   }
         ],
@@ -1595,40 +1380,40 @@ export const interviewQA = {
     title: "Transitions — Most Asked Interview Questions",
     subtitle: "Phase 4: React 18 Concurrent Features · Module 8: Concurrent React",
     level: "Junior to Senior",
-    tip: "When answering \"Transitions\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Transitions\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: startTransition use case?",
-    a: "Mark filter/search updates non-urgent while input stays responsive.",
+    q: "Q: What is startTransition used for?",
+    a: "Marking state updates as non-urgent so React can keep urgent updates (like typing) responsive.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"useTransition hook deep dive\" — how would you answer this in an interview?",
-    a: "When discussing useTransition hook deep dive in Transitions: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: useTransition deep dive — what does it return?",
+    a: "[isPending, startTransition]. isPending is true while the transition is in flight.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"startTransition function\" — how would you answer this in an interview?",
-    a: "When discussing startTransition function in Transitions: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Urgent vs non-urgent updates?",
+    a: "Urgent: input text, clicks. Non-urgent: filtering results, switching a heavy view. Put the latter in a transition.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Urgent vs non-urgent updates\" — how would you answer this in an interview?",
-    a: "When discussing Urgent vs non-urgent updates in Transitions: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: How do you show loading during a transition?",
+    a: "Use isPending to dim content or show a lightweight pending indicator without blocking input.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Loading states management\" — how would you answer this in an interview?",
-    a: "When discussing Loading states management in Transitions: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Can transitions be nested or interrupted?",
+    a: "Yes — newer urgent updates can interrupt in-progress transitions under concurrent rendering.",
+    level: "Senior"
   },
   {
-    q: "Q: What is Transitions and why is it important in React 19?",
-    a: "Transitions is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
+    q: "Q: transition vs debounce?",
+    a: "Debounce delays by time. Transitions are priority-based and cooperate with React’s scheduler.",
+    level: "Senior"
   }
         ],
       },
@@ -1638,40 +1423,40 @@ export const interviewQA = {
     title: "Router Setup — Most Asked Interview Questions",
     subtitle: "Phase 5: Routing & Navigation · Module 9: React Router",
     level: "Junior to Senior",
-    tip: "When answering \"Router Setup\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Router Setup\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: BrowserRouter vs createBrowserRouter?",
-    a: "Data router (RR 7) supports loaders, actions, errorElement — recommended for production.",
+    a: "BrowserRouter is the simpler component API. createBrowserRouter (React Router 7 data router) supports loaders, actions, and errorElement — preferred for production apps.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"BrowserRouter, HashRouter, MemoryRouter\" — how would you answer this in an interview?",
-    a: "When discussing BrowserRouter, HashRouter, MemoryRouter in Router Setup: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What is RouterProvider?",
+    a: "The component that takes a data router from createBrowserRouter and provides routing context to the app.",
+    level: "Junior"
+  },
+  {
+    q: "Q: HashRouter vs BrowserRouter?",
+    a: "BrowserRouter uses clean HTML5 history URLs (needs server fallback). HashRouter uses #/ paths and works on static hosts without rewrite rules.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"RouterProvider (v6.4+)\" — how would you answer this in an interview?",
-    a: "When discussing RouterProvider (v6.4+) in Router Setup: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What is createRoutesFromElements?",
+    a: "A helper to define data-router routes using JSX <Route> elements instead of plain objects.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"createBrowserRouter\" — how would you answer this in an interview?",
-    a: "When discussing createBrowserRouter in Router Setup: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: MemoryRouter use case?",
+    a: "Tests and non-browser environments — keeps history in memory without touching the address bar.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"createRoutesFromElements\" — how would you answer this in an interview?",
-    a: "When discussing createRoutesFromElements in Router Setup: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is Router Setup and why is it important in React 19?",
-    a: "Router Setup is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
+    q: "Q: React Router 7 highlights?",
+    a: "Unified data APIs, loaders/actions, better framework-mode options, and continued support for SPA routing.",
+    level: "Senior"
   }
         ],
       },
@@ -1681,60 +1466,40 @@ export const interviewQA = {
     title: "All Router Components & Hooks — Most Asked Interview Questions",
     subtitle: "Phase 5: Routing & Navigation · Module 9: React Router",
     level: "Junior to Senior",
-    tip: "When answering \"All Router Components & Hooks\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"All Router Components & Hooks\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: Explain useNavigate, useParams, useLocation, useSearchParams.",
-    a: "Navigate programmatically; read :params; location object; query string read/write.",
+    a: "useNavigate for programmatic navigation; useParams for :id segments; useLocation for pathname/state; useSearchParams for query strings.",
     level: "Junior"
   },
   {
     q: "Q: Link vs NavLink?",
-    a: "NavLink adds active styling when route matches.",
+    a: "Both navigate client-side. NavLink applies active styles when the route matches — ideal for nav menus.",
     level: "Junior"
   },
   {
-    q: "Q: Explain \"Routes, Route\" — how would you answer this in an interview?",
-    a: "When discussing Routes, Route in All Router Components & Hooks: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What is Outlet?",
+    a: "Renders the matched child route inside a parent layout — enables nested routing with shared chrome.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Link, NavLink\" — how would you answer this in an interview?",
-    a: "When discussing Link, NavLink in All Router Components & Hooks: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What does Navigate do?",
+    a: "Declarative redirect component. Useful in protected routes: if (!user) return <Navigate to=\"/login\" replace />.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Navigate\" — how would you answer this in an interview?",
-    a: "When discussing Navigate in All Router Components & Hooks: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: useOutletContext?",
+    a: "Shares values from a parent layout route to child routes rendered in Outlet without prop drilling.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Outlet\" — how would you answer this in an interview?",
-    a: "When discussing Outlet in All Router Components & Hooks: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"useNavigate\" — how would you answer this in an interview?",
-    a: "When discussing useNavigate in All Router Components & Hooks: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"useLocation\" — how would you answer this in an interview?",
-    a: "When discussing useLocation in All Router Components & Hooks: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"useParams\" — how would you answer this in an interview?",
-    a: "When discussing useParams in All Router Components & Hooks: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"useSearchParams\" — how would you answer this in an interview?",
-    a: "When discussing useSearchParams in All Router Components & Hooks: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: useMatch / useResolvedPath?",
+    a: "useMatch checks if a pattern matches the current location; useResolvedPath resolves relative paths — useful for active states and nested links.",
+    level: "Senior"
   }
         ],
       },
@@ -1744,59 +1509,39 @@ export const interviewQA = {
     title: "Advanced Routing — Most Asked Interview Questions",
     subtitle: "Phase 5: Routing & Navigation · Module 9: React Router",
     level: "Junior to Senior",
-    tip: "When answering \"Advanced Routing\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Advanced Routing\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: How implement protected routes?",
-    a: "Auth wrapper returning Navigate or loader redirect in data router.",
+    q: "Q: How do you implement protected routes?",
+    a: "A layout route that checks auth and renders <Outlet /> or redirects with Navigate. With data routers, loaders can throw redirect().",
     level: "Mid"
   },
   {
     q: "Q: What are route loaders?",
-    a: "Fetch data before render — useLoaderData in component.",
+    a: "Functions that load data before the route renders. Components read data with useLoaderData — fewer useEffect fetches.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Nested routes\" — how would you answer this in an interview?",
-    a: "When discussing Nested routes in Advanced Routing: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What are route actions?",
+    a: "Handle form mutations for a route. Pair with React Router Form and useActionData / useFetcher.",
+    level: "Senior"
+  },
+  {
+    q: "Q: How do you lazy-load routes?",
+    a: "route.lazy or React.lazy + Suspense. Vite splits each dynamic import into its own chunk.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Dynamic routes\" — how would you answer this in an interview?",
-    a: "When discussing Dynamic routes in Advanced Routing: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Nested and layout routes?",
+    a: "Parent route renders shared UI + Outlet; children fill the outlet. Index routes render at the parent path.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Protected routes\" — how would you answer this in an interview?",
-    a: "When discussing Protected routes in Advanced Routing: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Route guards\" — how would you answer this in an interview?",
-    a: "When discussing Route guards in Advanced Routing: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Lazy loaded routes\" — how would you answer this in an interview?",
-    a: "When discussing Lazy loaded routes in Advanced Routing: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Data loading with loaders\" — how would you answer this in an interview?",
-    a: "When discussing Data loading with loaders in Advanced Routing: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Actions and forms\" — how would you answer this in an interview?",
-    a: "When discussing Actions and forms in Advanced Routing: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Error elements\" — how would you answer this in an interview?",
-    a: "When discussing Error elements in Advanced Routing: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: errorElement on routes?",
+    a: "Per-route error UI when loaders/actions/render throw — better isolation than one global boundary.",
     level: "Mid"
   }
         ],
@@ -1807,40 +1552,40 @@ export const interviewQA = {
     title: "Controlled Forms — Most Asked Interview Questions",
     subtitle: "Phase 6: Forms & Validation · Module 10: Form Handling",
     level: "Junior to Senior",
-    tip: "When answering \"Controlled Forms\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Controlled Forms\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: How handle controlled inputs?",
-    a: "value + onChange tied to state — single source of truth.",
+    q: "Q: How do controlled form inputs work?",
+    a: "Each input’s value comes from React state and updates via onChange. React is the single source of truth.",
     level: "Junior"
   },
   {
-    q: "Q: Explain \"Input, textarea, select\" — how would you answer this in an interview?",
-    a: "When discussing Input, textarea, select in Controlled Forms: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you handle checkboxes and radios?",
+    a: "Checkbox: checked + onChange with boolean/array state. Radio: shared name and value compared to selected state.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Checkboxes and radio buttons\" — how would you answer this in an interview?",
-    a: "When discussing Checkboxes and radio buttons in Controlled Forms: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Multi-step forms approach?",
+    a: "Lift all step state to a parent (or one form library instance), validate per step, persist if needed, submit on the last step.",
+    level: "Senior"
+  },
+  {
+    q: "Q: File uploads in controlled forms?",
+    a: "Files stay uncontrolled; store File objects from onChange in state for preview/upload, submit via FormData.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"File uploads\" — how would you answer this in an interview?",
-    a: "When discussing File uploads in Controlled Forms: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Dynamic fields?",
+    a: "Store an array in state and map inputs; add/remove items immutably. Field arrays in RHF/Formik help at scale.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Multi-step forms\" — how would you answer this in an interview?",
-    a: "When discussing Multi-step forms in Controlled Forms: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Dynamic form fields\" — how would you answer this in an interview?",
-    a: "When discussing Dynamic form fields in Controlled Forms: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Preventing default submit?",
+    a: "onSubmit={(e) => { e.preventDefault(); ... }} so the browser does not reload the page.",
+    level: "Junior"
   }
         ],
       },
@@ -1850,49 +1595,39 @@ export const interviewQA = {
     title: "Form Libraries — Most Asked Interview Questions",
     subtitle: "Phase 6: Forms & Validation · Module 10: Form Handling",
     level: "Junior to Senior",
-    tip: "When answering \"Form Libraries\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Form Libraries\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Why React Hook Form popular?",
-    a: "Uncontrolled refs = fewer re-renders; great Zod/TS integration.",
+    q: "Q: Why is React Hook Form popular?",
+    a: "It minimizes re-renders by using uncontrolled inputs with refs, has a small API, and integrates well with Zod and TypeScript.",
     level: "Mid"
   },
   {
-    q: "Q: RHF vs Formik?",
-    a: "RHF faster/lighter; Formik more controlled/reducer-style.",
+    q: "Q: React Hook Form vs Formik?",
+    a: "RHF is usually lighter and faster. Formik is more controlled/reducer-oriented. Both are production-ready; RHF is more common in new apps.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"React Hook Form (complete API)\" — how would you answer this in an interview?",
-    a: "When discussing React Hook Form (complete API) in Form Libraries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How does Zod validation integrate?",
+    a: "Define a schema and pass zodResolver(schema) to useForm. One schema gives runtime validation and TypeScript types.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Formik (complete API)\" — how would you answer this in an interview?",
-    a: "When discussing Formik (complete API) in Form Libraries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What are field arrays?",
+    a: "APIs for dynamic lists of fields (add/remove/reorder) — useFieldArray in RHF or FieldArray in Formik.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Form validation strategies\" — how would you answer this in an interview?",
-    a: "When discussing Form validation strategies in Form Libraries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: When skip a form library?",
+    a: "Tiny forms with 1–2 fields can use local state or FormData. Libraries pay off for validation, nested fields, and large forms.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Custom validation\" — how would you answer this in an interview?",
-    a: "When discussing Custom validation in Form Libraries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Yup, Zod integration\" — how would you answer this in an interview?",
-    a: "When discussing Yup, Zod integration in Form Libraries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Field arrays and nested forms\" — how would you answer this in an interview?",
-    a: "When discussing Field arrays and nested forms in Form Libraries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Yup vs Zod?",
+    a: "Both schema validators. Zod has stronger TypeScript inference and is widely preferred in modern React + RHF stacks.",
     level: "Mid"
   }
         ],
@@ -1903,39 +1638,39 @@ export const interviewQA = {
     title: "Uncontrolled Forms — Most Asked Interview Questions",
     subtitle: "Phase 6: Forms & Validation · Module 10: Form Handling",
     level: "Junior to Senior",
-    tip: "When answering \"Uncontrolled Forms\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Uncontrolled Forms\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: When use uncontrolled forms?",
-    a: "Simple forms, file inputs, FormData, React 19 Actions.",
+    q: "Q: How do uncontrolled forms work in React?",
+    a: "Inputs keep their own DOM state. Read values with refs or FormData on submit instead of tracking every keystroke in React state.",
+    level: "Junior"
+  },
+  {
+    q: "Q: What is the FormData API approach?",
+    a: "On submit: const data = new FormData(e.target). Works well with native forms and React 19 Actions.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Form refs\" — how would you answer this in an interview?",
-    a: "When discussing Form refs in Uncontrolled Forms: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: defaultValue vs value?",
+    a: "defaultValue sets the initial uncontrolled value. value makes the input controlled. Do not mix them casually.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"FormData API\" — how would you answer this in an interview?",
-    a: "When discussing FormData API in Uncontrolled Forms: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: When are uncontrolled forms a good fit?",
+    a: "Simple contact forms, progressive enhancement, file inputs, and performance-sensitive large forms.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Native form handling\" — how would you answer this in an interview?",
-    a: "When discussing Native form handling in Uncontrolled Forms: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How does React Hook Form use uncontrolled inputs?",
+    a: "register() attaches refs so RHF reads values without re-rendering on each keypress (unless you watch fields).",
     level: "Mid"
   },
   {
-    q: "Q: What is Uncontrolled Forms and why is it important in React 19?",
-    a: "Uncontrolled Forms is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What are the most common Uncontrolled Forms interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how Uncontrolled Forms interacts with hooks, Suspense, or Server Components in modern React apps.",
+    q: "Q: Uncontrolled + React 19 Actions?",
+    a: "Native <form action={fn}> works with uncontrolled fields and FormData — great for progressive enhancement.",
     level: "Senior"
   }
         ],
@@ -1946,39 +1681,39 @@ export const interviewQA = {
     title: "Advanced Context Patterns — Most Asked Interview Questions",
     subtitle: "Phase 7: State Management · Module 11: Context API Deep Dive",
     level: "Junior to Senior",
-    tip: "When answering \"Advanced Context Patterns\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Advanced Context Patterns\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Optimize Context performance?",
-    a: "Split contexts, memoize value, avoid { ... } new object each render.",
+    q: "Q: How do you optimize Context performance?",
+    a: "Split contexts by concern, memoize Provider values, avoid creating new objects each render, and consider selector-based stores for high-frequency updates.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Multiple context providers\" — how would you answer this in an interview?",
-    a: "When discussing Multiple context providers in Advanced Context Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Context composition pattern?",
+    a: "Nest providers in a single AppProviders component so the root stays clean and order is consistent.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Context composition\" — how would you answer this in an interview?",
-    a: "When discussing Context composition in Advanced Context Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Context splitting — why?",
+    a: "So updating theme does not re-render every consumer of user data. Separate ThemeContext and AuthContext.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Performance optimization\" — how would you answer this in an interview?",
-    a: "When discussing Performance optimization in Advanced Context Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Context + useReducer for app state?",
+    a: "Good for medium complexity without Redux. Provide state and dispatch; optionally split into two contexts.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Context splitting\" — how would you answer this in an interview?",
-    a: "When discussing Context splitting in Advanced Context Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: When Context is the wrong tool?",
+    a: "High-frequency updates (mouse position, form keystrokes) or very large state trees — use a dedicated store instead.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Context with useReducer\" — how would you answer this in an interview?",
-    a: "When discussing Context with useReducer in Advanced Context Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Dynamic context values?",
+    a: "Derive value from props/state and memoize. Document which updates consumers should expect.",
     level: "Mid"
   }
         ],
@@ -1989,55 +1724,40 @@ export const interviewQA = {
     title: "Redux Toolkit — Most Asked Interview Questions",
     subtitle: "Phase 7: State Management · Module 12: External State Management",
     level: "Junior to Senior",
-    tip: "When answering \"Redux Toolkit\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Redux Toolkit\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What are Redux Toolkit slices?",
-    a: "createSlice — reducers + actions + Immer mutable syntax.",
+    a: "createSlice defines name, initial state, and reducers with Immer. It generates action creators and the reducer automatically.",
+    level: "Mid"
+  },
+  {
+    q: "Q: Why prefer RTK over classic Redux?",
+    a: "Less boilerplate, immutable updates via Immer, good defaults in configureStore, and built-in DevTools setup.",
+    level: "Junior"
+  },
+  {
+    q: "Q: What is RTK Query?",
+    a: "RTK’s data-fetching layer: define endpoints, get auto-generated hooks, caching, invalidation, and optimistic updates.",
+    level: "Senior"
+  },
+  {
+    q: "Q: useSelector and useDispatch?",
+    a: "useSelector reads store state (re-renders when selected value changes). useDispatch returns the dispatch function.",
+    level: "Junior"
+  },
+  {
+    q: "Q: createAsyncThunk purpose?",
+    a: "Standardizes async request lifecycles (pending/fulfilled/rejected) for slices without hand-rolled action types.",
     level: "Mid"
   },
   {
     q: "Q: RTK Query vs TanStack Query?",
-    a: "Both cache server data — pick one per app.",
+    a: "Both cache server state. Pick one strategy per app to avoid duplicate caches and conflicting invalidation.",
     level: "Senior"
-  },
-  {
-    q: "Q: Explain \"Store setup\" — how would you answer this in an interview?",
-    a: "When discussing Store setup in Redux Toolkit: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Slices and reducers\" — how would you answer this in an interview?",
-    a: "When discussing Slices and reducers in Redux Toolkit: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"All RTK hooks (useSelector, useDispatch, useStore)\" — how would you answer this in an interview?",
-    a: "When discussing All RTK hooks (useSelector, useDispatch, useStore) in Redux Toolkit: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"createSlice, createAsyncThunk\" — how would you answer this in an interview?",
-    a: "When discussing createSlice, createAsyncThunk in Redux Toolkit: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"RTK Query (complete API)\" — how would you answer this in an interview?",
-    a: "When discussing RTK Query (complete API) in Redux Toolkit: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Middleware\" — how would you answer this in an interview?",
-    a: "When discussing Middleware in Redux Toolkit: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Redux DevTools\" — how would you answer this in an interview?",
-    a: "When discussing Redux DevTools in Redux Toolkit: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
   }
         ],
       },
@@ -2047,40 +1767,40 @@ export const interviewQA = {
     title: "Zustand — Most Asked Interview Questions",
     subtitle: "Phase 7: State Management · Module 12: External State Management",
     level: "Junior to Senior",
-    tip: "When answering \"Zustand\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Zustand\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Why Zustand popular?",
-    a: "Minimal store, no Provider, selector subscriptions prevent extra renders.",
+    q: "Q: Why is Zustand popular?",
+    a: "Minimal API, no Provider required, and selectors so components re-render only when selected state changes.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Store creation\" — how would you answer this in an interview?",
-    a: "When discussing Store creation in Zustand: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Basic Zustand store example?",
+    a: "create((set) => ({ count: 0, inc: () => set((s) => ({ count: s.count + 1 })) })).",
+    level: "Junior"
+  },
+  {
+    q: "Q: Zustand vs Context?",
+    a: "Zustand avoids Provider boilerplate and prevents the “all consumers re-render” problem via selectors.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Subscriptions\" — how would you answer this in an interview?",
-    a: "When discussing Subscriptions in Zustand: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Zustand vs Redux Toolkit?",
+    a: "Zustand is lighter for simple global state. RTK fits larger apps needing middleware, DevTools conventions, and RTK Query.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Persistence middleware?",
+    a: "zustand/middleware persist can sync slices to localStorage with hydration handling.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Middleware\" — how would you answer this in an interview?",
-    a: "When discussing Middleware in Zustand: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Persistence\" — how would you answer this in an interview?",
-    a: "When discussing Persistence in Zustand: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"All Zustand APIs\" — how would you answer this in an interview?",
-    a: "When discussing All Zustand APIs in Zustand: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Do you need a Provider?",
+    a: "Not for the default store. Optional context stores exist if you need per-tree isolation.",
+    level: "Junior"
   }
         ],
       },
@@ -2090,39 +1810,39 @@ export const interviewQA = {
     title: "Jotai — Most Asked Interview Questions",
     subtitle: "Phase 7: State Management · Module 12: External State Management",
     level: "Junior to Senior",
-    tip: "When answering \"Jotai\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Jotai\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
+    q: "Q: What is Jotai?",
+    a: "An atomic state library — you compose small atoms bottom-up instead of one big store.",
+    level: "Mid"
+  },
+  {
     q: "Q: Jotai vs Zustand?",
-    a: "Jotai atomic bottom-up; Zustand single top-down store.",
+    a: "Jotai is atom-based and great for derived/async atoms. Zustand is a single store with a simpler mental model for many apps.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Atoms\" — how would you answer this in an interview?",
-    a: "When discussing Atoms in Jotai: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What is a derived atom?",
+    a: "An atom whose value is computed from other atoms — updates when dependencies change.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Derived atoms\" — how would you answer this in an interview?",
-    a: "When discussing Derived atoms in Jotai: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Async atoms?",
+    a: "Atoms can hold promises/async reads; UI can suspend or show loading depending on integration.",
+    level: "Senior"
+  },
+  {
+    q: "Q: When choose Jotai?",
+    a: "When state naturally splits into many independent pieces with complex derived relationships.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Async atoms\" — how would you answer this in an interview?",
-    a: "When discussing Async atoms in Jotai: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"All Jotai hooks and utilities\" — how would you answer this in an interview?",
-    a: "When discussing All Jotai hooks and utilities in Jotai: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is Jotai and why is it important in React 19?",
-    a: "Jotai is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
+    q: "Q: Provider in Jotai?",
+    a: "Optional Provider scopes atoms per tree; without it, atoms are app-global.",
     level: "Mid"
   }
         ],
@@ -2133,39 +1853,39 @@ export const interviewQA = {
     title: "Recoil — Most Asked Interview Questions",
     subtitle: "Phase 7: State Management · Module 12: External State Management",
     level: "Junior to Senior",
-    tip: "When answering \"Recoil\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Recoil\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What is Recoil?",
-    a: "Facebook atomic state — atoms + selectors. Less common than Zustand today.",
+    a: "Meta’s atomic state library with atoms and selectors. Less common in new projects than Zustand/Jotai, but still appears in interviews.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Atoms and selectors\" — how would you answer this in an interview?",
-    a: "When discussing Atoms and selectors in Recoil: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Atoms vs selectors?",
+    a: "Atoms hold state. Selectors derive/compute values (sync or async) from atoms.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Atom families\" — how would you answer this in an interview?",
-    a: "When discussing Atom families in Recoil: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Atom families?",
+    a: "Factories for parameterized atoms — e.g. one atom per item id.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Selector families\" — how would you answer this in an interview?",
-    a: "When discussing Selector families in Recoil: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: RecoilRoot requirement?",
+    a: "Yes — the tree must be wrapped in RecoilRoot for atoms to work.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"All Recoil hooks\" — how would you answer this in an interview?",
-    a: "When discussing All Recoil hooks in Recoil: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Why might teams avoid Recoil today?",
+    a: "Slower ecosystem momentum vs Zustand/Jotai/Redux; prefer libraries with clearer long-term maintenance.",
+    level: "Senior"
   },
   {
-    q: "Q: What is Recoil and why is it important in React 19?",
-    a: "Recoil is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
+    q: "Q: Recoil vs Context?",
+    a: "Recoil provides fine-grained subscriptions; Context re-renders all consumers of a value.",
     level: "Mid"
   }
         ],
@@ -2176,39 +1896,39 @@ export const interviewQA = {
     title: "Native Fetch — Most Asked Interview Questions",
     subtitle: "Phase 8: Data Fetching & API Integration · Module 13: Data Fetching",
     level: "Junior to Senior",
-    tip: "When answering \"Native Fetch\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Native Fetch\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Problems with useEffect-only fetch?",
-    a: "No cache, dedup, retry; race conditions need AbortController.",
+    q: "Q: Problems with useEffect-only fetching?",
+    a: "No caching, deduplication, retries, or shared loading state. Race conditions need AbortController. Prefer TanStack Query for server state.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Fetch API with useEffect\" — how would you answer this in an interview?",
-    a: "When discussing Fetch API with useEffect in Native Fetch: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you cancel a fetch?",
+    a: "const controller = new AbortController(); fetch(url, { signal: controller.signal }); abort in effect cleanup.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Abort controllers\" — how would you answer this in an interview?",
-    a: "When discussing Abort controllers in Native Fetch: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Loading and error state pattern?",
+    a: "Track status flags or a status enum (idle/loading/success/error) plus data and error fields.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Error handling\" — how would you answer this in an interview?",
-    a: "When discussing Error handling in Native Fetch: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Where should caching live?",
+    a: "In memory (Query client), HTTP cache headers, or a global store — not ad-hoc variables per component.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Loading states\" — how would you answer this in an interview?",
-    a: "When discussing Loading states in Native Fetch: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Handling non-OK responses?",
+    a: "Check response.ok; throw or set error for 4xx/5xx instead of assuming JSON success.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Caching strategies\" — how would you answer this in an interview?",
-    a: "When discussing Caching strategies in Native Fetch: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: JSON parsing pitfalls?",
+    a: "Empty responses, wrong content-type, and double-parsing. Guard and provide clear errors.",
     level: "Mid"
   }
         ],
@@ -2219,60 +1939,40 @@ export const interviewQA = {
     title: "React Query / TanStack Query — Most Asked Interview Questions",
     subtitle: "Phase 8: Data Fetching & API Integration · Module 13: Data Fetching",
     level: "Junior to Senior",
-    tip: "When answering \"React Query / TanStack Query\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"React Query / TanStack Query\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What is TanStack Query?",
-    a: "Server state library — useQuery caches by queryKey, stale-while-revalidate.",
+    a: "A server-state library. useQuery caches by queryKey and provides data, status, refetch, and background revalidation (stale-while-revalidate).",
     level: "Mid"
   },
   {
     q: "Q: What is a query key?",
-    a: "Unique cache identifier — include all variables: [\"users\", userId].",
+    a: "A unique cache identity, usually an array like [\"users\", userId]. Include every variable the query depends on.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Complete API coverage\" — how would you answer this in an interview?",
-    a: "When discussing Complete API coverage in React Query / TanStack Query: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: useMutation purpose?",
+    a: "For creates/updates/deletes. On success, invalidate or update related queries so the UI stays fresh.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"useQuery, useMutation, useInfiniteQuery\" — how would you answer this in an interview?",
-    a: "When discussing useQuery, useMutation, useInfiniteQuery in React Query / TanStack Query: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What are optimistic updates?",
+    a: "Update the cache immediately in onMutate, snapshot previous data, and roll back in onError if the server fails.",
+    level: "Senior"
+  },
+  {
+    q: "Q: useInfiniteQuery?",
+    a: "For paginated/infinite scroll lists — manages pages and fetchNextPage.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Query invalidation\" — how would you answer this in an interview?",
-    a: "When discussing Query invalidation in React Query / TanStack Query: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Optimistic updates\" — how would you answer this in an interview?",
-    a: "When discussing Optimistic updates in React Query / TanStack Query: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Cache management\" — how would you answer this in an interview?",
-    a: "When discussing Cache management in React Query / TanStack Query: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Prefetching\" — how would you answer this in an interview?",
-    a: "When discussing Prefetching in React Query / TanStack Query: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Suspense mode\" — how would you answer this in an interview?",
-    a: "When discussing Suspense mode in React Query / TanStack Query: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Query keys strategies\" — how would you answer this in an interview?",
-    a: "When discussing Query keys strategies in React Query / TanStack Query: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Why not put server data only in Redux?",
+    a: "Server state needs caching, staleness, and retries. TanStack Query specializes in that; keep Redux for true client state.",
+    level: "Senior"
   }
         ],
       },
@@ -2282,39 +1982,39 @@ export const interviewQA = {
     title: "SWR — Most Asked Interview Questions",
     subtitle: "Phase 8: Data Fetching & API Integration · Module 13: Data Fetching",
     level: "Junior to Senior",
-    tip: "When answering \"SWR\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"SWR\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
+    q: "Q: What is SWR?",
+    a: "A lightweight data-fetching library from Vercel using stale-while-revalidate: show cached data, then revalidate in the background.",
+    level: "Mid"
+  },
+  {
     q: "Q: TanStack Query vs SWR?",
-    a: "Both SWR pattern; TanStack Query richer mutations/DevTools.",
+    a: "Both revalidate cached data. TanStack Query has richer mutations, DevTools, and infinite query APIs; SWR is smaller/simpler.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Complete SWR API\" — how would you answer this in an interview?",
-    a: "When discussing Complete SWR API in SWR: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Basic useSWR usage?",
+    a: "const { data, error, isLoading } = useSWR(key, fetcher). Key null disables the request.",
+    level: "Junior"
+  },
+  {
+    q: "Q: How do mutations work in SWR?",
+    a: "Use mutate to update cache locally and/or revalidate from the server.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Revalidation strategies\" — how would you answer this in an interview?",
-    a: "When discussing Revalidation strategies in SWR: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Revalidation triggers?",
+    a: "Focus, reconnect, interval polling, and manual mutate — configurable per hook/global config.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Mutations\" — how would you answer this in an interview?",
-    a: "When discussing Mutations in SWR: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"All SWR hooks\" — how would you answer this in an interview?",
-    a: "When discussing All SWR hooks in SWR: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is SWR and why is it important in React 19?",
-    a: "SWR is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
+    q: "Q: When choose SWR?",
+    a: "Smaller apps or Next.js-centric stacks wanting a minimal API with good defaults.",
     level: "Mid"
   }
         ],
@@ -2325,40 +2025,40 @@ export const interviewQA = {
     title: "Axios Integration — Most Asked Interview Questions",
     subtitle: "Phase 8: Data Fetching & API Integration · Module 13: Data Fetching",
     level: "Junior to Senior",
-    tip: "When answering \"Axios Integration\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Axios Integration\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: Axios vs fetch?",
-    a: "Axios: interceptors, transforms, timeouts. fetch is native and sufficient for simple cases.",
+    a: "Axios adds interceptors, automatic JSON transforms, request cancellation helpers, and timeouts. fetch is native and enough for many apps.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Interceptors\" — how would you answer this in an interview?",
-    a: "When discussing Interceptors in Axios Integration: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What are Axios interceptors?",
+    a: "Middleware for requests/responses — attach auth tokens, refresh on 401, or normalize errors globally.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Request/response handling\" — how would you answer this in an interview?",
-    a: "When discussing Request/response handling in Axios Integration: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you use Axios with TanStack Query?",
+    a: "Pass an axios call as queryFn/mutationFn. Query libraries manage cache; Axios manages HTTP.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Custom hooks with Axios\" — how would you answer this in an interview?",
-    a: "When discussing Custom hooks with Axios in Axios Integration: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Custom hooks with Axios?",
+    a: "Wrap common endpoints in hooks, but prefer TanStack Query for shared server state instead of hand-rolled hooks alone.",
     level: "Mid"
   },
   {
-    q: "Q: What is Axios Integration and why is it important in React 19?",
-    a: "Axios Integration is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What are the most common Axios Integration interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how Axios Integration interacts with hooks, Suspense, or Server Components in modern React apps.",
+    q: "Q: Error handling pattern?",
+    a: "Normalize error shape in an interceptor; surface message/status to UI; avoid leaking stack traces.",
     level: "Senior"
+  },
+  {
+    q: "Q: Base URL and instances?",
+    a: "create an axios instance with baseURL and headers for each API to keep config DRY.",
+    level: "Junior"
   }
         ],
       },
@@ -2368,40 +2068,40 @@ export const interviewQA = {
     title: "CSS Modules — Most Asked Interview Questions",
     subtitle: "Phase 9: Styling Solutions · Module 14: All Styling Approaches",
     level: "Junior to Senior",
-    tip: "When answering \"CSS Modules\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"CSS Modules\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What are CSS Modules?",
-    a: "Scoped hashed class names at build time — zero runtime cost.",
+    a: "CSS files where class names are locally scoped and hashed at build time (Button_primary_x7f2a). Zero runtime cost. Vite supports them by default.",
     level: "Junior"
   },
   {
-    q: "Q: Explain \"Setup and usage\" — how would you answer this in an interview?",
-    a: "When discussing Setup and usage in CSS Modules: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you compose classes?",
+    a: "Import styles and use styles.btn, or composes: in the CSS module for composition.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Composition\" — how would you answer this in an interview?",
-    a: "When discussing Composition in CSS Modules: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Global vs local styles?",
+    a: "Default classes are local. Use :global(.name) sparingly for third-party or truly global selectors.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Global vs local styles\" — how would you answer this in an interview?",
-    a: "When discussing Global vs local styles in CSS Modules: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Pros of CSS Modules?",
+    a: "No naming collisions, no runtime CSS-in-JS cost, works well with SSR/RSC.",
     level: "Mid"
   },
   {
-    q: "Q: What is CSS Modules and why is it important in React 19?",
-    a: "CSS Modules is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
+    q: "Q: Cons?",
+    a: "Dynamic theming is less ergonomic than CSS variables + Tailwind or CSS-in-JS.",
     level: "Mid"
   },
   {
-    q: "Q: What are the most common CSS Modules interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how CSS Modules interacts with hooks, Suspense, or Server Components in modern React apps.",
-    level: "Senior"
+    q: "Q: CSS Modules vs Tailwind?",
+    a: "Modules keep styles in CSS files; Tailwind uses utility classes in JSX. Both avoid runtime CSS-in-JS.",
+    level: "Junior"
   }
         ],
       },
@@ -2411,39 +2111,39 @@ export const interviewQA = {
     title: "Styled Components — Most Asked Interview Questions",
     subtitle: "Phase 9: Styling Solutions · Module 14: All Styling Approaches",
     level: "Junior to Senior",
-    tip: "When answering \"Styled Components\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Styled Components\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: CSS-in-JS trade-offs?",
-    a: "Dynamic styles vs runtime cost; RSC prefers CSS Modules/Tailwind.",
+    q: "Q: What is styled-components?",
+    a: "A CSS-in-JS library that creates components with attached styles using template literals, with theming support.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Trade-offs of CSS-in-JS?",
+    a: "Great for dynamic styles colocated with components, but adds runtime cost and is awkward with React Server Components.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Complete styled-components API\" — how would you answer this in an interview?",
-    a: "When discussing Complete styled-components API in Styled Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How does theming work?",
+    a: "ThemeProvider supplies a theme object; styled components read props.theme.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Theming\" — how would you answer this in an interview?",
-    a: "When discussing Theming in Styled Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: SSR considerations?",
+    a: "Need stylesheet extraction/hydration setup to avoid flash of unstyled content.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Dynamic styles\" — how would you answer this in an interview?",
-    a: "When discussing Dynamic styles in Styled Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: styled-components vs Emotion?",
+    a: "Similar ideas; Emotion is often faster and offers a css prop. For new RSC-heavy apps, prefer Tailwind/CSS Modules.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Server-side rendering\" — how would you answer this in an interview?",
-    a: "When discussing Server-side rendering in Styled Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is Styled Components and why is it important in React 19?",
-    a: "Styled Components is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
+    q: "Q: Dynamic styles example?",
+    a: "const Button = styled.button`color: ${p => p.$primary ? \"white\" : \"black\"}`; use transient props ($primary) to avoid DOM warnings.",
     level: "Mid"
   }
         ],
@@ -2454,40 +2154,40 @@ export const interviewQA = {
     title: "Emotion — Most Asked Interview Questions",
     subtitle: "Phase 9: Styling Solutions · Module 14: All Styling Approaches",
     level: "Junior to Senior",
-    tip: "When answering \"Emotion\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Emotion\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
+    q: "Q: What is Emotion?",
+    a: "A CSS-in-JS library supporting the css prop and styled API, commonly used for dynamic styling and theming.",
+    level: "Mid"
+  },
+  {
+    q: "Q: css prop vs styled API?",
+    a: "css prop styles elements/components inline with Emotion; styled creates reusable styled components.",
+    level: "Mid"
+  },
+  {
     q: "Q: Emotion vs styled-components?",
-    a: "Emotion faster, supports css prop. Both runtime CSS-in-JS.",
+    a: "Emotion generally has better performance and a flexible css prop; both are runtime CSS-in-JS.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"css prop\" — how would you answer this in an interview?",
-    a: "When discussing css prop in Emotion: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Theming with Emotion?",
+    a: "ThemeProvider + useTheme, or pass theme into css functions.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"styled API\" — how would you answer this in an interview?",
-    a: "When discussing styled API in Emotion: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Theming and variants\" — how would you answer this in an interview?",
-    a: "When discussing Theming and variants in Emotion: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is Emotion and why is it important in React 19?",
-    a: "Emotion is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What are the most common Emotion interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how Emotion interacts with hooks, Suspense, or Server Components in modern React apps.",
+    q: "Q: RSC compatibility?",
+    a: "Runtime CSS-in-JS is problematic on the server component graph — prefer zero-runtime approaches for RSC apps.",
     level: "Senior"
+  },
+  {
+    q: "Q: When pick Emotion?",
+    a: "Existing Emotion codebase, need css prop, or complex dynamic styles in a client-only app.",
+    level: "Mid"
   }
         ],
       },
@@ -2497,39 +2197,39 @@ export const interviewQA = {
     title: "Tailwind CSS — Most Asked Interview Questions",
     subtitle: "Phase 9: Styling Solutions · Module 14: All Styling Approaches",
     level: "Junior to Senior",
-    tip: "When answering \"Tailwind CSS\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Tailwind CSS\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Tailwind vs traditional CSS?",
-    a: "Utility-first, design tokens, purged production CSS. v4 integrates with Vite via @tailwindcss/vite.",
+    q: "Q: What is Tailwind CSS?",
+    a: "A utility-first CSS framework. You compose classes like flex, p-4, text-lg in JSX. Tailwind v4 integrates with Vite via @tailwindcss/vite.",
     level: "Junior"
   },
   {
-    q: "Q: Explain \"Utility-first approach\" — how would you answer this in an interview?",
-    a: "When discussing Utility-first approach in Tailwind CSS: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Pros of Tailwind?",
+    a: "Fast UI iteration, consistent design tokens, and small production CSS after unused utilities are removed.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Cons of Tailwind?",
+    a: "Verbose class strings in JSX and a learning curve for the utility vocabulary.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Custom configuration\" — how would you answer this in an interview?",
-    a: "When discussing Custom configuration in Tailwind CSS: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you handle dark mode?",
+    a: "Use the dark: variant and/or class strategy on the html element, often toggled via state/localStorage.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Component patterns\" — how would you answer this in an interview?",
-    a: "When discussing Component patterns in Tailwind CSS: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Custom theme configuration?",
+    a: "Extend colors, spacing, and fonts in the Tailwind config / CSS theme — keep a single design system source.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"JIT mode\" — how would you answer this in an interview?",
-    a: "When discussing JIT mode in Tailwind CSS: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is Tailwind CSS and why is it important in React 19?",
-    a: "Tailwind CSS is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
+    q: "Q: Tailwind vs CSS Modules?",
+    a: "Tailwind speeds building UIs with utilities; Modules keep traditional CSS structure. Many teams use both.",
     level: "Mid"
   }
         ],
@@ -2540,40 +2240,40 @@ export const interviewQA = {
     title: "CSS-in-JS Patterns — Most Asked Interview Questions",
     subtitle: "Phase 9: Styling Solutions · Module 14: All Styling Approaches",
     level: "Junior to Senior",
-    tip: "When answering \"CSS-in-JS Patterns\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"CSS-in-JS Patterns\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Inline styles in React?",
-    a: "style={{ }} object — good for dynamic values; poor for pseudo selectors.",
+    q: "Q: What are inline styles in React?",
+    a: "The style prop takes a JS object: style={{ marginTop: 8 }}. Good for dynamic values; cannot express pseudo-selectors or media queries.",
     level: "Junior"
   },
   {
-    q: "Q: Explain \"Inline styles\" — how would you answer this in an interview?",
-    a: "When discussing Inline styles in CSS-in-JS Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Style object patterns?",
+    a: "Extract shared style objects, but remember new object literals break referential equality for memoized children.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Style object patterns\" — how would you answer this in an interview?",
-    a: "When discussing Style object patterns in CSS-in-JS Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: When are inline styles enough?",
+    a: "Highly dynamic positions/sizes, or one-off values. Prefer CSS/Tailwind for hover states and responsive design.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Dynamic styling\" — how would you answer this in an interview?",
-    a: "When discussing Dynamic styling in CSS-in-JS Patterns: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is CSS-in-JS Patterns and why is it important in React 19?",
-    a: "CSS-in-JS Patterns is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What are the most common CSS-in-JS Patterns interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how CSS-in-JS Patterns interacts with hooks, Suspense, or Server Components in modern React apps.",
+    q: "Q: Performance note?",
+    a: "Creating style objects every render can be fine, but avoid passing new objects into heavily memoized trees without need.",
     level: "Senior"
+  },
+  {
+    q: "Q: CSS variables for dynamic theming?",
+    a: "Set style={{ [\"--accent\"]: color }} on a parent and use var(--accent) in CSS — powerful hybrid approach.",
+    level: "Mid"
+  },
+  {
+    q: "Q: Inline styles vs className?",
+    a: "className for reusable/static rules; inline for values that change frequently from state.",
+    level: "Junior"
   }
         ],
       },
@@ -2583,39 +2283,39 @@ export const interviewQA = {
     title: "Component Libraries — Most Asked Interview Questions",
     subtitle: "Phase 9: Styling Solutions · Module 14: All Styling Approaches",
     level: "Junior to Senior",
-    tip: "When answering \"Component Libraries\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Component Libraries\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: shadcn/ui vs MUI?",
-    a: "shadcn: copy-paste Radix+Tailwind you own. MUI: full Material system, larger bundle.",
+    q: "Q: MUI vs Chakra vs shadcn/ui?",
+    a: "MUI: full Material system, larger bundle. Chakra: accessible composable primitives. shadcn/ui: copy-paste Radix + Tailwind components you own.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Material-UI (MUI) - complete API\" — how would you answer this in an interview?",
-    a: "When discussing Material-UI (MUI) - complete API in Component Libraries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What is Radix UI?",
+    a: "Headless accessible primitives (Dialog, Select, etc.) — behavior and a11y without forced styling.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Chakra UI - complete API\" — how would you answer this in an interview?",
-    a: "When discussing Chakra UI - complete API in Component Libraries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Why do teams like shadcn/ui?",
+    a: "No black-box package lock-in — components live in your repo and are fully customizable.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Ant Design\" — how would you answer this in an interview?",
-    a: "When discussing Ant Design in Component Libraries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Trade-offs of heavy UI kits?",
+    a: "Faster delivery vs bundle size, design constraints, and upgrade coupling.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"shadcn/ui\" — how would you answer this in an interview?",
-    a: "When discussing shadcn/ui in Component Libraries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: How do you theme MUI/Chakra?",
+    a: "ThemeProvider with a theme object controlling colors, typography, and component defaults.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Radix UI primitives\" — how would you answer this in an interview?",
-    a: "When discussing Radix UI primitives in Component Libraries: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Accessibility and component libraries?",
+    a: "Prefer libraries that handle focus traps, keyboard nav, and ARIA — still verify against your designs.",
     level: "Mid"
   }
         ],
@@ -2626,54 +2326,39 @@ export const interviewQA = {
     title: "React Testing Library — Most Asked Interview Questions",
     subtitle: "Phase 10: Testing · Module 15: Testing Strategies",
     level: "Junior to Senior",
-    tip: "When answering \"React Testing Library\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"React Testing Library\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: RTL guiding principle?",
-    a: "Test behavior users see — query by role/label, not implementation.",
+    q: "Q: What is React Testing Library’s guiding principle?",
+    a: "Test software the way users use it — query by role, label, and text, not by implementation details or class names.",
     level: "Mid"
   },
   {
     q: "Q: getBy vs queryBy vs findBy?",
-    a: "getBy throws if missing; queryBy returns null; findBy async/waitFor.",
+    a: "getBy throws if missing; queryBy returns null (assert absence); findBy is async and waits for the element.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"All queries (getBy, queryBy, findBy)\" — how would you answer this in an interview?",
-    a: "When discussing All queries (getBy, queryBy, findBy) in React Testing Library: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Why prefer userEvent over fireEvent?",
+    a: "userEvent simulates fuller user interactions (hover, tab, typing) more realistically than low-level fireEvent.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"User events and interactions\" — how would you answer this in an interview?",
-    a: "When discussing User events and interactions in React Testing Library: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you test async UI?",
+    a: "Use findBy queries or waitFor. Mock network with MSW for integration-style tests.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Async testing\" — how would you answer this in an interview?",
-    a: "When discussing Async testing in React Testing Library: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Should you test component state directly?",
+    a: "No. Assert visible UI and behavior. State is an implementation detail.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Custom renders\" — how would you answer this in an interview?",
-    a: "When discussing Custom renders in React Testing Library: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Testing hooks (@testing-library/react-hooks)\" — how would you answer this in an interview?",
-    a: "When discussing Testing hooks (@testing-library/react-hooks) in React Testing Library: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Testing context\" — how would you answer this in an interview?",
-    a: "When discussing Testing context in React Testing Library: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Testing custom hooks\" — how would you answer this in an interview?",
-    a: "When discussing Testing custom hooks in React Testing Library: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Custom render for providers?",
+    a: "Wrap render in a helper that includes Router/QueryClient/Theme providers used by the app.",
     level: "Mid"
   }
         ],
@@ -2684,40 +2369,40 @@ export const interviewQA = {
     title: "Vitest — Most Asked Interview Questions",
     subtitle: "Phase 10: Testing · Module 15: Testing Strategies",
     level: "Junior to Senior",
-    tip: "When answering \"Vitest\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Vitest\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Vitest vs Jest for Vite?",
-    a: "Vitest shares Vite config/transform — faster native ESM.",
+    q: "Q: Why Vitest for Vite projects?",
+    a: "It reuses Vite’s transform pipeline and config, supports native ESM, and is typically faster than Jest in Vite apps.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Test setup\" — how would you answer this in an interview?",
-    a: "When discussing Test setup in Vitest: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Is the Jest API compatible?",
+    a: "Largely yes — describe/it/expect and many Jest-style mocks work, easing migration.",
+    level: "Junior"
+  },
+  {
+    q: "Q: How do you run RTL with Vitest?",
+    a: "Install Testing Library + jsdom/happy-dom environment, then render/screen as usual.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Assertions\" — how would you answer this in an interview?",
-    a: "When discussing Assertions in Vitest: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Mocking in Vitest?",
+    a: "vi.fn(), vi.mock(), and vi.spyOn cover most unit-test mocking needs.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Mocking\" — how would you answer this in an interview?",
-    a: "When discussing Mocking in Vitest: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Coverage?",
+    a: "Vitest integrates coverage providers (e.g. v8/istanbul) via config — useful in CI gates.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Coverage\" — how would you answer this in an interview?",
-    a: "When discussing Coverage in Vitest: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is Vitest and why is it important in React 19?",
-    a: "Vitest is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
+    q: "Q: Watch mode benefits?",
+    a: "Re-runs only affected tests on change — tight feedback loop with Vite HMR-style DX.",
+    level: "Junior"
   }
         ],
       },
@@ -2727,44 +2412,39 @@ export const interviewQA = {
     title: "Jest — Most Asked Interview Questions",
     subtitle: "Phase 10: Testing · Module 15: Testing Strategies",
     level: "Junior to Senior",
-    tip: "When answering \"Jest\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Jest\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: When still use Jest?",
-    a: "Legacy projects, RN ecosystem — Vite projects prefer Vitest.",
+    q: "Q: When is Jest still used?",
+    a: "Legacy CRA apps, many React Native setups, and older codebases. New Vite apps often choose Vitest.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Test suites and specs\" — how would you answer this in an interview?",
-    a: "When discussing Test suites and specs in Jest: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What are Jest matchers?",
+    a: "expect(x).toBe / toEqual / toHaveBeenCalled — assertions for values and mocks.",
+    level: "Junior"
+  },
+  {
+    q: "Q: jest.mock purpose?",
+    a: "Replace modules with mocks for isolation — network clients, routers, etc.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Matchers (all Jest matchers)\" — how would you answer this in an interview?",
-    a: "When discussing Matchers (all Jest matchers) in Jest: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Snapshot testing — when?",
+    a: "For stable, rarely changing UI contracts. Prefer RTL behavior assertions for interactive components.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Mocking modules and functions\" — how would you answer this in an interview?",
-    a: "When discussing Mocking modules and functions in Jest: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Timer mocks?",
+    a: "jest.useFakeTimers() to test debounced/throttled logic without real waits.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Snapshot testing\" — how would you answer this in an interview?",
-    a: "When discussing Snapshot testing in Jest: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Timer mocks\" — how would you answer this in an interview?",
-    a: "When discussing Timer mocks in Jest: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Mock functions (jest.fn, jest.mock, etc.)\" — how would you answer this in an interview?",
-    a: "When discussing Mock functions (jest.fn, jest.mock, etc.) in Jest: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Jest vs Vitest briefly?",
+    a: "Similar APIs; Vitest aligns better with Vite/ESM. Jest has a larger historical ecosystem.",
     level: "Mid"
   }
         ],
@@ -2775,39 +2455,39 @@ export const interviewQA = {
     title: "E2E Testing — Most Asked Interview Questions",
     subtitle: "Phase 10: Testing · Module 15: Testing Strategies",
     level: "Junior to Senior",
-    tip: "When answering \"E2E Testing\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"E2E Testing\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Unit vs E2E testing?",
-    a: "Many RTL tests; few Playwright/Cypress for critical user journeys.",
+    q: "Q: Unit vs integration vs E2E?",
+    a: "Unit: isolated functions/components. Integration: component + children + mocked API. E2E: real browser flows (Playwright/Cypress).",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Playwright\" — how would you answer this in an interview?",
-    a: "When discussing Playwright in E2E Testing: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Playwright vs Cypress?",
+    a: "Both are strong. Playwright excels at cross-browser and parallel runs; Cypress has a polished interactive runner DX.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Cypress\" — how would you answer this in an interview?",
-    a: "When discussing Cypress in E2E Testing: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What should E2E cover?",
+    a: "Critical paths only — login, checkout, core happy paths — because E2E is slower and more brittle.",
+    level: "Senior"
+  },
+  {
+    q: "Q: How do you keep E2E stable?",
+    a: "Use test ids sparingly, prefer role/text, isolate test data, and avoid depending on animations/timing flakes.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Component testing?",
+    a: "Some tools test components in a real browser with less full-app overhead — a middle ground.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Component testing\" — how would you answer this in an interview?",
-    a: "When discussing Component testing in E2E Testing: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is E2E Testing and why is it important in React 19?",
-    a: "E2E Testing is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What are the most common E2E Testing interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how E2E Testing interacts with hooks, Suspense, or Server Components in modern React apps.",
+    q: "Q: CI tip for E2E?",
+    a: "Run on PRs against preview environments; shard tests; retry only known flakes carefully.",
     level: "Senior"
   }
         ],
@@ -2818,50 +2498,40 @@ export const interviewQA = {
     title: "Type Definitions — Most Asked Interview Questions",
     subtitle: "Phase 11: TypeScript Integration · Module 16: TypeScript with React",
     level: "Junior to Senior",
-    tip: "When answering \"Type Definitions\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Type Definitions\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: How type component props?",
-    a: "interface Props { ... } on function params — avoid React.FC for children.",
+    q: "Q: How do you type React component props?",
+    a: "Define a Props type/interface and annotate the function parameters. Prefer this over React.FC in modern TypeScript React.",
     level: "Junior"
   },
   {
     q: "Q: ReactNode vs ReactElement?",
-    a: "ReactNode: anything renderable. ReactElement: JSX element specifically.",
+    a: "ReactNode is anything renderable (elements, strings, null, arrays). ReactElement is a specific JSX element object.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"FC, ReactNode, ReactElement\" — how would you answer this in an interview?",
-    a: "When discussing FC, ReactNode, ReactElement in Type Definitions: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you type events?",
+    a: "React.ChangeEvent<HTMLInputElement>, React.MouseEvent<HTMLButtonElement>, React.FormEvent<HTMLFormElement>, etc.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Props typing\" — how would you answer this in an interview?",
-    a: "When discussing Props typing in Type Definitions: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you type useState and useRef?",
+    a: "useState<User | null>(null); useRef<HTMLInputElement>(null) for DOM refs.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Children typing\" — how would you answer this in an interview?",
-    a: "When discussing Children typing in Type Definitions: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Typing children?",
+    a: "children?: React.ReactNode is the usual pattern.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Event types (all synthetic events)\" — how would you answer this in an interview?",
-    a: "When discussing Event types (all synthetic events) in Type Definitions: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Ref types\" — how would you answer this in an interview?",
-    a: "When discussing Ref types in Type Definitions: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Hook types\" — how would you answer this in an interview?",
-    a: "When discussing Hook types in Type Definitions: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Why avoid React.FC by default?",
+    a: "Historically implied children and offered little benefit; explicit props are clearer with React 19 types.",
+    level: "Senior"
   }
         ],
       },
@@ -2871,54 +2541,39 @@ export const interviewQA = {
     title: "Advanced TypeScript — Most Asked Interview Questions",
     subtitle: "Phase 11: TypeScript Integration · Module 16: TypeScript with React",
     level: "Junior to Senior",
-    tip: "When answering \"Advanced TypeScript\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Advanced TypeScript\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Generic components in React?",
-    a: "function List<T>({ items }: { items: T[] }) — preserves item type.",
+    q: "Q: How do you type a generic component?",
+    a: "function List<T>({ items, renderItem }: { items: T[]; renderItem: (item: T) => React.ReactNode }) { ... }.",
     level: "Senior"
   },
   {
-    q: "Q: Partial, Pick, Omit use cases?",
-    a: "Partial for drafts; Pick/Omit for extending component props.",
+    q: "Q: Partial, Pick, and Omit?",
+    a: "Partial makes fields optional; Pick selects keys; Omit removes keys — common when extending component props.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Generic components\" — how would you answer this in an interview?",
-    a: "When discussing Generic components in Advanced TypeScript: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What are discriminated unions?",
+    a: "Unions with a shared tag field (type: \"loading\" | \"error\") so TypeScript narrows safely in switches.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Utility types (Partial, Pick, Omit, etc.)\" — how would you answer this in an interview?",
-    a: "When discussing Utility types (Partial, Pick, Omit, etc.) in Advanced TypeScript: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you type Context?",
+    a: "createContext<T | undefined>(undefined) plus a hook that throws if used outside the Provider.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Discriminated unions\" — how would you answer this in an interview?",
-    a: "When discussing Discriminated unions in Advanced TypeScript: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Typing HOCs / render props?",
+    a: "Use generics to preserve the wrapped component’s props; infer carefully to avoid any.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Type guards\" — how would you answer this in an interview?",
-    a: "When discussing Type guards in Advanced TypeScript: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Context typing\" — how would you answer this in an interview?",
-    a: "When discussing Context typing in Advanced TypeScript: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"HOC typing\" — how would you answer this in an interview?",
-    a: "When discussing HOC typing in Advanced TypeScript: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Render props typing\" — how would you answer this in an interview?",
-    a: "When discussing Render props typing in Advanced TypeScript: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Type guards?",
+    a: "Functions that return arg is Type so TypeScript narrows after the check — useful for API responses.",
     level: "Mid"
   }
         ],
@@ -2929,49 +2584,39 @@ export const interviewQA = {
     title: "Build Configuration — Most Asked Interview Questions",
     subtitle: "Phase 12: Build & Deploy · Module 17: Production Optimization",
     level: "Junior to Senior",
-    tip: "When answering \"Build Configuration\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Build Configuration\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Vite vs Webpack?",
-    a: "Vite: ESM dev server + Rollup prod. Webpack: full bundle dev — slower.",
+    q: "Q: Vite vs Webpack for React?",
+    a: "Vite: native ESM dev server + Rollup production builds. Webpack: bundles in development too — usually slower for large apps.",
     level: "Mid"
   },
   {
-    q: "Q: Environment variables in Vite?",
-    a: "VITE_ prefix in .env; access via import.meta.env — never secrets.",
+    q: "Q: How do Vite env variables work?",
+    a: "VITE_ prefix in .env; access via import.meta.env. Client-visible — never store secrets there.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Vite configuration\" — how would you answer this in an interview?",
-    a: "When discussing Vite configuration in Build Configuration: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What is tree shaking?",
+    a: "Dead-code elimination of unused ES module exports. Prefer ES module builds of libraries (e.g. lodash-es).",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Environment variables\" — how would you answer this in an interview?",
-    a: "When discussing Environment variables in Build Configuration: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you analyze bundle size?",
+    a: "rollup-plugin-visualizer / Vite analyzers to find large dependencies and duplicate packages.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Build optimization\" — how would you answer this in an interview?",
-    a: "When discussing Build optimization in Build Configuration: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Code splitting in Vite?",
+    a: "Dynamic import() creates async chunks automatically — pair with React.lazy for routes.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Asset optimization\" — how would you answer this in an interview?",
-    a: "When discussing Asset optimization in Build Configuration: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Tree shaking\" — how would you answer this in an interview?",
-    a: "When discussing Tree shaking in Build Configuration: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Code splitting strategies\" — how would you answer this in an interview?",
-    a: "When discussing Code splitting strategies in Build Configuration: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Asset optimization tips?",
+    a: "Hash filenames for caching, compress images, and avoid importing huge assets into the JS graph unnecessarily.",
     level: "Mid"
   }
         ],
@@ -2982,44 +2627,39 @@ export const interviewQA = {
     title: "Deployment — Most Asked Interview Questions",
     subtitle: "Phase 12: Build & Deploy · Module 17: Production Optimization",
     level: "Junior to Senior",
-    tip: "When answering \"Deployment\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Deployment\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Deploy React SPA to Vercel?",
-    a: "Build to dist/, configure SPA redirect to index.html, set env vars.",
+    q: "Q: How do you deploy a React SPA?",
+    a: "Build to dist/, host static files on Vercel/Netlify/etc., and configure SPA fallback so all routes serve index.html.",
     level: "Junior"
   },
   {
     q: "Q: CSR vs SSR vs SSG?",
-    a: "CSR in browser; SSR per request; SSG at build time.",
+    a: "CSR renders in the browser; SSR renders HTML per request; SSG prebuilds HTML at build time.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Vercel, Netlify, Railway\" — how would you answer this in an interview?",
-    a: "When discussing Vercel, Netlify, Railway in Deployment: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What belongs in CI/CD?",
+    a: "install → lint → test → build → deploy. Cache dependencies; use preview deployments for PRs.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Docker for a SPA?",
+    a: "Multi-stage: Node builds the app; nginx (or similar) serves dist/ with gzip and SPA routing.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Environment management?",
+    a: "Separate env vars per environment in the host dashboard; keep secrets server-side.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Docker containerization\" — how would you answer this in an interview?",
-    a: "When discussing Docker containerization in Deployment: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"CI/CD pipelines\" — how would you answer this in an interview?",
-    a: "When discussing CI/CD pipelines in Deployment: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Environment management\" — how would you answer this in an interview?",
-    a: "When discussing Environment management in Deployment: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Performance monitoring\" — how would you answer this in an interview?",
-    a: "When discussing Performance monitoring in Deployment: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Performance monitoring after deploy?",
+    a: "Web Vitals, error tracking (Sentry), and real-user monitoring to catch regressions.",
     level: "Mid"
   }
         ],
@@ -3030,40 +2670,40 @@ export const interviewQA = {
     title: "Framer Motion — Most Asked Interview Questions",
     subtitle: "Phase 13: Advanced Topics · Module 18: Animations",
     level: "Junior to Senior",
-    tip: "When answering \"Framer Motion\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Framer Motion\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Framer Motion use case?",
-    a: "Declarative animations, layout animations, gestures — popular for React UI.",
+    q: "Q: What is Framer Motion?",
+    a: "A React animation library for declarative animations, gestures, layout animations, and scroll-linked effects.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Complete API coverage\" — how would you answer this in an interview?",
-    a: "When discussing Complete API coverage in Framer Motion: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What are variants?",
+    a: "Named animation states (hidden/visible) you orchestrate on parents/children for coordinated motion.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Variants and animations\" — how would you answer this in an interview?",
-    a: "When discussing Variants and animations in Framer Motion: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Layout animations?",
+    a: "layout prop animates position/size changes when React layout shifts — great for shared-element-like effects.",
+    level: "Senior"
+  },
+  {
+    q: "Q: AnimatePresence purpose?",
+    a: "Animates components as they exit the tree (modals, lists) — otherwise unmount is instant.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Gestures\" — how would you answer this in an interview?",
-    a: "When discussing Gestures in Framer Motion: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Gestures?",
+    a: "Built-in drag/hover/tap handlers to build interactive motion UIs.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Layout animations\" — how would you answer this in an interview?",
-    a: "When discussing Layout animations in Framer Motion: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Scroll animations\" — how would you answer this in an interview?",
-    a: "When discussing Scroll animations in Framer Motion: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Performance tip?",
+    a: "Prefer transform/opacity; avoid animating layout properties when possible; reduce motion for a11y.",
+    level: "Senior"
   }
         ],
       },
@@ -3073,40 +2713,40 @@ export const interviewQA = {
     title: "React Spring — Most Asked Interview Questions",
     subtitle: "Phase 13: Advanced Topics · Module 18: Animations",
     level: "Junior to Senior",
-    tip: "When answering \"React Spring\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"React Spring\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: React Spring vs Framer Motion?",
-    a: "Spring physics-based; Framer more feature-rich declarative API.",
+    q: "Q: What is React Spring?",
+    a: "A physics-based animation library using springs instead of duration-only tweens for natural motion.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Springs and physics\" — how would you answer this in an interview?",
-    a: "When discussing Springs and physics in React Spring: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Framer Motion vs React Spring?",
+    a: "Framer is more feature-rich for UI gestures/layout. React Spring focuses on spring physics primitives.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Transitions\" — how would you answer this in an interview?",
-    a: "When discussing Transitions in React Spring: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Basic spring idea?",
+    a: "You animate toward a goal value; stiffness/damping control the feel rather than a fixed CSS duration alone.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"All hooks\" — how would you answer this in an interview?",
-    a: "When discussing All hooks in React Spring: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: useSpring / useTransition?",
+    a: "Hooks to create spring values and transition lists of items in/out.",
     level: "Mid"
   },
   {
-    q: "Q: What is React Spring and why is it important in React 19?",
-    a: "React Spring is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What are the most common React Spring interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how React Spring interacts with hooks, Suspense, or Server Components in modern React apps.",
+    q: "Q: When choose React Spring?",
+    a: "When you want physics-driven interaction and already like its API; otherwise Framer is more common in UI kits.",
     level: "Senior"
+  },
+  {
+    q: "Q: Accessibility?",
+    a: "Respect prefers-reduced-motion and provide non-animated equivalents.",
+    level: "Mid"
   }
         ],
       },
@@ -3116,40 +2756,40 @@ export const interviewQA = {
     title: "CSS Animations — Most Asked Interview Questions",
     subtitle: "Phase 13: Advanced Topics · Module 18: Animations",
     level: "Junior to Senior",
-    tip: "When answering \"CSS Animations\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"CSS Animations\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: CSS transitions vs animations?",
-    a: "Transitions: property change A→B. Animations: keyframes, loops.",
+    a: "Transitions interpolate when a property changes. Animations use @keyframes and can loop without a triggering state change.",
     level: "Junior"
   },
   {
-    q: "Q: Explain \"CSS transitions\" — how would you answer this in an interview?",
-    a: "When discussing CSS transitions in CSS Animations: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: When prefer CSS over JS animation libraries?",
+    a: "Simple hover/focus effects and one-off transitions — less JS weight and often smoother.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"CSS animations\" — how would you answer this in an interview?",
-    a: "When discussing CSS animations in CSS Animations: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Performance best practices?",
+    a: "Animate transform and opacity; avoid top/left/width when possible to reduce layout thrash.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Animation patterns\" — how would you answer this in an interview?",
-    a: "When discussing Animation patterns in CSS Animations: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: How do you trigger CSS transitions in React?",
+    a: "Toggle classes or style values based on state; ensure the browser sees a from→to change.",
+    level: "Junior"
   },
   {
-    q: "Q: What is CSS Animations and why is it important in React 19?",
-    a: "CSS Animations is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What are the most common CSS Animations interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how CSS Animations interacts with hooks, Suspense, or Server Components in modern React apps.",
+    q: "Q: Animation patterns for lists?",
+    a: "Staggered delays, AnimatePresence-like exit classes, or FLIP techniques for layout moves.",
     level: "Senior"
+  },
+  {
+    q: "Q: Reduced motion?",
+    a: "Use @media (prefers-reduced-motion: reduce) to disable or simplify animations.",
+    level: "Mid"
   }
         ],
       },
@@ -3159,45 +2799,40 @@ export const interviewQA = {
     title: "ARIA — Most Asked Interview Questions",
     subtitle: "Phase 13: Advanced Topics · Module 19: Accessibility (a11y)",
     level: "Junior to Senior",
-    tip: "When answering \"ARIA\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"ARIA\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: When use ARIA?",
-    a: "Only when semantic HTML insufficient — prefer button over div role=button.",
+    q: "Q: When should you use ARIA?",
+    a: "Only when native HTML semantics are insufficient. Prefer <button> over <div role=\"button\">.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"ARIA attributes\" — how would you answer this in an interview?",
-    a: "When discussing ARIA attributes in ARIA: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What are ARIA roles and attributes?",
+    a: "They describe purpose and state to assistive tech — role, aria-label, aria-expanded, aria-live, etc.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Keyboard navigation basics?",
+    a: "All interactive elements reachable via Tab; Enter/Space activate buttons; Escape closes dialogs; arrow keys for menus.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Semantic HTML\" — how would you answer this in an interview?",
-    a: "When discussing Semantic HTML in ARIA: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Focus management?",
+    a: "Move focus into modals on open and restore it on close; don’t trap users without an exit.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Keyboard navigation\" — how would you answer this in an interview?",
-    a: "When discussing Keyboard navigation in ARIA: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: What are live regions?",
+    a: "aria-live areas that announce dynamic updates (toasts, status) to screen readers.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Screen reader testing\" — how would you answer this in an interview?",
-    a: "When discussing Screen reader testing in ARIA: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Focus management\" — how would you answer this in an interview?",
-    a: "When discussing Focus management in ARIA: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Live regions\" — how would you answer this in an interview?",
-    a: "When discussing Live regions in ARIA: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Semantic HTML examples?",
+    a: "nav, main, header, button, label + input — often removes the need for extra ARIA.",
+    level: "Junior"
   }
         ],
       },
@@ -3207,40 +2842,40 @@ export const interviewQA = {
     title: "Accessibility Tools — Most Asked Interview Questions",
     subtitle: "Phase 13: Advanced Topics · Module 19: Accessibility (a11y)",
     level: "Junior to Senior",
-    tip: "When answering \"Accessibility Tools\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Accessibility Tools\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: How test accessibility?",
-    a: "axe DevTools, Lighthouse, keyboard-only testing, screen readers.",
+    q: "Q: How do you test accessibility?",
+    a: "Automated checks (axe, Lighthouse), keyboard-only testing, and screen reader spot checks.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"axe DevTools\" — how would you answer this in an interview?",
-    a: "When discussing axe DevTools in Accessibility Tools: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What does axe DevTools catch?",
+    a: "Missing labels, contrast issues, invalid ARIA, and many common WCAG failures — not everything.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Lighthouse\" — how would you answer this in an interview?",
-    a: "When discussing Lighthouse in Accessibility Tools: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Testing accessibility\" — how would you answer this in an interview?",
-    a: "When discussing Testing accessibility in Accessibility Tools: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is Accessibility Tools and why is it important in React 19?",
-    a: "Accessibility Tools is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What are the most common Accessibility Tools interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how Accessibility Tools interacts with hooks, Suspense, or Server Components in modern React apps.",
+    q: "Q: Why isn’t automation enough?",
+    a: "It misses focus order nuance, meaningful labels, and real AT user experience. Manual testing is required.",
     level: "Senior"
+  },
+  {
+    q: "Q: Lighthouse accessibility score?",
+    a: "A useful CI signal, not a guarantee of full WCAG compliance.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Testing Library a11y queries?",
+    a: "Prefer getByRole and getByLabelText — they encode accessibility into tests.",
+    level: "Mid"
+  },
+  {
+    q: "Q: Color contrast?",
+    a: "Aim for WCAG AA contrast ratios for text and UI controls; verify in design and with tooling.",
+    level: "Junior"
   }
         ],
       },
@@ -3250,40 +2885,40 @@ export const interviewQA = {
     title: "react-i18next — Most Asked Interview Questions",
     subtitle: "Phase 13: Advanced Topics · Module 20: Internationalization (i18n)",
     level: "Junior to Senior",
-    tip: "When answering \"react-i18next\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"react-i18next\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: How react-i18next works?",
-    a: "useTranslation() returns t(\"key\"); switch language via i18n.changeLanguage.",
+    q: "Q: How does react-i18next work?",
+    a: "An i18n instance loads translation resources; useTranslation() returns t(\"key\") and language utilities.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Complete API\" — how would you answer this in an interview?",
-    a: "When discussing Complete API in react-i18next: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you switch languages?",
+    a: "i18n.changeLanguage(\"fr\") — components using useTranslation re-render with new strings.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Pluralization and interpolation?",
+    a: "i18next supports plural forms and embedding variables into strings via t options.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Translation management\" — how would you answer this in an interview?",
-    a: "When discussing Translation management in react-i18next: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Namespace organization?",
+    a: "Split translations by feature/namespace and lazy-load them to keep bundles smaller.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Formatting dates/numbers?",
+    a: "Use i18n formatting or Intl APIs with the active locale for consistent UX.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Language switching\" — how would you answer this in an interview?",
-    a: "When discussing Language switching in react-i18next: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Pluralization\" — how would you answer this in an interview?",
-    a: "When discussing Pluralization in react-i18next: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Formatting (dates, numbers)\" — how would you answer this in an interview?",
-    a: "When discussing Formatting (dates, numbers) in react-i18next: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Hard-coded strings pitfall?",
+    a: "They break i18n. Keep user-visible copy in translation files from the start for multi-locale apps.",
+    level: "Junior"
   }
         ],
       },
@@ -3293,49 +2928,39 @@ export const interviewQA = {
     title: "Security Best Practices — Most Asked Interview Questions",
     subtitle: "Phase 13: Advanced Topics · Module 21: Security",
     level: "Junior to Senior",
-    tip: "When answering \"Security Best Practices\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Security Best Practices\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: XSS prevention in React?",
-    a: "JSX escapes by default; sanitize dangerouslySetInnerHTML with DOMPurify.",
+    q: "Q: How does React help prevent XSS?",
+    a: "JSX escapes values by default. Risk comes from dangerouslySetInnerHTML, unsanitized HTML, and unsafe URLs.",
     level: "Mid"
   },
   {
-    q: "Q: Where store JWT?",
-    a: "HttpOnly cookies preferred over localStorage.",
+    q: "Q: When is dangerouslySetInnerHTML acceptable?",
+    a: "Only with sanitized HTML (e.g. DOMPurify) from trusted pipelines — never raw user HTML.",
+    level: "Mid"
+  },
+  {
+    q: "Q: Where should JWTs be stored?",
+    a: "Prefer HttpOnly Secure cookies to reduce XSS token theft. localStorage is vulnerable if XSS exists.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"XSS prevention\" — how would you answer this in an interview?",
-    a: "When discussing XSS prevention in Security Best Practices: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: What is CSP?",
+    a: "Content Security Policy headers restrict script sources and reduce XSS impact. Configure at the host/server.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"CSRF protection\" — how would you answer this in an interview?",
-    a: "When discussing CSRF protection in Security Best Practices: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: CSRF protection?",
+    a: "For cookie-based auth, use SameSite cookies and CSRF tokens on state-changing requests.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Content Security Policy\" — how would you answer this in an interview?",
-    a: "When discussing Content Security Policy in Security Best Practices: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Secure authentication patterns\" — how would you answer this in an interview?",
-    a: "When discussing Secure authentication patterns in Security Best Practices: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Input sanitization\" — how would you answer this in an interview?",
-    a: "When discussing Input sanitization in Security Best Practices: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Dependency security\" — how would you answer this in an interview?",
-    a: "When discussing Dependency security in Security Best Practices: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Dependency security?",
+    a: "Regularly audit packages (npm audit), pin versions, and avoid unmaintained libraries with known CVEs.",
     level: "Mid"
   }
         ],
@@ -3346,40 +2971,40 @@ export const interviewQA = {
     title: "Micro-frontends — Most Asked Interview Questions",
     subtitle: "Phase 13: Advanced Topics · Module 22: Advanced Patterns",
     level: "Junior to Senior",
-    tip: "When answering \"Micro-frontends\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Micro-frontends\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What are micro-frontends?",
-    a: "Independent deployable frontends composed at runtime — Module Federation.",
+    a: "Splitting a frontend into independently deployable apps composed together at runtime or build time.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Module federation\" — how would you answer this in an interview?",
-    a: "When discussing Module federation in Micro-frontends: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Independent deployments\" — how would you answer this in an interview?",
-    a: "When discussing Independent deployments in Micro-frontends: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Shared dependencies\" — how would you answer this in an interview?",
-    a: "When discussing Shared dependencies in Micro-frontends: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What is Micro-frontends and why is it important in React 19?",
-    a: "Micro-frontends is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What are the most common Micro-frontends interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how Micro-frontends interacts with hooks, Suspense, or Server Components in modern React apps.",
+    q: "Q: What is Module Federation?",
+    a: "A Webpack/Vite approach to share code at runtime between separately built applications.",
     level: "Senior"
+  },
+  {
+    q: "Q: Benefits?",
+    a: "Team autonomy, independent releases, and scaling large orgs — at the cost of complexity.",
+    level: "Mid"
+  },
+  {
+    q: "Q: Challenges?",
+    a: "Shared dependencies, routing, styling isolation, auth, and consistent UX across fragments.",
+    level: "Senior"
+  },
+  {
+    q: "Q: When NOT to use micro-frontends?",
+    a: "Small teams/apps — the operational overhead outweighs benefits.",
+    level: "Mid"
+  },
+  {
+    q: "Q: Integration patterns?",
+    a: "Module Federation, iframes (isolation), or build-time package composition.",
+    level: "Mid"
   }
         ],
       },
@@ -3389,40 +3014,40 @@ export const interviewQA = {
     title: "PWA — Most Asked Interview Questions",
     subtitle: "Phase 13: Advanced Topics · Module 22: Advanced Patterns",
     level: "Junior to Senior",
-    tip: "When answering \"PWA\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"PWA\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What is a PWA?",
-    a: "Installable web app with service worker offline support + manifest.",
+    a: "A Progressive Web App is installable, works offline via service workers, and has a web app manifest for icons/name.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Service workers\" — how would you answer this in an interview?",
-    a: "When discussing Service workers in PWA: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Service worker role?",
+    a: "Intercepts network requests and applies cache strategies for offline/fast repeat visits.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Offline support\" — how would you answer this in an interview?",
-    a: "When discussing Offline support in PWA: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Cache strategies?",
+    a: "Cache-first for static assets; network-first for fresh API data; stale-while-revalidate as a hybrid.",
+    level: "Senior"
+  },
+  {
+    q: "Q: vite-plugin-pwa?",
+    a: "Generates service worker and manifest integration for Vite apps.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Web app manifest\" — how would you answer this in an interview?",
-    a: "When discussing Web app manifest in PWA: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Push notifications?",
+    a: "Require permission, a service worker, and a push service — optional PWA capability.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Push notifications\" — how would you answer this in an interview?",
-    a: "When discussing Push notifications in PWA: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Cache strategies\" — how would you answer this in an interview?",
-    a: "When discussing Cache strategies in PWA: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: PWA limitations?",
+    a: "iOS quirks, storage limits, and update/versioning complexity for caches.",
+    level: "Senior"
   }
         ],
       },
@@ -3432,39 +3057,39 @@ export const interviewQA = {
     title: "WebSockets — Most Asked Interview Questions",
     subtitle: "Phase 13: Advanced Topics · Module 23: Real-time Features",
     level: "Junior to Senior",
-    tip: "When answering \"WebSockets\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"WebSockets\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
+    q: "Q: WebSockets vs HTTP?",
+    a: "WebSockets provide a persistent bidirectional channel — better for chat, collaboration, and live updates than polling.",
+    level: "Mid"
+  },
+  {
     q: "Q: WebSockets vs SSE?",
-    a: "WebSockets bidirectional; SSE server→client only over HTTP.",
+    a: "WebSockets are bidirectional. SSE is server-to-client over HTTP with simpler reconnection semantics.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Socket.io integration\" — how would you answer this in an interview?",
-    a: "When discussing Socket.io integration in WebSockets: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you use WebSockets in React?",
+    a: "Open the connection in useEffect and close it in cleanup. Store latest handlers in refs to avoid stale closures.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Real-time updates\" — how would you answer this in an interview?",
-    a: "When discussing Real-time updates in WebSockets: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Socket.io benefits?",
+    a: "Fallbacks, rooms, acknowledgements, and reconnection helpers on top of WebSockets.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Reconnection handling\" — how would you answer this in an interview?",
-    a: "When discussing Reconnection handling in WebSockets: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Reconnection handling?",
+    a: "Backoff retries, re-auth on reconnect, and resyncing missed state after downtime.",
+    level: "Senior"
   },
   {
-    q: "Q: What is WebSockets and why is it important in React 19?",
-    a: "WebSockets is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What are the most common WebSockets interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how WebSockets interacts with hooks, Suspense, or Server Components in modern React apps.",
+    q: "Q: Security considerations?",
+    a: "Authenticate the socket, validate messages, and use wss:// in production.",
     level: "Senior"
   }
         ],
@@ -3475,39 +3100,39 @@ export const interviewQA = {
     title: "Server-Sent Events — Most Asked Interview Questions",
     subtitle: "Phase 13: Advanced Topics · Module 23: Real-time Features",
     level: "Junior to Senior",
-    tip: "When answering \"Server-Sent Events\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Server-Sent Events\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: When use SSE?",
-    a: "Live feeds, notifications — simpler than WebSockets for one-way streams.",
+    q: "Q: What are Server-Sent Events?",
+    a: "A one-way server-to-client stream over HTTP using EventSource — good for feeds and notifications.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"EventSource API\" — how would you answer this in an interview?",
-    a: "When discussing EventSource API in Server-Sent Events: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: When prefer SSE over WebSockets?",
+    a: "When you only need server push, want simpler infra, and automatic reconnection is enough.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Live updates\" — how would you answer this in an interview?",
-    a: "When discussing Live updates in Server-Sent Events: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you use EventSource in React?",
+    a: "Create EventSource in useEffect, handle onmessage/onerror, and close on cleanup.",
     level: "Mid"
   },
   {
-    q: "Q: What is Server-Sent Events and why is it important in React 19?",
-    a: "Server-Sent Events is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
-    level: "Mid"
-  },
-  {
-    q: "Q: What are the most common Server-Sent Events interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how Server-Sent Events interacts with hooks, Suspense, or Server Components in modern React apps.",
+    q: "Q: SSE limitations?",
+    a: "Mostly unidirectional; some proxy buffering issues; binary data is awkward compared to WebSockets.",
     level: "Senior"
   },
   {
-    q: "Q: Describe a real-world scenario where you used Server-Sent Events.",
-    a: "Use the STAR format: situation, task, action, result. Tie the answer to measurable outcomes (performance, maintainability, fewer bugs) and mention React 19 / current ecosystem tools.",
+    q: "Q: Auth with SSE?",
+    a: "Cookies work with same-origin; token query params are riskier. Design carefully for CORS/credentials.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Live updates pattern?",
+    a: "Server pushes events; React updates state; optionally reconcile with a REST snapshot on reconnect.",
     level: "Mid"
   }
         ],
@@ -3518,40 +3143,40 @@ export const interviewQA = {
     title: "React DevTools — Most Asked Interview Questions",
     subtitle: "Phase 14: DevTools & Debugging · Module 24: Developer Tools",
     level: "Junior to Senior",
-    tip: "When answering \"React DevTools\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"React DevTools\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: React DevTools Profiler?",
-    a: "Find slow components, why re-rendered, commit duration.",
+    q: "Q: How do React DevTools help?",
+    a: "Inspect the component tree, props/state/hooks, highlight updates, and profile render/commit timings.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Component tree inspection\" — how would you answer this in an interview?",
-    a: "When discussing Component tree inspection in React DevTools: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What is the Profiler for?",
+    a: "Finding slow commits and which components rendered and why — essential for performance interviews.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Props and state inspection\" — how would you answer this in an interview?",
-    a: "When discussing Props and state inspection in React DevTools: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Why did my component render?",
+    a: "DevTools can show prop/state/hook changes that caused an update.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Debugging hooks state?",
+    a: "Expand the hooks section on a fiber to see useState/useEffect dependencies and values.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Profiler\" — how would you answer this in an interview?",
-    a: "When discussing Profiler in React DevTools: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Production profiling?",
+    a: "Use a profiling build when needed; be careful shipping heavy instrumentation to all users.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Performance monitoring\" — how would you answer this in an interview?",
-    a: "When discussing Performance monitoring in React DevTools: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Debugging hooks\" — how would you answer this in an interview?",
-    a: "When discussing Debugging hooks in React DevTools: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Common interview tip?",
+    a: "Describe a systematic approach: reproduce → DevTools highlight updates → Profiler → fix memoization/state location.",
+    level: "Senior"
   }
         ],
       },
@@ -3561,40 +3186,40 @@ export const interviewQA = {
     title: "Browser DevTools — Most Asked Interview Questions",
     subtitle: "Phase 14: DevTools & Debugging · Module 24: Developer Tools",
     level: "Junior to Senior",
-    tip: "When answering \"Browser DevTools\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Browser DevTools\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Debug memory leaks?",
-    a: "Performance/Memory tab — detached DOM, missing effect cleanup.",
+    q: "Q: How do you find memory leaks?",
+    a: "Chrome Memory tools: heap snapshots, detached DOM nodes, growing listeners. Often missing effect cleanup in React.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Performance profiling\" — how would you answer this in an interview?",
-    a: "When discussing Performance profiling in Browser DevTools: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Performance panel usage?",
+    a: "Record interactions, find long tasks, layout thrashing, and expensive scripting.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Memory leaks detection\" — how would you answer this in an interview?",
-    a: "When discussing Memory leaks detection in Browser DevTools: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Network debugging for React apps?",
+    a: "Check waterfall, caching headers, duplicate fetches, and large payloads.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Why is my React app janky?",
+    a: "Main-thread long tasks, excessive re-renders, huge lists without virtualization, or unoptimized images.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Network monitoring\" — how would you answer this in an interview?",
-    a: "When discussing Network monitoring in Browser DevTools: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Console tips?",
+    a: "Breakpoints, conditional breakpoints, and logging render counts carefully in development.",
+    level: "Junior"
   },
   {
-    q: "Q: What is Browser DevTools and why is it important in React 19?",
-    a: "Browser DevTools is a core React concept. Explain the problem it solves, when to use it vs alternatives, and give a concise code or architecture example from production experience.",
+    q: "Q: CORS errors — what to check?",
+    a: "Server Access-Control headers, credentials mode, and whether the browser preflight OPTIONS succeeds.",
     level: "Mid"
-  },
-  {
-    q: "Q: What are the most common Browser DevTools interview follow-up questions?",
-    a: "Interviewers often ask about edge cases, performance implications, testing strategy, and how Browser DevTools interacts with hooks, Suspense, or Server Components in modern React apps.",
-    level: "Senior"
   }
         ],
       },
@@ -3604,40 +3229,40 @@ export const interviewQA = {
     title: "React Compiler — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"React Compiler\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"React Compiler\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: What is React Compiler?",
-    a: "Build-time auto-memoization — reduces manual useMemo/memo.",
+    q: "Q: What is the React Compiler?",
+    a: "A build-time tool that auto-memoizes components and values by analyzing purity — reducing manual useMemo/useCallback/React.memo.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Automatic optimization\" — how would you answer this in an interview?",
-    a: "When discussing Automatic optimization in React Compiler: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Does it replace all memoization?",
+    a: "Often for eligible components, but you still need good state architecture. It’s opt-in and incremental.",
+    level: "Senior"
+  },
+  {
+    q: "Q: What code works best with the Compiler?",
+    a: "Pure render functions without hidden side effects. Side effects belong in effects, not render.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Compiler configuration\" — how would you answer this in an interview?",
-    a: "When discussing Compiler configuration in React Compiler: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you adopt it?",
+    a: "Enable the Babel plugin / tooling, start on a subset of components, and fix purity violations it reports.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Memoization improvements\" — how would you answer this in an interview?",
-    a: "When discussing Memoization improvements in React Compiler: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Interview stance on useMemo with Compiler?",
+    a: "Know both: with Compiler, less manual memo; without Compiler, memoize measured hotspots.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Performance enhancements\" — how would you answer this in an interview?",
-    a: "When discussing Performance enhancements in React Compiler: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Migration guide\" — how would you answer this in an interview?",
-    a: "When discussing Migration guide in React Compiler: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Is Compiler required for React 19?",
+    a: "No. React 19 works without it. Compiler is an optimization layer on top.",
+    level: "Junior"
   }
         ],
       },
@@ -3647,40 +3272,40 @@ export const interviewQA = {
     title: "Actions & Form Handling — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"Actions & Form Handling\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Actions & Form Handling\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: React 19 Actions?",
-    a: "Async form action prop; useFormStatus for pending; progressive enhancement.",
+    q: "Q: What are React 19 Actions?",
+    a: "Async functions used as form actions or inside transitions. React tracks pending state and supports progressive enhancement.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Form actions\" — how would you answer this in an interview?",
-    a: "When discussing Form actions in Actions & Form Handling: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What is useFormStatus?",
+    a: "Reads pending state of the parent <form> — typically used in a SubmitButton to disable/show loading without prop drilling.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"useActionState hook\" — how would you answer this in an interview?",
-    a: "When discussing useActionState hook in Actions & Form Handling: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What is useActionState?",
+    a: "Manages state returned from an action (e.g. server validation errors) paired with a form action.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"useFormStatus hook\" — how would you answer this in an interview?",
-    a: "When discussing useFormStatus hook in Actions & Form Handling: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Progressive enhancement meaning?",
+    a: "The form can still submit if JS is slow/disabled — especially with server actions in frameworks.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Client-only action example?",
+    a: "async function submit(formData) { await api.save(formData) } passed to <form action={submit}>.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Server actions\" — how would you answer this in an interview?",
-    a: "When discussing Server actions in Actions & Form Handling: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Progressive enhancement\" — how would you answer this in an interview?",
-    a: "When discussing Progressive enhancement in Actions & Form Handling: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Actions vs classic onSubmit?",
+    a: "Actions integrate pending states and FormData more cleanly; onSubmit + preventDefault remains valid.",
+    level: "Junior"
   }
         ],
       },
@@ -3690,39 +3315,39 @@ export const interviewQA = {
     title: "useOptimistic Hook — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"useOptimistic Hook\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"useOptimistic Hook\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What is useOptimistic?",
-    a: "Show optimistic UI during async action; auto revert on error.",
+    a: "A React 19 hook that shows optimistic UI while an async action runs, then settles to the real result (or reverts on failure).",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Optimistic updates\" — how would you answer this in an interview?",
-    a: "When discussing Optimistic updates in useOptimistic Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How does the API work?",
+    a: "const [optimisticState, addOptimistic] = useOptimistic(state, updateFn). Call addOptimistic during the action.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"useOptimistic API\" — how would you answer this in an interview?",
-    a: "When discussing useOptimistic API in useOptimistic Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Typical use cases?",
+    a: "Likes, todos, chat messages — UI updates instantly before the server confirms.",
+    level: "Junior"
+  },
+  {
+    q: "Q: How do you handle errors?",
+    a: "If the action throws, React discards the optimistic state and you show an error — pair with proper rollback messaging.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"UI responsiveness\" — how would you answer this in an interview?",
-    a: "When discussing UI responsiveness in useOptimistic Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: useOptimistic vs TanStack Query optimistic updates?",
+    a: "Similar UX goal. useOptimistic is UI-local; Query optimistic updates operate on the server-state cache.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Error handling\" — how would you answer this in an interview?",
-    a: "When discussing Error handling in useOptimistic Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Rollback patterns\" — how would you answer this in an interview?",
-    a: "When discussing Rollback patterns in useOptimistic Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Why optimistic UI helps interviews?",
+    a: "Shows you understand perceived performance and failure handling, not just happy-path fetching.",
     level: "Mid"
   }
         ],
@@ -3733,39 +3358,39 @@ export const interviewQA = {
     title: "Document Metadata — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"Document Metadata\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Document Metadata\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: Document metadata in React 19?",
-    a: "Render <title> and <meta> in components — hoisted to head.",
+    a: "You can render <title> and <meta> inside components; React hoists them into document head.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Built-in title support\" — how would you answer this in an interview?",
-    a: "When discussing Built-in title support in Document Metadata: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Why does this matter?",
+    a: "Simplifies SEO and per-route titles without react-helmet in many cases.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Async metadata?",
+    a: "Frameworks may resolve metadata asynchronously while streaming — depends on your RSC/framework setup.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Multiple titles competing?",
+    a: "React resolves document metadata according to its precedence rules; prefer setting metadata near route roots.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Meta tags\" — how would you answer this in an interview?",
-    a: "When discussing Meta tags in Document Metadata: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: vs react-helmet-async?",
+    a: "Helmet is still used in older apps; React 19 built-in metadata covers common cases.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Async metadata\" — how would you answer this in an interview?",
-    a: "When discussing Async metadata in Document Metadata: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Document head management\" — how would you answer this in an interview?",
-    a: "When discussing Document head management in Document Metadata: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"SEO improvements\" — how would you answer this in an interview?",
-    a: "When discussing SEO improvements in Document Metadata: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Social/Open Graph tags?",
+    a: "Render appropriate meta tags for previews — still verify with platform debuggers after deploy.",
     level: "Mid"
   }
         ],
@@ -3776,39 +3401,39 @@ export const interviewQA = {
     title: "Ref as Prop — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"Ref as Prop\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Ref as Prop\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: ref as prop in React 19?",
-    a: "Pass ref like any prop — forwardRef often unnecessary.",
+    q: "Q: What changed with refs in React 19?",
+    a: "ref can be passed as a normal prop to function components. forwardRef is often unnecessary.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Ref forwarding improvements\" — how would you answer this in an interview?",
-    a: "When discussing Ref forwarding improvements in Ref as Prop: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Do you still need forwardRef?",
+    a: "For compatibility and some library patterns yes, but new code can accept ref directly.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Ref prop support\" — how would you answer this in an interview?",
-    a: "When discussing Ref prop support in Ref as Prop: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: TypeScript impact?",
+    a: "Ref typing is simpler — include ref on props instead of the forwardRef generic dance in many cases.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Callback refs still valid?",
+    a: "Yes. Function refs still run on mount/unmount with the node.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Exposing imperative APIs?",
+    a: "useImperativeHandle still applies when parents should call child methods.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Component refs\" — how would you answer this in an interview?",
-    a: "When discussing Component refs in Ref as Prop: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Forward ref patterns\" — how would you answer this in an interview?",
-    a: "When discussing Forward ref patterns in Ref as Prop: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"TypeScript support\" — how would you answer this in an interview?",
-    a: "When discussing TypeScript support in Ref as Prop: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Migration tip?",
+    a: "Replace forwardRef wrappers gradually; keep tests around focus management components.",
     level: "Mid"
   }
         ],
@@ -3819,40 +3444,40 @@ export const interviewQA = {
     title: "Context as Provider — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"Context as Provider\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Context as Provider\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Context as Provider syntax?",
-    a: "<ThemeContext value={x}> replaces .Provider in React 19.",
+    q: "Q: Context as Provider syntax in React 19?",
+    a: "You can write <ThemeContext value={theme}> instead of <ThemeContext.Provider value={theme}>.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Context provider pattern\" — how would you answer this in an interview?",
-    a: "When discussing Context provider pattern in Context as Provider: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Does behavior change?",
+    a: "No — it’s cleaner syntax with the same Provider semantics.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Performance still matters?",
+    a: "Yes. Memoize value and split contexts; new syntax doesn’t fix re-render issues.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Context composition\" — how would you answer this in an interview?",
-    a: "When discussing Context composition in Context as Provider: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Multiple contexts?",
+    a: "Compose providers the same way as before; naming is just shorter.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Migration?",
+    a: "Codemod or gradually replace .Provider usage; both forms work during transition.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Provider improvements\" — how would you answer this in an interview?",
-    a: "When discussing Provider improvements in Context as Provider: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Performance optimizations\" — how would you answer this in an interview?",
-    a: "When discussing Performance optimizations in Context as Provider: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Multiple contexts\" — how would you answer this in an interview?",
-    a: "When discussing Multiple contexts in Context as Provider: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Interview one-liner?",
+    a: "React 19 lets the context object itself act as the Provider component.",
+    level: "Junior"
   }
         ],
       },
@@ -3862,40 +3487,40 @@ export const interviewQA = {
     title: "Async Components — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"Async Components\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Async Components\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Async components in React 19?",
-    a: "Components async with Suspense — await data during render with use().",
+    q: "Q: What are async components in modern React?",
+    a: "Components that can await data during render (especially on the server) and integrate with Suspense for loading UI.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Async component support\" — how would you answer this in an interview?",
-    a: "When discussing Async component support in Async Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How does Suspense fit?",
+    a: "When a child suspends on a Promise, the nearest Suspense boundary shows fallback until resolution.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Promise handling\" — how would you answer this in an interview?",
-    a: "When discussing Promise handling in Async Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Client vs server async?",
+    a: "Async Server Components are first-class in RSC. On the client, use() / frameworks orchestrate suspending data.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Error handling?",
+    a: "Pair Suspense with Error Boundaries for failed promises/render errors.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Suspense integration\" — how would you answer this in an interview?",
-    a: "When discussing Suspense integration in Async Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Loading states?",
+    a: "Prefer Suspense fallbacks and granular boundaries over manual isLoading flags where the architecture supports it.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Error boundaries\" — how would you answer this in an interview?",
-    a: "When discussing Error boundaries in Async Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Loading states\" — how would you answer this in an interview?",
-    a: "When discussing Loading states in Async Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Pitfall?",
+    a: "Don’t spawn new Promises every render without caching — you’ll suspend forever/refetch endlessly.",
+    level: "Senior"
   }
         ],
       },
@@ -3905,40 +3530,40 @@ export const interviewQA = {
     title: "use Hook — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"use Hook\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"use Hook\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
     q: "Q: What is the use() hook?",
-    a: "Unwrap promises/context in render; works with Suspense; can be conditional.",
+    a: "React 19’s use() unwraps a Promise or reads Context during render. With Promises it suspends until resolved.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"use() hook API\" — how would you answer this in an interview?",
-    a: "When discussing use() hook API in use Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How is use() different from other hooks?",
+    a: "It can be called conditionally, unlike useState/useEffect, because of how it participates in render/Suspense.",
+    level: "Senior"
+  },
+  {
+    q: "Q: use(promise) example?",
+    a: "const data = use(resourcePromise); // suspends; parent Suspense shows fallback.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Promise unwrapping\" — how would you answer this in an interview?",
-    a: "When discussing Promise unwrapping in use Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: use(context) vs useContext?",
+    a: "use(Context) can read context and may be called conditionally; useContext cannot be conditional.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Context reading\" — how would you answer this in an interview?",
-    a: "When discussing Context reading in use Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Error handling with use()?",
+    a: "Rejected promises propagate to the nearest Error Boundary (or framework error handling).",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Suspense integration\" — how would you answer this in an interview?",
-    a: "When discussing Suspense integration in use Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Error handling\" — how would you answer this in an interview?",
-    a: "When discussing Error handling in use Hook: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: When not to use use()?",
+    a: "For simple client state — still use useState. use() is for Promise/context unwrapping patterns.",
+    level: "Junior"
   }
         ],
       },
@@ -3948,39 +3573,39 @@ export const interviewQA = {
     title: "Server Components (Stable) — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"Server Components (Stable)\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Server Components (Stable)\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: RSC stable in React 19?",
-    a: "Stable protocol; primary adoption via Next.js App Router.",
+    q: "Q: What does “stable Server Components” mean in React 19?",
+    a: "The RSC model and protocol are production-ready for frameworks; Next.js App Router is the main adoption path.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Stable Server Components\" — how would you answer this in an interview?",
-    a: "When discussing Stable Server Components in Server Components (Stable): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Client/Server boundaries?",
+    a: "Mark client graphs with \"use client\". Server Components can render Client Components as children but not import client-only hooks into server files.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Data fetching in RSC?",
+    a: "Fetch directly in Server Components. Avoid shipping that logic to the client bundle.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"RSC architecture\" — how would you answer this in an interview?",
-    a: "When discussing RSC architecture in Server Components (Stable): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Streaming SSR?",
+    a: "HTML streams as Suspense boundaries resolve — faster first paint for shells.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Serialization rules?",
+    a: "Props from server to client must be serializable — no functions/classes.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Client/Server boundaries\" — how would you answer this in an interview?",
-    a: "When discussing Client/Server boundaries in Server Components (Stable): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Data fetching\" — how would you answer this in an interview?",
-    a: "When discussing Data fetching in Server Components (Stable): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Streaming SSR\" — how would you answer this in an interview?",
-    a: "When discussing Streaming SSR in Server Components (Stable): give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: When keep a CSR SPA?",
+    a: "Simple dashboards behind login, or teams not ready for a framework RSC architecture.",
     level: "Mid"
   }
         ],
@@ -3991,40 +3616,40 @@ export const interviewQA = {
     title: "Improved Hydration — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"Improved Hydration\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Improved Hydration\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Hydration mismatch causes?",
-    a: "Date.now(), random IDs, window checks during render — use useId/useEffect.",
+    q: "Q: What is hydration?",
+    a: "Attaching React event handlers/state to server-rendered HTML so it becomes interactive.",
+    level: "Junior"
+  },
+  {
+    q: "Q: What causes hydration mismatches?",
+    a: "Date.now(), Math.random(), invalid HTML nesting, or branching on typeof window during render.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Better hydration errors\" — how would you answer this in an interview?",
-    a: "When discussing Better hydration errors in Improved Hydration: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: React 19 hydration improvements?",
+    a: "Clearer error messages and diffs that help locate mismatches faster.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Error messages\" — how would you answer this in an interview?",
-    a: "When discussing Error messages in Improved Hydration: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: How do you fix mismatch bugs?",
+    a: "Keep initial client render identical to server HTML; move browser-only values into useEffect; use useId for IDs.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Hydration mismatch detection\" — how would you answer this in an interview?",
-    a: "When discussing Hydration mismatch detection in Improved Hydration: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Invalid HTML example?",
+    a: "<p><div></div></p> — browser “fixes” DOM differently than React expects.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"SSR improvements\" — how would you answer this in an interview?",
-    a: "When discussing SSR improvements in Improved Hydration: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Debugging tools\" — how would you answer this in an interview?",
-    a: "When discussing Debugging tools in Improved Hydration: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: suppressHydrationWarning?",
+    a: "Rare escape hatch for known differences (e.g. timestamps). Prefer fixing the root cause.",
+    level: "Senior"
   }
         ],
       },
@@ -4034,39 +3659,39 @@ export const interviewQA = {
     title: "Enhanced Suspense — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"Enhanced Suspense\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Enhanced Suspense\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Nested Suspense boundaries?",
-    a: "Granular loading — shell fast, slow parts stream independently.",
+    q: "Q: What improved about Suspense?",
+    a: "Better support for nested boundaries, streaming, and combining with error handling in modern React/framework setups.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Suspense improvements\" — how would you answer this in an interview?",
-    a: "When discussing Suspense improvements in Enhanced Suspense: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Why nest Suspense boundaries?",
+    a: "So a slow widget doesn’t block the entire page shell — granular loading UX.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Multiple boundaries\" — how would you answer this in an interview?",
-    a: "When discussing Multiple boundaries in Enhanced Suspense: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Suspense + Error Boundaries?",
+    a: "Suspense handles waiting; Error Boundaries handle failures. Place both strategically.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Nested Suspense\" — how would you answer this in an interview?",
-    a: "When discussing Nested Suspense in Enhanced Suspense: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Loading patterns?",
+    a: "Skeleton screens, staggered reveals, and route-level + section-level boundaries.",
+    level: "Junior"
   },
   {
-    q: "Q: Explain \"Error boundaries integration\" — how would you answer this in an interview?",
-    a: "When discussing Error boundaries integration in Enhanced Suspense: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Client data Suspense?",
+    a: "Requires a Suspense-aware data library or framework integration — not plain useEffect alone.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Loading patterns\" — how would you answer this in an interview?",
-    a: "When discussing Loading patterns in Enhanced Suspense: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Common mistake?",
+    a: "One giant Suspense around the whole app — users see a single blank fallback too often.",
     level: "Mid"
   }
         ],
@@ -4077,39 +3702,39 @@ export const interviewQA = {
     title: "Asset Loading — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"Asset Loading\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Asset Loading\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Preload assets in React 19?",
-    a: "Resource hints for fonts/images — faster LCP.",
+    q: "Q: How does React 19 improve asset loading?",
+    a: "Better integration with resource loading patterns — preload/preinit style APIs and framework guidance for fonts/images/scripts.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Resource hints\" — how would you answer this in an interview?",
-    a: "When discussing Resource hints in Asset Loading: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Why preload critical assets?",
+    a: "Improves LCP by fetching fonts/hero images earlier in the critical path.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Preloading\" — how would you answer this in an interview?",
-    a: "When discussing Preloading in Asset Loading: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Image optimization basics?",
+    a: "Correct dimensions, modern formats, lazy-loading below the fold, and CDN resizing.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Font loading tips?",
+    a: "Use font-display strategies and preload primary fonts to reduce FOIT/FOUT jank.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Image optimization\" — how would you answer this in an interview?",
-    a: "When discussing Image optimization in Asset Loading: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Resource hints?",
+    a: "<prefetch>/<preload> (and framework helpers) tell the browser what you’ll need soon.",
+    level: "Senior"
   },
   {
-    q: "Q: Explain \"Font loading\" — how would you answer this in an interview?",
-    a: "When discussing Font loading in Asset Loading: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Performance improvements\" — how would you answer this in an interview?",
-    a: "When discussing Performance improvements in Asset Loading: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Bundle vs asset loading?",
+    a: "Code splitting reduces JS; asset loading optimizes images/fonts/CSS — both matter for performance.",
     level: "Mid"
   }
         ],
@@ -4120,39 +3745,39 @@ export const interviewQA = {
     title: "Web Components — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"Web Components\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Web Components\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Web Components in React 19?",
-    a: "Better custom element integration — pass props, listen to events.",
+    q: "Q: Can React work with Web Components?",
+    a: "Yes. React 19 improves custom element interop — passing props and listening to events is smoother than older versions.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Web Components support\" — how would you answer this in an interview?",
-    a: "When discussing Web Components support in Web Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: What is Shadow DOM impact?",
+    a: "Styles and DOM are encapsulated. Portals/events/CSS piercing need careful design.",
+    level: "Senior"
+  },
+  {
+    q: "Q: When use Web Components in a React app?",
+    a: "Design-system sharing across frameworks, or embedding third-party widgets authored as custom elements.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Custom elements\" — how would you answer this in an interview?",
-    a: "When discussing Custom elements in Web Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Event handling differences?",
+    a: "Custom events may need explicit listeners; React’s synthetic system doesn’t always map 1:1 to custom element events.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Props vs attributes?",
+    a: "Custom elements often use attributes/properties differently than React props — follow the element’s docs.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Shadow DOM\" — how would you answer this in an interview?",
-    a: "When discussing Shadow DOM in Web Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Integration patterns\" — how would you answer this in an interview?",
-    a: "When discussing Integration patterns in Web Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Event handling\" — how would you answer this in an interview?",
-    a: "When discussing Event handling in Web Components: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: SSR considerations?",
+    a: "Custom elements may need client-only mounting if they depend on browser APIs.",
     level: "Mid"
   }
         ],
@@ -4163,39 +3788,39 @@ export const interviewQA = {
     title: "TypeScript Improvements — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"TypeScript Improvements\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"TypeScript Improvements\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: React 19 TS changes?",
-    a: "ref as prop types; improved useRef/useReducer inference.",
+    q: "Q: What improved in React 19 TypeScript types?",
+    a: "Better ref-as-prop typing, improved useRef/useReducer inference, and cleaner component prop patterns.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Better type inference\" — how would you answer this in an interview?",
-    a: "When discussing Better type inference in TypeScript Improvements: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: ref typing change?",
+    a: "Treat ref like a regular optional prop on function components instead of always using forwardRef generics.",
+    level: "Senior"
+  },
+  {
+    q: "Q: Why does better inference matter?",
+    a: "Less manual generic annotation and fewer any casts around hooks and context.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Ref types\" — how would you answer this in an interview?",
-    a: "When discussing Ref types in TypeScript Improvements: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Context typing tip?",
+    a: "Still create a typed context and a safe consumer hook that throws outside the Provider.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Breaking type changes?",
+    a: "Expect some type errors when upgrading @types/react — fix gradually; they’re usually improvements.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Context types\" — how would you answer this in an interview?",
-    a: "When discussing Context types in TypeScript Improvements: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Component types\" — how would you answer this in an interview?",
-    a: "When discussing Component types in TypeScript Improvements: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Hook types\" — how would you answer this in an interview?",
-    a: "When discussing Hook types in TypeScript Improvements: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: ReactElement vs JSX.Element?",
+    a: "Prefer React.ReactElement / React.ReactNode from the React namespace for clarity in modern types.",
     level: "Mid"
   }
         ],
@@ -4206,40 +3831,40 @@ export const interviewQA = {
     title: "Concurrent Features — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"Concurrent Features\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Concurrent Features\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Enhanced concurrent features in React 19?",
-    a: "Improved batching, transitions, scheduling optimizations.",
+    q: "Q: What concurrent features should you know for interviews?",
+    a: "createRoot, automatic batching, useTransition, useDeferredValue, Suspense, and interruptible rendering.",
+    level: "Mid"
+  },
+  {
+    q: "Q: What improved in React 19 regarding concurrency?",
+    a: "Refinements around Actions, optimistic UI, Suspense/hydration messaging, and ecosystem stability — building on React 18’s model.",
     level: "Senior"
   },
   {
-    q: "Q: Explain \"Enhanced concurrent rendering\" — how would you answer this in an interview?",
-    a: "When discussing Enhanced concurrent rendering in Concurrent Features: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Priority scheduling in plain terms?",
+    a: "React processes urgent interactions before heavy non-urgent renders so the UI feels responsive.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Automatic batching improvements\" — how would you answer this in an interview?",
-    a: "When discussing Automatic batching improvements in Concurrent Features: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Do you opt into concurrency?",
+    a: "Using createRoot opts into the concurrent renderer. Legacy render does not.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Practical adoption?",
+    a: "Start with transitions on slow interactions; add Suspense where your data layer supports it.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Transition API updates\" — how would you answer this in an interview?",
-    a: "When discussing Transition API updates in Concurrent Features: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Priority scheduling\" — how would you answer this in an interview?",
-    a: "When discussing Priority scheduling in Concurrent Features: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Performance optimizations\" — how would you answer this in an interview?",
-    a: "When discussing Performance optimizations in Concurrent Features: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Measuring success?",
+    a: "Better interaction responsiveness (INP), fewer blocked inputs, and Profiler commits that don’t stall typing.",
+    level: "Senior"
   }
         ],
       },
@@ -4249,40 +3874,40 @@ export const interviewQA = {
     title: "Error Boundaries Enhancements — Most Asked Interview Questions",
     subtitle: "Phase 15: Recent Updates · Module 25: React 19 - Complete Coverage",
     level: "Junior to Senior",
-    tip: "When answering \"Error Boundaries Enhancements\" questions: definition → example → trade-off. Use React 19 / latest APIs.",
+    tip: "Answer with a clear definition, a concrete example, and one trade-off for \"Error Boundaries Enhancements\". Prefer React 19 / current APIs.",
     sections: [
       {
         title: 'Most Asked Questions',
         questions: [
   {
-    q: "Q: Error boundary improvements in React 19?",
-    a: "Better error recovery patterns and SSR error handling.",
+    q: "Q: What Error Boundary enhancements matter in React 19?",
+    a: "Better alignment with modern SSR/hydration error reporting and recovery patterns in framework apps — boundaries remain class-based.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Improved error boundaries\" — how would you answer this in an interview?",
-    a: "When discussing Improved error boundaries in Error Boundaries Enhancements: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Are hooks available for error boundaries yet?",
+    a: "No. You still implement getDerivedStateFromError and componentDidCatch on a class component (or use a small library wrapper).",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Error recovery\" — how would you answer this in an interview?",
-    a: "When discussing Error recovery in Error Boundaries Enhancements: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Error recovery patterns?",
+    a: "Reset keys on boundaries, “Try again” buttons, and route-level error elements in React Router/Next.js.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Error reporting\" — how would you answer this in an interview?",
-    a: "When discussing Error reporting in Error Boundaries Enhancements: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
+    q: "Q: Fallback UI best practices?",
+    a: "Explain what failed, offer retry/navigation, and keep surrounding app chrome intact.",
+    level: "Junior"
+  },
+  {
+    q: "Q: Logging in componentDidCatch?",
+    a: "Send errors to monitoring with component stack; don’t only render fallback silently.",
     level: "Mid"
   },
   {
-    q: "Q: Explain \"Fallback UI patterns\" — how would you answer this in an interview?",
-    a: "When discussing Fallback UI patterns in Error Boundaries Enhancements: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
-  },
-  {
-    q: "Q: Explain \"Error boundary composition\" — how would you answer this in an interview?",
-    a: "When discussing Error boundary composition in Error Boundaries Enhancements: give a clear definition, explain why it matters in React 19 apps, describe a real use case, and mention one common mistake or trade-off interviewers expect.",
-    level: "Mid"
+    q: "Q: Composition of boundaries?",
+    a: "Nested boundaries isolate failures — a chart crash shouldn’t blank the whole dashboard.",
+    level: "Senior"
   }
         ],
       },
